@@ -1,0 +1,11 @@
+
+      .jumbotron {
+          position: relative;
+          background: url("../images/slider3.png") center center;
+          color:black;
+          width: 100%;
+          height: 600px;
+          background-size: cover;
+          overflow: hidden;
+      }
+
