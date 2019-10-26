@@ -33,7 +33,7 @@
 
 
             {{-- main content --}}
-            <section class="mt-5">
+            <section >
 
                     @yield('content')
 
