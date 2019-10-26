@@ -9,3 +9,28 @@
           overflow: hidden;
       }
 
+
+      /* card hover */
+
+    .card:hover .card-body{
+        background: rgb(231, 247, 141);
+        transform: translateY(0);
+
+    }
+
+    .card:hover  .card-footer{
+        background: rgb(215, 238, 208);
+        transform: translateY(0);
+        color: #fff;
+    }
+
+    /* agar footer dibawah */
+    body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+
+      main {
+        flex: 1 0 auto;
+      }

@@ -12,5 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('front.templates.default');
-});
+    return view('front.templates.homepage');
+})->name('homepage');
+
+
+
+
+Route::resource('/report', 'ReportController');

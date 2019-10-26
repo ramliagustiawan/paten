@@ -14,11 +14,11 @@
 
         {{-- navbar-end --}}
 
-        <main>
+<main>
             {{--  jumbotron  --}}
             <section>
 
-
+               @include('front.templates.partials.jumbotron')
 
             </section>
             {{-- jumbotron-end --}}
@@ -27,22 +27,16 @@
             <section>
 
             {{--  card  --}}
-
+            @include('front.templates.partials.card')
 
             </section>
 
 
             {{-- main content --}}
-            <section class="mt-5">
 
-                    @yield('content')
+            @yield('content')
 
-
-            </section>
-
-        </main>
-
-
+</main>
 
              {{--  footer  --}}
 
