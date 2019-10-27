@@ -14,22 +14,22 @@
 
         {{-- navbar-end --}}
 
+        {{-- breadcrumb --}}
+       
+
+
         <main>
             {{--  jumbotron  --}}
-            <section>
-
-
-
-            </section>
+          
             {{-- jumbotron-end --}}
 
 
-            <section>
+         
 
             {{--  card  --}}
 
 
-            </section>
+           
 
 
             {{-- main content --}}

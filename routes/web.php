@@ -17,5 +17,7 @@ Route::get('/', function () {
 
 
 
+Route::resource('/ajukan', 'AjukanController');
+
 
 Route::resource('/report', 'ReportController');

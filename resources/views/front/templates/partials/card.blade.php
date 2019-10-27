@@ -34,7 +34,7 @@
 
                         </div>
                         <div class="card-footer">
-                              <a href="#" class="btn btn-primary">Ajukan Layanan</a>
+                              <a href="{{ route('ajukan.index') }}" class="btn btn-primary">Ajukan Layanan</a>
                         </div>
                       </div>
 

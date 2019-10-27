@@ -15,10 +15,10 @@
             <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavId">
                     <ul class="navbar-nav  " >
                             <li class="nav-item">
-                              <a class="nav-link active" href="#">INFORMASI LAYANAN</a>
+                              <a class="nav-link" href="#">INFORMASI LAYANAN</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">AJUKAN LAYANAN</a>
+                              <a class="nav-link" href="{{ route('ajukan.index') }}">AJUKAN LAYANAN</a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link" href="{{ route('report.index') }}">PELAPORAN</a>

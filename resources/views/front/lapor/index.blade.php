@@ -5,7 +5,7 @@
 
 <div class="container mt-5">
 
-<div class="card mt-5">
+<div class="card">
         <div class="card-header">
                 <h4 class="text-center">Pelaporan Dan Pengaduan</h4>
 
