@@ -12,3 +12,5 @@
        $(this).tab('show');
    });
 </script>
+
+@stack ('scripts')

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Lapor;
+use App\Report;
 
 class ReportController extends Controller
 {
@@ -25,7 +25,10 @@ class ReportController extends Controller
      */
     public function create()
     {
-        //
+        return view('front.lapor.create', [
+            'title' => 'Pelaporan',
+            'report' => Report::orderBY('created_at', DESC)->get()
+        ]);
     }
 
     /**
@@ -36,7 +39,25 @@ class ReportController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'alamat' => 'required|min:10',
+            'kontak' => 'required|numeric',
+            'pesan' => 'required|min:10',
+
+
+
+        ]);
+
+        Report::create([
+            'name' => $request->name,
+            'alamat' =>  $request->alamat,
+            'kontak' =>  $request->kontak,
+            'pesan' =>  $request->pesan,
+
+        ]);
+
+        return redirect()->route('report.index')->withSuccess('Laporan Berhasil Di Kirim');
     }
 
     /**
