@@ -1,4 +1,4 @@
-<script src="{{ asset('assets/bootstrap4_dist/js/bootstrap.min.js') }}"></script>
+
 
 {{--  jquery  --}}
 <script src="{{ asset('assets/js/jquery_3_4_1.min.js') }}"></script>
@@ -12,5 +12,10 @@
        $(this).tab('show');
    });
 </script>
+
+{{-- bootstrap js --}}
+<script src="{{ asset('assets/bootstrap4_dist/js/bootstrap.min.js') }}"></script>
+
+</body>
 
 @stack ('scripts')

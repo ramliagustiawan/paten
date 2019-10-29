@@ -3,6 +3,9 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Document</title>
 
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 {{--  bootstrap4  --}}
 <link rel="stylesheet" href="{{ asset('assets/bootstrap4_dist/css/bootstrap.min.css') }}">
 
