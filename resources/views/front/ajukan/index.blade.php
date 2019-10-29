@@ -3,13 +3,21 @@
 
 @section('content')
 
-<div class="container mt-5">
+<nav class="navbar navbar-dark justify-content-center  mt-5" style="background-color:lightblue">
+                <a class="navbar-brand" href="#">
+                    <img src="{{ asset('assets/images/kota.png') }}" width="50" height="50" alt="" class="rounded mx-auto d-block">
+                    <h4 class="text-justify">Pelayanan Online Kecamatan</h4>
+                </a>
+              </nav>
+
+<div class="container">
+
 
         <div class="">
-                <div class="card-header">
+                {{-- <div class="card-header">
                         <h4 class="text-center">Pelayanan Online Kecamatan</h4>
 
-                </div>
+                </div> --}}
 
                 <div class="mt-3">
                         <h4 class="">1. Pelayanan Perijinan</h4>

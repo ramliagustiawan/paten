@@ -16,7 +16,7 @@
 
                   </div>
                   <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Info</a>
+                        <a href="{{ route('info.index') }}" class="btn btn-primary">Info</a>
                   </div>
                 </div>
 

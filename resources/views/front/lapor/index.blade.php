@@ -3,13 +3,20 @@
 
 @section('content')
 
-<div class="container mt-5">
+<nav class="navbar navbar-dark justify-content-center  mt-5" style="background-color:lightblue">
+  <a class="navbar-brand" href="#">
+      <img src="{{ asset('assets/images/kota.png') }}" width="50" height="50" alt="" class="rounded mx-auto d-block">
+      <h4 class="text-justify">Pelaporan Dan Pengaduan</h4>
+  </a>
+</nav>
+
+<div class="container">
 
 <div class="card">
-        <div class="card-header">
+        {{-- <div class="card-header">
                 <h4 class="text-center">Pelaporan Dan Pengaduan</h4>
 
-        </div>
+        </div> --}}
         <div class="card-body">
           <h6 class="card-title">Sampaikan Keluhan , Masukan dan Saran Anda Kami Menjamin Kerahasiaanya Serta Akan Menindaklanjutinya</h6>
           <p class="card-text"></p>

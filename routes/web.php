@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('front.templates.homepage');
 })->name('homepage');
 
-
+Route::resource('/info', 'InfoController');
 
 Route::resource('/ajukan', 'AjukanController');
 
