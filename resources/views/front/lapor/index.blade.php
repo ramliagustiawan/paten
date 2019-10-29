@@ -25,7 +25,7 @@
                   <div class="card-header">
                     <strong>Contact</strong>
                   </div>
-                  
+
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><strong>Pemerintah Kecamatan Dungingi</strong></li>
                         <li class="list-group-item">Jalan Apel II Kel. Huangobotu</li>
@@ -49,12 +49,12 @@
 
                     </div>
 
-                  
+
 
                     <div class="form-group row @error('alamat') has-error @enderror">
                         <label for="" class="col-sm-2 col-md-6 col-lg-2 col-form-label"><strong>Alamat</strong> </label>
                         <div class="col-sm-10">
-                        <input type="text" name="alamat" class="form-control" id="alamat" placeholder="Masukkan Alamat Anda" value="{{ old('alamat') }}" 
+                        <input type="text" name="alamat" class="form-control" id="alamat" placeholder="Masukkan Alamat Anda" value="{{ old('alamat') }}"
                         required>
                         </div>
 
@@ -106,7 +106,7 @@
 
 @push('scripts')
 
-    
+
 
         {{--  bs-notify  --}}
         <script src="{{ asset('assets/plugins/bs-notify.min.js')}}"></script>
@@ -114,7 +114,7 @@
          {{-- flash message --}}
          @include ('front.templates.partials.alerts')
 
-      
+
 
 @endpush
 

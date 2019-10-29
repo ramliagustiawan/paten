@@ -16,7 +16,7 @@ class CreateIjinsTable extends Migration
         Schema::create('ijins', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama');
-            $table->text('deskripsi');
+            $table->text('controller');
             $table->timestamps();
         });
     }

@@ -16,7 +16,7 @@ class CreateNonijinsTable extends Migration
         Schema::create('nonijins', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama');
-            $table->text('deskripsi');
+            $table->text('controller');
             $table->timestamps();
         });
     }

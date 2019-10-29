@@ -14,8 +14,7 @@ class IjinsTableSeeder extends Seeder
     {
         Ijin::create([
             'nama' => 'IUMK',
-            'deskripsi' => 'Ijin Usaha Mikro Kecil',           
+            'controller' => 'iumk',
         ]);
-        
     }
 }

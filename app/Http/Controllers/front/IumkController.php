@@ -4,9 +4,8 @@ namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Report;
 
-class ReportController extends Controller
+class IumkController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class ReportController extends Controller
      */
     public function index()
     {
-        return view('front.lapor.index');
+        return 'hello world';
     }
 
     /**
@@ -25,11 +24,7 @@ class ReportController extends Controller
      */
     public function create()
     {
-        $report = Report::orderBY('created_at', DESC)->get();
-        return view('front.lapor.create', [
-            'title' => 'Pelaporan',
-            'report' => $report
-        ]);
+        //
     }
 
     /**
@@ -40,25 +35,7 @@ class ReportController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'alamat' => 'required|min:10',
-            'kontak' => 'required|numeric',
-            'pesan' => 'required|min:10',
-
-
-
-        ]);
-
-        Report::create([
-            'name' => $request->name,
-            'alamat' =>  $request->alamat,
-            'kontak' =>  $request->kontak,
-            'pesan' =>  $request->pesan,
-
-        ]);
-
-        return redirect()->route('report.index')->withSuccess('Laporan Berhasil Di Kirim');
+        //
     }
 
     /**

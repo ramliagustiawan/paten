@@ -11,6 +11,11 @@ class AjukanController extends Controller
 {
     public function index()
     {
-        return view('front.ajukan.index');
+        $ijin = Ijin::all();
+        $nonijin = Nonijin::all();
+        return view('front.ajukan.index', [
+            'ijin' => $ijin,
+            'nonijin' => $nonijin
+        ]);
     }
 }
