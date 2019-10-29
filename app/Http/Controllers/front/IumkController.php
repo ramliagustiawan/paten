@@ -14,7 +14,7 @@ class IumkController extends Controller
      */
     public function index()
     {
-        return 'hello world';
+        return view('front.iumk.index');
     }
 
     /**
