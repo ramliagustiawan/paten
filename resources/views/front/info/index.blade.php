@@ -10,39 +10,87 @@
                 </a>
               </nav>
 
-<div class="container">
+              <div class="container">
+
+              <div class="card mt-3">
+                  <div class="card-header">
+                      <h4 class="box-title">1. Informasi Proses dan Status Layanan</h4>
+                  </div>
+                  <div class="card-body">
+
+                      <div class="box">
+                          <div class="box-header">
+                            
+                          </div>
+                          <!-- /.box-header -->
+                          <div class="box-body">
+                            <table id="example1" class="table table-bordered  table-hover">
+                              <thead>
+                              <tr>
+                                <th>Rendering engine</th>
+                                <th>Browser</th>
+                                <th>Platform(s)</th>
+                                <th>Engine version</th>
+                                <th>CSS grade</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr>
+                                <td>Trident</td>
+                                <td>Internet
+                                  Explorer 4.0
+                                </td>
+                                <td>Win 95+</td>
+                                <td> 4</td>
+                                <td>X</td>
+                              </tr>
+                              <tr>
+                                <td>Trident</td>
+                                <td>Internet
+                                  Explorer 5.0
+                                </td>
+                                <td>Win 95+</td>
+                                <td>5</td>
+                                <td>C</td>
+                              </tr>
+                             
+                              </tbody>
+                              <tfoot>
+                              <tr>
+                                <th>Rendering engine</th>
+                                <th>Browser</th>
+                                <th>Platform(s)</th>
+                                <th>Engine version</th>
+                                <th>CSS grade</th>
+                              </tr>
+                              </tfoot>
+                            </table>
+                          </div>
+                          <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                     
+                  
 
 
-        <div class="">
-                {{-- <div class="card-header">
-                        <h4 class="text-center">Pelayanan Online Kecamatan</h4>
+                  </div>
+                </div>
 
-                </div> --}}
+                {{-- batas --}}
 
-
-
-                <div class="card text-center">
+                <div class="card mt-3">
                     <div class="card-header">
-                      <ul class="nav nav-tabs card-header-tabs">
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Info Proses Layanan</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Persyaratan Layanan</a>
-                        </li>
-                      
-                      </ul>
+                        <h4 class="box-title">2. Informasi Syarat Dan Ketentuan Layanan</h4>
                     </div>
-                    <div class="card-title">
-
-
+                    <div class="card-body">
+  
                         <div class="box">
                             <div class="box-header">
-                              <h3 class="box-title">1. Info Proses Layanan</h3>
+                              
                             </div>
                             <!-- /.box-header -->
-                            <div class="box-body mt-3">
-                              <table id="example1" class="table table-bordered table-striped">
+                            <div class="box-body">
+                              <table id="dataTable" class="table table-bordered  table-hover">
                                 <thead>
                                 <tr>
                                   <th>Rendering engine</th>
@@ -62,8 +110,16 @@
                                   <td> 4</td>
                                   <td>X</td>
                                 </tr>
+                                <tr>
+                                  <td>Trident</td>
+                                  <td>Internet
+                                    Explorer 5.0
+                                  </td>
+                                  <td>Win 95+</td>
+                                  <td>5</td>
+                                  <td>C</td>
+                                </tr>
                                
-                                
                                 </tbody>
                                 <tfoot>
                                 <tr>
@@ -79,106 +135,39 @@
                             <!-- /.box-body -->
                           </div>
                           <!-- /.box -->
+                       
                     
-
-
-                   
-
-
-
-
-
+  
+  
                     </div>
                   </div>
-
-                <div class="mt-5">
-                        <h4 class="">1. Info Proses Layanan</h4>
-
+  
                 </div>
 
-                <table class="table table-hover mt-3">
-                        <thead>
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
-                        </tbody>
-                      </table>
-
-                    
 
 
-        </div>
-                    <hr>
 
-                <div class="mt-5">
-                    <h4 class="">2. Jenis dan Persyaratan Layanan</h4>
-                </div>
-
-                <table class="table table-hover mt-3">
-                        <thead>
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
-                        </tbody>
-                      </table>
-
-                    
-
-
-        </div>
+              </div>
 
         
-</div>
+
 
 @endsection
+
+
+{{-- css untuk datatables --}}
+@push('datatable')
+  
+  <link rel="stylesheet" href="{{ asset('assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
+
+@endpush
 
 @push('scripts')
 
 
+        <!-- DataTables -->
+        <script src="{{ asset('assets/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset('assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
 
         {{--  bs-notify  --}}
         <script src="{{ asset('assets/plugins/bs-notify.min.js')}}"></script>
@@ -186,9 +175,61 @@
          {{-- flash message --}}
          @include ('front.templates.partials.alerts')
 
-         <!-- DataTables -->
-        <script src="{{ asset('assets/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-        <script src="{{ asset('assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+        <script>
+            $(function () 
+            {
+              $('#example1').DataTable()
+              $('#example2').DataTable({
+                'paging'      : true,
+                'lengthChange': false,
+                'searching'   : false,
+                'ordering'    : true,
+                'info'        : true,
+                'autoWidth'   : false
+              });
+            });
+
+            $(function () 
+            {
+              $('#dataTable').DataTable()
+              $('#dataTable2').DataTable({
+                'paging'      : true,
+                'lengthChange': false,
+                'searching'   : false,
+                'ordering'    : true,
+                'info'        : true,
+                'autoWidth'   : false
+              });
+            });
+
+
+
+
+          </script>
+
+{{-- <script>
+    $(function()
+    {
+        $('#dataTable').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax:'',
+            columns: [
+                {data:'DT_RowIndex', orderable:false,searchable:false},
+                {data:'title'},
+                {data: 'description'},
+                {data: 'author'},
+                {data: 'cover'},
+                {data: 'action'}
+            ]
+
+        });
+
+    });
+
+</script> --}}
+
+       
 
 
 

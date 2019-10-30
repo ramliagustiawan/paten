@@ -6,8 +6,6 @@
 {{--  fontawesome script  --}}
 <script src="{{ asset('assets/fontawesome/js/all.js') }}"></script>
 
-
-
 <script>
    $('#navId a').click(e => {
        e.preventDefault();
@@ -25,6 +23,8 @@
 <!-- FastClick -->
 <script src="{{ asset('assets/bower_components/fastclick/lib/fastclick.js') }}"></script>
 
-</body>
+@stack('scripts')
 
-@stack ('scripts')
+
+
+
