@@ -99,7 +99,8 @@
 {{-- css untuk datatables --}}
 @push('datatable')
 
-  <link rel="stylesheet" href="{{ asset('assets/datatable/datatables-bs4/css/dataTables.bootstrap4.css')}}">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="{{ asset('assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
 
 @endpush
 
@@ -107,9 +108,8 @@
 
 
         <!-- DataTables -->
-
-        <script src="{{ asset('assets/datatable/datatables/jquery.dataTables.js') }}"></script>
-        <script src=" {{ asset('assets/datatable/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
+        <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.js') }}"></script>
+        <script src="{{ asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
 
         {{--  bs-notify  --}}
         <script src="{{ asset('assets/plugins/bs-notify.min.js')}}"></script>
