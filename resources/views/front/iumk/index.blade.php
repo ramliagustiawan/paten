@@ -168,7 +168,7 @@
                             <div class="card-header">
                             <strong> Persyaratan Yang Harus Dibawa :</strong>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body up">
 
 
 

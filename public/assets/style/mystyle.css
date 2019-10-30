@@ -12,11 +12,23 @@
 
       /* card hover */
 
-    .card:hover .card-body{
+    .card:hover .hov{
         background: rgb(231, 247, 141);
         transform: translateY(0);
 
     }
+
+    .card:hover .aju{
+      background: rgb(231, 247, 141);
+      transform: translateY(0);
+
+  }
+
+  .card:hover .up{
+    background: rgb(234, 245, 185);
+    transform: translateY(0);
+
+}
 
     .card:hover  .card-footer{
         background: rgb(215, 238, 208);

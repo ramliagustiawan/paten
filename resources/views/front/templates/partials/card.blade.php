@@ -6,7 +6,7 @@
 
                 <div class="card">
 
-                  <div class="card-body">
+                  <div class="card-body hov">
                   <i class="fas fa-laptop" ></i>
                   <br>
                   <h5 class="card-title"><strong>Informasi Layanan</strong></h5>
@@ -22,7 +22,7 @@
 
                 <div class="card">
 
-                        <div class="card-body">
+                        <div class="card-body hov">
                             <i class="fas fa-print"></i>
                         <br>
                         <h5 class="card-title"><strong>Ajukan Layanan</strong></h5>
@@ -40,7 +40,7 @@
 
                       <div class="card">
 
-                            <div class="card-body">
+                            <div class="card-body hov">
                             <i class="fas fa-phone-volume"></i>
                             <br>
                             <h5 class="card-title"><strong>Pelaporan</strong></h5>

@@ -27,7 +27,7 @@
         @foreach ($ijin as $item)
 
                 <div class="card mt-3 text-center" style="width: 14rem;">
-                    <div class="card-body">
+                    <div class="card-body aju">
                             <img src="{{asset('assets/images/surat5.png')}}" class="card-img-top" alt="..."  >
                     <br>
                     <h6 class="card-title"><strong>{{ $item->nama }}</strong></h6>
@@ -57,7 +57,7 @@
 
                         <div class="col-xs-2 col-sm-6 col-md-4 col-lg-3">
                             <div class="card mt-3 text-center" style="width: 14rem;">
-                             <div class="card-body">
+                             <div class="card-body aju">
                                   <img src="{{asset('assets/images/surat5.png')}}" class="card-img-top" alt="...">
                                   <br>
                                   <h6 class="card-title"><strong>{{ $noni->nama }}</strong></h6>
