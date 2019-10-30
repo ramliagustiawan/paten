@@ -24,6 +24,7 @@ Route::get('/', function () {
 });
 
 
+
 Route::get('/info/data', 'DataController@ijins')->name('info.data');
 Route::get('/info/non', 'DataController@nonijins')->name('info.non');
 
