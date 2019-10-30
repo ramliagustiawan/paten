@@ -11,10 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('front.templates.homepage');
-})->name('homepage');
+// Route::get('/', function () {
+//     return view('front.templates.homepage');
+// })->name('homepage');
 
+Route::get('/', function () {
+    return view('admin.templates.default');
+})->name('default');
 
 Route::get('/info/data', 'DataController@ijins')->name('info.data');
 Route::get('/info/non', 'DataController@nonijins')->name('info.non');
