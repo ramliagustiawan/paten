@@ -15,7 +15,15 @@ Route::get('/', function () {
     return view('front.templates.homepage');
 })->name('homepage');
 
+
+Route::get('/info/data', 'DataController@ijins')->name('info.data');
+Route::get('/info/non', 'DataController@nonijins')->name('info.non');
+
 Route::resource('/info', 'InfoController');
+
+
+
+
 
 Route::resource('/ajukan', 'AjukanController');
 
