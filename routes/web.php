@@ -11,35 +11,28 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('front.templates.homepage');
-// })->name('homepage');
-
-// Route::get('/', function () {
-//     return view('admin.templates.default');
-// })->name('default');
-
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('front.templates.homepage');
+})->name('homepage');
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 
-Route::get('/info/data', 'DataController@ijins')->name('info.data');
-Route::get('/info/non', 'DataController@nonijins')->name('info.non');
+Route::get('/info/data', 'front\DataController@ijins')->name('info.data');
+Route::get('/info/non', 'front\DataController@nonijins')->name('info.non');
 
-Route::resource('/info', 'InfoController');
-
-
+Route::resource('/info', 'front\InfoController');
 
 
+Route::resource('/ajukan', 'front\AjukanController');
 
-Route::resource('/ajukan', 'AjukanController');
+Route::resource('/iumk', 'front\IumkController');
 
-Route::resource('/iumk', 'IumkController');
+Route::resource('/report', 'front\ReportController');
 
-
-Route::resource('/report', 'ReportController');
 
 Auth::routes(['verify' => true]);
 

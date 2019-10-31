@@ -24,7 +24,7 @@
                               <a class="nav-link" href="{{ route('report.index') }}">PELAPORAN</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">LOGIN</a>
+                              <a class="nav-link " href="{{ route('login') }}" tabindex="-1" aria-disabled="true">LOGIN</a>
                             </li>
                     </ul>
             </div>

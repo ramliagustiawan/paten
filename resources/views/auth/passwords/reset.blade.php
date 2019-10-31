@@ -1,6 +1,12 @@
-@extends('layouts.app')
+@extends('front.templates.default')
 
 @section('content')
+<nav class="navbar navbar-dark justify-content-center  mt-5" style="background-color:lightblue">
+    <a class="navbar-brand" href="#">
+        <img src="{{ asset('assets/images/kota.png') }}" width="50" height="50" alt="" class="rounded mx-auto d-block">
+        <h4 class="text-justify">Administrator</h4>
+    </a>
+  </nav>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
