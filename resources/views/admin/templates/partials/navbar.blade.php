@@ -111,55 +111,88 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
-          <i class="fas fa-th-large"></i>
-        </a>
-      </li>
-      <li class="dropdown user user-menu">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-          <span class="hidden-xs">{{ auth()->user()->name }}</span>
-        </a>
-        <ul class="dropdown-menu">
-          <!-- User image -->
-          <li class="user-header">
-            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
-            <p>
-                    {{ auth()->user()->name }}
-              <small></small>
-            </p>
-          </li>
-          <!-- Menu Body -->
-          <li class="user-body">
-            <div class="row">
-              <div class="col-xs-4 text-center">
-                <a href="#">Followers</a>
+      <li class="nav-item dropdown">
+
+          <a class="nav-link" data-toggle="dropdown" href="#">            
+              <span class="hidden-xs">{{ auth()->user()->name }}</span>
+          </a>
+
+          <div class="dropdown-menu ">
+
+              <div class="card" style="width: 8rem;">
+
+                  
+                  <div class="card-body">   
+                      <img src="{{ asset('assets/images/kota.png') }}" class="card-img-top" alt="...">
+                  </div>
+
+                  <div class="card-footer text-center">
+                    <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();" class="btn btn-danger text-center">Sign Out</a>
+                  </div>
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display:none;">@csrf</form>
+
               </div>
-              <div class="col-xs-4 text-center">
-                <a href="#">Sales</a>
-              </div>
-              <div class="col-xs-4 text-center">
-                <a href="#">Friends</a>
-              </div>
-            </div>
-            <!-- /.row -->
-          </li>
-          <!-- Menu Footer-->
-          <li class="user-footer">
-            <div class="pull-left">
-              <a href="#" class="btn btn-default btn-flat">Profile</a>
-            </div>
-            <div class="pull-right">
-              <a href="{{ route('logout') }}"
-              onclick="event.preventDefault();
-              document.getElementById('logout-form').submit();"
-              class="btn btn-default btn-flat">Sign out</a>
-            </div>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display:none;">@csrf</form>
-          </li>
-        </ul>
+          </div>        
       </li>
+
+
+       
+        
+
+      
+
+
+      
+
+     
+
+        <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="{{ asset('assets/images/kota.png') }}" class="user-image" alt="User Image">
+              <span class="hidden-xs">Alexander Pierce</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  Alexander Pierce - Web Developer
+                  <small>Member since Nov. 2012</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <li class="user-body">
+                <div class="row">
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Followers</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Sales</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Friends</a>
+                  </div>
+                </div>
+                <!-- /.row -->
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+
+      
     </ul>
   </nav>
