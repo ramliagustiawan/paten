@@ -1,19 +1,7 @@
 
 
 {{--  jquery  --}}
-<script src="{{ asset('assets/datatable/jquery/jquery.min.js') }}"></script>
-
-{{-- <script src="{{ asset('assets/js/jquery_3_4_1.min.js') }}"></script> --}}
-
-<!-- jQuery 3 -->
-{{-- <script src="{{ asset('assets/bower_components/jquery/dist/jquery.min.js') }}"></script> --}}
-<!-- jQuery UI 1.11.4 -->
-{{-- <script src="{{ asset('assets/bower_components/jquery-ui/jquery-ui.min.js') }}"></script> --}}
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-
-
-
-
+<script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
 
 {{--  fontawesome script  --}}
 <script src="{{ asset('assets/fontawesome/js/all.js') }}"></script>
@@ -30,10 +18,10 @@
 
 
 <!-- SlimScroll -->
-<script src="{{ asset('assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
+{{--  <script src="{{ asset('assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>  --}}
 
 <!-- FastClick -->
-<script src="{{ asset('assets/bower_components/fastclick/lib/fastclick.js') }}"></script>
+{{--  <script src="{{ asset('assets/bower_components/fastclick/lib/fastclick.js') }}"></script>  --}}
 
 @stack('scripts')
 

@@ -11,16 +11,20 @@ class DataController extends Controller
 {
     public function ijins()
     {
-        $ijin = Ijin::query();
+        $ijin = Ijin::orderBy('nama','ASC');
 
 
-        return datatables()->of($ijin)->toJson();
+        return datatables()->of($ijin)
+        ->addIndexColumn()
+        ->toJson();
     }
 
     public function nonijins()
     {
-        $nonijin = Nonijin::query();
+        $nonijin = Nonijin::orderBy('nama','ASC');
 
-        return datatables()->of($nonijin)->toJson();
+        return datatables()->of($nonijin)
+        ->addIndexColumn()
+        ->toJson();
     }
 }

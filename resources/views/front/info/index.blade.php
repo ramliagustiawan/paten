@@ -108,8 +108,8 @@
 
 
         <!-- DataTables -->
-        <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.js') }}"></script>
-        <script src="{{ asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
+       
+        
 
         {{--  bs-notify  --}}
         <script src="{{ asset('assets/plugins/bs-notify.min.js')}}"></script>
@@ -118,6 +118,9 @@
          @include ('front.templates.partials.alerts')
 
         {{-- script query datatable --}}
+
+        <script src="{{ asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
+        <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.js') }}"></script>
 
         <script>
                 $(function()
@@ -128,7 +131,7 @@
                         ajax:'{{ route('info.non') }}',
                         columns: [
 
-                            {data:'id'},
+                            {data:'DT_RowIndex',orderable:false,searchable:false},
                             {data:'nama'},
                             {data: 'controller'},
                         ]
@@ -146,7 +149,7 @@
                     ajax:'{{ route('info.data') }}',
                     columns: [
 
-                        {data:'id'},
+                        {data:'DT_RowIndex',orderable:false,searchable:false},
                         {data:'nama'},
                         {data: 'controller'},
                     ]
