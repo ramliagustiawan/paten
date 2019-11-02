@@ -23,18 +23,18 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-         
-            
-          <li class="nav-header">MISCELLANEOUS</li>
+
+
+          <li class="nav-header">ADMINISTRATOR</li>
           <li class="nav-item">
-            <a href="https://adminlte.io/docs/3.0" class="nav-link">
+            <a href="{{ route('admin.user.index') }}" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
-              <p>Documentation</p>
+              <p>Pengguna</p>
             </a>
           </li>
 
           <li class="nav-header">MULTI LEVEL EXAMPLE</li>
-          
+
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-circle"></i>
@@ -88,11 +88,11 @@
             </ul>
           </li>
 
-         
-          
+
+
             <li class="nav-header">MISCELLANEOUS</li>
             <li class="nav-item">
-              <a href="{{ route('logout') }}" class="nav-link"  
+              <a href="{{ route('logout') }}" class="nav-link"
                 onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
                 <i class="nav-icon fas fa-file"></i>
@@ -100,7 +100,7 @@
               </a>
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display:none;">@csrf</form>
             </li>
-         
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
