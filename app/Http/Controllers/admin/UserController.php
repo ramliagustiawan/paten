@@ -15,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-       
+
         return view('admin.user.index');
     }
 
@@ -74,12 +74,15 @@ class UserController extends Controller
     public function edit($id)
     {
 
+        // $model = User::findOrFail($id);
+        // return view('admin.user.formedit', [
+        //     'title' => 'Edit Data Penulis',
+        //     'model' => $model,
+
+        // ]);
+
         $model = User::findOrFail($id);
-        return view('admin.user.form', [
-            'title' => 'Edit Data Penulis',
-            'model' => $model,
-            
-        ]);
+        return view('admin.user.formedit', compact('model'));
     }
 
     /**
@@ -91,8 +94,8 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-          //validasi
-          $this->validate($request, [
+        //validasi
+        $this->validate($request, [
             'name' => 'required|min:3',
             'email' => 'required|email|unique:users',
             'password' => 'required'

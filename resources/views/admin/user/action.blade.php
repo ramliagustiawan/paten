@@ -1,11 +1,5 @@
 
-{{-- <a href="{{route('admin.user.edit', $model) }}"
-class="btn btn-warning">Edit</a> --}}
-
-{{-- <button href="{{ route('admin.user.destroy', $model) }}"
-class="btn btn-danger" id="delete">Hapus</button> --}}
-
-<a href="{{ url('edit') }}" class="btn btn-warning modal-show edit" title="{{ $model->name }}">Edit</a>
+<a href="{{ route('admin.user.edit', $model)}}" class="btn btn-warning modal-show edit" title="{{ $model->name }}">Edit</a>
 
 <button href="{{ url('destroy') }}" class="btn btn-danger" id="delete" title="{{ $model->name }}">Hapus</button>
 

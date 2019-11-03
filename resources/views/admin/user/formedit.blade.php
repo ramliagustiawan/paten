@@ -1,26 +1,26 @@
 {!! Form::model($model, [
-    'route'=>'admin.user.store',
-    'method'=>'POST'
+    'route'=> $model->exists ? ['admin.user.update', $model->id] : 'admin.user.store',
+    'method'=> $model->exists ? 'PUT' : 'POST'
 ]) !!}
 
 
 <div class="form-group">
     <label for="" class="control-label">Name</label>
-    {!! Form::text('name', null, ['class' => 'form-control', 'id' => 'name']) !!}  
+    {!! Form::text('name', null, ['class' => 'form-control', 'id' => 'name']) !!}
 
 </div>
 
 
 <div class="form-group">
     <label for="" class="control-label">Email</label>
-    {!! Form::email('email', null, ['class' => 'form-control', 'id' => 'email']) !!}  
+    {!! Form::email('email', null, ['class' => 'form-control', 'id' => 'email']) !!}
 
 </div>
 
 <div class="form-group">
         <label for="" class="control-label">Password</label>
-        {!! Form::text('password', null, ['class' => 'form-control', 'id' => 'password']) !!}  
-    
+        {!! Form::Password('password', null, ['class' => 'form-control', 'id' => 'password']) !!}
+
 </div>
 
 {!! Form::close() !!}
