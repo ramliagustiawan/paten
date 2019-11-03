@@ -21,7 +21,7 @@
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
-                          <table id="status" class="table table-bordered  table-hover">
+                          <table id="status" class="table table-bordered  table-hover" style="width:100%">
                             <thead>
                             <tr>
                               <th>No</th>
@@ -106,7 +106,7 @@
                         title = me.attr('title');
 
                     $('#modal-title').text(title);
-                    $('#modal-btn-save').text('Tambah Pengguna');
+                    $('#modal-btn-save').text(me.hasClass('edit') ? 'Update' : 'Create');
 
                     $.ajax({
                         url: url,
@@ -159,7 +159,7 @@
                                     $('#' + key)
                                     .closest('.form-group')
                                     .addClass('has-error')
-                                    .append('<span class="help-block"><strong>' + value + '</strong></span>')
+                                    .append('<span class="help-block">' + value + '</span>')
                                 });
                             }
                         }

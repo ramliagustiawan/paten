@@ -74,13 +74,6 @@ class UserController extends Controller
     public function edit($id)
     {
 
-        // $model = User::findOrFail($id);
-        // return view('admin.user.formedit', [
-        //     'title' => 'Edit Data Penulis',
-        //     'model' => $model,
-
-        // ]);
-
         $model = User::findOrFail($id);
         return view('admin.user.formedit', compact('model'));
     }
@@ -92,22 +85,25 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
         //validasi
         $this->validate($request, [
             'name' => 'required|min:3',
-            'email' => 'required|email|unique:users',
+            'email' => 'required|email|unique:users,email,' . $id,
             'password' => 'required'
         ]);
 
-        $user->update([
+        $model = User::findOrFail($id);
+
+        $model->update([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->password
+            'password' => $request->password,
+
         ]);
 
-        return redirect()->route('admin.user.index')->withSuccess('Data Pengguna Berhasil Di Ubah');
+        // return redirect()->route('admin.user.index')->withSuccess('Data Pengguna Berhasil Di Ubah');
     }
 
     /**
