@@ -26,7 +26,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.form');
+        $model = new User();
+        return view('admin.user.formedit', compact('model'));
     }
 
     /**
@@ -70,9 +71,15 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
-       
+
+        $model = User::findOrFail($id);
+        return view('admin.user.form', [
+            'title' => 'Edit Data Penulis',
+            'model' => $model,
+            
+        ]);
     }
 
     /**

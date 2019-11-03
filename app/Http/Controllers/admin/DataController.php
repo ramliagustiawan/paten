@@ -13,11 +13,7 @@ class DataController extends Controller
         $user = User::orderBy('name', 'ASC');
 
         return datatables()->of($user)
-            ->addColumn('action', function () {
-                return '<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editModal">
-                Edit
-                </button>';
-            })
+            ->addColumn('action', 'admin.user.action')
             ->addIndexColumn()
             ->toJson();
     }
