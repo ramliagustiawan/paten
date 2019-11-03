@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\User;
 
 class UserController extends Controller
 {
@@ -14,6 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
+       
         return view('admin.user.index');
     }
 
@@ -24,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.user.form');
     }
 
     /**
@@ -35,7 +37,20 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validasi
+        $this->validate($request, [
+            'name' => 'required|min:3',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required'
+        ]);
+
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password
+        ]);
+
+        return redirect()->route('admin.user.index')->withSuccess('Data Pengguna Berhasil Di Tambahkan');
     }
 
     /**
@@ -55,9 +70,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+       
     }
 
     /**
@@ -67,9 +82,22 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+          //validasi
+          $this->validate($request, [
+            'name' => 'required|min:3',
+            'email' => 'required|email|unique:users',
+            'password' => 'required'
+        ]);
+
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password
+        ]);
+
+        return redirect()->route('admin.user.index')->withSuccess('Data Pengguna Berhasil Di Ubah');
     }
 
     /**

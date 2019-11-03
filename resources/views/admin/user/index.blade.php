@@ -6,11 +6,12 @@
 
                 <div class="card-header">
                     <h4 class="box-title">Data Pengguna</h4>
-                    <a href="" class="btn btn-primary">Tambah Pengguna</a>
 
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                            Launch demo modal
-                    </button>
+                    <a href="{{ route('admin.user.create')}}" class="btn btn-primary pull-right modal-show" title="Tambah Pengguna">Tambah Pengguna</a>
+
+                    {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Tambah Pengguna
+                    </button> --}}
                 </div>
                 <div class="card-body">
 
@@ -27,7 +28,7 @@
                               <th>Nama</th>
                               <th>Email</th>
                               <th>Password</th>
-                              {{--  <th>Aksi</th>  --}}
+                               <th>Aksi</th>
 
 
 
@@ -52,28 +53,12 @@
       </div>
 
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      {{-- modal tambah --}}
+      @include('admin.templates.partials.modal')
 
 
+
+      <!-- Modal edit -->
 
 
 
@@ -104,13 +89,87 @@
                             {data:'name'},
                             {data:'email'},
                             {data:'password'},
-
+                            {data:'action'},
                         ]
                     });
                 });
             </script>
 
+            {{-- script modal tambah --}}
+            <script>
+                // menampilkan modal
+                $('body').on('click', '.modal-show', function(event){
+                    event.preventDefault();
 
+                    var me = $(this),
+                        url = me.attr('href'),
+                        title = me.attr('title');
+
+                    $('#modal-title').text(title);
+                    $('#modal-btn-save').text('Tambah Pengguna');
+
+                    $.ajax({
+                        url: url,
+                        dataType: 'html',
+                        success: function (response) {
+                            $('#modal-body').html(response);
+                        }
+                    });
+
+                    $('#modal').modal('show');
+                });
+
+                // fungsi validasi
+                $('#modal-btn-save').click(function(event){
+                    event.preventDefault();
+
+                    var form = $('#modal-body form'),
+                        url = form.attr('action'),
+                        method = $('input[name=_method]').val() == undefined ? 'POST' : 'PUT';
+
+
+                    form.find('.help-block').remove();
+                    form.find('.form-group').removeClass('has-error')
+
+                    $.ajax({
+                        url : url,
+                        method : method,
+                        data : form.serialize(),
+                        success: function(response) {
+
+                            // apabila data berhasil validasi lgsg simpan
+
+                            form.trigger('reset');
+                            $('#modal').modal('hide');
+                            $('#status').DataTable().ajax.reload();
+
+                            swal({
+                                type : 'success',
+                                title : 'Success!',
+                                text: 'Data has been saved'
+                            });
+
+                        },
+                        // apabila error
+                        error : function (xhr) {
+                            var res = xhr.responseJSON;
+
+                            if($.isEmptyObject(res) == false){
+                                $.each(res.errors, function (key, value){
+                                    $('#' + key)
+                                    .closest('.form-group')
+                                    .addClass('has-error')
+                                    .append('<span class="help-block"><strong>' + value + '</strong></span>')
+                                });
+                            }
+                        }
+                    });
+                });
+
+
+
+
+            </script>
 
 
 @endpush
