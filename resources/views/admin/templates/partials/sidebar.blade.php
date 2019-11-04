@@ -33,65 +33,109 @@
             </a>
           </li>
 
-          <li class="nav-header">MULTI LEVEL EXAMPLE</li>
+          
 
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-circle"></i>
-              <p>
-                Level 1
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Level 2</p>
-                </a>
-              </li>
+       
+
+          <li class="nav-header">PENGATURAN</li>
+
+        
               <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>
-                    Level 2
+                    Jenis Layanan
                     <i class="right fas fa-angle-left"></i>
                   </p>
                 </a>
+
                 <ul class="nav nav-treeview">
+
                   <li class="nav-item">
                     <a href="#" class="nav-link">
                       <i class="far fa-dot-circle nav-icon"></i>
-                      <p>Level 3</p>
+                      <p>Perijinan</p>
                     </a>
                   </li>
+
                   <li class="nav-item">
                     <a href="#" class="nav-link">
                       <i class="far fa-dot-circle nav-icon"></i>
-                      <p>Level 3</p>
+                      <p>Non Perijinan</p>
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="far fa-dot-circle nav-icon"></i>
-                      <p>Level 3</p>
-                    </a>
-                  </li>
+
+                 
                 </ul>
+                
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Level 2</p>
-                </a>
-              </li>
-            </ul>
+
+              {{--  BATAS  --}}
+
+              <li class="nav-item has-treeview">
+                  <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>
+                      Lain Lain
+                      <i class="right fas fa-angle-left"></i>
+                    </p>
+                  </a>
+  
+                  <ul class="nav nav-treeview">
+  
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="far fa-dot-circle nav-icon"></i>
+                        <p>Pejabat</p>
+                      </a>
+                    </li>
+  
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="far fa-dot-circle nav-icon"></i>
+                        <p>Personil</p>
+                      </a>
+                    </li>   
+
+                  </ul>                  
+                </li>
+
+                {{--  batas  --}}
+                
           </li>
 
+          {{--  PROSES LAYANAN  --}}
 
+          <li class="nav-header">PROSES LAYANAN</li>
+          <li class="nav-item">
+            <a href="{{ route('admin.user.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-file"></i>
+              <p>Pengguna</p>
+            </a>
+          </li>
 
-            <li class="nav-header">MISCELLANEOUS</li>
+          <li class="nav-item">
+              <a href="{{ route('admin.user.index') }}" class="nav-link">
+                <i class="nav-icon fas fa-file"></i>
+                <p>Pengguna</p>
+              </a>
+            </li>
+
+            {{--  PELAPORAN  --}}
+
+            <li class="nav-header">PELAPORAN</li>
             <li class="nav-item">
+              <a href="{{ route('admin.user.index') }}" class="nav-link">
+                <i class="nav-icon fas fa-file"></i>
+                <p>Tindak Lanjut</p>
+              </a>
+            </li>
+
+
+          {{--  logout  --}}
+
+          <li class="nav-header"></li>
+          <li class="nav-item">
               <a href="{{ route('logout') }}" class="nav-link"
                 onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
