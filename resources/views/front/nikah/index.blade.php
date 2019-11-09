@@ -86,74 +86,78 @@
 
                     </div>
 
-                    <div class="form-group row @error('negara') has-error @enderror ">
-                        <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Warga Negara</strong> </label>
-                        <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10 ">
-                        <input type="" name="negara" class="form-control " id="negara" placeholder="Masukkan Nomor Induk Kependudukan Anda" value="Indonesia"  >
+                    <div class="form-group row @error('negara') has-error @enderror">
+                      <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Warga Negara</strong> </label>
+                      <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                          <select name="negara" id="" class="form-control select2">
+                              <option selected>Pilih Kewarganegaraan</option>
+                              <option value="Indonesia">Indonesia</option>
+                              <option value="Warga Negara Asing">Warga Negara Asing</option>
+                            </select>
+                      </div>
+
+                      @error('negara')
+                        <span class="help-block">{{ $message }}</span>
+                      @enderror
+
+                  </div>
+
+                    <div class="form-group row @error('kerja') has-error @enderror">
+                        <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Pekerjaan</strong> </label>
+                        <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                        <input type="" name="kerja" class="form-control" id="kerja" placeholder="Masukkan Pekerjaan Anda" value="{{ old('kerja') }}" >
                         </div>
 
-                        @error('negara')
+                        @error('kerja')
                           <span class="help-block">{{ $message }}</span>
                         @enderror
 
-                </div>
-
-                <div class="form-group row @error('kerja') has-error @enderror">
-                    <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Pekerjaan</strong> </label>
-                    <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                    <input type="" name="kerja" class="form-control" id="kerja" placeholder="Masukkan Pekerjaan Anda" value="{{ old('kerja') }}" >
                     </div>
 
-                    @error('kerja')
-                      <span class="help-block">{{ $message }}</span>
-                    @enderror
+                    <div class="form-group row @error('agama') has-error @enderror">
+                        <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Agama</strong> </label>
+                        <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                            <select name="agama" id="" class="form-control select2">
+                                <option selected>Pilih Agama</option>
+                                <option value="Islam">Islam</option>
+                                <option value="Kristen Katolik">Kristen Katolik</option>
+                                <option value="Hindu">Hindu</option>
+                                <option value="Budha">Budha</option>
+                                <option value="Krsten Protestan">Kristen Protestan</option>
+                              </select>
+                        </div>
 
-                </div>
+                        @error('agama')
+                          <span class="help-block">{{ $message }}</span>
+                        @enderror
 
-                <div class="form-group row @error('agama') has-error @enderror">
-                    <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Agama</strong> </label>
-                    <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                        <select name="agama" id="" class="form-control select2">
-                            <option selected>Pilih Agama</option>
-                            <option value="Islam">Islam</option>
-                            <option value="Kristen Katolik">Kristen Katolik</option>
-                            <option value="Hindu">Hindu</option>
-                            <option value="Budha">Budha</option>
-                            <option value="Krsten Protestan">Kristen Protestan</option>
-                          </select>
                     </div>
 
-                    @error('agama')
-                      <span class="help-block">{{ $message }}</span>
-                    @enderror
+                    <div class="form-group row @error('statusnikah') has-error @enderror">
+                        <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Status</strong> </label>
+                        <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                        <input type="text" name="statusnikah" class="form-control" id="statusnikah" placeholder="Masukkan status anda" value="{{ old('statusnikah') }}"
+                        >
+                        </div>
 
-                </div>
+                        @error('statusnikah')
+                          <span class="help-block">{{ $message }}</span>
+                        @enderror
 
-                <div class="form-group row @error('statusnikah') has-error @enderror">
-                    <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Status</strong> </label>
-                    <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                    <input type="text" name="statusnikah" class="form-control" id="statusnikah" placeholder="Masukkan status anda" value="{{ old('statusnikah') }}"
-                    >
                     </div>
 
-                    @error('statusnikah')
-                      <span class="help-block">{{ $message }}</span>
-                    @enderror
+                    <div class="form-group row @error('bin') has-error @enderror">
+                        <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Bin</strong> </label>
+                        <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                        <input type="text" name="bin" class="form-control" id="bin" placeholder="Masukkan Nama Orang Tua anda" value="{{ old('bin') }}"
+                        >
+                        </div>
 
-                </div>
+                        @error('bin')
+                          <span class="help-block">{{ $message }}</span>
+                        @enderror
 
-                <div class="form-group row @error('bin') has-error @enderror">
-                    <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Bin</strong> </label>
-                    <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                    <input type="text" name="bin" class="form-control" id="bin" placeholder="Masukkan Nama Orang Tua anda" value="{{ old('bin') }}"
-                    >
                     </div>
-
-                    @error('bin')
-                      <span class="help-block">{{ $message }}</span>
-                    @enderror
-
-                </div>
 
 
                     <div class="form-group row @error('alamat') has-error @enderror">
@@ -167,14 +171,10 @@
                         @enderror
 
                     </div>
-
-
-
-
                     {{-- batas suami --}}
                     <br>
                     <hr>
-                    <br>
+                    
 
                     <div class="form-group row @error('istri') has-error @enderror">
                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>2. istri </strong></label>
@@ -228,15 +228,19 @@
 
                     </div>
 
-                    <div class="form-group row @error('negaraistri') has-error @enderror">
-                        <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Warga Negara</strong> </label>
-                        <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                        <input type="" name="negaraistri" class="form-control" id="negaraistri" placeholder="Masukkan Nomor Induk Kependudukan Anda" value="Indonesia" >
-                        </div>
+                <div class="form-group row @error('negaraistri') has-error @enderror">
+                  <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Warga Negara</strong> </label>
+                  <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                      <select name="negaraistri" id="" class="form-control select2">
+                          <option selected>Pilih Kewarganegaraan</option>
+                          <option value="Indonesia">Indonesia</option>
+                          <option value="Warga Negara Asing">Warga Negara Asing</option>
+                        </select>
+                  </div>
 
-                        @error('negaraistri')
-                          <span class="help-block">{{ $message }}</span>
-                        @enderror
+                  @error('negaraistri')
+                    <span class="help-block">{{ $message }}</span>
+                  @enderror
 
                 </div>
 

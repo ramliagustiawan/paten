@@ -20,7 +20,7 @@ class CreateServicesTable extends Migration
             $table->char('kontak');
             $table->char('kelurahan')->nullable();
             $table->string('alamat', 50);
-            $table->integer('nik');
+            $table->biginteger('nik');
             $table->char('ttl')->nullable();
             $table->char('jk')->nullable();
             $table->char('negara')->nullable();
