@@ -14,12 +14,12 @@ class NonijinsTableSeeder extends Seeder
     {
         Nonijin::create([
             'nama' => 'Dispensasi Nikah',
-            'controller' => 'Surat Untuk Keperluan Nikah',
+            'controller' => 'nikah',
         ]);
 
         Nonijin::create([
             'nama' => 'Surat Keterangan',
-            'controller' => 'Surat Keterangan sesuai Kebutuhan Masyarakat',
+            'controller' => 'suket',
         ]);
     }
 }

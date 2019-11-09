@@ -30,6 +30,8 @@ Route::resource('/info', 'front\InfoController');
 Route::resource('/ajukan', 'front\AjukanController');
 
 Route::resource('/iumk', 'front\IumkController');
+Route::resource('/nikah', 'front\NikahController');
+Route::resource('/suket', 'front\SuketController');
 
 Route::resource('/report', 'front\ReportController');
 

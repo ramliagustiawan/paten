@@ -48,7 +48,8 @@ class CreateServicesTable extends Migration
             $table->char('fungsibangunan')->nullable();
             $table->char('jumlahkaryawan')->nullable();
             $table->char('penanggungjawab')->nullable();
-            $table->char('ket')->nullable();
+            $table->text('ket')->nullable();
+            $table->char('nokua')->nullable();
             $table->string('fotoktp')->nullable();
             $table->string('fotosku')->nullable();
             $table->string('fotopbb')->nullable();

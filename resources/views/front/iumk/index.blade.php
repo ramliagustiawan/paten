@@ -182,7 +182,7 @@
 
                                 </div>
 
-                              
+
                         <div class="form-group row @error('modal') has-error @enderror">
                             <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Jumlah Modal</strong> </label>
                             <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
@@ -196,7 +196,7 @@
 
                         </div>
 
-                        
+
 
                     {{-- jenis surat invisible value default --}}
 
@@ -300,8 +300,8 @@
 
                             <p style="font-size:13px;">* Centang Lewatkan Lampiran bila Lampiran Belum Ada </p>
                             <p style="font-size:13px;">** File Berformat jpg, png, jpeg, svg dan Maximal Ukuran/Size Lampiran 2 MB</p>
-                            
-                           
+
+
 
                             </div>
                     </div>
