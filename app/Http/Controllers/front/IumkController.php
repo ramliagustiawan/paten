@@ -40,20 +40,71 @@ class IumkController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'alamat' => 'required|min:10',
-            'kontak' => 'required|numeric',
-            'pesan' => 'required|min:10',
 
+        // VALIDASI
+        $this->validate($request, [
+
+            'nama' => 'required',
+            'nik' => 'required|numeric',
+            'alamat' => 'required|min:3',
+            'kelurahan' => 'required',
+            'kontak' => 'required|numeric',
+            'naper' => 'required',
+            'bentuk' => 'required',
+            'npwp' => 'required',
+            'giatusaha' => 'required',
+            'statusbangunan' => 'required',
+            'alamatusaha' => 'required|min:10',
+            'modal' => 'required',
+            'layanan'=>'required',
+            'fotoktp' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
+            'fotosku' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
+            'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
+            'fotodiri' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
 
         ]);
 
-        Report::create([
-            'name' => $request->name,
-            'alamat' =>  $request->alamat,
-            'kontak' =>  $request->kontak,
-            'pesan' =>  $request->pesan,
+        // CEK GAMBAR
+        $fotoktp = null;
+        $fotosku = null;
+        $fotopbb = null;
+        $fotodiri = null;
+
+        if ($request->hasFile('fotoktp')) {
+            $fotoktp = $request->file('fotoktp')->store('assets/covers');
+        }
+
+        if ($request->hasFile('fotosku')) {
+            $fotoktp = $request->file('fotosku')->store('assets/covers');
+        }
+
+        if ($request->hasFile('fotopbb')) {
+            $fotoktp = $request->file('fotopbb')->store('assets/covers');
+        }
+
+        if ($request->hasFile('fotodiri')) {
+            $fotoktp = $request->file('fotodiri')->store('assets/covers');
+        }
+
+        Service::create([
+
+            'nama' => $request->nama,
+            'nik' => $request->nik,
+            'alamat' => $request->alamat,
+            'kelurahan' => $request->kelurahan,
+            'kontak' => $request->kontak,
+            'naper' => $request->naper,
+            'bentuk' => $request->bentuk,
+            'npwp' => $request->npwp,
+            'giatusaha' => $request->giatusaha,
+            'statusbangunan' => $request->statusbangunan,
+            'alamatusaha' => $request->alamatusaha,
+            'modal' => $request->modal,
+            'layanan' => $request->layanan,
+            'fotoktp' => $request->fotoktp,
+            'fotosku' => $request->fotosku,
+            'fotopbb' => $request->fotopbb,
+            'fotodiri' => $request->fotodiri,
 
         ]);
 

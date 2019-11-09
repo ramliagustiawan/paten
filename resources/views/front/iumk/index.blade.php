@@ -29,30 +29,30 @@
 
               <div class="col-xs-10 col-md-10 col-lg-10 mt-1">
 
-                  <form action="{{ route('report.store') }}" method="POST">
+                  <form action="{{ route('iumk.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <p> Berdasarkan Peraturan Presiden Nomor 98 Tahun 2014 Tentang Perizinan Untuk Usaha Mikro dan Kecil (Lembar Negera Republik Indonesia Tahun 2014 Nomor 222);Peraturan Menteri Dalam Negeri Republik Indonesia Nomor 83 Tahun 2014 tentang Pedoman Pemberikan Izin Usaha Mikro Kecil; Peraturan Walikota Gorontalo tentang Pelimpahan Sebagian Usuran Pemerintahan dari Walikota Gorontalo kepada Camat, bersama ini menyatakan dan memberikan izin kepada :
                     </p>
 
-                    <div class="form-group row @error('name') has-error @enderror">
+                    <div class="form-group row @error('nama') has-error @enderror">
                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Nama </strong></label>
                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Masukkan Nama Anda" value="{{ old('name') }}" required>
+                        <input type="text" name="nama" class="form-control" id="nama" placeholder="Masukkan Nama Anda" value="{{ old('nama') }}" >
                         </div>
-                        @error('name')
+                        @error('nama')
                           <span class="help-block">{{ $message }}</span>
                         @enderror
 
                     </div>
 
-                    <div class="form-group row @error('ktp') has-error @enderror">
-                            <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>No.KTP</strong> </label>
+                    <div class="form-group row @error('nik') has-error @enderror">
+                            <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>NIK</strong> </label>
                             <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                            <input type="" name="ktp" class="form-control" id="ktp" placeholder="Masukkan Nomor Telp/Hp Anda" value="{{ old('ktp') }}" required>
+                            <input type="" name="nik" class="form-control" id="nik" placeholder="Masukkan Nomor Induk Kependudukan Anda" value="{{ old('nik') }}" >
                             </div>
 
-                            @error('kontak')
+                            @error('nik')
                               <span class="help-block">{{ $message }}</span>
                             @enderror
 
@@ -64,7 +64,7 @@
                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Alamat</strong> </label>
                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                         <input type="text" name="alamat" class="form-control" id="alamat" placeholder="Masukkan Alamat Anda" value="{{ old('alamat') }}"
-                        required>
+                        >
                         </div>
 
                         @error('alamat')
@@ -73,10 +73,34 @@
 
                     </div>
 
+                   {{--  --}}
+
+                   <div class="form-group row @error('kelurahan') has-error @enderror">
+                        <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kelurahan</strong> </label>
+                        <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                            <select name="kelurahan" id="" class="form-control select2">
+                                <option selected>Pilih Kelurahan</option>
+                                <option value="Kelurahan Huangobotu Kecamatan Dungingi">Huangobotu</option>
+                                <option value="Kelurahan Huangobotu Kecamatan Dungingi">Libuo</option>
+                                <option value="Kelurahan Huangobotu Kecamatan Dungingi">Tuladenggi</option>
+                                <option value="Kelurahan Huangobotu Kecamatan Dungingi">Tomulabutao</option>
+                                <option value="Kelurahan Huangobotu Kecamatan Dungingi">Tomulabutao Selatan</option>
+                              </select>
+                        </div>
+
+                        @error('kelurahan')
+                          <span class="help-block">{{ $message }}</span>
+                        @enderror
+
+                    </div>
+
+                    {{--  --}}
+
+
                     <div class="form-group row @error('kontak') has-error @enderror">
                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kontak</strong> </label>
                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                        <input type="" name="kontak" class="form-control" id="kontak" placeholder="Masukkan Nomor Telp/Hp Anda" value="{{ old('kontak') }}" required>
+                        <input type="" name="kontak" class="form-control" id="kontak" placeholder="Masukkan Nomor Telp/Hp Anda" value="{{ old('kontak') }}">
                         </div>
 
                         @error('kontak')
@@ -87,82 +111,108 @@
 
                     <p>Untuk mendirikan usaha Mikro dan Kecil yang mencakup perizinan dasar berupa: Menempati lokasi/domisili, melakukan kegiatan usaha baik peroduksi maupun penjualan barang dan jasa dengan identitas:</p>
 
-                    <div class="form-group row @error('name') has-error @enderror">
-                            <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Nama </strong></label>
+                    <div class="form-group row @error('naper') has-error @enderror">
+                            <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Nama Perusahaan </strong></label>
                             <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Masukkan Nama Anda" value="{{ old('name') }}" required>
+                            <input type="text" name="naper" class="form-control" id="naper" placeholder="Masukkan Nama Anda" value="{{ old('naper') }}">
                             </div>
-                            @error('name')
+                            @error('naper')
                               <span class="help-block">{{ $message }}</span>
                             @enderror
 
                         </div>
 
-                        <div class="form-group row @error('ktp') has-error @enderror">
-                                <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>No.KTP</strong> </label>
+                        <div class="form-group row @error('bentuk') has-error @enderror">
+                                <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Bentuk Usaha</strong> </label>
                                 <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                <input type="" name="ktp" class="form-control" id="ktp" placeholder="Masukkan Nomor Telp/Hp Anda" value="{{ old('ktp') }}" required>
+                                <input type="" name="bentuk" class="form-control" id="bentuk" placeholder="Contoh : Usaha Dagang" value="{{ old('bentuk') }}">
                                 </div>
 
-                                @error('kontak')
+                                @error('bentuk')
                                   <span class="help-block">{{ $message }}</span>
                                 @enderror
 
                         </div>
 
+                        <div class="form-group row @error('npwp') has-error @enderror">
+                                <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>NPWP</strong> </label>
+                                <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                <input type="" name="npwp" class="form-control" id="npwp" placeholder="Masukkan NPWP atau (-) jika belum ada" value="{{ old('npwp') }}">
+                                </div>
 
+                                @error('npwp')
+                                  <span class="help-block">{{ $message }}</span>
+                                @enderror
 
-                        <div class="form-group row @error('alamat') has-error @enderror">
-                            <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Alamat</strong> </label>
-                            <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                            <input type="text" name="alamat" class="form-control" id="alamat" placeholder="Masukkan Alamat Anda" value="{{ old('alamat') }}"
-                            required>
                             </div>
 
-                            @error('alamat')
+                            <div class="form-group row @error('giatusaha') has-error @enderror">
+                                    <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kegiatan Usaha</strong> </label>
+                                    <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                    <input type="" name="giatusaha" class="form-control" id="giatusaha" placeholder="Contoh : Jual Nasi Kuning" value="{{ old('giatusaha') }}">
+                                    </div>
+
+                                    @error('giatusaha')
+                                      <span class="help-block">{{ $message }}</span>
+                                    @enderror
+
+                            </div>
+
+                            <div class="form-group row @error('statusbangunan') has-error @enderror">
+                                    <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Sarana Usaha</strong> </label>
+                                    <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                    <input type="" name="statusbangunan" class="form-control" id="statusbangunan" placeholder="Contoh : Sewa" value="{{ old('statusbangunan') }}">
+                                    </div>
+
+                                    @error('statusbangunan')
+                                      <span class="help-block">{{ $message }}</span>
+                                    @enderror
+
+                            </div>
+
+                            <div class="form-group row @error('alamatusaha') has-error @enderror">
+                                    <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Alamat Usaha</strong> </label>
+                                    <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                    <input type="text" name="alamatusaha" class="form-control" id="alamatusaha" placeholder="Tuliskan Lengkap Contoh : Jalan Apel Kelurahan Huangobotu Kecamatan Dungingi" value="{{ old('alamatusaha') }}">
+                                    </div>
+
+                                    @error('alamatusaha')
+                                      <span class="help-block">{{ $message }}</span>
+                                    @enderror
+
+                                </div>
+
+                              
+                        <div class="form-group row @error('modal') has-error @enderror">
+                            <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Jumlah Modal</strong> </label>
+                            <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                            <input type="text" name="modal" class="form-control" id="modal" placeholder="Contoh : 20.000.000" value="{{ old('modal') }}"
+                            >
+                            </div>
+
+                            @error('modal')
                               <span class="help-block">{{ $message }}</span>
                             @enderror
 
                         </div>
 
-                        <div class="form-group row @error('kontak') has-error @enderror">
-                            <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kontak</strong> </label>
-                            <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                            <input type="" name="kontak" class="form-control" id="kontak" placeholder="Masukkan Nomor Telp/Hp Anda" value="{{ old('kontak') }}" required>
-                            </div>
-
-                            @error('kontak')
-                              <span class="help-block">{{ $message }}</span>
-                            @enderror
-
-                        </div>
-
-                    <div class="form-group row @error('pesan') has-error @enderror">
-                        <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Pesan</strong></label>
-                        <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                        <textarea class="form-control" id="" name="pesan" placeholder="Tuliskan Pengaduan /Laporan Anda"  rows="4">{{ old('pesan') }}</textarea>
-                        </div>
-
-                        @error('pesan')
-                        <span class="help-block">{{ $message }}</span>
-                        @enderror
-
-                    </div>
+                        
 
                     {{-- jenis surat invisible value default --}}
 
-                    <div class="form-group row @error('alamat') has-error @enderror invisible ">
+                    <div class="form-group row @error('layanan') has-error @enderror invisible ">
                             <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kategori</strong> </label>
                             <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                            <input type="text" name="alamat" class="form-control" id="alamat" placeholder="Masukkan Alamat Anda" value="IUMK"
+                            <input type="text" name="layanan" class="form-control" id="layanan" placeholder="Masukkan layanan Anda" value="IUMK"
                             required>
                             </div>
 
-                            @error('alamat')
+                            @error('layanan')
                               <span class="help-block">{{ $message }}</span>
                             @enderror
 
                     </div>
+
 
                     <div class="card">
                             <div class="card-header">
@@ -170,21 +220,18 @@
                             </div>
                             <div class="card-body up">
 
-
-
-
-                                    <div class="form-group row  @error('cover') has-error @enderror">
+                                    <div class="form-group row  @error('fotoktp') has-error @enderror">
                                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                                 <label class="" for="">1. KTP (Copy)</label>
                                             </div>
 
                                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                <input type="file" name="cover" class="form-group">
+                                                <input type="file" name="fotoktp" class="form-group">
                                                 <br>
                                                 <input type="radio" aria-label="Radio button for following text input"> <span>Lewatkan Lampiran *</span>
                                             </div>
 
-                                            @error('cover')
+                                            @error('fotoktp')
                                                 <span class="help-block">{{ $message }}</span>
                                             @enderror
 
@@ -192,18 +239,18 @@
 
                                     <hr>
 
-                                    <div class="form-group row  @error('cover') has-error @enderror">
+                                    <div class="form-group row  @error('fotopbb') has-error @enderror">
                                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                                 <label class="" for="">2. Bukti Pelunasan PBB</label>
                                             </div>
 
                                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                <input type="file" name="cover" class="form-group">
+                                                <input type="file" name="fotopbb" class="form-group">
                                                 <br>
                                                 <input type="radio" aria-label="Radio button for following text input"> <span>Lewatkan Lampiran *</span>
                                             </div>
 
-                                            @error('cover')
+                                            @error('fotopbb')
                                                 <span class="help-block">{{ $message }}</span>
                                             @enderror
 
@@ -211,18 +258,18 @@
 
                                     <hr>
 
-                                    <div class="form-group row  @error('cover') has-error @enderror">
+                                    <div class="form-group row  @error('fotosku') has-error @enderror">
                                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                                 <label class="" for="">3. Surat Keterangan Usaha Dari Kelurahan</label>
                                             </div>
 
                                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                <input type="file" name="cover" class="form-group">
+                                                <input type="file" name="fotosku" class="form-group">
                                                 <br>
                                                 <input type="radio" aria-label="Radio button for following text input"> <span>Lewatkan Lampiran *</span>
                                             </div>
 
-                                            @error('cover')
+                                            @error('fotosku')
                                                 <span class="help-block">{{ $message }}</span>
                                             @enderror
 
@@ -230,27 +277,31 @@
 
                                     <hr>
 
-                                    <div class="form-group row  @error('cover') has-error @enderror">
+                                    <div class="form-group row  @error('fotodiri') has-error @enderror">
                                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                                 <label class="" for="">4. Foto Diri Ukuran 4 x 6 Warna</label>
                                             </div>
 
                                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                <input type="file" name="cover" class="form-group">
+                                                <input type="file" name="fotodiri" class="form-group">
                                                 <br>
                                                 <input type="radio" aria-label="Radio button for following text input"> <span>Lewatkan Lampiran *</span>
                                             </div>
 
-                                            @error('cover')
+                                            @error('fotodiri')
                                                 <span class="help-block">{{ $message }}</span>
                                             @enderror
 
                                     </div>
 
+                                    <br>
 
 
 
-
+                            <p style="font-size:13px;">* Centang Lewatkan Lampiran bila Lampiran Belum Ada </p>
+                            <p style="font-size:13px;">** File Berformat jpg, png, jpeg, svg dan Maximal Ukuran/Size Lampiran 2 MB</p>
+                            
+                           
 
                             </div>
                     </div>
