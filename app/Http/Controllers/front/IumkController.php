@@ -4,6 +4,7 @@ namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Service;
 
 class IumkController extends Controller
 {
@@ -24,7 +25,11 @@ class IumkController extends Controller
      */
     public function create()
     {
-        //
+        $iumk = Services::orderBY('created_at', DESC)->get();
+        return view('front.iumk.create', [
+            'title' => 'Pelaporan',
+            'report' => $iumk
+        ]);
     }
 
     /**
@@ -35,7 +40,24 @@ class IumkController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'alamat' => 'required|min:10',
+            'kontak' => 'required|numeric',
+            'pesan' => 'required|min:10',
+
+
+        ]);
+
+        Report::create([
+            'name' => $request->name,
+            'alamat' =>  $request->alamat,
+            'kontak' =>  $request->kontak,
+            'pesan' =>  $request->pesan,
+
+        ]);
+
+        return redirect()->route('iumk.index')->withSuccess('Permohonan IUMK Berhasil Di Kirim');
     }
 
     /**

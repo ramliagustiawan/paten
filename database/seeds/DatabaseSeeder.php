@@ -17,5 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(LaporsTableSeeder::class);
         $this->call(IjinsTableSeeder::class);
         $this->call(NonijinsTableSeeder::class);
+
+        $this->call(ServicesTableSeeder::class);
     }
 }

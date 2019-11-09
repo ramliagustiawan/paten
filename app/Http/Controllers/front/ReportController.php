@@ -5,6 +5,7 @@ namespace App\Http\Controllers\front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Report;
+use Illuminate\Support\Facades\Storage;
 
 class ReportController extends Controller
 {
@@ -25,10 +26,10 @@ class ReportController extends Controller
      */
     public function create()
     {
-        $report = Report::orderBY('created_at', DESC)->get();
+        $iumk = Report::orderBY('created_at', DESC)->get();
         return view('front.lapor.create', [
             'title' => 'Pelaporan',
-            'report' => $report
+            'report' => $iumk
         ]);
     }
 
@@ -40,21 +41,66 @@ class ReportController extends Controller
      */
     public function store(Request $request)
     {
+        // VALIDASI
         $this->validate($request, [
-            'name' => 'required',
+
+            'nama' => 'required',
+            'nik' => 'required|numeric',
             'alamat' => 'required|min:10',
             'kontak' => 'required|numeric',
-            'pesan' => 'required|min:10',
-
-
+            'naper' => 'required',
+            'bentuk' => 'required',
+            'npwp' => 'required|numeric',
+            'giatusaha' => 'required',
+            'statusbangunan' => 'required',
+            'alamatusaha' => 'required|min:10',
+            'modal' => 'required|numeric',
+            'fotoktp' => 'file|image',
+            'fotosku' => 'file|image',
+            'fotopbb' => 'file|image',
+            'fotodiri' => 'file|image',
 
         ]);
 
+        // CEK GAMBAR
+        $fotoktp = null;
+        $fotosku = null;
+        $fotopbb = null;
+        $fotodiri = null;
+
+        if ($request->hasFile('fotoktp')) {
+            $fotoktp = $request->file('fotoktp')->store('assets/covers');
+        }
+
+        if ($request->hasFile('fotosku')) {
+            $fotoktp = $request->file('fotosku')->store('assets/covers');
+        }
+
+        if ($request->hasFile('fotopbb')) {
+            $fotoktp = $request->file('fotopbb')->store('assets/covers');
+        }
+
+        if ($request->hasFile('fotodiri')) {
+            $fotoktp = $request->file('fotodiri')->store('assets/covers');
+        }
+
         Report::create([
-            'name' => $request->name,
-            'alamat' =>  $request->alamat,
-            'kontak' =>  $request->kontak,
-            'pesan' =>  $request->pesan,
+
+            'nama' => $request->nama,
+            'nik' => $request->nik,
+            'alamat' => $request->alamat,
+            'kontak' => $request->kontak,
+            'naper' => $request->naper,
+            'bentuk' => $request->bentuk,
+            'npwp' => $request->npwp,
+            'giatusaha' => $request->giatusaha,
+            'statusbangunan' => $request->statusbangunan,
+            'alamatusaha' => $request->alamatusaha,
+            'modal' => $request->modal,
+            'fotoktp' => $request->fotoktp,
+            'fotosku' => $request->fotosku,
+            'fotopbb' => $request->fotopbb,
+            'fotodiri' => $request->fotodiri,
 
         ]);
 
