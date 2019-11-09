@@ -18,10 +18,10 @@ class CreateServicesTable extends Migration
             $table->char('nama');
             $table->char('layanan');
             $table->char('kontak');
-            $table->char('kelurahan');
+            $table->char('kelurahan')->nullable();
             $table->string('alamat', 50);
             $table->integer('nik');
-            $table->date('ttl')->nullable();
+            $table->char('ttl')->nullable();
             $table->char('jk')->nullable();
             $table->char('negara')->nullable();
             $table->char('kerja')->nullable();

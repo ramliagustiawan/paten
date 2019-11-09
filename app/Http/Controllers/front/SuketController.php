@@ -21,7 +21,7 @@ class SuketController extends Controller
     public function create()
     {
         $iumk = Service::orderBY('created_at', DESC)->get();
-        return view('front.iumk.create', [
+        return view('front.suket.create', [
             'title' => 'Pelaporan',
             'report' => $iumk
         ]);
@@ -41,66 +41,52 @@ class SuketController extends Controller
 
             'nama' => 'required',
             'nik' => 'required|numeric',
-            'alamat' => 'required|min:3',
+            'ttl' => 'required',
+            'jk' => 'required|min:4',
+            'agama' => 'required',
+            'kerja' => 'required',
+            'alamat' => 'required',
             'kelurahan' => 'required',
+            'ket' => 'required|min:10',
+            'keperluan' => 'required|min:10',
             'kontak' => 'required|numeric',
-            'naper' => 'required',
-            'bentuk' => 'required',
-            'npwp' => 'required',
-            'giatusaha' => 'required',
-            'statusbangunan' => 'required',
-            'alamatusaha' => 'required|min:10',
-            'modal' => 'required',
             'layanan' => 'required',
             'fotoktp' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
-            'fotosku' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
-            'fotodiri' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
+          
 
         ]);
 
         // CEK GAMBAR
         $fotoktp = null;
-        $fotosku = null;
         $fotopbb = null;
-        $fotodiri = null;
+       
 
         if ($request->hasFile('fotoktp')) {
             $fotoktp = $request->file('fotoktp')->store('assets/covers');
-        }
-
-        if ($request->hasFile('fotosku')) {
-            $fotoktp = $request->file('fotosku')->store('assets/covers');
         }
 
         if ($request->hasFile('fotopbb')) {
             $fotoktp = $request->file('fotopbb')->store('assets/covers');
         }
 
-        if ($request->hasFile('fotodiri')) {
-            $fotoktp = $request->file('fotodiri')->store('assets/covers');
-        }
-
         Service::create([
 
             'nama' => $request->nama,
             'nik' => $request->nik,
+            'ttl' => $request->ttl,
+            'jk' => $request->jk,
+            'agama' => $request->agama,
+            'kerja' => $request->kerja,
             'alamat' => $request->alamat,
             'kelurahan' => $request->kelurahan,
+            'ket' => $request->ket,
+            'keperluan' => $request->keperluan,
             'kontak' => $request->kontak,
-            'naper' => $request->naper,
-            'bentuk' => $request->bentuk,
-            'npwp' => $request->npwp,
-            'giatusaha' => $request->giatusaha,
-            'statusbangunan' => $request->statusbangunan,
-            'alamatusaha' => $request->alamatusaha,
-            'modal' => $request->modal,
             'layanan' => $request->layanan,
             'fotoktp' => $request->fotoktp,
-            'fotosku' => $request->fotosku,
             'fotopbb' => $request->fotopbb,
-            'fotodiri' => $request->fotodiri,
-
+           
         ]);
 
         return redirect()->route('suket.index')->withSuccess('Permohonan Surat Keterangan Berhasil Di Kirim');

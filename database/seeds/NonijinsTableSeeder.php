@@ -21,5 +21,16 @@ class NonijinsTableSeeder extends Seeder
             'nama' => 'Surat Keterangan',
             'controller' => 'suket',
         ]);
+
+        Nonijin::create([
+            'nama' => 'Domisili Perusahaan',
+            'controller' => 'domisili',
+        ]);
+        
+        Nonijin::create([
+            'nama' => 'Surat Keterangan Tidak Mampu',
+            'controller' => 'sktm',
+        ]);
+
     }
 }

@@ -29,7 +29,7 @@
 
               <div class="col-xs-10 col-md-10 col-lg-10 mt-1">
 
-                  <form action="{{ route('iumk.store') }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('suket.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                    
@@ -47,6 +47,18 @@
                         @enderror
 
                     </div>
+
+                    <div class="form-group row @error('nik') has-error @enderror">
+                      <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>NIK</strong> </label>
+                      <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                      <input type="" name="nik" class="form-control" id="nik" placeholder="Masukkan Nomor Induk Kependudukan Anda" value="{{ old('nik') }}" >
+                      </div>
+
+                      @error('nik')
+                        <span class="help-block">{{ $message }}</span>
+                      @enderror
+
+              </div>
 
                     <div class="form-group row @error('ttl') has-error @enderror">
                             <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tempat Tanggal Lahir</strong> </label>
@@ -123,6 +135,29 @@
 
                     </div>
 
+                     {{--  --}}
+
+                   <div class="form-group row @error('kelurahan') has-error @enderror">
+                    <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kelurahan</strong> </label>
+                    <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                        <select name="kelurahan" id="" class="form-control select2">
+                            <option selected>Pilih Kelurahan</option>
+                            <option value="Kelurahan Huangobotu Kecamatan Dungingi">Huangobotu</option>
+                            <option value="Kelurahan Huangobotu Kecamatan Dungingi">Libuo</option>
+                            <option value="Kelurahan Huangobotu Kecamatan Dungingi">Tuladenggi</option>
+                            <option value="Kelurahan Huangobotu Kecamatan Dungingi">Tomulabutao</option>
+                            <option value="Kelurahan Huangobotu Kecamatan Dungingi">Tomulabutao Selatan</option>
+                          </select>
+                    </div>
+
+                    @error('kelurahan')
+                      <span class="help-block">{{ $message }}</span>
+                    @enderror
+
+                </div>
+
+                {{--  --}}
+
                     <div class="form-group row @error('ket') has-error @enderror">
                         <label for="" class="col-sm-2 col-md-6 col-lg-2 col-form-label"><strong>Keterangan</strong></label>
                         <div class="col-sm-10">
@@ -168,7 +203,7 @@
                     <div class="form-group row @error('layanan') has-error @enderror invisible ">
                             <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kategori</strong> </label>
                             <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                            <input type="text" name="layanan" class="form-control" id="layanan" placeholder="Masukkan layanan Anda" value="Dispensasi Nikah"
+                            <input type="text" name="layanan" class="form-control" id="layanan" placeholder="Masukkan layanan Anda" value="Surat Keterangan"
                             required>
                             </div>
 
