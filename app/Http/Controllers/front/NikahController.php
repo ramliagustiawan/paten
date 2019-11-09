@@ -25,7 +25,7 @@ class NikahController extends Controller
      */
     public function create()
     {
-        $iumk = Services::orderBY('created_at', DESC)->get();
+        $iumk = Service::orderBY('created_at', DESC)->get();
         return view('front.iumk.create', [
             'title' => 'Pelaporan',
             'report' => $iumk
@@ -44,70 +44,77 @@ class NikahController extends Controller
         // VALIDASI
         $this->validate($request, [
 
-            'nama' => 'required',
-            'nik' => 'required|numeric',
-            'alamat' => 'required|min:3',
-            'kelurahan' => 'required',
+            'nokua' => 'required',
+            'nama' => 'required|min:3',
+            'ttl' => 'required',
+            'jk' => 'required',
+            'negara' => 'required',
+            'kerja' => 'required',
+            'agama' => 'required',
+            'statusnikah' => 'required',
+            'bin' => 'required',
+            'alamat' => 'required',
+            'istri' => 'required',
+            'ttlistri' => 'required',
+            'jkistri' => 'required',
+            'negaraistri' => 'required',
+            'kerjaistri' => 'required',
+            'agamaistri' => 'required',
+            'statusistri' => 'required',
+            'binti' => 'required',
+            'alamatistri' => 'required',
             'kontak' => 'required|numeric',
-            'naper' => 'required',
-            'bentuk' => 'required',
-            'npwp' => 'required',
-            'giatusaha' => 'required',
-            'statusbangunan' => 'required',
-            'alamatusaha' => 'required|min:10',
-            'modal' => 'required',
+            'nik' => 'required|numeric',
             'layanan' => 'required',
-            'fotoktp' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
-            'fotosku' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
+            'fotoktp' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',          
             'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
-            'fotodiri' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
+           
 
         ]);
 
         // CEK GAMBAR
-        $fotoktp = null;
-        $fotosku = null;
+        $fotoktp = null;       
         $fotopbb = null;
-        $fotodiri = null;
+       
 
         if ($request->hasFile('fotoktp')) {
             $fotoktp = $request->file('fotoktp')->store('assets/covers');
-        }
-
-        if ($request->hasFile('fotosku')) {
-            $fotoktp = $request->file('fotosku')->store('assets/covers');
         }
 
         if ($request->hasFile('fotopbb')) {
             $fotoktp = $request->file('fotopbb')->store('assets/covers');
         }
 
-        if ($request->hasFile('fotodiri')) {
-            $fotoktp = $request->file('fotodiri')->store('assets/covers');
-        }
+        
 
         Service::create([
 
+            'nokua' => $request->nokua,
             'nama' => $request->nama,
-            'nik' => $request->nik,
+            'ttl' => $request->ttl,
+            'jk' => $request->jk,
+            'negara' => $request->negara,
+            'kerja' => $request->kerja,
+            'agama' => $request->agama,
+            'statusnikah' => $request->statusnikah,
+            'bin' => $request->bin,
             'alamat' => $request->alamat,
-            'kelurahan' => $request->kelurahan,
+            'istri' => $request->istri,
+            'ttlistri' => $request->ttlistri,
+            'jkistri' => $request->jkistri,
+            'negaraistri' => $request->negaraistri,
+            'kerjaistri' => $request->kerjaistri,
+            'agamaistri' => $request->agamaistri,
+            'statusistri' => $request->statusistri,
+            'binti' => $request->binti,
+            'alamatistri' => $request->alamatistri,
             'kontak' => $request->kontak,
-            'naper' => $request->naper,
-            'bentuk' => $request->bentuk,
-            'npwp' => $request->npwp,
-            'giatusaha' => $request->giatusaha,
-            'statusbangunan' => $request->statusbangunan,
-            'alamatusaha' => $request->alamatusaha,
-            'modal' => $request->modal,
+            'nik' => $request->nik,
             'layanan' => $request->layanan,
-            'fotoktp' => $request->fotoktp,
-            'fotosku' => $request->fotosku,
+            'fotoktp' => $request->fotoktp,         
             'fotopbb' => $request->fotopbb,
-            'fotodiri' => $request->fotodiri,
-
         ]);
 
-        return redirect()->route('iumk.index')->withSuccess('Permohonan IUMK Berhasil Di Kirim');
+        return redirect()->route('nikah.index')->withSuccess('Permohonan Dispensasi Nikah Berhasil Di Kirim');
     }
 }

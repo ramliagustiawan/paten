@@ -29,7 +29,7 @@
 
               <div class="col-xs-10 col-md-10 col-lg-10 mt-1">
 
-                  <form action="{{ route('iumk.store') }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('nikah.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="form-group row @error('nokua') has-error @enderror">
@@ -86,10 +86,10 @@
 
                     </div>
 
-                    <div class="form-group row @error('negara') has-error @enderror" >
+                    <div class="form-group row @error('negara') has-error @enderror ">
                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Warga Negara</strong> </label>
-                        <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                        <input type="" name="negara" class="form-control" id="negara" placeholder="Masukkan Nomor Induk Kependudukan Anda" value="Indonesia" disabled >
+                        <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10 ">
+                        <input type="" name="negara" class="form-control " id="negara" placeholder="Masukkan Nomor Induk Kependudukan Anda" value="Indonesia"  >
                         </div>
 
                         @error('negara')
@@ -187,6 +187,18 @@
 
                     </div>
 
+                    <div class="form-group row @error('nik') has-error @enderror">
+                      <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>NIK</strong> </label>
+                      <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                      <input type="" name="nik" class="form-control" id="nik" placeholder="Masukkan Nomor Induk Kependudukan Anda" value="{{ old('nik') }}" >
+                      </div>
+
+                      @error('nik')
+                        <span class="help-block">{{ $message }}</span>
+                      @enderror
+
+              </div>
+
                     <div class="form-group row @error('ttlistri') has-error @enderror">
                             <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tempat Tanggal Lahir</strong> </label>
                             <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
@@ -219,7 +231,7 @@
                     <div class="form-group row @error('negaraistri') has-error @enderror">
                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Warga Negara</strong> </label>
                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                        <input type="" name="negaraistri" class="form-control" id="negaraistri" placeholder="Masukkan Nomor Induk Kependudukan Anda" value="Indonesia" disabled >
+                        <input type="" name="negaraistri" class="form-control" id="negaraistri" placeholder="Masukkan Nomor Induk Kependudukan Anda" value="Indonesia" >
                         </div>
 
                         @error('negaraistri')
