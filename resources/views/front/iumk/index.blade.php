@@ -123,14 +123,19 @@
                         </div>
 
                         <div class="form-group row @error('bentuk') has-error @enderror">
-                                <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Bentuk Usaha</strong> </label>
-                                <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                <input type="" name="bentuk" class="form-control" id="bentuk" placeholder="Contoh : Usaha Dagang" value="{{ old('bentuk') }}">
-                                </div>
+                            <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Bentuk Usaha</strong> </label>
+                            <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                <select name="bentuk" id="" class="form-control select2">
+                                    <option selected>Pilih Bentuk Usaha</option>
+                                    <option value="Usaha Dagang">Usaha Dagang</option>
+                                    <option value="Usaha Jasa">Usaha Jasa</option>
+                                    <option value="Usaha Produksi">Usaha Produksi</option>
+                                  </select>
+                            </div>
 
-                                @error('bentuk')
-                                  <span class="help-block">{{ $message }}</span>
-                                @enderror
+                            @error('bentuk')
+                              <span class="help-block">{{ $message }}</span>
+                            @enderror
 
                         </div>
 
@@ -158,15 +163,21 @@
 
                             </div>
 
-                            <div class="form-group row @error('statusbangunan') has-error @enderror">
-                                    <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Sarana Usaha</strong> </label>
-                                    <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                    <input type="" name="statusbangunan" class="form-control" id="statusbangunan" placeholder="Contoh : Sewa" value="{{ old('statusbangunan') }}">
-                                    </div>
 
-                                    @error('statusbangunan')
-                                      <span class="help-block">{{ $message }}</span>
-                                    @enderror
+                            <div class="form-group row @error('statusbangunan') has-error @enderror">
+                                <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Sarana Usaha</strong> </label>
+                                <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                    <select name="statusbangunan" id="" class="form-control select2">
+                                        <option selected>Pilih Sarana Usaha</option>
+                                        <option value="Milik Sendiri">Milik Sendiri</option>
+                                        <option value="Sewa">Sewa</option>
+                                        <option value="Pedagang Keliling">Pedagang Keliling</option>
+                                      </select>
+                                </div>
+
+                                @error('statusbangunan')
+                                  <span class="help-block">{{ $message }}</span>
+                                @enderror
 
                             </div>
 

@@ -133,11 +133,18 @@
 
                     </div>
 
+
                     <div class="form-group row @error('statusnikah') has-error @enderror">
                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Status</strong> </label>
                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                        <input type="text" name="statusnikah" class="form-control" id="statusnikah" placeholder="Masukkan status anda" value="{{ old('statusnikah') }}"
-                        >
+                            <select name="statusnikah" id="" class="form-control select2">
+                                <option selected>Pilih Status</option>
+                                <option value="Perjaka">Perjaka</option>
+                                <option value="Perawan">Perawan</option>
+                                <option value="Duda">Duda</option>
+                                <option value="Janda">Janda</option>
+
+                              </select>
                         </div>
 
                         @error('statusnikah')
@@ -174,7 +181,7 @@
                     {{-- batas suami --}}
                     <br>
                     <hr>
-                    
+
 
                     <div class="form-group row @error('istri') has-error @enderror">
                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>2. istri </strong></label>
@@ -278,8 +285,14 @@
                 <div class="form-group row @error('statusistri') has-error @enderror">
                     <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Status</strong> </label>
                     <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                    <input type="text" name="statusistri" class="form-control" id="statusistri" placeholder="Masukkan status anda" value="{{ old('statusistri') }}"
-                    >
+                        <select name="statusistri" id="" class="form-control select2">
+                            <option selected>Pilih Status</option>
+                            <option value="Perjaka">Perjaka</option>
+                            <option value="Perawan">Perawan</option>
+                            <option value="Duda">Duda</option>
+                            <option value="Janda">Janda</option>
+
+                          </select>
                     </div>
 
                     @error('statusistri')
