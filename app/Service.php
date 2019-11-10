@@ -18,4 +18,9 @@ class Service extends Model
         }
         return 'https://via.placeholder.com/150x200.png?text=No+Cover';
     }
+
+    public function prosessurat()
+    {
+        return $this->belongsTo(Prosessurat::class);
+    }
 }

@@ -33,13 +33,13 @@
             </a>
           </li>
 
-          
 
-       
+
+
 
           <li class="nav-header">PENGATURAN</li>
 
-        
+
               <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -65,9 +65,9 @@
                     </a>
                   </li>
 
-                 
+
                 </ul>
-                
+
               </li>
 
               {{--  BATAS  --}}
@@ -80,44 +80,44 @@
                       <i class="right fas fa-angle-left"></i>
                     </p>
                   </a>
-  
+
                   <ul class="nav nav-treeview">
-  
+
                     <li class="nav-item">
                       <a href="#" class="nav-link">
                         <i class="far fa-dot-circle nav-icon"></i>
                         <p>Pejabat</p>
                       </a>
                     </li>
-  
+
                     <li class="nav-item">
                       <a href="#" class="nav-link">
                         <i class="far fa-dot-circle nav-icon"></i>
                         <p>Personil</p>
                       </a>
-                    </li>   
+                    </li>
 
-                  </ul>                  
+                  </ul>
                 </li>
 
                 {{--  batas  --}}
-                
+
           </li>
 
           {{--  PROSES LAYANAN  --}}
 
           <li class="nav-header">PROSES LAYANAN</li>
           <li class="nav-item">
-            <a href="{{ route('admin.user.index') }}" class="nav-link">
+            <a href="{{ route('admin.daftar.index') }}" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
-              <p>Pengguna</p>
+              <p>Permohonan Layanan</p>
             </a>
           </li>
 
           <li class="nav-item">
-              <a href="{{ route('admin.user.index') }}" class="nav-link">
+              <a href="{{ route('admin.proses.index') }}" class="nav-link">
                 <i class="nav-icon fas fa-file"></i>
-                <p>Pengguna</p>
+                <p>Proses Layanan</p>
               </a>
             </li>
 
@@ -125,7 +125,7 @@
 
             <li class="nav-header">PELAPORAN</li>
             <li class="nav-item">
-              <a href="{{ route('admin.user.index') }}" class="nav-link">
+              <a href="{{ route('admin.tindak.index') }}" class="nav-link">
                 <i class="nav-icon fas fa-file"></i>
                 <p>Tindak Lanjut</p>
               </a>
