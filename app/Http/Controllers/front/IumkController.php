@@ -5,6 +5,7 @@ namespace App\Http\Controllers\front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Service;
+use App\Iumk;
 
 class IumkController extends Controller
 {
@@ -25,7 +26,7 @@ class IumkController extends Controller
      */
     public function create()
     {
-        $iumk = Services::orderBY('created_at', DESC)->get();
+        $iumk = Iumk::orderBY('created_at', DESC)->get();
         return view('front.iumk.create', [
             'title' => 'Pelaporan',
             'report' => $iumk
@@ -86,7 +87,7 @@ class IumkController extends Controller
             $fotoktp = $request->file('fotodiri')->store('assets/covers');
         }
 
-        Service::create([
+        Iumk::create([
 
             'nama' => $request->nama,
             'nik' => $request->nik,

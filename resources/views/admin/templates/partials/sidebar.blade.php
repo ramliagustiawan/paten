@@ -115,6 +115,13 @@
           </li>
 
           <li class="nav-item">
+            <a href="{{ route('admin.iumk.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-file"></i>
+              <p>IUMK</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
               <a href="{{ route('admin.proses.index') }}" class="nav-link">
                 <i class="nav-icon fas fa-file"></i>
                 <p>Proses Layanan</p>

@@ -8,6 +8,7 @@ use App\User;
 use App\Service;
 use App\Prosessurat;
 use App\Report;
+use App\Iumk;
 
 class DataController extends Controller
 {
@@ -54,6 +55,16 @@ class DataController extends Controller
 
         return datatables()->of($report)
             ->addColumn('action', 'admin.tindak.action')
+            ->addIndexColumn()
+            ->toJson();
+    }
+
+    public function iumk()
+    {
+        $iumk = Iumk::orderBy('created_at', 'DESC');
+
+        return datatables()->of($iumk)
+            ->addColumn('action', 'admin.iumk.action')
             ->addIndexColumn()
             ->toJson();
     }
