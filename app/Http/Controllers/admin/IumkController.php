@@ -5,6 +5,8 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Iumk;
+use Fpdf;
+use PDF;
 
 class IumkController extends Controller
 {
@@ -29,7 +31,7 @@ class IumkController extends Controller
         return view('admin.iumk.create', [
             'title' => 'Ajukan IUMK',
             'iumk' => $iumk
-        ]); 
+        ]);
     }
 
     /**
@@ -40,8 +42,8 @@ class IumkController extends Controller
      */
     public function store(Request $request)
     {
-         // VALIDASI
-         $this->validate($request, [
+        // VALIDASI
+        $this->validate($request, [
 
             'nama' => 'required',
             'nik' => 'required|numeric',
@@ -55,7 +57,7 @@ class IumkController extends Controller
             'statusbangunan' => 'required',
             'alamatusaha' => 'required|min:10',
             'modal' => 'required',
-            'layanan'=>'required',
+            'layanan' => 'required',
             'fotoktp' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotosku' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
@@ -149,8 +151,8 @@ class IumkController extends Controller
      */
     public function update(Request $request, Iumk $iumk)
     {
-         // VALIDASI
-         $this->validate($request, [
+        // VALIDASI
+        $this->validate($request, [
 
             'nama' => 'required',
             'nik' => 'required|numeric',
@@ -164,7 +166,7 @@ class IumkController extends Controller
             'statusbangunan' => 'required',
             'alamatusaha' => 'required|min:10',
             'modal' => 'required',
-            'layanan'=>'required',
+            'layanan' => 'required',
             'fotoktp' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotosku' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
@@ -248,5 +250,14 @@ class IumkController extends Controller
         $iumk->delete();
         return redirect()->route('admin.iumk.index')
             ->with('danger', 'Permohonan IUMK Dihapus');
+    }
+
+    public function cetak()
+    {
+
+        $data = Iumk::get();
+        $pdf = PDF::loadView('admin.iumk.cetak', $data);
+
+        return $pdf->stream();
     }
 }

@@ -2,12 +2,16 @@
 {{-- <div class="row"> --}}
 
     <a href="{{ route('admin.iumk.show', $model)}}" class="btn btn-info modal-show edit" title="{{ $model->name }}">Periksa</a>
-    
+
     <a href="{{ route('admin.iumk.edit', $model)}}" class="btn btn-warning modal-show edit" title="{{ $model->name }}">Proses</a>
-    
+
+    <a href="{{ route('admin.iumk.cetak', $model)}}" class="btn btn-primary modal-show edit" title="{{ $model->name }}">Cetak</a>
+
+
+
     <button href="{{ route('admin.iumk.destroy', $model) }}" class="btn btn-danger btn-delete" id="delete" title="{{ $model->name }}" >Hapus</button>
-    
-    
+
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
     <script>
@@ -42,6 +46,5 @@
         })
 
     </script>
-    
-    
-    
+
+
