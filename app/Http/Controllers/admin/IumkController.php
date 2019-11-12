@@ -255,11 +255,11 @@ class IumkController extends Controller
     public function cetak()
     {
 
-        $data = Iumk::get();
+        $iumk = Iumk::all();
         $pdf = PDF::loadView('admin.iumk.cetak', [
-            'iumk' => $data,
-            'title'=> 'Ijin Usaha Mikro Kecil'
-        ]);
+            'iumk' => $iumk,
+            'title' => 'Ijin Usaha Mikro Kecil'
+        ])->setPaper('F4', 'portrait');
 
         return $pdf->stream();
     }
