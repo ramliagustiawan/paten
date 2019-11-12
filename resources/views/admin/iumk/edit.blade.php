@@ -24,7 +24,7 @@
                                     
                                             </div>
                                             <div class="card-body">
-                                              <h6 class="card-title">Silahkan Lengkapi Data Anda</h6>
+                                              <h6 class="card-title">Validasi Data dan Perbaiki Apabila Masih Ada Kesalahan</h6>
                                               <p class="card-text"></p>
                                               {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
                                             </div>
@@ -234,103 +234,135 @@
                                     
                                                         <div class="card">
                                                                 <div class="card-header">
-                                                                <strong> Persyaratan Yang Harus Dibawa :</strong>
+                                                                <strong> Proses Lebih Lanjut :</strong>
                                                                 </div>
-                                                                <div class="card-body up">
-                                    
-                                                                        <div class="form-group row  @error('fotoktp') has-error @enderror">
-                                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                                                    <label class="" for="">1. KTP (Copy)</label>
-                                                                                </div>
-                                    
-                                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                                                    <input type="file" name="fotoktp" class="form-group">
-                                                                                    <br>
-                                                                                    <input type="radio" aria-label="Radio button for following text input"> <span>Lewatkan Lampiran *</span>
-                                                                                </div>
-                                    
-                                                                                @error('fotoktp')
-                                                                                    <span class="help-block">{{ $message }}</span>
-                                                                                @enderror
-                                    
-                                                                        </div>
-                                    
-                                                                        <hr>
-                                    
-                                                                        <div class="form-group row  @error('fotopbb') has-error @enderror">
-                                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                                                    <label class="" for="">2. Bukti Pelunasan PBB</label>
-                                                                                </div>
-                                    
-                                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                                                    <input type="file" name="fotopbb" class="form-group">
-                                                                                    <br>
-                                                                                    <input type="radio" aria-label="Radio button for following text input"> <span>Lewatkan Lampiran *</span>
-                                                                                </div>
-                                    
-                                                                                @error('fotopbb')
-                                                                                    <span class="help-block">{{ $message }}</span>
-                                                                                @enderror
-                                    
-                                                                        </div>
-                                    
-                                                                        <hr>
-                                    
-                                                                        <div class="form-group row  @error('fotosku') has-error @enderror">
-                                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                                                    <label class="" for="">3. Surat Keterangan Usaha Dari Kelurahan</label>
-                                                                                </div>
-                                    
-                                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                                                    <input type="file" name="fotosku" class="form-group">
-                                                                                    <br>
-                                                                                    <input type="radio" aria-label="Radio button for following text input"> <span>Lewatkan Lampiran *</span>
-                                                                                </div>
-                                    
-                                                                                @error('fotosku')
-                                                                                    <span class="help-block">{{ $message }}</span>
-                                                                                @enderror
-                                    
-                                                                        </div>
-                                    
-                                                                        <hr>
-                                    
-                                                                        <div class="form-group row  @error('fotodiri') has-error @enderror">
-                                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                                                    <label class="" for="">4. Foto Diri Ukuran 4 x 6 Warna</label>
-                                                                                </div>
-                                    
-                                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                                                    <input type="file" name="fotodiri" class="form-group">
-                                                                                    <br>
-                                                                                    <input type="radio" aria-label="Radio button for following text input"> <span>Lewatkan Lampiran *</span>
-                                                                                </div>
-                                    
-                                                                                @error('fotodiri')
-                                                                                    <span class="help-block">{{ $message }}</span>
-                                                                                @enderror
-                                    
-                                                                        </div>
-                                    
-                                                                        <br>
-                                    
-                                    
-                                    
-                                                                <p style="font-size:13px;">* Centang Lewatkan Lampiran bila Lampiran Belum Ada </p>
-                                                                <p style="font-size:13px;">** File Berformat jpg, png, jpeg, svg dan Maximal Ukuran/Size Lampiran 2 MB</p>
-                                    
-                                    
-                                    
-                                                                </div>
+                                                              
                                                         </div>
+
+                                                        {{--  --}}
+                                    
+                                                       <div class="form-group row @error('syarat') has-error @enderror">
+                                                        <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Persyaratan</strong> </label>
+                                                        <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                                            <select name="syarat" id="" class="form-control select2">
+                                                            <option selected>{{old('syarat') ?? $iumk->syarat}}</option>
+                                                                <option value="Berkas Lengkap">Berkas Lengkap</option>
+                                                                <option value="Berkas Tidak Lengkap">Berkas Tidak Lengkap</option>
+                                                              </select>
+                                                        </div>
+                                
+                                                        @error('syarat')
+                                                          <span class="help-block">{{ $message }}</span>
+                                                        @enderror
+                                
+                                                    </div>
+                                
+                                                    {{--  --}}
+
+                                                      
+                                                        <div class="form-group row @error('nosurat') has-error @enderror">
+                                                          <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Nomor Surat</strong> </label>
+                                                          <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                                          <input type="text" name="nosurat" class="form-control" id="nosurat" placeholder="Masukkan Nomor Surat" value="{{ old('nosurat') ?? $iumk->nosurat }}">
+                                                          </div>
+                      
+                                                          @error('nosurat')
+                                                            <span class="help-block">{{ $message }}</span>
+                                                          @enderror
+                      
+                                                      </div>
+
+                                                      <div class="form-group row @error('tglsurat') has-error @enderror">
+                                                        <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tanggal Surat</strong> </label>
+                                                        <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                                        <input type="text" name="tglsurat" class="form-control" id="tglsurat" placeholder="Masukkan Tanggal Surat" value="{{ old('tglsurat') ?? $iumk->tglsurat }}">
+                                                        </div>
+                    
+                                                        @error('tglsurat')
+                                                          <span class="help-block">{{ $message }}</span>
+                                                        @enderror
+                    
+                                                    </div>
+
+                                                    <div class="form-group row @error('pejabat') has-error @enderror">
+                                                      <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Pejabat</strong> </label>
+                                                      <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                                      <input type="text" name="pejabat" class="form-control" id="pejabat" placeholder="Pejabat Yang Menandatangani" value="{{ old('pejabat') ?? $iumk->pejabat}}">
+                                                      </div>
+                  
+                                                      @error('pejabat')
+                                                        <span class="help-block">{{ $message }}</span>
+                                                      @enderror
+                  
+                                                  </div>
+
+                                                  <div class="form-group row @error('nip') has-error @enderror">
+                                                    <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>NIP</strong> </label>
+                                                    <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                                    <input type="text" name="nip" class="form-control" id="nip" placeholder="NIP" value="{{ old('nip') ?? $iumk->nip}}">
+                                                    </div>
+                
+                                                    @error('nip')
+                                                      <span class="help-block">{{ $message }}</span>
+                                                    @enderror
+                
+                                                </div>
+
+                                                <div class="form-group row @error('barcode') has-error @enderror">
+                                                  <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Barcode </strong> </label>
+                                                  <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                                  <input type="text" name="barcode" class="form-control" id="barcode" placeholder="Barcode" value="{{ old('barcode') ?? $iumk->barcode}}">
+                                                  </div>
+              
+                                                  @error('barcode')
+                                                    <span class="help-block">{{ $message }}</span>
+                                                  @enderror
+              
+                                              </div>
+
+                                               {{--  --}}
+                                    
+                                               <div class="form-group row @error('proses') has-error @enderror">
+                                                <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Posisi Berkas</strong> </label>
+                                                <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                                    <select name="proses" id="" class="form-control select2">
+                                                        <option selected>{{old('proses') ?? $iumk->proses}}</option>
+                                                        <option value="Proses Verifikasi">Proses Verifikasi</option>
+                                                        <option value="Proses Penandatangan">Proses Penandatangan</option>
+                                                        <option value="Menunggu Pejabat Yang Menandatangani">Menunggu Pejabat Yang Menandatangani</option>
+                                                        <option value="Surat Selesai">Surat Selesai </option>
+                                                      </select>
+                                                </div>
+                        
+                                                @error('proses')
+                                                  <span class="help-block">{{ $message }}</span>
+                                                @enderror
+                        
+                                            </div>
+                        
+                                            {{--  --}}
+
+
+                                             
+
+                                                      
                                     
                                     
                                                         <div class="form-group mt-2">
                                                             <input type="submit" value="Validasi" class="btn btn-primary">
                                                         </div>
+
                                     
                                                       </form>
+
+                                                      {{-- cetak --}}
+                                                      {{-- <button href="{{ route('admin.iumk.cetak')}}" class="btn btn-success modal-show edit" >Cetak</button> --}}
+
+                                                      
                                                   </div>
+
+                                                
+
                                                 </div>
                                     
                                                 <div class="card-footer text-muted mt-4">

@@ -171,15 +171,15 @@ class IumkController extends Controller
             'fotosku' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotodiri' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
-            'syarat' => 'required',
-            'proses' => 'required',
-            'ketproses' => 'required',
-            'nosurat' => 'required',
-            'tglsurat' => 'required',
-            'pejabat' => 'required',
-            'nip' => 'required',
-            'barcode' => 'required',
-            'hasil' => 'required',
+            // 'syarat' => 'required',
+            // 'proses' => 'required',
+            // 'ketproses' => 'required',
+            // 'nosurat' => 'required',
+            // 'tglsurat' => 'required',
+            // 'pejabat' => 'required',
+            // 'nip' => 'required',
+            // 'barcode' => 'required',
+            // 'hasil' => 'required',
 
         ]);
 
@@ -205,7 +205,7 @@ class IumkController extends Controller
             $fotoktp = $request->file('fotodiri')->store('assets/covers');
         }
 
-        Iumk::update([
+        $iumk->update([
 
             'nama' => $request->nama,
             'nik' => $request->nik,
@@ -226,13 +226,13 @@ class IumkController extends Controller
             'fotodiri' => $request->fotodiri,
             'syarat' => $request->syarat,
             'proses' => $request->proses,
-            'ketproses' => $request->ketproses,
+            // 'ketproses' => $request->ketproses,
             'nosurat' => $request->nosurat,
             'tglsurat' => $request->tglsurat,
             'pejabat' => $request->pejabat,
             'nip' => $request->nip,
             'barcode' => $request->barcode,
-            'hasil' => $request->hasil,
+            // 'hasil' => $request->hasil,
 
         ]);
 
@@ -256,7 +256,10 @@ class IumkController extends Controller
     {
 
         $data = Iumk::get();
-        $pdf = PDF::loadView('admin.iumk.cetak', $data);
+        $pdf = PDF::loadView('admin.iumk.cetak', [
+            'iumk' => $data,
+            'title'=> 'Ijin Usaha Mikro Kecil'
+        ]);
 
         return $pdf->stream();
     }

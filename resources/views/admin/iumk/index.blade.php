@@ -29,6 +29,8 @@
                               <th>Layanan</th>
                               <th>Kelurahan</th>
                               <th>Tanggal Pengajuan</th>
+                              <th>Persyaratan</th>
+                              <th>Keterangan</th>
                                <th>Aksi</th>
 
 
@@ -92,6 +94,8 @@
                             {data:'layanan'},
                             {data:'alamat'},
                             {data:'created_at'},
+                            {data:'syarat'},
+                            {data:'proses'},
                             {data:'action'},
 
                         ]
