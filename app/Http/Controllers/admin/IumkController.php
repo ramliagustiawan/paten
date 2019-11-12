@@ -252,15 +252,17 @@ class IumkController extends Controller
             ->with('danger', 'Permohonan IUMK Dihapus');
     }
 
-    public function cetak()
+    public function cetak($id)
     {
 
-        $iumk = Iumk::all();
+        $iumk = Iumk::find($id);      
         $pdf = PDF::loadView('admin.iumk.cetak', [
             'iumk' => $iumk,
             'title' => 'Ijin Usaha Mikro Kecil'
         ])->setPaper('F4', 'portrait');
 
         return $pdf->stream();
+
     }
-}
+
+  }

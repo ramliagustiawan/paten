@@ -10,7 +10,7 @@ Route::get('/proses/surat', 'DataController@surat')->name('proses.surat');
 Route::get('/tindak/lanjut', 'DataController@lanjut')->name('tindak.lanjut');
 
 Route::get('/iumk/iumk', 'DataController@iumk')->name('iumk.iumk');
-Route::get('/iumk/pdf', 'IumkController@cetak')->name('iumk.cetak');
+Route::get('/iumk/pdf/{id}', 'IumkController@cetak')->name('iumk.cetak');
 
 Route::resource('/user', 'UserController');
 

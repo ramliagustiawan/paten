@@ -43,7 +43,7 @@
             </tr>
 
             <tr>
-                <td align="center">Nomor : 120/kd/dungingi/2019</td>
+                <td align="center">Nomor : {{$iumk->nosurat}}</td>
             </tr>
 
             <tr>
@@ -61,42 +61,46 @@
     </table>
 
 
+    
+
 <table align="center"  >
+       
     <tr>
         <td height="1"></td>
     </tr>
 
     <tr>
         <td>Nama</td>
-        <td width="400">  : {{$title}} </td>
+        <td width="400">  : {{$iumk->nama}} </td>
     </tr>
         <tr>
             <td height="1"></td>
         </tr>
     <tr>
         <td>NIK</td>
-        <td width="400">  : </td>
+        <td width="400">  : {{$iumk->nik}} </td>
     </tr>
         <tr>
             <td height="1"></td>
         </tr>
     <tr>
         <td>Alamat</td>
-        <td width="400">  :</td>
+        <td width="400">  : {{$iumk->alamat}}</td>
     </tr>
         <tr>
             <td height="1"></td>
         </tr>
     <tr>
         <td>No. Telpon</td>
-        <td width="400">  :</td>
+        <td width="400">  : {{$iumk->kontak}}</td>
     </tr>
     <tr>
             <td height="1"></td>
         </tr>
 
-
+     
 </table>
+
 
 <table>
     <tr>
@@ -111,56 +115,56 @@
 
         <tr>
             <td>Nama Usaha</td>
-            <td width="350">  : {{$title}} </td>
+            <td width="350">  : {{$iumk->naper}} </td>
         </tr>
             <tr>
                 <td height="1"></td>
             </tr>
         <tr>
             <td>Bentuk Usaha</td>
-            <td width="350">  :</td>
+            <td width="350">  : {{$iumk->bentuk}}</td>
         </tr>
             <tr>
                 <td height="1"></td>
             </tr>
         <tr>
             <td>NPWP</td>
-            <td width="350">  :</td>
+            <td width="350">  : {{$iumk->npwp}}</td>
         </tr>
             <tr>
                 <td height="1"></td>
             </tr>
         <tr>
             <td>Kegiatan Usaha</td>
-            <td width="350">  :</td>
+            <td width="350">  : {{$iumk->giatusaha}}</td>
         </tr>
             <tr>
                 <td height="1"></td>
             </tr>
         <tr>
             <td>Sarana Usaha</td>
-            <td width="350">  :</td>
+            <td width="350">  : {{$iumk->statusbangunan}}</td>
         </tr>
             <tr>
                 <td height="1"></td>
             </tr>
             <tr>
                 <td>Alamat Usaha</td>
-                <td width="350">  :</td>
+                <td width="350">  : {{$iumk->alamatusaha}}</td>
             </tr>
                 <tr>
                     <td height="1"></td>
                 </tr>
             <tr>
                 <td>Jumlah Modal Usaha</td>
-                <td width="350">  :</td>
+                <td width="350">  : Rp. {{$iumk->modal}}</td>
             </tr>
                 <tr>
                     <td height="1"></td>
                 </tr>
             <tr>
                 <td>Nomor Pendaftaran</td>
-                <td width="350">  :</td>
+                <td width="350">  : </td>
             </tr>
 
 
@@ -190,7 +194,7 @@
 <table style="position: absolute;  margin-left: 330px;">
 
     <tr>
-        <td align="center">Gorontalo, 11 November 2019</td>
+        <td align="center">Gorontalo, {{$iumk->tglsurat}}</td>
     </tr>
     <tr>
         <td align="center"><b>Camat Dungingi</b></td>
@@ -199,14 +203,16 @@
         <td height="35"></td>
     </tr>
     <tr>
-        <td align="center"><u>Sriyanti Ano SP, M.Si</u></td>
+        <td align="center"><u>{{$iumk->pejabat}}</u></td>
     </tr>
 
     <tr>
-        <td>NIP. 19706998129321492100</td>
+        <td>NIP. {{$iumk->nip}}</td>
     </tr>
 
 </table>
+
+
 
 </body>
 
