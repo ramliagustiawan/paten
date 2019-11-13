@@ -117,9 +117,10 @@
           <li class="nav-item">
             <a href="{{ route('admin.iumk.index') }}" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
-              <p>IUMK</p>
+              <p>IUMK</p> <span class="badge badge-light ml-5">9</span>
             </a>
           </li>
+
 
           <li class="nav-item">
               <a href="{{ route('admin.proses.index') }}" class="nav-link">
