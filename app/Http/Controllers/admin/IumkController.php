@@ -236,7 +236,7 @@ class IumkController extends Controller
 
         ]);
 
-        return redirect()->route('admin.iumk.index')->withSuccess('Permohonan IUMK Valid');
+        return redirect()->route('admin.iumk.index')->withInfo('Permohonan IUMK Valid');
     }
 
     /**

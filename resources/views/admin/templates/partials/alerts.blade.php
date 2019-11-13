@@ -12,7 +12,7 @@
             // settings
             type: 'success',
             placement: {
-                from: "top",
+                from: "bottom",
                 align: "right"
             },
             animate: {
@@ -30,7 +30,7 @@
             //settings
             type: 'info',
             placement: {
-                from: "top",
+                from: "bottom",
                 align: "right"
             },
             animate: {
@@ -48,7 +48,7 @@
             //settings
             type: 'danger',
             placement: {
-                from: "top",
+                from: "bottom",
                 align: "right"
             },
             animate: {
