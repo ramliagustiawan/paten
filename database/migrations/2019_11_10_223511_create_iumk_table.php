@@ -28,10 +28,11 @@ class CreateIumkTable extends Migration
             $table->char('statusbangunan');
             $table->char('alamatusaha');
             $table->char('modal');
-            $table->string('fotoktp')->nullable();
-            $table->string('fotosku')->nullable();
-            $table->string('fotopbb')->nullable();
-            $table->string('fotodiri')->nullable();
+            $table->string('fotoktp')->nullable()->default(null);
+            $table->string('fotosku')->nullable()->default(null);
+            $table->string('fotopbb')->nullable()->default(null);
+            $table->string('fotodiri')->nullable()->default(null);
+
 
             $table->char('syarat')->nullable();
             $table->char('proses')->nullable();

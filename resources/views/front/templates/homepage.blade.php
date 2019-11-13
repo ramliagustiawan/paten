@@ -47,6 +47,19 @@
 
         @include('front.templates.partials.script')
 
+
+
+
+
+        {{--  bs-notify  --}}
+        <script src="{{ asset('assets/plugins/bs-notify.min.js')}}"></script>
+
+         {{-- flash message --}}
+         @include ('front.templates.partials.alerts')
+
+
+
+
     </body>
 
 </html>

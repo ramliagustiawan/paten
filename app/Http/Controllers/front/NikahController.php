@@ -66,26 +66,26 @@ class NikahController extends Controller
             'kontak' => 'required|numeric',
             'nik' => 'required|numeric',
             'layanan' => 'required',
-            'fotoktp' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',          
+            'fotoktp' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
-           
+
 
         ]);
 
         // CEK GAMBAR
-        $fotoktp = null;       
+        $fotoktp = null;
         $fotopbb = null;
-       
+
 
         if ($request->hasFile('fotoktp')) {
             $fotoktp = $request->file('fotoktp')->store('assets/covers');
         }
 
         if ($request->hasFile('fotopbb')) {
-            $fotoktp = $request->file('fotopbb')->store('assets/covers');
+            $fotopbb = $request->file('fotopbb')->store('assets/covers');
         }
 
-        
+
 
         Service::create([
 
@@ -111,8 +111,8 @@ class NikahController extends Controller
             'kontak' => $request->kontak,
             'nik' => $request->nik,
             'layanan' => $request->layanan,
-            'fotoktp' => $request->fotoktp,         
-            'fotopbb' => $request->fotopbb,
+            'fotoktp' => $fotoktp,
+            'fotopbb' => $fotopbb,
         ]);
 
         return redirect()->route('nikah.index')->withSuccess('Permohonan Dispensasi Nikah Berhasil Di Kirim');

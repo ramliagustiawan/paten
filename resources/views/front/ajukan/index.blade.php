@@ -14,7 +14,7 @@
 <div class="container">
 
         <div class="">
-                
+
                 <div class="mt-3">
                         <h4 class="">1. Pelayanan Perijinan</h4>
                 </div>
@@ -24,18 +24,18 @@
                                 <div class="card mt-3 text-center" style="width: 14rem;">
                                         <a href="{{ $item->controller }}">
                                         <div class="card-body aju">
-                                       
+
                                                 <img src="{{asset('assets/images/surat5.png')}}" class="card-img-top" alt="..."  >
                                         <br>
                                         </a>
                                         <h6 class="card-title"><strong>{{ $item->nama }}</strong></h6>
-                                        
+
                                         </div>
                                        </a>
-                                       
+
                                 </div>
                         </div>
-                     @endforeach                  
+                     @endforeach
                 </div>
 
                 <hr>
@@ -53,7 +53,7 @@
                                         <br>
                                         </a>
                                         <h6 class="card-title"><strong>{{ $noni->nama }}</strong></h6>
-                                    
+
 
                                 </div>
                             </div>

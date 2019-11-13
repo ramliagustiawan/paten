@@ -41,11 +41,56 @@ class Iumk extends Model
         if (substr($this->fotoktp, 0, 5) == "https") {
             return $this->fotoktp;
         }
+
         if ($this->fotoktp) {
             return asset($this->fotoktp);
         }
-        return 'https://via.placeholder.com/150x200.png?text=No+Cover';
+
+        return 'https://via.placeholder.com/150x200.png?text=No+Data';
     }
+
+    public function getSku()
+    {
+
+        if (substr($this->fotosku, 0, 5) == "https") {
+            return $this->fotosku;
+        }
+
+        if ($this->fotosku) {
+            return asset($this->fotosku);
+        }
+
+        return 'https://via.placeholder.com/150x200.png?text=No+Data';
+    }
+
+    public function getPbb()
+    {
+
+        if (substr($this->fotopbb, 0, 5) == "https") {
+            return $this->fotopbb;
+        }
+
+        if ($this->fotopbb) {
+            return asset($this->fotopbb);
+        }
+
+        return 'https://via.placeholder.com/150x200.png?text=No+Data';
+    }
+    public function getDiri()
+    {
+
+        if (substr($this->fotodiri, 0, 5) == "https") {
+            return $this->fotodiri;
+        }
+
+        if ($this->fotodiri) {
+            return asset($this->fotodiri);
+        }
+
+        return 'https://via.placeholder.com/150x200.png?text=No+Data';
+    }
+
+
 
     public function prosessurat()
     {

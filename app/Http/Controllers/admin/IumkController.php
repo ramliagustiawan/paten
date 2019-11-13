@@ -76,15 +76,15 @@ class IumkController extends Controller
         }
 
         if ($request->hasFile('fotosku')) {
-            $fotoktp = $request->file('fotosku')->store('assets/covers');
+            $fotosku = $request->file('fotosku')->store('assets/covers');
         }
 
         if ($request->hasFile('fotopbb')) {
-            $fotoktp = $request->file('fotopbb')->store('assets/covers');
+            $fotopbb = $request->file('fotopbb')->store('assets/covers');
         }
 
         if ($request->hasFile('fotodiri')) {
-            $fotoktp = $request->file('fotodiri')->store('assets/covers');
+            $fotodiri = $request->file('fotodiri')->store('assets/covers');
         }
 
         Iumk::create([
@@ -102,10 +102,10 @@ class IumkController extends Controller
             'alamatusaha' => $request->alamatusaha,
             'modal' => $request->modal,
             'layanan' => $request->layanan,
-            'fotoktp' => $request->fotoktp,
-            'fotosku' => $request->fotosku,
-            'fotopbb' => $request->fotopbb,
-            'fotodiri' => $request->fotodiri,
+            'fotoktp' => $fotoktp,
+            'fotosku' => $fotosku,
+            'fotopbb' => $fotopbb,
+            'fotodiri' => $fotodiri,
 
         ]);
 
@@ -171,14 +171,14 @@ class IumkController extends Controller
             'fotosku' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotodiri' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
-            // 'syarat' => 'required',
-            // 'proses' => 'required',
+            'syarat' => 'required',
+            'proses' => 'required',
             // 'ketproses' => 'required',
-            // 'nosurat' => 'required',
-            // 'tglsurat' => 'required',
-            // 'pejabat' => 'required',
-            // 'nip' => 'required',
-            // 'barcode' => 'required',
+            'nosurat' => 'required',
+            'tglsurat' => 'required',
+            'pejabat' => 'required',
+            'nip' => 'required',
+            'barcode' => 'required',
             // 'hasil' => 'required',
 
         ]);
@@ -220,10 +220,10 @@ class IumkController extends Controller
             'alamatusaha' => $request->alamatusaha,
             'modal' => $request->modal,
             'layanan' => $request->layanan,
-            'fotoktp' => $request->fotoktp,
-            'fotosku' => $request->fotosku,
-            'fotopbb' => $request->fotopbb,
-            'fotodiri' => $request->fotodiri,
+            'fotoktp' => $fotoktp,
+            'fotosku' => $fotosku,
+            'fotopbb' => $fotopbb,
+            'fotodiri' => $fotodiri,
             'syarat' => $request->syarat,
             'proses' => $request->proses,
             // 'ketproses' => $request->ketproses,

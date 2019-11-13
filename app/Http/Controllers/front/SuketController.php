@@ -53,21 +53,21 @@ class SuketController extends Controller
             'layanan' => 'required',
             'fotoktp' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
-          
+
 
         ]);
 
         // CEK GAMBAR
         $fotoktp = null;
         $fotopbb = null;
-       
+
 
         if ($request->hasFile('fotoktp')) {
             $fotoktp = $request->file('fotoktp')->store('assets/covers');
         }
 
         if ($request->hasFile('fotopbb')) {
-            $fotoktp = $request->file('fotopbb')->store('assets/covers');
+            $fotopbb = $request->file('fotopbb')->store('assets/covers');
         }
 
         Service::create([
@@ -84,9 +84,9 @@ class SuketController extends Controller
             'keperluan' => $request->keperluan,
             'kontak' => $request->kontak,
             'layanan' => $request->layanan,
-            'fotoktp' => $request->fotoktp,
-            'fotopbb' => $request->fotopbb,
-           
+            'fotoktp' => $fotoktp,
+            'fotopbb' => $fotopbb,
+
         ]);
 
         return redirect()->route('suket.index')->withSuccess('Permohonan Surat Keterangan Berhasil Di Kirim');
