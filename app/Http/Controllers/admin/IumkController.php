@@ -120,8 +120,8 @@ class IumkController extends Controller
      */
     public function show($id)
     {
-        $iumk = Iumk::findOrFail($id);
-        // dd($daftar);
+        $iumk = Iumk::find($id);
+        // dd($iumk);
         return view('admin.iumk.show', [
             'title' => 'Detail Permohonan IUMK',
             'daftar' => $iumk,
@@ -255,14 +255,12 @@ class IumkController extends Controller
     public function cetak($id)
     {
 
-        $iumk = Iumk::find($id);      
+        $iumk = Iumk::find($id);
         $pdf = PDF::loadView('admin.iumk.cetak', [
             'iumk' => $iumk,
             'title' => 'Ijin Usaha Mikro Kecil'
         ])->setPaper('F4', 'portrait');
 
         return $pdf->stream();
-
     }
-
-  }
+}

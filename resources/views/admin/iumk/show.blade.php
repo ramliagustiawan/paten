@@ -62,7 +62,7 @@
                                     <th>Bentuk Usaha</th>
                                     <td>{{ $daftar->bentuk }}</td>
                                 </tr>
-                            
+
                                 <tr>
                                     <th>NPWP</th>
                                     <td>{{ $daftar->npwp }}</td>
@@ -82,27 +82,28 @@
                                     <th>Alamat Usaha</th>
                                     <td>{{ $daftar->alamatusaha }}</td>
                                 </tr>
-    
+
                                 <tr>
                                     <th>Modal</th>
                                     <td>{{ $daftar->modal }}</td>
                                 </tr>
-    
+
                                 <tr>
                                     <th>KTP</th>
-                                    <td>{{ $daftar->fotoktp }}</td>
+                                    <td><img src='{{$daftar->getCover()}}' height="250px"></td>
+
                                 </tr>
-                                
+
                                 <tr>
                                     <th>Surat Keterangan Usaha</th>
-                                    <td>{{ $daftar->fotosku }}</td>
+                                    <td>{{ $daftar->fotoktp }}</td>
                                 </tr>
-    
+
                                 <tr>
                                     <th>Pajak Bumi Bangunan</th>
                                     <td>{{ $daftar->fotopbb }}</td>
                                 </tr>
-    
+
                                 <tr>
                                     <th>Foto Diri</th>
                                     <td>{{ $daftar->fotodiri }}</td>
