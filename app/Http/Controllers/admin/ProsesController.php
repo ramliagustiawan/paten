@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Iumk;
+use App\Prosessurat;
 
 class ProsesController extends Controller
 {
@@ -46,7 +48,12 @@ class ProsesController extends Controller
      */
     public function show($id)
     {
-        //
+        $iumk = Prosessurat::find($id);
+        dd($iumk);
+        return view('admin.proses.show', [
+            'title' => 'Detail Proses Layanan',
+            'daftar' => $iumk,
+        ]);
     }
 
     /**

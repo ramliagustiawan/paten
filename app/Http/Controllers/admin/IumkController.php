@@ -173,14 +173,14 @@ class IumkController extends Controller
             'fotosku' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotodiri' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
-            'syarat' => 'required',
-            'proses' => 'required',
+            // 'syarat' => 'required',
+            // 'proses' => 'required',
             // 'ketproses' => 'required',
-            'nosurat' => 'required',
-            'tglsurat' => 'required',
-            'pejabat' => 'required',
-            'nip' => 'required',
-            'barcode' => 'required',
+            // 'nosurat' => 'required',
+            // 'tglsurat' => 'required',
+            // 'pejabat' => 'required',
+            // 'nip' => 'required',
+            // 'barcode' => 'required',
             // 'hasil' => 'required',
 
         ]);
@@ -269,15 +269,15 @@ class IumkController extends Controller
     public function proses($id)
     {
         $iumk = Iumk::findOrFail($id);
-        // dd($iumk);
+        dd($iumk);
 
         Prosessurat::create([
 
             'iumk_id' => $iumk->id,
-            'syarat'=> $iumk->nama,
+            'syarat' => $iumk->nama,
             'layanan' => $iumk->layanan,
             'tglajuan' => $iumk->created_at,
-            
+
         ]);
 
         return redirect()->route('admin.proses.index')->withSuccess('Proses Surat');
