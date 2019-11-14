@@ -14,4 +14,11 @@ class Prosessurat extends Model
     {
         return $this->belongsTo(Service::class);
     }
+
+    public function iumk()
+    {
+        return $this->belongsTo(Iumk::class);
+    }
+
+    
 }

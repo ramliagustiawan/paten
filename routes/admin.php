@@ -20,6 +20,7 @@ Route::post('/daftar/{daftar}', 'DaftarController@proses')->name('daftar.proses'
 Route::resource('/proses', 'ProsesController');
 
 Route::resource('/iumk', 'IumkController');
+Route::post('/iumk/{iumk}', 'IumkController@proses')->name('iumk.proses');
 
 
 

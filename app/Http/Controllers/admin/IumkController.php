@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Iumk;
 use Fpdf;
 use PDF;
+use App\Prosessurat;
+use Carbon\Carbon;
 
 class IumkController extends Controller
 {
@@ -262,5 +264,22 @@ class IumkController extends Controller
         ])->setPaper('F4', 'portrait');
 
         return $pdf->stream();
+    }
+
+    public function proses($id)
+    {
+        $iumk = Iumk::findOrFail($id);
+        // dd($iumk);
+
+        Prosessurat::create([
+
+            'iumk_id' => $iumk->id,
+            'syarat'=> $iumk->nama,
+            'layanan' => $iumk->layanan,
+            'tglajuan' => $iumk->created_at,
+            
+        ]);
+
+        return redirect()->route('admin.proses.index')->withSuccess('Proses Surat');
     }
 }

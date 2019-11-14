@@ -96,4 +96,9 @@ class Iumk extends Model
     {
         return $this->belongsTo(Prosessurat::class);
     }
+
+    public function scopeIsSelesai($query)
+    {
+        return $query->where('hasil', null);
+    }
 }

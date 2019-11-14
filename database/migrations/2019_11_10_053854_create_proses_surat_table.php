@@ -15,21 +15,21 @@ class CreateProsesSuratTable extends Migration
     {
         Schema::create('proses_surat', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('service_id');
+            $table->unsignedBigInteger('iumk_id');
             $table->char('layanan');
             $table->char('tglajuan');
-            $table->char('syarat')->nullable();
-            $table->char('proses')->nullable();
-            $table->char('ket')->nullable();
-            $table->char('nosurat')->nullable();
-            $table->char('tglsurat')->nullable();
-            $table->char('pejabat')->nullable();
-            $table->biginteger('nip')->nullable();
-            $table->string('barcode')->nullable();
-            $table->char('finish_at')->nullable();
+            $table->char('syarat')->nullable()->default(null);
+            $table->char('proses')->nullable()->default(null);
+            $table->char('ket')->nullable()->default(null);
+            $table->char('nosurat')->nullable()->default(null);
+            $table->char('tglsurat')->nullable()->default(null);
+            $table->char('pejabat')->nullable()->default(null);
+            $table->biginteger('nip')->nullable()->default(null);
+            $table->string('barcode')->nullable()->default(null);
+            $table->char('finish_at')->nullable()->default(null);
             $table->timestamps();
 
-            $table->foreign('service_id')->references('id')->on('services')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign('iumk_id')->references('id')->on('iumk')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 

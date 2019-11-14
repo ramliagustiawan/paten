@@ -62,7 +62,7 @@
         <script src="{{ asset('assets/plugins/bs-notify.min.js')}}"></script>
 
          {{-- flash message --}}
-         @include ('front.templates.partials.alerts')
+         @include ('admin.templates.partials.alerts')
 
         {{--  swal  --}}
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
@@ -77,7 +77,7 @@
                         columns: [
 
                             {data:'DT_RowIndex',orderable:false,searchable:false},
-                            {data:'nama'},
+                            {data:'syarat'},
                             {data:'layanan'},
                             {data:'created_at'},
                             {data:'action'},

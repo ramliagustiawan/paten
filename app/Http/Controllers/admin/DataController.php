@@ -34,14 +34,10 @@ class DataController extends Controller
 
     public function surat()
     {
-        // $proses = Prosessurat::orderBy('created_at', 'DESC');
-
         $proses = Prosessurat::latest();
-        // $service = Service::latest();
-
         return datatables()->of($proses)
             ->addColumn('nama', function (Prosessurat $model) {
-                return $model->service->nama;
+                return $model->iumk->nama;
             })
             ->addColumn('action', 'admin.proses.action')
             ->addIndexColumn()
@@ -61,7 +57,7 @@ class DataController extends Controller
 
     public function iumk()
     {
-        $iumk = Iumk::orderBy('created_at', 'DESC');
+        $iumk = Iumk::isSelesai()->orderBy('created_at', 'DESC');
 
         return datatables()->of($iumk)
             ->addColumn('action', 'admin.iumk.action')
