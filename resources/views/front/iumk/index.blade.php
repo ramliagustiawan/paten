@@ -211,14 +211,14 @@
 
                     {{-- jenis surat invisible value default --}}
 
-                    <div class="form-group row @error('layanan') has-error @enderror invisible ">
+                    <div class="form-group row @error('layanan_id') has-error @enderror invisible ">
                             <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kategori</strong> </label>
                             <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                            <input type="text" name="layanan" class="form-control" id="layanan" placeholder="Masukkan layanan Anda" value="IUMK"
+                            <input type="text" name="layanan_id" class="form-control" id="layanan" placeholder="Masukkan layanan Anda" value="1"
                             required>
                             </div>
 
-                            @error('layanan')
+                            @error('layanan_id')
                               <span class="help-block">{{ $message }}</span>
                             @enderror
 

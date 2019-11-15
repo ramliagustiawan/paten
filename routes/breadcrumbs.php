@@ -37,6 +37,18 @@ Breadcrumbs::for('admin.proses.index', function ($trail) {
     $trail->push('Beranda', route('admin.dashboard'));
     $trail->push('Status Surat', route('admin.proses.index'));
 });
+// proses show
+Breadcrumbs::for('admin.proses.show', function ($trail, $proses) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Status Surat', route('admin.proses.index'));
+    $trail->push('Detail Surat', route('admin.proses.show', $proses));
+});
+// proses edit
+Breadcrumbs::for('admin.proses.edit', function ($trail, $proses) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Status Surat', route('admin.proses.index'));
+    $trail->push('Detail Surat', route('admin.proses.edit', $proses));
+});
 
 
 // tindak lanjut index

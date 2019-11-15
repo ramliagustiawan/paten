@@ -37,7 +37,7 @@ class DataController extends Controller
         $proses = Prosessurat::latest();
         return datatables()->of($proses)
             ->addColumn('nama', function (Prosessurat $model) {
-                return $model->iumk->nama;
+                return $model->nama;
             })
             ->addColumn('action', 'admin.proses.action')
             ->addIndexColumn()
@@ -60,6 +60,9 @@ class DataController extends Controller
         $iumk = Iumk::isSelesai()->orderBy('created_at', 'DESC');
 
         return datatables()->of($iumk)
+            ->addColumn('layanan_id', function (Iumk $model) {
+                return $model->layanan->layanan;
+            })
             ->addColumn('action', 'admin.iumk.action')
             ->addIndexColumn()
             ->toJson();

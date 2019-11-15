@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Iumk;
+use App\Layanan;
 use Fpdf;
 use PDF;
 use App\Prosessurat;
@@ -33,7 +34,8 @@ class IumkController extends Controller
         $iumk = Iumk::orderBY('created_at', 'DESC')->get();
         return view('admin.iumk.create', [
             'title' => 'Ajukan IUMK',
-            'iumk' => $iumk
+            'iumk' => $iumk,
+            'layanan' => Layanan::orderBy('layanan', 'ASC')->get(),
         ]);
     }
 
@@ -60,7 +62,7 @@ class IumkController extends Controller
             'statusbangunan' => 'required',
             'alamatusaha' => 'required|min:10',
             'modal' => 'required',
-            'layanan' => 'required',
+            'layanan_id' => 'required',
             'fotoktp' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotosku' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
@@ -104,7 +106,7 @@ class IumkController extends Controller
             'statusbangunan' => $request->statusbangunan,
             'alamatusaha' => $request->alamatusaha,
             'modal' => $request->modal,
-            'layanan' => $request->layanan,
+            'layanan_id' => $request->layanan_id,
             'fotoktp' => $fotoktp,
             'fotosku' => $fotosku,
             'fotopbb' => $fotopbb,
@@ -112,7 +114,7 @@ class IumkController extends Controller
 
         ]);
 
-        return redirect()->route('admin.iumk.index')->withSuccess('Permohonan IUMK Berhasil Di Kirim');
+        return redirect()->route('admin.iumk.index')->withSuccess('Permohonan IUMK Berhasil Di Tambahkan');
     }
 
     /**
@@ -239,7 +241,7 @@ class IumkController extends Controller
 
         ]);
 
-        return redirect()->route('admin.iumk.edit', $iumk)->withInfo('Permohonan IUMK Valid');
+        return redirect()->route('admin.iumk.edit', $iumk)->withInfo('Permohonan IUMK ' . $iumk->nama . ' valid');
     }
 
     /**
@@ -281,7 +283,7 @@ class IumkController extends Controller
 
         ]);
 
-        return redirect()->route('admin.proses.index')->withSuccess('Proses Surat');
+        return redirect()->route('admin.proses.index')->withSuccess('Proses Surat: ' . $iumk->nama);
     }
 
     public function qrcode($id)

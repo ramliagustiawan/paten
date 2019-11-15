@@ -5,7 +5,7 @@
         <div class="card mt-1">
 
                 <div class="card-header">
-                    <h4 class="box-title">Detail Permohonan IUMK</h4>
+                    <h4 class="box-title">Detail Surat</h4>
 
 
 
@@ -25,91 +25,63 @@
 
                                 <tr>
                                     <th>Nama Pemohon</th>
-                                    <td>{{ $daftar->nama }}</td>
+                                    <td>{{ $daftar->syarat }}</td>
                                 </tr>
 
                                 <tr>
-                                        <th>NIK</th>
-                                        <td>{{ $daftar->nik }}</td>
+                                        <th>Layanan</th>
+                                        <td>{{ $daftar->layanan }}</td>
                                     </tr>
 
                                 <tr>
-                                    <th>Layanan</th>
-                                    <td>{{ $daftar->layanan->layanan }}</td>
+                                    <th>Tanggal Pengajuan Surat</th>
+                                    <td>{{ $daftar->tglajuan }}</td>
                                 </tr>
 
                                 <tr>
-                                    <th>Alamat</th>
-                                    <td>{{ $daftar->alamat }}</td>
+                                    <th>Tanggal Selesai</th>
+                                    <td>{{ $daftar->created_at}}</td>
                                 </tr>
 
                                 <tr>
-                                    <th>Kelurahan</th>
-                                    <td>{{ $daftar->kelurahan }}</td>
+                                    <th>Update Surat</th>
+                                    <td>{{ $daftar->updated_at }}</td>
                                 </tr>
 
                                 <tr>
-                                    <th>No Telp</th>
+                                    <th>Proses</th>
                                     <td>{{ $daftar->kontak }}</td>
                                 </tr>
 
                                 <tr>
-                                    <th>Nama Perusahaan</th>
+                                    <th>ket</th>
                                      <td>{{ $daftar->naper }}</td>
                                 </tr>
 
                                 <tr>
-                                    <th>Bentuk Usaha</th>
+                                    <th>Nomor Surat</th>
                                     <td>{{ $daftar->bentuk }}</td>
                                 </tr>
 
                                 <tr>
-                                    <th>NPWP</th>
+                                    <th>Pejabat</th>
                                     <td>{{ $daftar->npwp }}</td>
                                 </tr>
 
                                 <tr>
-                                    <th>Kegiatan Usaha</th>
+                                    <th>NIP</th>
                                     <td>{{ $daftar->giatusaha }}</td>
                                 </tr>
 
                                 <tr>
-                                    <th>Sarana Usaha</th>
+                                    <th>Barcode</th>
                                     <td>{{ $daftar->statusbangunan }}</td>
                                 </tr>
 
                                 <tr>
-                                    <th>Alamat Usaha</th>
+                                    <th>finish_at</th>
                                     <td>{{ $daftar->alamatusaha }}</td>
                                 </tr>
-
-                                <tr>
-                                    <th>Modal</th>
-                                    <td>{{ $daftar->modal }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th>KTP</th>
-                                    <td><img src="{{ url($daftar->getCover()) }}" height="250px"></td>
-
-                                </tr>
-
-                                <tr>
-                                    <th>Surat Keterangan Usaha</th>
-                                    <td><img src="{{ url($daftar->getSku()) }}" height="250px"></td>
-                                </tr>
-
-                                <tr>
-                                    <th>Pajak Bumi Bangunan</th>
-                                    <td><img src="{{ url($daftar->getPbb()) }}" height="250px"></td>
-                                </tr>
-
-                                <tr>
-                                    <th>Foto Diri</th>
-                                    <td><img src="{{ url($daftar->getDiri()) }}" height="250px"></td>
-                                </tr>
-
-
 
                           </table>
                         </div>

@@ -48,11 +48,10 @@ class ProsesController extends Controller
      */
     public function show($id)
     {
-        $iumk = Prosessurat::find($id);
-        dd($iumk);
+        $proses = Prosessurat::find($id);
         return view('admin.proses.show', [
             'title' => 'Detail Proses Layanan',
-            'daftar' => $iumk,
+            'daftar' => $proses,
         ]);
     }
 
@@ -62,9 +61,12 @@ class ProsesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Prosessurat $prosessurat)
     {
-        //
+        return view('admin.proses.edit', [
+            'title' => 'Edit proses Surat',
+            'proses' => $prosessurat,
+        ]);
     }
 
     /**

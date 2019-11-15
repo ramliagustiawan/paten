@@ -20,7 +20,7 @@ class CreateIumkTable extends Migration
             $table->string('alamat', 50);
             $table->char('kelurahan');
             $table->char('kontak');
-            $table->char('layanan');
+            $table->unsignedBigInteger('layanan_id');
             $table->char('naper');
             $table->char('bentuk');
             $table->char('npwp');
@@ -33,7 +33,6 @@ class CreateIumkTable extends Migration
             $table->string('fotopbb')->nullable()->default(null);
             $table->string('fotodiri')->nullable()->default(null);
 
-
             $table->char('syarat')->nullable();
             $table->char('proses')->nullable();
             $table->char('ketproses')->nullable();
@@ -45,6 +44,9 @@ class CreateIumkTable extends Migration
             $table->string('hasil')->nullable();
 
             $table->timestamps();
+
+            // BUAT FOREIGN KEY
+            $table->foreign('layanan_id')->references('id')->on('layanan')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 

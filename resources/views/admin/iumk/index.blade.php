@@ -91,7 +91,7 @@
 
                             {data:'DT_RowIndex',orderable:false,searchable:false},
                             {data:'nama'},
-                            {data:'layanan'},
+                            {data:'layanan_id'},
                             {data:'alamat'},
                             {data:'created_at'},
                             {data:'syarat'},
