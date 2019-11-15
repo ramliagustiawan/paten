@@ -212,6 +212,11 @@
 
 </table>
 
+<table>
+        <th></th>
+        <td ><img src="{{('./assets/code/qr.png')}}" style="margin-left:125px; height:100px;"></td>
+</table>
+
 
 
 </body>

@@ -308,9 +308,11 @@
 
                                                 </div>
 
-                                                <div class="form-group row @error('barcode') has-error @enderror">
+                                                {{-- <div class="form-group row @error('barcode') has-error @enderror">
+                                                 
                                                   <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Barcode </strong> </label>
                                                   <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                                     
                                                   <input type="text" name="barcode" class="form-control" id="barcode" placeholder="Barcode" value="{{ old('barcode') ?? $iumk->barcode}}">
                                                   </div>
 
@@ -318,7 +320,7 @@
                                                     <span class="help-block">{{ $message }}</span>
                                                   @enderror
 
-                                              </div>
+                                              </div> --}}
 
                                                {{--  --}}
 
@@ -350,7 +352,10 @@
 
                                                         <div class="form-group mt-2">
                                                             <input type="submit" value="Validasi" class="btn btn-primary">
+                                                            <a href="{{ route('admin.iumk.qrcode', $iumk)}}" class="btn btn-info modal-show edit" >Generate Qrcode</a>
                                                         </div>
+
+                                                       
 
 
                                                       </form>

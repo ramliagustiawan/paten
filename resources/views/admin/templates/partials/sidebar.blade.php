@@ -161,15 +161,13 @@
             <li class="nav-header">REGISTER</li>
             <li class="nav-item">
               <a href="{{ route('admin.tindak.index') }}" class="nav-link">
-                <i class="nav-icon fas fa-envelope-open"></i>
-                {{-- <i class="fas fa-envelope-open"></i> --}}
+                <i class="nav-icon fas fa-arrow-alt-circle-down"></i>
                 <p>Surat Masuk</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="{{ route('admin.tindak.index') }}" class="nav-link">
-                <i class="nav-icon fas fa-envelope"></i>
-                {{-- <i class="fas fa-envelope"></i> --}}
+                <i class="nav-icon fas fa-arrow-alt-circle-up"></i>
                 <p>Surat Keluar</p>
               </a>
             </li>

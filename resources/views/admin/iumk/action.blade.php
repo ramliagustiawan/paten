@@ -7,6 +7,8 @@
 
     <a href="{{ route('admin.iumk.cetak', $model)}}" class="btn btn-primary modal-show edit" title="{{ $model->name }}" style="font-size:14px;">Cetak</a>
 
+   
+
     <form action="{{ route('admin.iumk.proses', $model) }}" method="POST">
         @csrf
         <input type="submit" value="Selesai" class="btn btn-success">

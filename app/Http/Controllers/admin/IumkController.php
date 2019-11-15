@@ -9,6 +9,7 @@ use Fpdf;
 use PDF;
 use App\Prosessurat;
 use Carbon\Carbon;
+use QRCode;
 
 class IumkController extends Controller
 {
@@ -238,7 +239,7 @@ class IumkController extends Controller
 
         ]);
 
-        return redirect()->route('admin.iumk.index')->withInfo('Permohonan IUMK Valid');
+        return redirect()->route('admin.iumk.edit',$iumk)->withInfo('Permohonan IUMK Valid');
     }
 
     /**
@@ -269,7 +270,7 @@ class IumkController extends Controller
     public function proses($id)
     {
         $iumk = Iumk::findOrFail($id);
-        dd($iumk);
+        // dd($iumk);
 
         Prosessurat::create([
 
@@ -281,5 +282,31 @@ class IumkController extends Controller
         ]);
 
         return redirect()->route('admin.proses.index')->withSuccess('Proses Surat');
+    }
+
+    public function qrcode($id)
+    {
+        $iumk = Iumk::find($id);
+        $file = public_path('assets/code/qr.png');
+        // dd($iumk);
+        // dd($file);
+
+        $nama = $iumk->nama;
+        // $nik = $iumk->nik;
+        // $alamat = $iumk->alamat;
+        $kelurahan = $iumk->layanan;
+        $naper = $iumk->naper;
+        $bentuk = $iumk->nik;
+        // dd($nama);
+
+            QRCode::meCard($nama,$kelurahan,$naper,$bentuk)
+                ->setErrorCorrectionLevel('H')
+                ->setSize(3)
+                ->setMargin(2)
+                ->setOutfile($file)
+                ->png();
+
+        return redirect()->route('admin.iumk.index')->withSuccess('Qrcode Generate Surat Siap Cetak');
+        
     }
 }
