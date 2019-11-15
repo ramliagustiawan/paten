@@ -231,6 +231,24 @@
 
                                                         </div>
 
+                                                        {{-- <div class="form-group row  @error('fotodiri') has-error @enderror">
+                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2">
+                                                                    <label class="" for="">Foto Diri </label>
+                                                                </div>
+
+                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-10">
+
+                                                                    <img src="{{ url($iumk->getDiri()) }}" height="110px">
+                                                                    <input type="file" name="fotodiri" class="form-group" >
+
+                                                                </div>
+
+                                                                @error('fotodiri')
+                                                                    <span class="help-block">{{ $message }}</span>
+                                                                @enderror
+
+                                                        </div> --}}
+
 
                                                         <div class="card">
                                                                 <div class="card-header">
@@ -309,10 +327,10 @@
                                                 </div>
 
                                                 {{-- <div class="form-group row @error('barcode') has-error @enderror">
-                                                 
+
                                                   <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Barcode </strong> </label>
                                                   <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                                     
+
                                                   <input type="text" name="barcode" class="form-control" id="barcode" placeholder="Barcode" value="{{ old('barcode') ?? $iumk->barcode}}">
                                                   </div>
 
@@ -355,7 +373,7 @@
                                                             <a href="{{ route('admin.iumk.qrcode', $iumk)}}" class="btn btn-info modal-show edit" >Generate Qrcode</a>
                                                         </div>
 
-                                                       
+
 
 
                                                       </form>

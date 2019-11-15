@@ -61,10 +61,10 @@
     </table>
 
 
-    
+
 
 <table align="center"  >
-       
+
     <tr>
         <td height="1"></td>
     </tr>
@@ -98,7 +98,7 @@
             <td height="1"></td>
         </tr>
 
-     
+
 </table>
 
 
@@ -212,10 +212,22 @@
 
 </table>
 
+{{-- tabel foto --}}
+
 <table>
-        <th></th>
-        <td ><img src="{{('./assets/code/qr.png')}}" style="margin-left:125px; height:100px;"></td>
+    <th></th>
+    {{-- <td><img src="{{('./assets/images/kota.png')}}" style="margin-left:100px; height:100px;"></td> --}}
+
+    <th></th>
+    <td ><img src="{{('./assets/code/qr.png')}}" style="margin-left:160px; height:100px;"></td>
 </table>
+
+{{-- tabel qrcode --}}
+{{-- <table>
+        <th></th>
+        <td ><img src="{{('./assets/code/qr.png')}}" style="height:80px;"></td>
+</table> --}}
+
 
 
 

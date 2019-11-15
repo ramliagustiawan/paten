@@ -158,10 +158,10 @@ class IumkController extends Controller
         $this->validate($request, [
 
             'nama' => 'required',
-            'nik' => 'required|numeric',
+            'nik' => 'required|numeric|max:9999999999999999',
             'alamat' => 'required|min:3',
             'kelurahan' => 'required',
-            'kontak' => 'required|numeric',
+            'kontak' => 'required|numeric|max:999999999999',
             'naper' => 'required',
             'bentuk' => 'required',
             'npwp' => 'required',
@@ -197,15 +197,15 @@ class IumkController extends Controller
         }
 
         if ($request->hasFile('fotosku')) {
-            $fotoktp = $request->file('fotosku')->store('assets/covers');
+            $fotosku = $request->file('fotosku')->store('assets/covers');
         }
 
         if ($request->hasFile('fotopbb')) {
-            $fotoktp = $request->file('fotopbb')->store('assets/covers');
+            $fotopbb = $request->file('fotopbb')->store('assets/covers');
         }
 
         if ($request->hasFile('fotodiri')) {
-            $fotoktp = $request->file('fotodiri')->store('assets/covers');
+            $fotodiri = $request->file('fotodiri')->store('assets/covers');
         }
 
         $iumk->update([
@@ -223,10 +223,10 @@ class IumkController extends Controller
             'alamatusaha' => $request->alamatusaha,
             'modal' => $request->modal,
             'layanan' => $request->layanan,
-            'fotoktp' => $fotoktp,
-            'fotosku' => $fotosku,
-            'fotopbb' => $fotopbb,
-            'fotodiri' => $fotodiri,
+            // 'fotoktp' => $fotoktp,
+            // 'fotosku' => $fotosku,
+            // 'fotopbb' => $fotopbb,
+            // 'fotodiri' => $fotodiri,
             'syarat' => $request->syarat,
             'proses' => $request->proses,
             // 'ketproses' => $request->ketproses,
@@ -239,7 +239,7 @@ class IumkController extends Controller
 
         ]);
 
-        return redirect()->route('admin.iumk.edit',$iumk)->withInfo('Permohonan IUMK Valid');
+        return redirect()->route('admin.iumk.edit', $iumk)->withInfo('Permohonan IUMK Valid');
     }
 
     /**
@@ -299,14 +299,13 @@ class IumkController extends Controller
         $bentuk = $iumk->nik;
         // dd($nama);
 
-            QRCode::meCard($nama,$kelurahan,$naper,$bentuk)
-                ->setErrorCorrectionLevel('H')
-                ->setSize(3)
-                ->setMargin(2)
-                ->setOutfile($file)
-                ->png();
+        QRCode::meCard($nama, $kelurahan, $naper, $bentuk)
+            ->setErrorCorrectionLevel('H')
+            ->setSize(3)
+            ->setMargin(2)
+            ->setOutfile($file)
+            ->png();
 
-        return redirect()->route('admin.iumk.index')->withSuccess('Qrcode Generate Surat Siap Cetak');
-        
+        return redirect()->route('admin.iumk.index')->withSuccess('Qrcode Generate  permohonan : ' . $iumk->nama . ' Siap Cetak');
     }
 }
