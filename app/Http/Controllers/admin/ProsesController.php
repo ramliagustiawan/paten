@@ -49,9 +49,12 @@ class ProsesController extends Controller
     public function show($id)
     {
         $proses = Prosessurat::find($id);
+        // $iumk = Iumk::find($id);
+        // dd($proses);
         return view('admin.proses.show', [
             'title' => 'Detail Proses Layanan',
             'daftar' => $proses,
+            // 'iumk' => $iumk,
         ]);
     }
 

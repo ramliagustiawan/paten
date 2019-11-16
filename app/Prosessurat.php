@@ -19,6 +19,10 @@ class Prosessurat extends Model
     {
         return $this->belongsTo(Iumk::class);
     }
+    public function layanan()
+    {
+        return $this->belongsTo(Layanan::class);
+    }
 
     // fungsi mengubah format tanggal
     public function getCreatedAtAttribute()

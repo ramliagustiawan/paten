@@ -35,7 +35,7 @@
 
                                 <tr>
                                     <th>Layanan</th>
-                                    <td>{{ $daftar->layanan->layanan }}</td>
+                                    <td>{{ $daftar->layanan->layanan}}</td>
                                 </tr>
 
                                 <tr>

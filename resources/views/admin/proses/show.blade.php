@@ -25,17 +25,27 @@
 
                                 <tr>
                                     <th>Nama Pemohon</th>
-                                    <td>{{ $daftar->syarat }}</td>
+                                    <td>{{ $daftar->nama }}</td>
                                 </tr>
 
                                 <tr>
                                         <th>Layanan</th>
-                                        <td>{{ $daftar->layanan }}</td>
+                                        <td>{{ $daftar->finish_at }}</td>
                                     </tr>
 
                                 <tr>
                                     <th>Tanggal Pengajuan Surat</th>
                                     <td>{{ $daftar->tglajuan }}</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Persyaratan</th>
+                                     <td>{{ $daftar->syarat }}</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Proses</th>
+                                    <td>{{ $daftar->proses }}</td>
                                 </tr>
 
                                 <tr>
@@ -49,18 +59,8 @@
                                 </tr>
 
                                 <tr>
-                                    <th>Proses</th>
-                                    <td>{{ $daftar->kontak }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th>ket</th>
-                                     <td>{{ $daftar->naper }}</td>
-                                </tr>
-
-                                <tr>
                                     <th>Nomor Surat</th>
-                                    <td>{{ $daftar->bentuk }}</td>
+                                    <td>{{ $daftar->layanan }}</td>
                                 </tr>
 
                                 <tr>

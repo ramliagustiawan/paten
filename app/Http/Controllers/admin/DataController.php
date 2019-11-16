@@ -38,8 +38,8 @@ class DataController extends Controller
         $proses = Prosessurat::latest();
         // dd($proses);
         return datatables()->of($proses)
-            ->addColumn('nama', function (Prosessurat $model) {
-                return $model->iumk;
+            ->addColumn('proses_id', function (Prosessurat $model) {
+                return $model->kontak;
             })
             ->addColumn('action', 'admin.proses.action')
             ->addIndexColumn()

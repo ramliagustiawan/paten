@@ -266,8 +266,6 @@ class IumkController extends Controller
     public function cetak($id)
     {
         $iumk = Iumk::find($id);
-        // $pejabat = Pejabat::pluck('nama');
-        // dd($iumk);
         $pdf = PDF::loadView('admin.iumk.cetak', [
             'iumk' => $iumk,
             // 'pejabat' => $pejabat,
@@ -286,7 +284,7 @@ class IumkController extends Controller
         Prosessurat::create([
 
             'proses_id' => $iumk->layanan_id,
-            'layanan' => $iumk->nama,
+            'nama' => $iumk->nama,
             'finish_at' => $iumk->layanan->layanan,
             'proses' => $iumk->proses,
             'syarat' => $iumk->syarat,

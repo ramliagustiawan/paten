@@ -302,26 +302,26 @@
 
                                                     </div>
 
-                                                    <div class="form-group row @error('barcode') has-error @enderror">
+                                                    {{-- <div class="form-group row @error('barcode') has-error @enderror">
                                                     <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Pejabat Yang Bertanda</strong> </label>
                                                     <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                                         <select name="barcode" id="" class="form-control select2">
                                                             <option selected>{{old('barcode') ?? $iumk->barcode}}</option>
                                                             <option value="Camat Dungingi">Camat Dungingi</option>
                                                             <option value="a.n Camat Dungingi">Sekcam Dungingi</option>
-                                                            <option value="a.n Camat Dungingi">Kepala Seksi</option>
+                                                            <option value="a.n Camat Dungingi">Kepala Seksi</option> --}}
                                                             {{-- <option value="Surat Selesai">Surat Selesai </option> --}}
-                                                          </select>
+                                                          {{-- </select>
                                                     </div>
 
                                                     @error('barcode')
                                                       <span class="help-block">{{ $message }}</span>
                                                     @enderror
 
-                                                </div>
+                                                </div> --}}
 
                                                   <div class="form-group row @error('pejabat_id') has-error @enderror">
-                                                    <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Nama Pejabat</strong> </label>
+                                                    <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Pejabat</strong> </label>
                                                     <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                                         <select name="pejabat_id" id="" class="form-control select2">
 
@@ -345,23 +345,23 @@
 
                                                 </div>
 
-                                                <div class="form-group row @error('nip') has-error @enderror">
+                                                {{-- <div class="form-group row @error('nip') has-error @enderror">
                                                     <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>NIP</strong> </label>
                                                     <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                                         <select name="nip" id="" class="form-control select2">
                                                             <option selected>{{old('nip') ?? $iumk->nip}}</option>
                                                             <option value="19690908 199203 2 011">Camat Dungingi</option>
-                                                            <option value="19840813 200312 1 002">Sekcam Dungingi</option>
+                                                            <option value="19840813 200312 1 002">Sekcam Dungingi</option> --}}
                                                             {{-- <option value="Hj. Harni Mahmud, S.AP">Kepala Seksi</option> --}}
                                                             {{-- <option value="Surat Selesai">Surat Selesai </option> --}}
-                                                          </select>
+                                                          {{-- </select>
                                                     </div>
 
                                                     @error('nip')
                                                       <span class="help-block">{{ $message }}</span>
                                                     @enderror
 
-                                                </div>
+                                                </div> --}}
 
                                                <div class="form-group row @error('proses') has-error @enderror">
                                                 <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Posisi Berkas</strong> </label>
