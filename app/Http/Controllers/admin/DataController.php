@@ -10,6 +10,7 @@ use App\Prosessurat;
 use App\Report;
 use App\Iumk;
 use App\Layanan;
+use App\Suket;
 
 class DataController extends Controller
 {
@@ -66,6 +67,19 @@ class DataController extends Controller
                 return $model->layanan->layanan;
             })
             ->addColumn('action', 'admin.iumk.action')
+            ->addIndexColumn()
+            ->toJson();
+    }
+
+    public function suket()
+    {
+        $suket = Suket::isSelesai()->orderBy('created_at', 'DESC');
+
+        return datatables()->of($suket)
+            ->addColumn('layanan_id', function (Suket $model) {
+                return $model->layanan->layanan;
+            })
+            ->addColumn('action', 'admin.suket.action')
             ->addIndexColumn()
             ->toJson();
     }

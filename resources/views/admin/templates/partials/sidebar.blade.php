@@ -113,28 +113,28 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ route('admin.iumk.index') }}" class="nav-link">
+                    <a href="" class="nav-link">
                         <i class="nav-icon fas fa-chart-pie"></i>
                         <p>Dispensasi Nikah</p>
                         {{-- <span class="badge badge-light ml-5">9</span> --}}
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ route('admin.iumk.index') }}" class="nav-link">
+                    <a href="{{ route('admin.suket.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-chart-pie"></i>
                         <p>Surat Keterangan</p>
                         {{-- <span class="badge badge-light ml-5">9</span> --}}
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ route('admin.iumk.index') }}" class="nav-link">
+                    <a href="" class="nav-link">
                         <i class="nav-icon fas fa-chart-pie"></i>
                         <p>SKTM</p>
                         {{-- <span class="badge badge-light ml-5">9</span> --}}
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ route('admin.iumk.index') }}" class="nav-link">
+                    <a href="" class="nav-link">
                         <i class="nav-icon fas fa-chart-pie"></i>
                         <p>Domisili Usaha</p>
                         {{-- <span class="badge badge-light ml-5">9</span> --}}

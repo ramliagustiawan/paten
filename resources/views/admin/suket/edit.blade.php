@@ -24,7 +24,7 @@
 
                                             </div>
                                             <div class="card-body">
-                                              <h6 class="card-title">Silahkan Lengkapi Data Anda</h6>
+                                              <h6 class="card-title">Validasi Data dan Perbaiki Apabila Masih Ada Kesalahan</h6>
                                               <p class="card-text"></p>
                                               {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
                                             </div>
@@ -35,8 +35,9 @@
 
                                                   <div class="col-xs-10 col-md-10 col-lg-10 mt-1">
 
-                                                      <form action="{{ route('admin.iumk.store') }}" method="POST" enctype="multipart/form-data">
+                                                      <form action="{{ route('admin.iumk.update',$iumk) }}" method="POST" enctype="multipart/form-data">
                                                         @csrf
+                                                        @method("PUT")
 
                                                         <p> Berdasarkan Peraturan Presiden Nomor 98 Tahun 2014 Tentang Perizinan Untuk Usaha Mikro dan Kecil (Lembar Negera Republik Indonesia Tahun 2014 Nomor 222);Peraturan Menteri Dalam Negeri Republik Indonesia Nomor 83 Tahun 2014 tentang Pedoman Pemberikan Izin Usaha Mikro Kecil; Peraturan Walikota Gorontalo tentang Pelimpahan Sebagian Usuran Pemerintahan dari Walikota Gorontalo kepada Camat, bersama ini menyatakan dan memberikan izin kepada :
                                                         </p>
@@ -44,7 +45,7 @@
                                                         <div class="form-group row @error('nama') has-error @enderror">
                                                             <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Nama </strong></label>
                                                             <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                                            <input type="text" name="nama" class="form-control" id="nama" placeholder="Masukkan Nama Anda" value="{{ old('nama') }}" >
+                                                            <input type="text" name="nama" class="form-control" id="nama" placeholder="Masukkan Nama Anda" value="{{ old('nama') ?? $iumk->nama }}" >
                                                             </div>
                                                             @error('nama')
                                                               <span class="help-block">{{ $message }}</span>
@@ -55,7 +56,7 @@
                                                         <div class="form-group row @error('nik') has-error @enderror">
                                                                 <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>NIK</strong> </label>
                                                                 <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                                                <input type="" name="nik" class="form-control" id="nik" placeholder="Masukkan Nomor Induk Kependudukan Anda" value="{{ old('nik') }}" >
+                                                                <input type="" name="nik" class="form-control" id="nik" placeholder="Masukkan Nomor Induk Kependudukan Anda" value="{{ old('nik') ?? $iumk->nik }}" >
                                                                 </div>
 
                                                                 @error('nik')
@@ -69,7 +70,7 @@
                                                         <div class="form-group row @error('alamat') has-error @enderror">
                                                             <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Alamat</strong> </label>
                                                             <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                                            <input type="text" name="alamat" class="form-control" id="alamat" placeholder="Masukkan Alamat Anda" value="{{ old('alamat') }}"
+                                                            <input type="text" name="alamat" class="form-control" id="alamat" placeholder="Masukkan Alamat Anda" value="{{ old('alamat') ?? $iumk->alamat }}"
                                                             >
                                                             </div>
 
@@ -106,7 +107,7 @@
                                                         <div class="form-group row @error('kontak') has-error @enderror">
                                                             <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kontak</strong> </label>
                                                             <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                                            <input type="" name="kontak" class="form-control" id="kontak" placeholder="Masukkan Nomor Telp/Hp Anda" value="{{ old('kontak') }}">
+                                                            <input type="" name="kontak" class="form-control" id="kontak" placeholder="Masukkan Nomor Telp/Hp Anda" value="{{ old('kontak') ?? $iumk->kontak }}">
                                                             </div>
 
                                                             @error('kontak')
@@ -120,7 +121,7 @@
                                                         <div class="form-group row @error('naper') has-error @enderror">
                                                                 <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Nama Perusahaan </strong></label>
                                                                 <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                                                <input type="text" name="naper" class="form-control" id="naper" placeholder="Masukkan Nama Anda" value="{{ old('naper') }}">
+                                                                <input type="text" name="naper" class="form-control" id="naper" placeholder="Masukkan Nama Anda" value="{{ old('naper') ?? $iumk->naper }}">
                                                                 </div>
                                                                 @error('naper')
                                                                   <span class="help-block">{{ $message }}</span>
@@ -148,7 +149,7 @@
                                                             <div class="form-group row @error('npwp') has-error @enderror">
                                                                     <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>NPWP</strong> </label>
                                                                     <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                                                    <input type="" name="npwp" class="form-control" id="npwp" placeholder="Masukkan NPWP atau (-) jika belum ada" value="{{ old('npwp') }}">
+                                                                    <input type="" name="npwp" class="form-control" id="npwp" placeholder="Masukkan NPWP atau (-) jika belum ada" value="{{ old('npwp') ?? $iumk->npwp }}">
                                                                     </div>
 
                                                                     @error('npwp')
@@ -160,7 +161,7 @@
                                                                 <div class="form-group row @error('giatusaha') has-error @enderror">
                                                                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kegiatan Usaha</strong> </label>
                                                                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                                                        <input type="" name="giatusaha" class="form-control" id="giatusaha" placeholder="Contoh : Jual Nasi Kuning" value="{{ old('giatusaha') }}">
+                                                                        <input type="" name="giatusaha" class="form-control" id="giatusaha" placeholder="Contoh : Jual Nasi Kuning" value="{{ old('giatusaha') ?? $iumk->giatusaha }}">
                                                                         </div>
 
                                                                         @error('giatusaha')
@@ -190,7 +191,7 @@
                                                                 <div class="form-group row @error('alamatusaha') has-error @enderror">
                                                                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Alamat Usaha</strong> </label>
                                                                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                                                        <input type="text" name="alamatusaha" class="form-control" id="alamatusaha" placeholder="Tuliskan Lengkap Contoh : Jalan Apel Kelurahan Huangobotu Kecamatan Dungingi" value="{{ old('alamatusaha') }}">
+                                                                        <input type="text" name="alamatusaha" class="form-control" id="alamatusaha" placeholder="Tuliskan Lengkap Contoh : Jalan Apel Kelurahan Huangobotu Kecamatan Dungingi" value="{{ old('alamatusaha') ?? $iumk->alamatusaha }}">
                                                                         </div>
 
                                                                         @error('alamatusaha')
@@ -203,7 +204,7 @@
                                                             <div class="form-group row @error('modal') has-error @enderror">
                                                                 <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Jumlah Modal</strong> </label>
                                                                 <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                                                <input type="text" name="modal" class="form-control" id="modal" placeholder="Contoh : 20.000.000" value="{{ old('modal') }}"
+                                                                <input type="text" name="modal" class="form-control" id="modal" placeholder="Contoh : 20.000.000" value="{{ old('modal') ?? $iumk->modal }}"
                                                                 >
                                                                 </div>
 
@@ -217,17 +218,12 @@
 
                                                         {{-- jenis surat invisible value default --}}
 
-                                                        <div class="form-group row @error('layanan_id') has-error @enderror invisible">
+                                                        <div class="form-group row @error('layanan_id') has-error @enderror invisible ">
                                                                 <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kategori</strong> </label>
                                                                 <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                                                 <input type="text" name="layanan_id" class="form-control" id="layanan" placeholder="Masukkan layanan Anda" value="1"
                                                                 required>
                                                                 </div>
-                                                                {{-- <select name="layanan_id" id="" class="form-control select2">
-                                                                    @foreach ($layanan as $item)
-                                                                    <option value="{{ $item->id }}">{{ $item->layanan }}</option>
-                                                                    @endforeach
-                                                                </select> --}}
 
                                                                 @error('layanan_id')
                                                                   <span class="help-block">{{ $message }}</span>
@@ -235,106 +231,182 @@
 
                                                         </div>
 
+                                                        {{-- <div class="form-group row  @error('fotodiri') has-error @enderror">
+                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2">
+                                                                    <label class="" for="">Foto Diri </label>
+                                                                </div>
+
+                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-10">
+
+                                                                    <img src="{{ url($iumk->getDiri()) }}" height="110px">
+                                                                    <input type="file" name="fotodiri" class="form-group" >
+
+                                                                </div>
+
+                                                                @error('fotodiri')
+                                                                    <span class="help-block">{{ $message }}</span>
+                                                                @enderror
+
+                                                        </div> --}}
+
 
                                                         <div class="card">
                                                                 <div class="card-header">
-                                                                <strong> Persyaratan Yang Harus Dibawa :</strong>
+                                                                <strong> Proses Lebih Lanjut :</strong>
                                                                 </div>
-                                                                <div class="card-body up">
 
-                                                                        <div class="form-group row  @error('fotoktp') has-error @enderror">
-                                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                                                    <label class="" for="">1. KTP (Copy)</label>
-                                                                                </div>
-
-                                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                                                    <input type="file" name="fotoktp" class="form-group">
-                                                                                    <br>
-                                                                                    <input type="radio" aria-label="Radio button for following text input"> <span>Lewatkan Lampiran *</span>
-                                                                                </div>
-
-                                                                                @error('fotoktp')
-                                                                                    <span class="help-block">{{ $message }}</span>
-                                                                                @enderror
-
-                                                                        </div>
-
-                                                                        <hr>
-
-                                                                        <div class="form-group row  @error('fotopbb') has-error @enderror">
-                                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                                                    <label class="" for="">2. Bukti Pelunasan PBB</label>
-                                                                                </div>
-
-                                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                                                    <input type="file" name="fotopbb" class="form-group">
-                                                                                    <br>
-                                                                                    <input type="radio" aria-label="Radio button for following text input"> <span>Lewatkan Lampiran *</span>
-                                                                                </div>
-
-                                                                                @error('fotopbb')
-                                                                                    <span class="help-block">{{ $message }}</span>
-                                                                                @enderror
-
-                                                                        </div>
-
-                                                                        <hr>
-
-                                                                        <div class="form-group row  @error('fotosku') has-error @enderror">
-                                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                                                    <label class="" for="">3. Surat Keterangan Usaha Dari Kelurahan</label>
-                                                                                </div>
-
-                                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                                                    <input type="file" name="fotosku" class="form-group">
-                                                                                    <br>
-                                                                                    <input type="radio" aria-label="Radio button for following text input"> <span>Lewatkan Lampiran *</span>
-                                                                                </div>
-
-                                                                                @error('fotosku')
-                                                                                    <span class="help-block">{{ $message }}</span>
-                                                                                @enderror
-
-                                                                        </div>
-
-                                                                        <hr>
-
-                                                                        <div class="form-group row  @error('fotodiri') has-error @enderror">
-                                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                                                    <label class="" for="">4. Foto Diri Ukuran 4 x 6 Warna</label>
-                                                                                </div>
-
-                                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                                                    <input type="file" name="fotodiri" class="form-group">
-                                                                                    <br>
-                                                                                    <input type="radio" aria-label="Radio button for following text input"> <span>Lewatkan Lampiran *</span>
-                                                                                </div>
-
-                                                                                @error('fotodiri')
-                                                                                    <span class="help-block">{{ $message }}</span>
-                                                                                @enderror
-
-                                                                        </div>
-
-                                                                        <br>
-
-
-
-                                                                <p style="font-size:13px;">* Centang Lewatkan Lampiran bila Lampiran Belum Ada </p>
-                                                                <p style="font-size:13px;">** File Berformat jpg, png, jpeg, svg dan Maximal Ukuran/Size Lampiran 2 MB</p>
-
-
-
-                                                                </div>
                                                         </div>
+
+                                                        {{--  --}}
+
+                                                       <div class="form-group row @error('syarat') has-error @enderror">
+                                                        <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Persyaratan</strong> </label>
+                                                        <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                                            <select name="syarat" id="" class="form-control select2">
+                                                            <option selected>{{old('syarat') ?? $iumk->syarat}}</option>
+                                                                <option value="Berkas Lengkap">Berkas Lengkap</option>
+                                                                <option value="Berkas Tidak Lengkap">Berkas Tidak Lengkap</option>
+                                                              </select>
+                                                        </div>
+
+                                                        @error('syarat')
+                                                          <span class="help-block">{{ $message }}</span>
+                                                        @enderror
+
+                                                    </div>
+
+                                                    {{--  --}}
+
+
+                                                        <div class="form-group row @error('nosurat') has-error @enderror">
+                                                          <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Nomor Surat</strong> </label>
+                                                          <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                                          <input type="text" name="nosurat" class="form-control" id="nosurat" placeholder="Masukkan Nomor Surat" value="{{ old('nosurat') ?? $iumk->nosurat }}">
+                                                          </div>
+
+                                                          @error('nosurat')
+                                                            <span class="help-block">{{ $message }}</span>
+                                                          @enderror
+
+                                                      </div>
+
+                                                      <div class="form-group row @error('tglsurat') has-error @enderror">
+                                                        <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tanggal Surat</strong> </label>
+                                                        <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                                        <input type="date" name="tglsurat" class="form-control" id="tglsurat" placeholder="Masukkan Tanggal Surat" value="{{ old('tglsurat') ?? $iumk->tglsurat }}">
+                                                        </div>
+
+                                                        @error('tglsurat')
+                                                          <span class="help-block">{{ $message }}</span>
+                                                        @enderror
+
+                                                    </div>
+
+                                                    {{-- <div class="form-group row @error('barcode') has-error @enderror">
+                                                    <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Pejabat Yang Bertanda</strong> </label>
+                                                    <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                                        <select name="barcode" id="" class="form-control select2">
+                                                            <option selected>{{old('barcode') ?? $iumk->barcode}}</option>
+                                                            <option value="Camat Dungingi">Camat Dungingi</option>
+                                                            <option value="a.n Camat Dungingi">Sekcam Dungingi</option>
+                                                            <option value="a.n Camat Dungingi">Kepala Seksi</option> --}}
+                                                            {{-- <option value="Surat Selesai">Surat Selesai </option> --}}
+                                                          {{-- </select>
+                                                    </div>
+
+                                                    @error('barcode')
+                                                      <span class="help-block">{{ $message }}</span>
+                                                    @enderror
+
+                                                </div> --}}
+
+                                                  <div class="form-group row @error('pejabat_id') has-error @enderror">
+                                                    <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Pejabat</strong> </label>
+                                                    <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                                        <select name="pejabat_id" id="" class="form-control select2">
+
+                                                            @foreach ($pejabat as $item)
+                                                            <option
+                                                                value="{{ $item->id }}"
+                                                                @if($item->id == $iumk->pejabat_id)
+                                                                    selected
+                                                                @endif
+                                                            >
+                                                                {{$item->nama}}
+                                                            </option>
+
+                                                            @endforeach
+                                                          </select>
+                                                    </div>
+
+                                                    @error('pejabat_id')
+                                                      <span class="help-block">{{ $message }}</span>
+                                                    @enderror
+
+                                                </div>
+
+                                                {{-- <div class="form-group row @error('nip') has-error @enderror">
+                                                    <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>NIP</strong> </label>
+                                                    <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                                        <select name="nip" id="" class="form-control select2">
+                                                            <option selected>{{old('nip') ?? $iumk->nip}}</option>
+                                                            <option value="19690908 199203 2 011">Camat Dungingi</option>
+                                                            <option value="19840813 200312 1 002">Sekcam Dungingi</option> --}}
+                                                            {{-- <option value="Hj. Harni Mahmud, S.AP">Kepala Seksi</option> --}}
+                                                            {{-- <option value="Surat Selesai">Surat Selesai </option> --}}
+                                                          {{-- </select>
+                                                    </div>
+
+                                                    @error('nip')
+                                                      <span class="help-block">{{ $message }}</span>
+                                                    @enderror
+
+                                                </div> --}}
+
+                                               <div class="form-group row @error('proses') has-error @enderror">
+                                                <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Posisi Berkas</strong> </label>
+                                                <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                                    <select name="proses" id="" class="form-control select2">
+                                                        <option selected>{{old('proses') ?? $iumk->proses}}</option>
+                                                        <option value="Proses Verifikasi">Proses Verifikasi</option>
+                                                        <option value="Proses Penandatangan">Proses Penandatangan</option>
+                                                        <option value="Menunggu Pejabat Yang Menandatangani">Menunggu Pejabat Yang Menandatangani</option>
+                                                        {{-- <option value="Surat Selesai">Surat Selesai </option> --}}
+                                                      </select>
+                                                </div>
+
+                                                @error('proses')
+                                                  <span class="help-block">{{ $message }}</span>
+                                                @enderror
+
+                                            </div>
+
+                                            {{--  --}}
+
+
+
+
+
 
 
                                                         <div class="form-group mt-2">
-                                                            <input type="submit" value="Ajukan" class="btn btn-primary">
+                                                            <input type="submit" value="Validasi" class="btn btn-primary">
+                                                            <a href="{{ route('admin.iumk.qrcode', $iumk)}}" class="btn btn-info modal-show edit" >Generate Qrcode</a>
                                                         </div>
 
+
+
+
                                                       </form>
+
+                                                      {{-- cetak --}}
+                                                      {{-- <button href="{{ route('admin.iumk.cetak')}}" class="btn btn-success modal-show edit" >Cetak</button> --}}
+
+
                                                   </div>
+
+
+
                                                 </div>
 
                                                 <div class="card-footer text-muted mt-4">
@@ -372,7 +444,7 @@
         <script src="{{ asset('assets/plugins/bs-notify.min.js')}}"></script>
 
          {{-- flash message --}}
-         @include ('front.templates.partials.alerts')
+         @include ('admin.templates.partials.alerts')
 
         {{--  swal  --}}
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>

@@ -62,3 +62,31 @@ Breadcrumbs::for('admin.user.index', function ($trail) {
     $trail->push('Beranda', route('admin.dashboard'));
     $trail->push('Administrator', route('admin.user.index'));
 });
+
+// suket
+// suket index
+Breadcrumbs::for('admin.suket.index', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Surat Keterangan', route('admin.suket.index'));
+});
+
+// suket create
+Breadcrumbs::for('admin.suket.create', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Surat Keterangan', route('admin.suket.index'));
+    $trail->push('Tambah Surat Keterangan', route('admin.suket.create'));
+});
+
+// suket show
+Breadcrumbs::for('admin.suket.show', function ($trail, $suket) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Surat Keterangan', route('admin.suket.index'));
+    $trail->push('Detail Surat Keterangan', route('admin.suket.show', $suket));
+});
+
+// suket edit
+Breadcrumbs::for('admin.suket.edit', function ($trail, $suket) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Surat Keterangan', route('admin.suket.index'));
+    $trail->push('Validasi suket', route('admin.suket.edit', $suket));
+});

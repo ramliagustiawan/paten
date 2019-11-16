@@ -1,17 +1,28 @@
 <?php
 
-namespace App\Http\Controllers\front;
+namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Service;
 use App\Suket;
+use App\Layanan;
+use App\Pejabat;
+use Fpdf;
+use PDF;
+use App\Prosessurat;
+use Carbon\Carbon;
+use QRCode;
 
 class SuketController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        return view('front.suket.index');
+        return view('admin.suket.index');
     }
 
     /**
@@ -21,10 +32,12 @@ class SuketController extends Controller
      */
     public function create()
     {
+       
         $suket = Suket::orderBY('created_at', 'DESC')->get();
-        return view('front.suket.create', [
-            'title' => 'Pelaporan',
-            'report' => $suket
+        return view('admin.suket.create', [
+            'title' => 'Ajukan Surat Keterangan',
+            'suket' => $suket,
+            'layanan' => Layanan::orderBy('layanan', 'ASC')->get(),
         ]);
     }
 
@@ -36,9 +49,8 @@ class SuketController extends Controller
      */
     public function store(Request $request)
     {
-
-        // VALIDASI
-        $this->validate($request, [
+          // VALIDASI
+          $this->validate($request, [
 
             'nama' => 'required',
             'nik' => 'required|numeric|max:9999999999999999',
@@ -92,6 +104,51 @@ class SuketController extends Controller
 
         ]);
 
-        return redirect()->route('ajukan.index')->withSuccess('Permohonan Surat Keterangan Berhasil Di Kirim');
+        return redirect()->route('admin.suket.index')->withSuccess('Permohonan Surat Keterangan Berhasil Di Kirim');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }

@@ -46,10 +46,10 @@ class IumkController extends Controller
         $this->validate($request, [
 
             'nama' => 'required',
-            'nik' => 'required|numeric',
+            'nik' => 'required|numeric|max:9999999999999999',
             'alamat' => 'required|min:3',
             'kelurahan' => 'required',
-            'kontak' => 'required|numeric',
+            'kontak' => 'required|numeric|max:999999999999',
             'naper' => 'required',
             'bentuk' => 'required',
             'npwp' => 'required',

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Iumk;
+use App\Suket;
 
 class HomeController extends Controller
 {
@@ -16,13 +17,17 @@ class HomeController extends Controller
     public function index()
     {
         $iumk = Iumk::orderBY('created_at', 'DESC')->get();
-        $count = Iumk::count();
+        $suket = Suket::orderBY('created_at', 'DESC')->get();
+        $countiumk = Iumk::count();
+        $countsuket = Suket::count();
         // dd($count);
 
         return view('admin.dashboard', [
             'title' => 'Dashboard',
-            'count' => $count,
-            'iumk' => $iumk
+            'countiumk' => $countiumk,
+            'countsuket' => $countsuket,
+            'iumk' => $iumk,
+            'suket'=>$suket,
         ]);
     }
 }
