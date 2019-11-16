@@ -18,6 +18,10 @@ class Iumk extends Model
     {
         return $this->belongsTo(Layanan::class);
     }
+    public function pejabat()
+    {
+        return $this->belongsTo(Pejabat::class);
+    }
 
     // fungsi mengubah format tanggal
     public function getCreatedAtAttribute()

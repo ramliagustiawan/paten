@@ -38,7 +38,7 @@ class CreateIumkTable extends Migration
             $table->char('ketproses')->nullable();
             $table->char('nosurat')->nullable();
             $table->date('tglsurat')->nullable();
-            $table->string('pejabat')->nullable();
+            $table->unsignedBigInteger('pejabat_id')->nullable()->default(null);
             $table->string('nip')->nullable();
             $table->string('barcode')->nullable();
             $table->string('hasil')->nullable();
@@ -47,6 +47,7 @@ class CreateIumkTable extends Migration
 
             // BUAT FOREIGN KEY
             $table->foreign('layanan_id')->references('id')->on('layanan')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign('pejabat_id')->references('id')->on('pejabat')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 

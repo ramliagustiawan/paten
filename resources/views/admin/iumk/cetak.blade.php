@@ -197,17 +197,17 @@
         <td align="center">Gorontalo, {{$iumk->tglsurat}}</td>
     </tr>
     <tr>
-        <td align="center"><b>Camat Dungingi</b></td>
+        <td align="center"><b>{{$iumk->pejabat->jabatan}}</b></td>
     </tr>
     <tr>
         <td height="35"></td>
     </tr>
     <tr>
-        <td align="center"><u>{{$iumk->pejabat}}</u></td>
+        <td align="center"><u>{{$iumk->pejabat->nama}}</u></td>
     </tr>
 
     <tr>
-        <td>NIP. {{$iumk->nip}}</td>
+        <td>NIP. {{$iumk->pejabat->nip}}</td>
     </tr>
 
 </table>

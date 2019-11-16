@@ -29,7 +29,7 @@ class CreateProsesSuratTable extends Migration
             $table->char('finish_at')->nullable()->default(null);
             $table->timestamps();
 
-            $table->foreign('iumk_id')->references('id')->on('iumk')->onUpdate('CASCADE')->onDelete('CASCADE');
+            // $table->foreign('iumk_id')->references('id')->on('iumk')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 

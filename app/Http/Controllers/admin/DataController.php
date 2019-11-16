@@ -9,6 +9,7 @@ use App\Service;
 use App\Prosessurat;
 use App\Report;
 use App\Iumk;
+use App\Layanan;
 
 class DataController extends Controller
 {

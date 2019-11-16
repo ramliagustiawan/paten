@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Iumk;
 use App\Layanan;
+use App\Pejabat;
 use Fpdf;
 use PDF;
 use App\Prosessurat;
@@ -141,9 +142,12 @@ class IumkController extends Controller
      */
     public function edit(Iumk $iumk)
     {
+        $pejabat = Pejabat::get();
+        // dd($iumk);
         return view('admin.iumk.edit', [
             'title' => 'Edit Permohonan IUMK',
             'iumk' => $iumk,
+            'pejabat' => $pejabat,
         ]);
     }
 
@@ -171,7 +175,8 @@ class IumkController extends Controller
             'statusbangunan' => 'required',
             'alamatusaha' => 'required|min:10',
             'modal' => 'required',
-            'layanan' => 'required',
+            'layanan_id' => 'required',
+            // 'pejabat' => 'required',
             'fotoktp' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotosku' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
@@ -224,7 +229,7 @@ class IumkController extends Controller
             'statusbangunan' => $request->statusbangunan,
             'alamatusaha' => $request->alamatusaha,
             'modal' => $request->modal,
-            'layanan' => $request->layanan,
+            'layanan_id' => $request->layanan_id,
             // 'fotoktp' => $fotoktp,
             // 'fotosku' => $fotosku,
             // 'fotopbb' => $fotopbb,
@@ -234,7 +239,8 @@ class IumkController extends Controller
             // 'ketproses' => $request->ketproses,
             'nosurat' => $request->nosurat,
             'tglsurat' => $request->tglsurat,
-            'pejabat' => $request->pejabat,
+            'barcode' => $request->barcode,
+            'pejabat_id' => $request->pejabat_id,
             'nip' => $request->nip,
             'barcode' => $request->barcode,
             // 'hasil' => $request->hasil,
@@ -259,11 +265,14 @@ class IumkController extends Controller
 
     public function cetak($id)
     {
-
         $iumk = Iumk::find($id);
+        // $pejabat = Pejabat::pluck('nama');
+        // dd($iumk);
         $pdf = PDF::loadView('admin.iumk.cetak', [
             'iumk' => $iumk,
-            'title' => 'Ijin Usaha Mikro Kecil'
+            // 'pejabat' => $pejabat,
+            'title' => 'Ijin Usaha Mikro Kecil',
+
         ])->setPaper('F4', 'portrait');
 
         return $pdf->stream();
@@ -278,7 +287,7 @@ class IumkController extends Controller
 
             'iumk_id' => $iumk->id,
             'syarat' => $iumk->nama,
-            'layanan' => $iumk->layanan,
+            'layanan_id' => $iumk->layanan_id,
             'tglajuan' => $iumk->created_at,
 
         ]);

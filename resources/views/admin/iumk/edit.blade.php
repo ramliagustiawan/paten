@@ -218,14 +218,14 @@
 
                                                         {{-- jenis surat invisible value default --}}
 
-                                                        <div class="form-group row @error('layanan') has-error @enderror invisible ">
+                                                        <div class="form-group row @error('layanan_id') has-error @enderror invisible ">
                                                                 <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kategori</strong> </label>
                                                                 <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                                                <input type="text" name="layanan" class="form-control" id="layanan" placeholder="Masukkan layanan Anda" value="IUMK"
+                                                                <input type="text" name="layanan_id" class="form-control" id="layanan" placeholder="Masukkan layanan Anda" value="1"
                                                                 required>
                                                                 </div>
 
-                                                                @error('layanan')
+                                                                @error('layanan_id')
                                                                   <span class="help-block">{{ $message }}</span>
                                                                 @enderror
 
@@ -302,22 +302,59 @@
 
                                                     </div>
 
-                                                    <div class="form-group row @error('pejabat') has-error @enderror">
-                                                      <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Pejabat</strong> </label>
-                                                      <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                                      <input type="text" name="pejabat" class="form-control" id="pejabat" placeholder="Pejabat Yang Menandatangani" value="{{ old('pejabat') ?? $iumk->pejabat}}">
-                                                      </div>
+                                                    <div class="form-group row @error('barcode') has-error @enderror">
+                                                    <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Pejabat Yang Bertanda</strong> </label>
+                                                    <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                                        <select name="barcode" id="" class="form-control select2">
+                                                            <option selected>{{old('barcode') ?? $iumk->barcode}}</option>
+                                                            <option value="Camat Dungingi">Camat Dungingi</option>
+                                                            <option value="a.n Camat Dungingi">Sekcam Dungingi</option>
+                                                            <option value="a.n Camat Dungingi">Kepala Seksi</option>
+                                                            {{-- <option value="Surat Selesai">Surat Selesai </option> --}}
+                                                          </select>
+                                                    </div>
 
-                                                      @error('pejabat')
-                                                        <span class="help-block">{{ $message }}</span>
-                                                      @enderror
+                                                    @error('barcode')
+                                                      <span class="help-block">{{ $message }}</span>
+                                                    @enderror
 
-                                                  </div>
+                                                </div>
 
-                                                  <div class="form-group row @error('nip') has-error @enderror">
+                                                  <div class="form-group row @error('pejabat_id') has-error @enderror">
+                                                    <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Nama Pejabat</strong> </label>
+                                                    <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                                        <select name="pejabat_id" id="" class="form-control select2">
+
+                                                            @foreach ($pejabat as $item)
+                                                            <option
+                                                                value="{{ $item->id }}"
+                                                                @if($item->id == $iumk->pejabat_id)
+                                                                    selected
+                                                                @endif
+                                                            >
+                                                                {{$item->nama}}
+                                                            </option>
+
+                                                            @endforeach
+                                                          </select>
+                                                    </div>
+
+                                                    @error('pejabat_id')
+                                                      <span class="help-block">{{ $message }}</span>
+                                                    @enderror
+
+                                                </div>
+
+                                                <div class="form-group row @error('nip') has-error @enderror">
                                                     <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>NIP</strong> </label>
                                                     <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                                    <input type="text" name="nip" class="form-control" id="nip" placeholder="NIP" value="{{ old('nip') ?? $iumk->nip}}">
+                                                        <select name="nip" id="" class="form-control select2">
+                                                            <option selected>{{old('nip') ?? $iumk->nip}}</option>
+                                                            <option value="19690908 199203 2 011">Camat Dungingi</option>
+                                                            <option value="19840813 200312 1 002">Sekcam Dungingi</option>
+                                                            {{-- <option value="Hj. Harni Mahmud, S.AP">Kepala Seksi</option> --}}
+                                                            {{-- <option value="Surat Selesai">Surat Selesai </option> --}}
+                                                          </select>
                                                     </div>
 
                                                     @error('nip')
@@ -325,22 +362,6 @@
                                                     @enderror
 
                                                 </div>
-
-                                                {{-- <div class="form-group row @error('barcode') has-error @enderror">
-
-                                                  <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Barcode </strong> </label>
-                                                  <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-
-                                                  <input type="text" name="barcode" class="form-control" id="barcode" placeholder="Barcode" value="{{ old('barcode') ?? $iumk->barcode}}">
-                                                  </div>
-
-                                                  @error('barcode')
-                                                    <span class="help-block">{{ $message }}</span>
-                                                  @enderror
-
-                                              </div> --}}
-
-                                               {{--  --}}
 
                                                <div class="form-group row @error('proses') has-error @enderror">
                                                 <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Posisi Berkas</strong> </label>
@@ -350,7 +371,7 @@
                                                         <option value="Proses Verifikasi">Proses Verifikasi</option>
                                                         <option value="Proses Penandatangan">Proses Penandatangan</option>
                                                         <option value="Menunggu Pejabat Yang Menandatangani">Menunggu Pejabat Yang Menandatangani</option>
-                                                        <option value="Surat Selesai">Surat Selesai </option>
+                                                        {{-- <option value="Surat Selesai">Surat Selesai </option> --}}
                                                       </select>
                                                 </div>
 
