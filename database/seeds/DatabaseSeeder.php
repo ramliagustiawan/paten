@@ -19,5 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(NonijinsTableSeeder::class);
 
         $this->call(ServicesTableSeeder::class);
+        $this->call(PejabatsTableSeeder::class);
+        $this->call(LayanansTableSeeder::class);
     }
 }

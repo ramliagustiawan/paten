@@ -285,9 +285,11 @@ class IumkController extends Controller
 
         Prosessurat::create([
 
-            'iumk_id' => $iumk->id,
-            'syarat' => $iumk->nama,
-            'layanan_id' => $iumk->layanan_id,
+            'proses_id' => $iumk->layanan_id,
+            'layanan' => $iumk->nama,
+            'finish_at' => $iumk->layanan->layanan,
+            'proses' => $iumk->proses,
+            'syarat' => $iumk->syarat,
             'tglajuan' => $iumk->created_at,
 
         ]);

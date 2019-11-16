@@ -27,7 +27,11 @@
                               <th>No</th>
                               <th>Nama</th>
                               <th>Layanan</th>
+                              <th>Layanan</th>
                               <th>Tanggal Pengajuan</th>
+                              <th>Persyaratan</th>
+                              <th>Proses</th>
+                              <th>Keterangan</th>
                                <th>Aksi</th>
 
 
@@ -77,9 +81,13 @@
                         columns: [
 
                             {data:'DT_RowIndex',orderable:false,searchable:false},
-                            {data:'syarat'},
                             {data:'layanan'},
+                            {data:'finish_at'},
+                            {data:'proses_id'},
                             {data:'created_at'},
+                            {data:'syarat'},
+                            {data:'proses'},
+                            {data:'ket'},
                             {data:'action'},
                         ]
                     });

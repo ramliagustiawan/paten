@@ -10,6 +10,9 @@ class Layanan extends Model
 
     protected $guarded = [];
 
+    public $timestamps = false;
+
+
     public function iumk()
     {
         return $this->belongsTo(Iumk::class);
