@@ -16,7 +16,12 @@ class ProsesController extends Controller
      */
     public function index()
     {
-        return view('admin.proses.index');
+        $proses = Prosessurat::get();
+        // dd($proses);
+        return view('admin.proses.index', [
+            'title' => 'Status Layanan',
+            'proses' => $proses,
+        ]);
     }
 
     /**
@@ -79,9 +84,31 @@ class ProsesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Prosessurat $prosessurat)
     {
-        //
+        // VALIDASI
+        $this->validate($request, [
+
+            'proses' => 'required',
+            'ket' => 'required',
+            // 'proses_id' => 'required',
+            // 'nama' => 'required',
+            // 'tglajuan' => 'required|min:4',
+            // 'syarat' => 'required',
+            // 'proses' => 'required',
+            // 'finish_at' => 'required',
+
+        ]);
+
+
+        $prosessurat->update([
+
+            'proses' => $request->proses,
+            'ket' => $request->ket,
+
+        ]);
+
+        return redirect()->route('admin.proses.index', $prosessurat)->withInfo('Permohonan Surat Keterangan ' . $prosessurat->nama . ' valid');
     }
 
     /**
@@ -90,8 +117,10 @@ class ProsesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Prosessurat $prosessurat)
     {
-        //
+        $prosessurat->delete();
+        return redirect()->route('admin.proses.index')
+            ->with('danger', 'Permohonan Surat Keterangan Dihapus');
     }
 }

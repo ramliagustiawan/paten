@@ -4,7 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Jenssegers\Date\Date;
+// use Jenssegers\Date\Date;
 use App\Suket;
 use App\Layanan;
 use App\Pejabat;
@@ -34,7 +34,7 @@ class SuketController extends Controller
      */
     public function create()
     {
-       
+
         $suket = Suket::orderBY('created_at', 'DESC')->get();
         return view('admin.suket.create', [
             'title' => 'Ajukan Surat Keterangan',
@@ -51,8 +51,8 @@ class SuketController extends Controller
      */
     public function store(Request $request)
     {
-          // VALIDASI
-          $this->validate($request, [
+        // VALIDASI
+        $this->validate($request, [
 
             'nama' => 'required',
             'nik' => 'required|numeric|max:9999999999999999',
@@ -151,8 +151,8 @@ class SuketController extends Controller
      */
     public function update(Request $request, Suket $suket)
     {
-         // VALIDASI
-         $this->validate($request, [
+        // VALIDASI
+        $this->validate($request, [
 
             'nama' => 'required',
             'nik' => 'required|numeric|max:9999999999999999',
@@ -208,9 +208,7 @@ class SuketController extends Controller
             // 'ketproses' => $request->ketproses,
             'nosurat' => $request->nosurat,
             'tglsurat' => $request->tglsurat,
-            // 'barcode' => $request->barcode,
             'pejabat_id' => $request->pejabat_id,
-            // 'nip' => $request->nip,
             // 'hasil' => $request->hasil,
 
         ]);

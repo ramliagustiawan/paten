@@ -16,6 +16,11 @@ class CreateLayananTable extends Migration
         Schema::create('layanan', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('layanan');
+            $table->char('kategori');
+            $table->char('biaya');
+            $table->char('waktu');
+            $table->longText('syarat');
+            $table->string('ket');
         });
     }
 

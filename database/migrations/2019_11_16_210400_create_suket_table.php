@@ -30,7 +30,7 @@ class CreateSuketTable extends Migration
             $table->char('keperluan');
             $table->string('fotoktp')->nullable()->default(null);
             $table->string('fotopbb')->nullable()->default(null);
-            
+
             $table->char('syarat')->nullable();
             $table->char('proses')->nullable();
             $table->char('ketproses')->nullable();

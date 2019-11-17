@@ -57,31 +57,12 @@
                                     <th>Update Surat</th>
                                     <td>{{ $daftar->updated_at }}</td>
                                 </tr>
-
                                 <tr>
-                                    <th>Nomor Surat</th>
-                                    <td>{{ $daftar->layanan }}</td>
+                                    <th>Keterangan Proses</th>
+                                    <td>{{ $daftar->ket }}</td>
                                 </tr>
 
-                                <tr>
-                                    <th>Pejabat</th>
-                                    <td>{{ $daftar->npwp }}</td>
-                                </tr>
 
-                                <tr>
-                                    <th>NIP</th>
-                                    <td>{{ $daftar->giatusaha }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th>Barcode</th>
-                                    <td>{{ $daftar->statusbangunan }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th>finish_at</th>
-                                    <td>{{ $daftar->alamatusaha }}</td>
-                                </tr>
 
                           </table>
                         </div>

@@ -23,6 +23,8 @@ Route::get('/', function () {
 
 Route::get('/info/data', 'front\DataController@ijins')->name('info.data');
 Route::get('/info/non', 'front\DataController@nonijins')->name('info.non');
+Route::get('/info/proses', 'front\DataController@prosessurat')->name('info.proses');
+Route::get('/info/syarat', 'front\DataController@syarat')->name('info.syarat');
 
 Route::resource('/info', 'front\InfoController');
 

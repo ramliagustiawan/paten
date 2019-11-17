@@ -54,59 +54,49 @@
                                 </tr>
 
                                 <tr>
-                                    <th>Nama Perusahaan</th>
-                                     <td>{{ $daftar->naper }}</td>
+                                    <th>Tempat Lahir</th>
+                                    <td>{{ $daftar->tempat }}</td>
                                 </tr>
 
                                 <tr>
-                                    <th>Bentuk Usaha</th>
-                                    <td>{{ $daftar->bentuk }}</td>
+                                    <th>Tanggal Lahir</th>
+                                    <td>{{ $daftar->tgllhr }}</td>
                                 </tr>
 
                                 <tr>
-                                    <th>NPWP</th>
-                                    <td>{{ $daftar->npwp }}</td>
+                                    <th>Jenis Kelamin</th>
+                                    <td>{{ $daftar->jk }}</td>
                                 </tr>
 
                                 <tr>
-                                    <th>Kegiatan Usaha</th>
-                                    <td>{{ $daftar->giatusaha }}</td>
+                                    <th>Agama</th>
+                                    <td>{{ $daftar->agama }}</td>
                                 </tr>
 
                                 <tr>
-                                    <th>Sarana Usaha</th>
-                                    <td>{{ $daftar->statusbangunan }}</td>
+                                    <th>Pekerjaan</th>
+                                    <td>{{ $daftar->pekerjaan }}</td>
                                 </tr>
 
                                 <tr>
-                                    <th>Alamat Usaha</th>
-                                    <td>{{ $daftar->alamatusaha }}</td>
+                                    <th>Keterangan</th>
+                                    <td>{{ $daftar->keterangan }}</td>
+
                                 </tr>
 
                                 <tr>
-                                    <th>Modal</th>
-                                    <td>{{ $daftar->modal }}</td>
+                                    <th>Keperluan</th>
+                                    <td>{{ $daftar->keperluan }}</td>
                                 </tr>
 
                                 <tr>
                                     <th>KTP</th>
                                     <td><img src="{{ url($daftar->getCover()) }}" height="250px"></td>
-
                                 </tr>
 
                                 <tr>
-                                    <th>Surat Keterangan Usaha</th>
-                                    <td><img src="{{ url($daftar->getSku()) }}" height="250px"></td>
-                                </tr>
-
-                                <tr>
-                                    <th>Pajak Bumi Bangunan</th>
+                                    <th>Pajak Bumi dan Bangunan</th>
                                     <td><img src="{{ url($daftar->getPbb()) }}" height="250px"></td>
-                                </tr>
-
-                                <tr>
-                                    <th>Foto Diri</th>
-                                    <td><img src="{{ url($daftar->getDiri()) }}" height="250px"></td>
                                 </tr>
 
 

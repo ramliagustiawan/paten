@@ -15,9 +15,9 @@ class CreateProsesSuratTable extends Migration
     {
         Schema::create('proses_surat', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('proses_id');
-            $table->char('nama');
-            $table->char('tglajuan');
+            $table->unsignedBigInteger('proses_id')->nullable()->default(null);
+            $table->char('nama')->nullable()->default(null);
+            $table->char('tglajuan')->nullable()->default(null);
             $table->char('syarat')->nullable()->default(null);
             $table->char('proses')->nullable()->default(null);
             $table->char('ket')->nullable()->default(null);

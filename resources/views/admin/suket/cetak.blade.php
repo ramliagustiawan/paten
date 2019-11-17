@@ -73,19 +73,19 @@
         <td width="470">  : {{$suket->pejabat->nama}} </td>
     </tr>
         <tr>
-            <td height="1"></td>
+            <td height="3"></td>
         </tr>
     <tr>
         <td>NIP </td>
         <td width="470">  : {{$suket->pejabat->nip}} </td>
     </tr>
-        <tr>
+        {{-- <tr>
             <td height="1"></td>
         </tr>
     <tr>
         <td>Jabatan</td>
         <td width="470">  : {{$suket->pejabat->jabatan}}</td>
-    </tr>
+    </tr> --}}
         <tr>
             <td height="6"></td>
         </tr>
@@ -146,7 +146,7 @@
                 <tr>
                     <td height="2"></td>
                 </tr>
-            <tr>
+            {{-- <tr>
                 <td>Keterangan</td>
                 <td width="350">  : Rp. {{$suket->keterangan}}</td>
             </tr>
@@ -156,7 +156,7 @@
             <tr>
                 <td>Keperluan</td>
                 <td width="350">  : {{$suket->keperluan}}</td>
-            </tr>
+            </tr> --}}
 
 
         <tr>
@@ -168,7 +168,7 @@
 
     <table>
         <tr>
-        <td align="justify">    Yang bersangkutan adalah warga Kecamatan Dungingi Kota Gorontalo, Sesuai Keterangan yang bersangkutan, surat ini dipergunakan untuk {{$suket->keperluan}}</td>
+        <td align="justify">   {{$suket->keterangan}} , surat ini dipergunakan untuk {{$suket->keperluan}}</td>
         </tr>
     </table>
 
