@@ -170,7 +170,8 @@ return [
         Barryvdh\Cors\ServiceProvider::class,
         Codedge\Fpdf\FpdfServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
-        LaravelQRCode\Providers\QRCodeServiceProvider::class, 
+        LaravelQRCode\Providers\QRCodeServiceProvider::class,
+        Jenssegers\Date\DateServiceProvider::class, 
 
         /*
          * Application Service Providers...

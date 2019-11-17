@@ -18,6 +18,7 @@ Route::get('/iumk/pdf/{id}', 'IumkController@cetak')->name('iumk.cetak');
 Route::get('/iumk/qrcode/{id}', 'IumkController@qrcode')->name('iumk.qrcode');
 
 Route::get('/suket/pdf/{id}', 'SuketController@cetak')->name('suket.cetak');
+Route::get('/suket/qrcode/{id}', 'SuketController@qrcode')->name('suket.qrcode');
 
 
 Route::resource('/user', 'UserController');

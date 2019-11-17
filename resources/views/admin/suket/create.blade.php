@@ -93,8 +93,8 @@
                                                             <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                                                 <select name="jk" id="" class="form-control select2">
                                                                     <option selected>Pilih Jenis Kelamin</option>
-                                                                    <option value="jk Huangobotu Kecamatan Dungingi">Laki-Laki</option>
-                                                                    <option value="jk Huangobotu Kecamatan Dungingi">Perempuan</option>
+                                                                    <option value="Laki-Laki">Laki-Laki</option>
+                                                                    <option value="Perempuan">Perempuan</option>
                                     
                                                                   </select>
                                                             </div>
@@ -114,7 +114,7 @@
                                                                     <option value="Kristen Katolik">Kristen Katolik</option>
                                                                     <option value="Hindu">Hindu</option>
                                                                     <option value="Budha">Budha</option>
-                                                                    <option value="Krsten Protestan">Kristen Protestan</option>
+                                                                    <option value="Kristen Protestan">Kristen Protestan</option>
                                                                   </select>
                                                             </div>
                                         
@@ -159,10 +159,10 @@
                                                             <select name="kelurahan" id="" class="form-control select2">
                                                                 <option selected>Pilih Kelurahan</option>
                                                                 <option value="Kelurahan Huangobotu Kecamatan Dungingi">Huangobotu</option>
-                                                                <option value="Kelurahan Huangobotu Kecamatan Dungingi">Libuo</option>
-                                                                <option value="Kelurahan Huangobotu Kecamatan Dungingi">Tuladenggi</option>
-                                                                <option value="Kelurahan Huangobotu Kecamatan Dungingi">Tomulabutao</option>
-                                                                <option value="Kelurahan Huangobotu Kecamatan Dungingi">Tomulabutao Selatan</option>
+                                                                <option value="Kelurahan Libuo Kecamatan Dungingi">Libuo</option>
+                                                                <option value="Kelurahan Tuladenggi Kecamatan Dungingi">Tuladenggi</option>
+                                                                <option value="Kelurahan Tomulabutao Kecamatan Dungingi">Tomulabutao</option>
+                                                                <option value="Kelurahan Tomulabutao Selatan Kecamatan Dungingi">Tomulabutao Selatan</option>
                                                               </select>
                                                         </div>
                                     

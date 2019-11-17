@@ -43,6 +43,13 @@ class Suket extends Model
             ->format('d F Y');
     }
 
+    public function getTgllhrAttribute()
+    {
+        \Carbon\Carbon::setLocale('id');
+        return \Carbon\Carbon::parse($this->attributes['tgllhr'])
+            ->format(' d F Y ');
+    }
+
     // tampilgambar
     public function getCover()
     {

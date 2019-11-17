@@ -88,10 +88,10 @@
                                                                 <select name="kelurahan" id="" class="form-control select2">
                                                                     <option selected>Pilih Kelurahan</option>
                                                                     <option value="Kelurahan Huangobotu Kecamatan Dungingi">Huangobotu</option>
-                                                                    <option value="Kelurahan Huangobotu Kecamatan Dungingi">Libuo</option>
-                                                                    <option value="Kelurahan Huangobotu Kecamatan Dungingi">Tuladenggi</option>
-                                                                    <option value="Kelurahan Huangobotu Kecamatan Dungingi">Tomulabutao</option>
-                                                                    <option value="Kelurahan Huangobotu Kecamatan Dungingi">Tomulabutao Selatan</option>
+                                                                    <option value="Kelurahan Libuo Kecamatan Dungingi">Libuo</option>
+                                                                    <option value="Kelurahan Tuladenggi Kecamatan Dungingi">Tuladenggi</option>
+                                                                    <option value="Kelurahan Tomulabutao Kecamatan Dungingi">Tomulabutao</option>
+                                                                    <option value="Kelurahan Tomulabutao Selatan Kecamatan Dungingi">Tomulabutao Selatan</option>
                                                                   </select>
                                                             </div>
 

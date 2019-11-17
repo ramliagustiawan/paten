@@ -43,7 +43,7 @@
             </tr>
 
             <tr>
-                <td align="center">Nomor : {{$iumk->nosurat}}</td>
+                <td align="center">Nomor : {{$suket->nosurat}}</td>
             </tr>
 
             <tr>
@@ -56,120 +56,111 @@
 
     <table>
         <tr>
-            <td align="justify">    Berdasarkan Undang-Undang Nomor 20 Tahun 2008 tentang Usaha Mikro Kecil dan Menengah ; Peraturan Presiden Nomor 98 Tahun 2014  ; Peraturan Menteri Dalam Negeri Republik Indonesia Nomor 83 Tahun 2014 tentang Pedoman Pemberian Izin Usaha Mikro dan Kecil ; Peraturan Walikota Gorontalo Nomor 11 Tahun 2015 Tentang Pendelegasian Kewenangan Pelaksanaan Pemberian izin usaha Mikro dan Kecil (IUMK) kepada Camat Se-Kota Gorontalo, Bersama ini menyatakan  dan memberikan izin kepada :</td>
+            <td align="justify">   Yang bertanda tangan di bawah ini :
+                </td>
         </tr>
     </table>
-
-
 
 
 <table align="center"  >
 
     <tr>
-        <td height="1"></td>
+        <td height="5"></td>
     </tr>
 
     <tr>
         <td>Nama</td>
-        <td width="400">  : {{$iumk->nama}} </td>
+        <td width="470">  : {{$suket->pejabat->nama}} </td>
     </tr>
         <tr>
             <td height="1"></td>
         </tr>
     <tr>
-        <td>NIK</td>
-        <td width="400">  : {{$iumk->nik}} </td>
+        <td>NIP </td>
+        <td width="470">  : {{$suket->pejabat->nip}} </td>
     </tr>
         <tr>
             <td height="1"></td>
         </tr>
     <tr>
-        <td>Alamat</td>
-        <td width="400">  : {{$iumk->alamat}}</td>
+        <td>Jabatan</td>
+        <td width="470">  : {{$suket->pejabat->jabatan}}</td>
     </tr>
         <tr>
-            <td height="1"></td>
+            <td height="6"></td>
         </tr>
-    <tr>
-        <td>No. Telpon</td>
-        <td width="400">  : {{$iumk->kontak}}</td>
-    </tr>
-    <tr>
-            <td height="1"></td>
-        </tr>
-
 
 </table>
 
 
 <table>
     <tr>
-        <td align="justify">    Untuk mendirikan usaha Mikro dan Kecil yang mencakup perizinan dasar berupa: Menempati lokasi/domisili, melakukan kegiatan usaha baik peroduksi maupun penjualan barang dan jasa dengan identitas:</td>
+        <td align="justify">    Dengan ini Menerangkan Bahwa :</td>
     </tr>
 </table>
 
 <table align="center"  >
         <tr>
-            <td height="1"></td>
+            <td height="5"></td>
         </tr>
 
         <tr>
-            <td>Nama Usaha</td>
-            <td width="350">  : {{$iumk->naper}} </td>
+            <td>Nama </td>
+            <td width="350">  : {{$suket->nama}} </td>
         </tr>
             <tr>
-                <td height="1"></td>
+                <td height="2"></td>
+            </tr>
+            <tr>
+                <td>Tempat Tanggal Lahir </td>
+                <td width="400">  : {{$suket->tempat}}, {{$suket->tgllhr}} </td>
+            </tr>
+            <tr>
+                <td height="2"></td>
             </tr>
         <tr>
-            <td>Bentuk Usaha</td>
-            <td width="350">  : {{$iumk->bentuk}}</td>
+            <td>Jenis Kelamin</td>
+            <td width="350">  : {{$suket->jk}}</td>
         </tr>
             <tr>
-                <td height="1"></td>
+                <td height="2"></td>
             </tr>
         <tr>
-            <td>NPWP</td>
-            <td width="350">  : {{$iumk->npwp}}</td>
+            <td>Agama</td>
+            <td width="350">  : {{$suket->agama}}</td>
         </tr>
             <tr>
-                <td height="1"></td>
+                <td height="2"></td>
             </tr>
         <tr>
-            <td>Kegiatan Usaha</td>
-            <td width="350">  : {{$iumk->giatusaha}}</td>
+            <td>Pekerjaan</td>
+            <td width="350">  : {{$suket->pekerjaan}}</td>
         </tr>
             <tr>
-                <td height="1"></td>
-            </tr>
-        <tr>
-            <td>Sarana Usaha</td>
-            <td width="350">  : {{$iumk->statusbangunan}}</td>
-        </tr>
-            <tr>
-                <td height="1"></td>
+                <td height="2"></td>
             </tr>
             <tr>
-                <td>Alamat Usaha</td>
-                <td width="350">  : {{$iumk->alamatusaha}}</td>
+                <td>Alamat</td>
+                <td width="350">  : {{$suket->alamat}}</td>
             </tr>
                 <tr>
-                    <td height="1"></td>
+                    <td height="2"></td>
                 </tr>
             <tr>
-                <td>Jumlah Modal Usaha</td>
-                <td width="350">  : Rp. {{$iumk->modal}}</td>
+                <td>Keterangan</td>
+                <td width="350">  : Rp. {{$suket->keterangan}}</td>
             </tr>
                 <tr>
-                    <td height="1"></td>
+                    <td height="2"></td>
                 </tr>
             <tr>
-                <td>Nomor Pendaftaran</td>
-                <td width="350">  : </td>
+                <td>Keperluan</td>
+                <td width="350">  : {{$suket->keperluan}}</td>
             </tr>
 
 
         <tr>
-            <td height="1"></td>
+            <td height="9"></td>
         </tr>
 
 
@@ -177,13 +168,16 @@
 
     <table>
         <tr>
-            <td align="justify">    Perizinan dasar usaha ini diberikan dengan ketentuan tidak dapat dipindahtangankan, wajib membayar pajak dan pungutan pemerintah, mematuhi peraturan perundang-undangan lain yang berlaku, menjaga kebersihan lingkungan dan mengembalikan perizinan ini apabila berpindah tempat usaha, perubahan skala usaha, serta memperbaharuinya apabila terjadi perubahan pada penanggungjawab perusahaan.</td>
+        <td align="justify">    Yang bersangkutan adalah warga Kecamatan Dungingi Kota Gorontalo, Sesuai Keterangan yang bersangkutan, surat ini dipergunakan untuk {{$suket->keperluan}}</td>
         </tr>
     </table>
 
     <table>
         <tr>
-            <td align="justify">    Demikian perizinan ini diberikan untuk dipergunakan sebagaimana mestinya.</td>
+            <td align="justify">    Demikianlah surat keterangan ini , apabila dikemudian hari ternyata ada permasalahan, maka akan menjadi tanggung jawab yang bersangkutan sepenuhnya, dan pejabat yang menadatangani terlepas dari segala tuntutuan hukum yang berlaku.</td>
+        </tr>
+        <tr>
+            <td height="9"></td>
         </tr>
     </table>
 
@@ -194,20 +188,20 @@
 <table style="position: absolute;  margin-left: 330px;">
 
     <tr>
-        <td align="center">Gorontalo, {{$iumk->tglsurat}}</td>
+        <td align="center">Gorontalo, {{$suket->tglsurat}}</td>
     </tr>
     <tr>
-        <td align="center"><b>{{$iumk->pejabat->jabatan}}</b></td>
+        <td align="center"><b>{{$suket->pejabat->jabatan}}</b></td>
     </tr>
     <tr>
         <td height="35"></td>
     </tr>
     <tr>
-        <td align="center"><u>{{$iumk->pejabat->nama}}</u></td>
+        <td align="center"><u>{{$suket->pejabat->nama}}</u></td>
     </tr>
 
     <tr>
-        <td>NIP. {{$iumk->pejabat->nip}}</td>
+        <td>NIP. {{$suket->pejabat->nip}}</td>
     </tr>
 
 </table>
