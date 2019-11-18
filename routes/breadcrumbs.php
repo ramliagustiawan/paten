@@ -97,3 +97,30 @@ Breadcrumbs::for('admin.suket.edit', function ($trail, $suket) {
     $trail->push('Surat Keterangan', route('admin.suket.index'));
     $trail->push('Validasi suket', route('admin.suket.edit', $suket));
 });
+
+// nonijin
+// nonijin index
+Breadcrumbs::for('admin.nonijin.index', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Non Perijinan', route('admin.nonijin.index'));
+});
+
+
+// ijin index
+Breadcrumbs::for('admin.ijin.index', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Perijinan', route('admin.ijin.index'));
+});
+
+
+// syarat index
+Breadcrumbs::for('admin.syarat.index', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Detail Layanan', route('admin.syarat.index'));
+});
+
+// pejabat index
+Breadcrumbs::for('admin.pejabat.index', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Pejabat', route('admin.pejabat.index'));
+});

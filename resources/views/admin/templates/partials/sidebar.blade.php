@@ -38,22 +38,22 @@
                 <ul class="nav nav-treeview">
 
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('admin.ijin.index') }}" class="nav-link">
                       <i class="far fa-dot-circle nav-icon"></i>
                       <p>Perijinan</p>
                     </a>
                   </li>
 
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('admin.nonijin.index') }}" class="nav-link">
                       <i class="far fa-dot-circle nav-icon"></i>
                       <p>Non Perijinan</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('admin.syarat.index') }}" class="nav-link">
                       <i class="far fa-dot-circle nav-icon"></i>
-                      <p>Syrat Layanan</p>
+                      <p>Detail Layanan</p>
                     </a>
                   </li>
 
@@ -75,7 +75,7 @@
                   <ul class="nav nav-treeview">
 
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
+                      <a href="{{ route('admin.pejabat.index') }}" class="nav-link">
                         <i class="far fa-dot-circle nav-icon"></i>
                         <p>Pejabat</p>
                       </a>

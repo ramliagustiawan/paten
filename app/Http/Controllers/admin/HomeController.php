@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Iumk;
 use App\Suket;
 use App\Prosessurat;
+use App\Report;
 
 class HomeController extends Controller
 {

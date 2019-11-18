@@ -8,8 +8,11 @@ Route::get('/user/data', 'DataController@data')->name('user.data');
 Route::get('/daftar/layanan', 'DataController@layanan')->name('daftar.layanan');
 Route::get('/proses/surat', 'DataController@surat')->name('proses.surat');
 Route::get('/tindak/lanjut', 'DataController@lanjut')->name('tindak.lanjut');
-
 Route::get('/suket/suket', 'DataController@suket')->name('suket.suket');
+Route::get('/nonijin/nonijin', 'DataController@nonijin')->name('nonijin.nonijin');
+Route::get('/ijin/ijin', 'DataController@ijin')->name('ijin.ijin');
+Route::get('/syarat/syarat', 'DataController@syarat')->name('syarat.syarat');
+Route::get('/pejabat/pejabat', 'DataController@pejabat')->name('pejabat.pejabat');
 
 Route::post('/iumk/qrcode', 'IumkController@qrcode')->name('iumk.qrcode');
 
@@ -38,3 +41,11 @@ Route::post('/suket/{suket}', 'SuketController@proses')->name('suket.proses');
 
 
 Route::resource('/tindak', 'TindakController');
+
+Route::resource('/nonijin', 'NonijinController');
+
+Route::resource('/ijin', 'IjinController');
+
+Route::resource('/syarat', 'SyaratController');
+
+Route::resource('/pejabat', 'PejabatController');

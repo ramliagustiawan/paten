@@ -11,6 +11,9 @@ use App\Report;
 use App\Iumk;
 use App\Layanan;
 use App\Suket;
+use App\Nonijin;
+use App\Ijin;
+use App\Pejabat;
 
 class DataController extends Controller
 {
@@ -80,6 +83,58 @@ class DataController extends Controller
                 return $model->layanan->layanan;
             })
             ->addColumn('action', 'admin.suket.action')
+            ->addIndexColumn()
+            ->toJson();
+    }
+
+    public function nonijin()
+    {
+        $nonijin = Nonijin::orderBy('nama', 'ASC');
+
+        return datatables()->of($nonijin)
+            // ->addColumn('layanan_id', function (nonijin $model) {
+            //     return $model->layanan->layanan;
+            // })
+            ->addColumn('action', 'admin.nonijin.action')
+            ->addIndexColumn()
+            ->toJson();
+    }
+
+    public function ijin()
+    {
+        $ijin = Ijin::orderBy('nama', 'ASC');
+
+        return datatables()->of($ijin)
+            // ->addColumn('layanan_id', function (nonijin $model) {
+            //     return $model->layanan->layanan;
+            // })
+            ->addColumn('action', 'admin.ijin.action')
+            ->addIndexColumn()
+            ->toJson();
+    }
+
+    public function syarat()
+    {
+        $syarat = Layanan::orderBy('layanan', 'ASC');
+
+        return datatables()->of($syarat)
+            // ->addColumn('syarat_id', function (syarat $model) {
+            //     return $model->syarat->syarat;
+            // })
+            ->addColumn('action', 'admin.syarat.action')
+            ->addIndexColumn()
+            ->toJson();
+    }
+
+    public function pejabat()
+    {
+        $pejabat = Pejabat::orderBy('id', 'ASC');
+
+        return datatables()->of($pejabat)
+            // ->addColumn('pejabat_id', function (pejabat $model) {
+            //     return $model->pejabat->pejabat;
+            // })
+            ->addColumn('action', 'admin.pejabat.action')
             ->addIndexColumn()
             ->toJson();
     }
