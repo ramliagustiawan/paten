@@ -21,18 +21,19 @@
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
-                          <table id="status" class="table table-bordered  table-hover" style="width:100%">
+                          <table id="status" class="table table-bordered  table-hover" style="font-size:14px; width:100%">
                             <thead>
                             <tr>
                               <th>No</th>
                               <th>Nama</th>
                               <th>Alamat</th>
                               <th>Kontak</th>
-                              <th>Pesan</th>
-                              <th>Nama</th>
-                              <th>Alamat</th>
-                              <th>Kontak</th>
-                              <th>Pesan</th>
+                              <th>Tanggal Laporan</th>
+                              <th>Isi Laporan</th>
+                              <th>Tindak Lanjut</th>
+                              <th>Pejabat Yg Menangani</th>
+                              <th>Keterangan</th>
+
                                <th>Aksi</th>
 
 
@@ -67,7 +68,7 @@
         <script src="{{ asset('assets/plugins/bs-notify.min.js')}}"></script>
 
          {{-- flash message --}}
-         @include ('front.templates.partials.alerts')
+         @include ('admin.templates.partials.alerts')
 
         {{--  swal  --}}
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
@@ -85,11 +86,11 @@
                             {data:'name'},
                             {data:'alamat'},
                             {data:'kontak'},
+                            {data:'created_at'},
                             {data:'pesan'},
                             {data:'tindakan'},
                             {data:'aparat'},
                             {data:'ket'},
-                            {data:'updated_at'},
                             {data:'action'},
                         ]
                     });

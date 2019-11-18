@@ -1,17 +1,17 @@
 
 {{-- <div class="row"> --}}
 
-    <a href="{{ route('admin.iumk.show', $model)}}" class="btn btn-info modal-show edit" title="{{ $model->name }}" style="font-size:14px;">Periksa</a>
+    <a href="{{ route('admin.iumk.show', $model)}}" class="btn btn-info modal-show edit" title="{{ $model->name }}" style="font-size:13px;">Periksa</a>
 
-    <a href="{{ route('admin.iumk.edit', $model)}}" class="btn btn-warning modal-show edit" title="{{ $model->name }}" style="font-size:14px;">Proses</a>
+    <a href="{{ route('admin.iumk.edit', $model)}}" class="btn btn-warning modal-show edit" title="{{ $model->name }}" style="font-size:13px;">Proses</a>
 
-    <a href="{{ route('admin.iumk.cetak', $model)}}" class="btn btn-primary modal-show edit" title="{{ $model->name }}" style="font-size:14px;">Cetak</a>
+    <a href="{{ route('admin.iumk.cetak', $model)}}" class="btn btn-primary modal-show edit" title="{{ $model->name }}" style="font-size:13px;">Cetak</a>
 
-   
+
 
     <form action="{{ route('admin.iumk.proses', $model) }}" method="POST">
         @csrf
-        <input type="submit" value="Selesai" class="btn btn-success">
+        <input type="submit" value="Selesai" class="btn btn-success" style="font-size:13px;">
     </form>
 
 

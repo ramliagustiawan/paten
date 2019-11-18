@@ -54,7 +54,14 @@ Breadcrumbs::for('admin.proses.edit', function ($trail, $proses) {
 // tindak lanjut index
 Breadcrumbs::for('admin.tindak.index', function ($trail) {
     $trail->push('Beranda', route('admin.dashboard'));
-    $trail->push('Tindak Lanjut', route('admin.tindak.index'));
+    $trail->push('Daftar Pelaporan', route('admin.tindak.index'));
+});
+
+// tindak edit
+Breadcrumbs::for('admin.tindak.edit', function ($trail, $tindak) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Daftar Pelaporan', route('admin.tindak.index'));
+    $trail->push('Tindak Lanjut', route('admin.tindak.edit', $tindak));
 });
 
 // user index

@@ -3,10 +3,10 @@
 
     @if (session('success'))
 
-        $.notify( 
+        $.notify(
         {
             // options
-            message:'{{session('success')}} ' 
+            message:'{{session('success')}} '
         },
         {
             // settings

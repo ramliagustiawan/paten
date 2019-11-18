@@ -23,7 +23,7 @@
 
                                 </div>
                                 <div class="card-body">
-                                  <h6 class="card-title">Validasi Data dan Perbaiki Apabila Masih Ada Kesalahan</h6>
+                                  <h6 class="card-title">Update Data dan Perbaiki Apabila Masih Ada Kesalahan</h6>
                                   <p class="card-text"></p>
                                   {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
                                 </div>
@@ -37,7 +37,7 @@
                                       @csrf
                                       @method("PUT")
 
-                                    
+
 
                                       <div class="form-group row @error('nama') has-error @enderror">
                                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong> Nama </strong></label>
@@ -87,7 +87,7 @@
 
                                       </div>
 
-                                     
+
 
                                     <div class="form-group row @error('created_at') has-error @enderror">
                                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tanggal Selesai</strong> </label>
@@ -100,9 +100,9 @@
                                         @enderror
 
                                     </div>
-                              
+
                                     <br>
-                                
+
                                            <div class="card">
                                                     <div class="card-header">
                                                     <strong> Proses Lebih Lanjut :</strong>
@@ -126,11 +126,11 @@
                                                 {{-- <option value="Surat Selesai">Surat Selesai </option> --}}
                                               </select>
                                         </div>
-    
+
                                         @error('proses')
                                           <span class="help-block">{{ $message }}</span>
                                         @enderror
-    
+
                                     </div>
 
                                 {{--  --}}
@@ -153,16 +153,9 @@
                                 </div>
 
 
-
-
-
-
-
-
-
                                             <div class="form-group mt-2">
-                                                <input type="submit" value="Validasi" class="btn btn-primary">
-                                               
+                                                <input type="submit" value="Update" class="btn btn-primary">
+
                                             </div>
 
 
