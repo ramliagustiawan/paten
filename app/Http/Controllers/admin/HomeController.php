@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Iumk;
 use App\Suket;
+use App\Prosessurat;
 
 class HomeController extends Controller
 {
@@ -18,16 +19,20 @@ class HomeController extends Controller
     {
         $iumk = Iumk::orderBY('created_at', 'DESC')->get();
         $suket = Suket::orderBY('created_at', 'DESC')->get();
+        $proses = Prosessurat::orderBY('created_at', 'DESC')->get();
         $countiumk = Iumk::count();
         $countsuket = Suket::count();
+        $countproses = Prosessurat::count();
         // dd($count);
 
         return view('admin.dashboard', [
             'title' => 'Dashboard',
             'countiumk' => $countiumk,
             'countsuket' => $countsuket,
+            'countproses' => $countproses,
             'iumk' => $iumk,
             'suket'=>$suket,
+            'proses'=>$proses,
         ]);
     }
 }

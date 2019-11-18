@@ -3,9 +3,28 @@
 @section('content')
 
 <section class="content">
+
     <div class="container-fluid">
       <!-- Small boxes (Stat box) -->
       <div class="row">
+
+          <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>{{ $countproses }}</h3>
+    
+                  <p>Total Layanan</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-stats-bars"></i>
+                 
+                </div>
+                <a href="{{ route('admin.proses.index') }}" class="small-box-footer">Lihat Status Layanan <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+
         <div class="col-lg-3 col-6">
           <!-- small box -->
           <div class="small-box bg-info">
@@ -15,27 +34,15 @@
               <p>Ijin Usaha Mikro Kecil</p>
             </div>
             <div class="icon">
-              <i class="ion ion-bag"></i>
+              <i class="ion ion-clipboard"></i>
             </div>
             <a href="{{ route('admin.iumk.index') }}" class="small-box-footer">Ajukan IUMK <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-6">
-          <!-- small box -->
-          <div class="small-box bg-success">
-            <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-              <p>Bounce Rate</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
+        
+
         <div class="col-lg-3 col-6">
           <!-- small box -->
           <div class="small-box bg-warning">
@@ -45,7 +52,7 @@
               <p>Surat Keterangan</p>
             </div>
             <div class="icon">
-              <i class="ion ion-person-add"></i>
+              <i class="ion ion-document"></i>
             </div>
             <a href="{{ route('admin.suket.index') }}" class="small-box-footer">Ajukan Surat Keterangan <i class="fas fa-arrow-circle-right"></i></a>
           </div>

@@ -61,6 +61,7 @@ class ProsesController extends Controller
             'daftar' => $proses,
             // 'iumk' => $iumk,
         ]);
+        
     }
 
     /**
@@ -69,11 +70,13 @@ class ProsesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Prosessurat $prosessurat)
+    public function edit($id)
     {
+        $proses = Prosessurat::find($id);
+        // dd($proses);
         return view('admin.proses.edit', [
             'title' => 'Edit proses Surat',
-            'proses' => $prosessurat,
+            'proses' => $proses,
         ]);
     }
 
@@ -84,8 +87,11 @@ class ProsesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Prosessurat $prosessurat)
+    public function update(Request $request, $id)
     {
+
+        $proses = Prosessurat::find($id);
+        // dd($proses);
         // VALIDASI
         $this->validate($request, [
 
@@ -101,14 +107,14 @@ class ProsesController extends Controller
         ]);
 
 
-        $prosessurat->update([
+        $proses->update([
 
             'proses' => $request->proses,
             'ket' => $request->ket,
 
         ]);
 
-        return redirect()->route('admin.proses.index', $prosessurat)->withInfo('Permohonan Surat Keterangan ' . $prosessurat->nama . ' valid');
+        return redirect()->route('admin.proses.index', $proses)->withInfo('Permohonan Surat Keterangan ' . $proses->nama . ' valid');
     }
 
     /**
