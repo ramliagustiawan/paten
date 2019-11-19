@@ -25,7 +25,10 @@ class PejabatController extends Controller
      */
     public function create()
     {
-        //
+        $model = new Pejabat();
+        return view('admin.pejabat.form', [
+            'model' => $model,
+        ]);
     }
 
     /**
@@ -36,7 +39,17 @@ class PejabatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       //validasi
+       $this->validate($request, [
+        'nama' => 'required',
+        'jabatan' => 'required',
+        'ketjabatan' => 'required',
+        'nip' => 'required',
+        
+    ]);
+
+    $model = Pejabat::create($request->all());
+    return $model;
     }
 
     /**
@@ -58,7 +71,8 @@ class PejabatController extends Controller
      */
     public function edit($id)
     {
-        //
+        $model = Pejabat::findOrFail($id);
+        return view('admin.pejabat.form', compact('model'));
     }
 
     /**
@@ -70,7 +84,17 @@ class PejabatController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         //validasi
+         $this->validate($request, [
+            'nama' => 'required',
+            'jabatan' => 'required',
+            'ketjabatan' => 'required',
+            'nip' => 'required',
+        ]);
+
+        $model = Pejabat::findOrFail($id);
+
+        $model->update($request->all());
     }
 
     /**
@@ -81,6 +105,7 @@ class PejabatController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = Pejabat::findOrFail($id);
+        $model->delete();
     }
 }

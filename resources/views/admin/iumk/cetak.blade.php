@@ -200,6 +200,9 @@
         <td align="center"><b>{{$iumk->pejabat->jabatan}}</b></td>
     </tr>
     <tr>
+        <td align="center"><b>{{$iumk->pejabat->ketjabatan}}</b></td>
+    </tr>
+    <tr>
         <td height="35"></td>
     </tr>
     <tr>
