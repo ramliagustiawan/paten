@@ -46,7 +46,7 @@ class SyaratController extends Controller
             'biaya' => 'required',
             'waktu' => 'required',
             'syarat' => 'required',
-            // 'ket' => 'required',
+
         ]);
 
         $model = Layanan::create($request->all());

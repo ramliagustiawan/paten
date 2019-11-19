@@ -55,7 +55,7 @@
 
 
       {{-- modal tambah --}}
-      @include('admin.templates.partials.largemodal')
+      @include('admin.templates.partials.modal')
 
 
 

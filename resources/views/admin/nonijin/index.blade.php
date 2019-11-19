@@ -21,7 +21,7 @@
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
-                          <table id="status" class="table table-bordered  table-hover" style="width:100%">
+                          <table id="status" class="table table-bordered  table-hover" style="font-size:14px;width:100%">
                             <thead>
                             <tr>
                               <th>No</th>

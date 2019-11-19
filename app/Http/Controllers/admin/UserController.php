@@ -48,8 +48,8 @@ class UserController extends Controller
         User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->password
-        ]);
+            'password' => bcrypt($request->password),
+        ])->assignRole('admin');
 
         return redirect()->route('admin.user.index')->withSuccess('Data Pengguna Berhasil Di Tambahkan');
     }
@@ -112,12 +112,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
         $model = User::findOrFail($id);
         $model->delete();
 
         // User::destroy($id);
-       
+
     }
 }

@@ -32,7 +32,7 @@
                   <form action="{{ route('suket.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
-                   
+
 
                     <p>  Yang bertanda tangan di bawah ini Camat Dungingi, dengan ini menerangkan bahwa:
                     </p>
@@ -113,11 +113,11 @@
                                 <option value="Krsten Protestan">Kristen Protestan</option>
                               </select>
                         </div>
-    
+
                         @error('agama')
                           <span class="help-block">{{ $message }}</span>
                         @enderror
-    
+
                     </div>
 
 
@@ -133,7 +133,7 @@
 
                 </div>
 
-               
+
 
                     <div class="form-group row @error('alamat') has-error @enderror">
                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Alamat</strong> </label>
@@ -182,7 +182,7 @@
 
                     </div>
 
-                  
+
                     <div class="form-group row @error('keperluan') has-error @enderror">
                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Keperluan</strong></label>
                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
@@ -194,7 +194,7 @@
 
                     </div>
 
-                
+
 
                    <div class="form-group row @error('kontak') has-error @enderror">
                     <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kontak</strong> </label>
@@ -208,7 +208,7 @@
 
                 </div>
 
-                  
+
 
                     {{-- jenis surat invisible value default --}}
 
@@ -225,10 +225,10 @@
 
                     </div>
 
-      
+
                       <p>Nama tersebut adalah warga Kecamatan Dungingi Kota Gorontalo. Surat Keterangan ini dipergunakan untuk :
                       </p>
-                     
+
                       <p>Demikianlah surat keterangan ini kami buat, apabila dikemudian hari ternyata ada permasalahan, maka akan menjadi tanggung jawab yang bersangkutan sepenuhnya, dan pejabat yang menadatangani terlepas dari segala tuntutuan hukum yang berlaku.
 
                       </p>
@@ -292,7 +292,7 @@
 
 
                     <div class="form-group mt-2">
-                        <input type="submit" value="Kirim" class="btn btn-primary">
+                        <input type="submit" value="Ajukan" class="btn btn-primary">
                     </div>
 
                   </form>

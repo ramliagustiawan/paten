@@ -1,4 +1,3 @@
-
 {!! Form::model($model, [
     'route'=> $model->exists ? ['admin.syarat.update', $model->id] : 'admin.syarat.store',
     'method'=> $model->exists ? 'PUT' : 'POST'
@@ -31,15 +30,9 @@
 </div>
 
 <div class="form-group">
-    <label for="" class="control-label">Persyaratan</label>
-    {!! Form::textarea('syarat', null, ['class' => 'form-control', 'id' => 'syarat']) !!}
+    <label for="" class="control-label">Syarat</label>
+    {!! Form::text('syarat', null, ['class' => 'form-control', 'id' => 'syarat']) !!}
 
 </div>
-
-{{-- <div class="form-group">
-    <label for="" class="control-label">Ket</label>
-    {!! Form::text('ket', null, ['class' => 'form-control', 'id' => 'ket']) !!}
-
-</div> --}}
 
 {!! Form::close() !!}
