@@ -7,7 +7,7 @@
                 <div class="card-header">
                     <h4 class="box-title">Layanan Perijinan</h4>
 
-                    <a href="{{ route('admin.nonijin.create')}}" class="btn btn-primary pull-right modal-show" title="Tambah Pengguna">Tambah Layanan</a>
+                    <a href="{{ route('admin.ijin.create')}}" class="btn btn-primary pull-right modal-show" title="Tambah Layanan">Tambah Layanan</a>
 
                     {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Tambah Pengguna
@@ -51,7 +51,7 @@
 
 
       {{-- modal tambah --}}
-      {{-- @include('admin.templates.partials.modal') --}}
+      @include('admin.templates.partials.modal')
 
 
 
@@ -92,132 +92,9 @@
                 });
             </script>
 
-            {{-- script modal tambah --}}
-            {{-- <script>
-                // menampilkan modal
-                $('body').on('click', '.modal-show', function(event){
-                    event.preventDefault();
+            {{-- ajax crud --}}
+            @include ('admin.templates.partials.ajaxcrud')
 
-                    var me = $(this),
-                        url = me.attr('href'),
-                        title = me.attr('title');
-
-                    $('#modal-title').text(title);
-                    $('#modal-btn-save').text(me.hasClass('edit') ? 'Update' : 'Create');
-
-                    $.ajax({
-                        url: url,
-                        dataType: 'html',
-                        success: function (response) {
-                            $('#modal-body').html(response);
-                        }
-                    });
-
-                    $('#modal').modal('show');
-                });
-
-                // fungsi validasi
-                $('#modal-btn-save').click(function(event){
-                    event.preventDefault();
-
-                    var form = $('#modal-body form'),
-                        url = form.attr('action'),
-                        method = $('input[name=_method]').val() == undefined ? 'POST' : 'PUT';
-
-
-                    form.find('.help-block').remove();
-                    form.find('.form-group').removeClass('has-error')
-
-                    $.ajax({
-                        url : url,
-                        method : method,
-                        data : form.serialize(),
-                        success: function(response) {
-
-                            // apabila data berhasil validasi lgsg simpan
-
-                            form.trigger('reset');
-                            $('#modal').modal('hide');
-                            $('#status').DataTable().ajax.reload();
-
-                            swal({
-                                type : 'success',
-                                title : 'Success!',
-                                text: 'Data has been saved'
-                            });
-
-                        },
-                        // apabila error
-                        error : function (xhr) {
-                            var res = xhr.responseJSON;
-
-                            if($.isEmptyObject(res) == false){
-                                $.each(res.errors, function (key, value){
-                                    $('#' + key)
-                                    .closest('.form-group')
-                                    .addClass('has-error')
-                                    .append('<span class="help-block">' + value + '</span>')
-                                });
-                            }
-                        }
-                    });
-                });
-
-
-                // delete
-                $('body').on('click', '.btn-delete', function(event){
-                event.preventDefault();
-
-                     var me = $(this),
-                        url = me.attr('href'),
-                        title = me.attr('title'),
-                        csrf_token = $('meta[name="csrf-token"]').attr('content');
-
-                    Swal.fire({
-                        title: 'Apakah Anda Yakin Menghapus Data ' + title + ' ?',
-                        text: "Setelah Dihapus data tidak dapat dikembalikan",
-                        type: 'warning',
-                        showCancelButton: true,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        confirmButtonText: 'Ya, Data Dihapus Saja!'
-                        }).then((result) => {
-
-                            if (result.value) {
-                                $.ajax({
-                                    url: url,
-                                    type: "POST",
-                                    data: {
-                                        '_method' : 'DELETE',
-                                        '_token'  : csrf_token
-                                    },
-
-                                        success: function (response) {
-                                            $('#status').DataTable().ajax.reload();
-
-                                            Swal.fire({
-                                                    title:'Hapus!',
-                                                    text:'Data Berhasil Dihapus.',
-                                                    type:'success'
-                                                });
-                                        },
-                                        error: function (xhr) {
-                                                Swal.fire({
-                                                        title:'Oooppss!',
-                                                        text:'Something Wrong',
-                                                        type:'error'
-                                                });
-                                            }
-
-                                })
-                            }
-
-
-                        });
-                });
-
-
-            </script> --}}
 
 
 @endpush

@@ -115,7 +115,7 @@ class DataController extends Controller
 
     public function syarat()
     {
-        $syarat = Layanan::orderBy('layanan', 'ASC');
+        $syarat = Layanan::orderBy('id', 'ASC');
 
         return datatables()->of($syarat)
             // ->addColumn('syarat_id', function (syarat $model) {

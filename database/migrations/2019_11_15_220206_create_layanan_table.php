@@ -20,7 +20,7 @@ class CreateLayananTable extends Migration
             $table->char('biaya');
             $table->char('waktu');
             $table->longText('syarat');
-            $table->string('ket');
+            $table->string('ket')->nullable()->default(null);
         });
     }
 

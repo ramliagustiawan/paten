@@ -6,8 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ijin extends Model
 {
-    protected $fillable = [
-        'nama',
-        'deskripsi',
-    ];
+    protected $guarded = [];
 }

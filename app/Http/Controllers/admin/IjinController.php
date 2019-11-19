@@ -25,7 +25,10 @@ class IjinController extends Controller
      */
     public function create()
     {
-        //
+        $model = new Ijin();
+        return view('admin.ijin.form', [
+            'model' => $model,
+        ]);
     }
 
     /**
@@ -36,7 +39,14 @@ class IjinController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validasi
+        $this->validate($request, [
+            'nama' => 'required',
+            'controller' => 'required',
+        ]);
+
+        $model = Ijin::create($request->all());
+        return $model;
     }
 
     /**
@@ -58,7 +68,8 @@ class IjinController extends Controller
      */
     public function edit($id)
     {
-        //
+        $model = Ijin::findOrFail($id);
+        return view('admin.ijin.form', compact('model'));
     }
 
     /**
@@ -70,7 +81,15 @@ class IjinController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //validasi
+        $this->validate($request, [
+            'nama' => 'required',
+            'controller' => 'required',
+        ]);
+
+        $model = Ijin::findOrFail($id);
+
+        $model->update($request->all());
     }
 
     /**
@@ -81,6 +100,7 @@ class IjinController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = Ijin::findOrFail($id);
+        $model->delete();
     }
 }

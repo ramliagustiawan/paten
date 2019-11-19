@@ -25,7 +25,10 @@ class SyaratController extends Controller
      */
     public function create()
     {
-        //
+        $model = new Layanan();
+        return view('admin.syarat.form', [
+            'model' => $model,
+        ]);
     }
 
     /**
@@ -36,7 +39,18 @@ class SyaratController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validasi
+        $this->validate($request, [
+            'layanan' => 'required',
+            'kategori' => 'required',
+            'biaya' => 'required',
+            'waktu' => 'required',
+            'syarat' => 'required',
+            // 'ket' => 'required',
+        ]);
+
+        $model = Layanan::create($request->all());
+        return $model;
     }
 
     /**
@@ -58,7 +72,8 @@ class SyaratController extends Controller
      */
     public function edit($id)
     {
-        //
+        $model = Layanan::findOrFail($id);
+        return view('admin.syarat.form', compact('model'));
     }
 
     /**
@@ -70,7 +85,18 @@ class SyaratController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //validasi
+        $this->validate($request, [
+            'layanan' => 'required',
+            'kategori' => 'required',
+            'biaya' => 'required',
+            'waktu' => 'required',
+            'syarat' => 'required',
+        ]);
+
+        $model = Layanan::findOrFail($id);
+
+        $model->update($request->all());
     }
 
     /**
@@ -81,6 +107,7 @@ class SyaratController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = Layanan::findOrFail($id);
+        $model->delete();
     }
 }
