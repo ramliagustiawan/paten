@@ -25,7 +25,10 @@ class NonijinController extends Controller
      */
     public function create()
     {
-        //
+        $model = new Nonijin();
+        return view('admin.nonijin.form', [
+            'model' => $model,
+        ]);
     }
 
     /**
@@ -36,7 +39,14 @@ class NonijinController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validasi
+        $this->validate($request, [
+            'nama' => 'required',
+            'controller' => 'required',
+        ]);
+
+        $model = Nonijin::create($request->all());
+        return $model;
     }
 
     /**
@@ -58,7 +68,8 @@ class NonijinController extends Controller
      */
     public function edit($id)
     {
-        //
+        $model = Nonijin::findOrFail($id);
+        return view('admin.nonijin.form', compact('model'));
     }
 
     /**
@@ -70,7 +81,15 @@ class NonijinController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //validasi
+        $this->validate($request, [
+            'nama' => 'required',
+            'controller' => 'required',
+        ]);
+
+        $model = Nonijin::findOrFail($id);
+
+        $model->update($request->all());
     }
 
     /**
@@ -81,6 +100,9 @@ class NonijinController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = Nonijin::findOrFail($id);
+        $model->delete();
+
+        // Nonijin::destroy($id);
     }
 }
