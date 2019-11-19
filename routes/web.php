@@ -38,6 +38,10 @@ Route::resource('/suket', 'front\SuketController');
 Route::resource('/report', 'front\ReportController');
 
 
-Auth::routes(['verify' => true]);
+Auth::routes([
+    'verify' => true,
+    'reset' => false,
+    'register' => false,
+    ]);
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
