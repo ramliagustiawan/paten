@@ -11,7 +11,7 @@
 
     <form action="{{ route('admin.iumk.proses', $model) }}" method="POST">
         @csrf
-        <input type="submit" value="Selesai" class="btn btn-success" style="font-size:13px;">
+        <input type="submit" value="Selesai" class="btn btn-success btn-proses" id="proses" style="font-size:13px;">
     </form>
 
 
@@ -52,5 +52,6 @@
         })
 
     </script>
+
 
 

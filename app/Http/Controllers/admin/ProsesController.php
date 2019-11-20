@@ -61,7 +61,6 @@ class ProsesController extends Controller
             'daftar' => $proses,
             // 'iumk' => $iumk,
         ]);
-        
     }
 
     /**
@@ -114,7 +113,7 @@ class ProsesController extends Controller
 
         ]);
 
-        return redirect()->route('admin.proses.index', $proses)->withInfo('Permohonan Surat Keterangan ' . $proses->nama . ' valid');
+        return redirect()->route('admin.proses.index', $proses)->withInfo('Permohonan Surat Keterangan ' . $proses->nama . ' Selesai');
     }
 
     /**

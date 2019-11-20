@@ -141,6 +141,7 @@
                                         <select name="ket" id="" class="form-control select2">
                                             <option selected>{{old('ket') ?? $proses->ket}}</option>
                                             <option value="Surat Sudah Bisa Dijemput">Surat Sudah Bisa Dijemput</option>
+                                            <option value="Sementara Proses">Sementara Proses</option>
                                             <option value="Surat Sudah Diterima Pemohon">Surat Sudah Diterima Pemohon</option>
                                             {{-- <option value="Surat Selesai">Surat Selesai </option> --}}
                                           </select>

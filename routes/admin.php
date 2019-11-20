@@ -24,7 +24,7 @@ Route::get('/suket/pdf/{id}', 'SuketController@cetak')->name('suket.cetak');
 Route::get('/suket/qrcode/{id}', 'SuketController@qrcode')->name('suket.qrcode');
 
 
-Route::resource('/user', 'UserController');
+Route::resource('/user', 'UserController')->middleware('role:admin');
 
 Route::resource('/daftar', 'DaftarController');
 Route::post('/daftar/{daftar}', 'DaftarController@proses')->name('daftar.proses');
@@ -42,10 +42,10 @@ Route::post('/suket/{suket}', 'SuketController@proses')->name('suket.proses');
 
 Route::resource('/tindak', 'TindakController');
 
-Route::resource('/nonijin', 'NonijinController');
+Route::resource('/nonijin', 'NonijinController')->middleware('role:admin');
 
-Route::resource('/ijin', 'IjinController');
+Route::resource('/ijin', 'IjinController')->middleware('role:admin');
 
-Route::resource('/syarat', 'SyaratController');
+Route::resource('/syarat', 'SyaratController')->middleware('role:admin');
 
-Route::resource('/pejabat', 'PejabatController');
+Route::resource('/pejabat', 'PejabatController')->middleware('role:admin');

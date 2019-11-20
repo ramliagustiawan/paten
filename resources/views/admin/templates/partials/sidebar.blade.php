@@ -14,6 +14,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
+        @role('admin')
           <li class="nav-header">ADMINISTRATOR</li>
           <li class="nav-item">
             <a href="{{ route('admin.user.index') }}" class="nav-link">
@@ -22,7 +23,9 @@
               <p>Pengguna</p>
             </a>
           </li>
+        @endrole
 
+        @role('admin')
           <li class="nav-header">PENGATURAN</li>
 
               <li class="nav-item has-treeview">
@@ -60,9 +63,10 @@
                 </ul>
 
               </li>
+              @endrole
 
               {{--  BATAS  --}}
-
+              @role('admin')
               <li class="nav-item has-treeview">
                   <a href="#" class="nav-link">
                     <i class="fas fa-cogs nav-icon"></i>
@@ -94,6 +98,7 @@
                 {{--  batas  --}}
 
           </li>
+          @endrole
 
           {{--  PROSES LAYANAN  --}}
 

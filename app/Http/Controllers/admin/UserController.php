@@ -49,7 +49,9 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
-        ])->assignRole('admin');
+        ])->assignRole('adminkec');
+
+        // ->assignRole('admin')
 
         return redirect()->route('admin.user.index')->withSuccess('Data Pengguna Berhasil Di Tambahkan');
     }
