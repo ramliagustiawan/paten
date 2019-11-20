@@ -247,6 +247,11 @@ class SuketController extends Controller
         $suket = Suket::findOrFail($id);
         // dd($suket);
 
+        $suket->update([
+            'hasil' => Carbon::now(),
+        ]);
+
+
         Prosessurat::create([
 
             'proses_id' => $suket->layanan_id,

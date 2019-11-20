@@ -281,6 +281,10 @@ class IumkController extends Controller
         $iumk = Iumk::findOrFail($id);
         // dd($iumk);
 
+        $iumk->update([
+            'hasil' => Carbon::now(),
+        ]);
+
         Prosessurat::create([
 
             'proses_id' => $iumk->layanan_id,

@@ -32,8 +32,12 @@ class HomeController extends Controller
             'countsuket' => $countsuket,
             'countproses' => $countproses,
             'iumk' => $iumk,
-            'suket'=>$suket,
-            'proses'=>$proses,
+            'suket' => $suket,
+            'proses' => $proses,
         ]);
+
+        Role::create(['name' => 'adminkec']);
+
+        return view('home');
     }
 }
