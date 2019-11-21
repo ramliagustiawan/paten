@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 use App\User;
 use App\Service;
 use App\Prosessurat;
@@ -15,13 +16,18 @@ use App\Nonijin;
 use App\Ijin;
 use App\Pejabat;
 
+
 class DataController extends Controller
 {
     public function data()
     {
-        $user = User::orderBy('name', 'ASC');
+
+        $user = User::orderBy('created_at', 'DESC');
 
         return datatables()->of($user)
+            ->addColumn('roles_id', function (User $model) {
+                return $model->roles->first()->name;
+            })
             ->addColumn('action', 'admin.user.action')
             ->addIndexColumn()
             ->toJson();
@@ -135,6 +141,19 @@ class DataController extends Controller
             //     return $model->pejabat->pejabat;
             // })
             ->addColumn('action', 'admin.pejabat.action')
+            ->addIndexColumn()
+            ->toJson();
+    }
+
+    public function role()
+    {
+        $role = Role::orderBy('id', 'ASC');
+
+        return datatables()->of($role)
+            // ->addColumn('role_id', function (role $model) {
+            //     return $model->role->role;
+            // })
+            ->addColumn('action', 'admin.role.action')
             ->addIndexColumn()
             ->toJson();
     }

@@ -13,6 +13,7 @@ Route::get('/nonijin/nonijin', 'DataController@nonijin')->name('nonijin.nonijin'
 Route::get('/ijin/ijin', 'DataController@ijin')->name('ijin.ijin');
 Route::get('/syarat/syarat', 'DataController@syarat')->name('syarat.syarat');
 Route::get('/pejabat/pejabat', 'DataController@pejabat')->name('pejabat.pejabat');
+Route::get('/role/role', 'DataController@role')->name('role.role');
 
 Route::post('/iumk/qrcode', 'IumkController@qrcode')->name('iumk.qrcode');
 
@@ -49,3 +50,5 @@ Route::resource('/ijin', 'IjinController')->middleware('role:admin');
 Route::resource('/syarat', 'SyaratController')->middleware('role:admin');
 
 Route::resource('/pejabat', 'PejabatController')->middleware('role:admin');
+
+Route::resource('/role', 'RoleController')->middleware('role:admin');

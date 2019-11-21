@@ -5,9 +5,9 @@
         <div class="card mt-1">
 
                 <div class="card-header">
-                    <h4 class="box-title">Data Pengguna</h4>
+                    <h4 class="box-title">Role Akses</h4>
 
-                    <a href="{{ route('admin.user.create')}}" class="btn btn-primary pull-right modal-show" title="Tambah Pengguna">Tambah Pengguna</a>
+                    <a href="{{ route('admin.role.create')}}" class="btn btn-primary pull-right modal-show" title="Tambah Layanan">Tambah role</a>
 
                     {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Tambah Pengguna
@@ -21,14 +21,12 @@
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
-                          <table id="status" class="table table-bordered  table-hover" style="font-size:14px; width:100%">
+                          <table id="status" class="table table-bordered  table-hover" style="font-size:14px;width:100%">
                             <thead>
                             <tr>
                               <th>No</th>
                               <th>Nama</th>
-                              <th>Email</th>
-                              <th>Akses</th>
-                              {{-- <th>Password</th> --}}
+                              <th>Guard Name</th>
                                <th>Aksi</th>
 
 
@@ -53,7 +51,7 @@
 
 
       {{-- modal tambah --}}
-      {{-- @include('admin.templates.partials.modal') --}}
+      @include('admin.templates.partials.modal')
 
 
 
@@ -82,22 +80,22 @@
                     $('#status').DataTable({
                         processing: true,
                         serverSide: true,
-                        ajax:'{{ route('admin.user.data') }}',
+                        ajax:'{{ route('admin.role.role') }}',
                         columns: [
 
                             {data:'DT_RowIndex',orderable:false,searchable:false},
                             {data:'name'},
-                            {data:'email'},
-                            {data:'roles_id'},
-                            // {data:'password'},
+                            {data:'guard_name'},
                             {data:'action'},
                         ]
                     });
                 });
             </script>
 
-         {{-- modal tambah --}}
-      {{-- @include('admin.templates.partials.ajaxcrud') --}}
+            {{-- ajax crud --}}
+            @include ('admin.templates.partials.ajaxcrud')
+
+
 
 
 @endpush

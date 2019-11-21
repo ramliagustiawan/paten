@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 use App\User;
 
 class UserController extends Controller
@@ -16,7 +17,11 @@ class UserController extends Controller
     public function index()
     {
 
-        return view('admin.user.index');
+        $users = User::orderBy('created_at', 'DESC');
+        return view('admin.user.index', [
+            'title' => 'Manajemen User',
+            'users' => $users,
+        ]);
     }
 
     /**
@@ -27,7 +32,13 @@ class UserController extends Controller
     public function create()
     {
         $model = new User();
-        return view('admin.user.formedit', compact('model'));
+        $role = Role::orderBy('name', 'ASC')->get();
+        // dd($model);
+        return view('admin.user.create', [
+            'title' => 'Tambah User',
+            'model' => $model,
+            'role' => $role,
+        ]);
     }
 
     /**
@@ -42,16 +53,20 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required|min:3',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required'
+            'password' => 'required',
+            'roles_id' => 'required',
         ]);
 
-        User::create([
-            'name' => $request->name,
+        $user = User::firstOrCreate([
             'email' => $request->email,
+        ], [
+            'name' => $request->name,
             'password' => bcrypt($request->password),
-        ])->assignRole('adminkec');
+            'status' => true,
+            'roles_id' => $request->roles_id,
+        ]);
 
-        // ->assignRole('admin')
+        $user->assignRole($request->roles_id);
 
         return redirect()->route('admin.user.index')->withSuccess('Data Pengguna Berhasil Di Tambahkan');
     }
@@ -93,19 +108,23 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required|min:3',
             'email' => 'required|email|unique:users,email,' . $id,
-            'password' => 'required'
+            'password' => 'nullable|min:6',
+            'roles_id' => 'required',
         ]);
 
+
         $model = User::findOrFail($id);
+        $password = !empty($request->password) ? bcrypt($request->password) : $model->password;
 
         $model->update([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => $password,
+            'roles_id' => $request->roles_id,
 
         ]);
 
-        // return redirect()->route('admin.user.index')->withSuccess('Data Pengguna Berhasil Di Ubah');
+        return redirect()->route('admin.user.index')->withSuccess('Data Pengguna Berhasil Di Ubah');
     }
 
     /**

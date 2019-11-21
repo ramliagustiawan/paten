@@ -69,6 +69,12 @@ Breadcrumbs::for('admin.user.index', function ($trail) {
     $trail->push('Beranda', route('admin.dashboard'));
     $trail->push('Administrator', route('admin.user.index'));
 });
+// user create
+Breadcrumbs::for('admin.user.create', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Manajemen User', route('admin.user.index'));
+    $trail->push('Tambah user', route('admin.user.create'));
+});
 
 // suket
 // suket index
@@ -123,4 +129,10 @@ Breadcrumbs::for('admin.syarat.index', function ($trail) {
 Breadcrumbs::for('admin.pejabat.index', function ($trail) {
     $trail->push('Beranda', route('admin.dashboard'));
     $trail->push('Pejabat', route('admin.pejabat.index'));
+});
+
+// role index
+Breadcrumbs::for('admin.role.index', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Hak Akses', route('admin.role.index'));
 });

@@ -1,9 +1,9 @@
    {{-- isi --}}
 
-   <form 
-   action="{{ route('admin.user.store') }}" 
+   <form
+   action="{{ route('admin.user.store') }}"
    method="POST">
-   
+
         @csrf
 
         <div class="form-group row @error('name') has-error @enderror">
@@ -32,6 +32,31 @@
 
         </div>
 
+        <div class="form-group row @error('pejabat_id') has-error @enderror">
+            <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Hak Akses</strong> </label>
+            <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                <select name="pejabat_id" id="" class="form-control select2">
+
+                    @foreach ($roles as $item)
+                    <option
+                        value="{{ $item->id }}"
+                        @if($item->id == $user->role_id)
+                            selected
+                        @endif
+                    >
+                        {{$item->name}}
+                    </option>
+
+                    @endforeach
+                  </select>
+            </div>
+
+            @error('pejabat_id')
+              <span class="help-block">{{ $message }}</span>
+            @enderror
+
+        </div>
+
         <div class="form-group row @error('password') has-error @enderror">
             <label for="" class="col-sm-2 col-md-6 col-lg-2 col-form-label"><strong>Password</strong> </label>
             <div class="col-sm-10">
@@ -44,7 +69,7 @@
 
         </div>
 
-       
+
 
       </form>
 
