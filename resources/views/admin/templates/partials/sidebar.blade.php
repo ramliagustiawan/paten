@@ -31,6 +31,14 @@
               <p>Role</p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="{{ route('admin.user.role_permission') }}" class="nav-link">
+              <i class="nav-icon fas fa-key"></i>
+
+              <p>Role  Permission</p>
+            </a>
+          </li>
         @endrole
 
         @role('admin')

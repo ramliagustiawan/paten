@@ -75,6 +75,12 @@ Breadcrumbs::for('admin.user.create', function ($trail) {
     $trail->push('Manajemen User', route('admin.user.index'));
     $trail->push('Tambah user', route('admin.user.create'));
 });
+//user permission
+Breadcrumbs::for('admin.user.role_permission', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Manajemen User', route('admin.user.index'));
+    $trail->push('Role Permission', route('admin.user.role_permission'));
+});
 
 // suket
 // suket index

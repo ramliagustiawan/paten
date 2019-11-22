@@ -53,7 +53,7 @@
 
 
       {{-- modal tambah --}}
-      {{-- @include('admin.templates.partials.modal') --}}
+      @include('admin.templates.partials.modal')
 
 
 
@@ -97,7 +97,7 @@
             </script>
 
          {{-- modal tambah --}}
-      {{-- @include('admin.templates.partials.ajaxcrud') --}}
+      @include('admin.templates.partials.ajaxcrud')
 
 
 @endpush

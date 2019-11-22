@@ -5,7 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+use DB;
 use App\User;
+
 
 class UserController extends Controller
 {
@@ -17,7 +20,7 @@ class UserController extends Controller
     public function index()
     {
 
-        $users = User::orderBy('created_at', 'DESC');
+        $users = User::orderBy('id', 'ASC');
         return view('admin.user.index', [
             'title' => 'Manajemen User',
             'users' => $users,
@@ -32,9 +35,9 @@ class UserController extends Controller
     public function create()
     {
         $model = new User();
-        $role = Role::orderBy('name', 'ASC')->get();
+        $role = Role::pluck('name', 'id');
         // dd($model);
-        return view('admin.user.create', [
+        return view('admin.user.form', [
             'title' => 'Tambah User',
             'model' => $model,
             'role' => $role,
@@ -92,7 +95,17 @@ class UserController extends Controller
     {
 
         $model = User::findOrFail($id);
-        return view('admin.user.formedit', compact('model'));
+        $role = Role::pluck('name', 'id');
+
+        // if (!empty($model->roles->name)) {
+        //     $model->roles_id = $model->roles->name;
+        // }
+
+        return view('admin.user.formedit', [
+            'title' => 'Edit User',
+            'model' => $model,
+            'role' => $role,
+        ]);
     }
 
     /**
@@ -108,8 +121,7 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required|min:3',
             'email' => 'required|email|unique:users,email,' . $id,
-            'password' => 'nullable|min:6',
-            'roles_id' => 'required',
+            'password' => 'nullable',
         ]);
 
 
@@ -117,14 +129,11 @@ class UserController extends Controller
         $password = !empty($request->password) ? bcrypt($request->password) : $model->password;
 
         $model->update([
-            'name' => $request->name,
             'email' => $request->email,
+            'name' => $request->name,
             'password' => $password,
-            'roles_id' => $request->roles_id,
 
         ]);
-
-        return redirect()->route('admin.user.index')->withSuccess('Data Pengguna Berhasil Di Ubah');
     }
 
     /**
@@ -140,5 +149,33 @@ class UserController extends Controller
 
         // User::destroy($id);
 
+    }
+
+    public function rolePermission(Request $request)
+    {
+        $role = $request->get('role');
+
+        //Default, set dua buah variable dengan nilai null
+        $permissions = null;
+        $hasPermission = null;
+
+        //Mengambil data role
+        $roles = Role::all()->pluck('name');
+
+        //apabila parameter role terpenuhi
+        if (!empty($role)) {
+            //select role berdasarkan namenya, ini sejenis dengan method find()
+            $getRole = Role::findByName($role);
+
+            //Query untuk mengambil permission yang telah dimiliki oleh role terkait
+            $hasPermission = DB::table('role_has_permissions')
+                ->select('permissions.name')
+                ->join('permissions', 'role_has_permissions.permission_id', '=', 'permissions.id')
+                ->where('role_id', $getRole->id)->get()->pluck('name')->all();
+
+            //Mengambil data permission
+            $permissions = Permission::all()->pluck('name');
+        }
+        return view('admin.user.role_permission', compact('roles', 'permissions', 'hasPermission'));
     }
 }

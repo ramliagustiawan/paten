@@ -24,8 +24,10 @@ Route::get('/iumk/qrcode/{id}', 'IumkController@qrcode')->name('iumk.qrcode');
 Route::get('/suket/pdf/{id}', 'SuketController@cetak')->name('suket.cetak');
 Route::get('/suket/qrcode/{id}', 'SuketController@qrcode')->name('suket.qrcode');
 
-
+Route::get('/user/rolper', 'UserController@rolePermission')->name('user.role_permission');
 Route::resource('/user', 'UserController')->middleware('role:admin');
+// Route::post('/user/permission', 'UserController@addPermission')->name('users.add_permission');
+
 
 Route::resource('/daftar', 'DaftarController');
 Route::post('/daftar/{daftar}', 'DaftarController@proses')->name('daftar.proses');
