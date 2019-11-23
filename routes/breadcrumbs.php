@@ -75,11 +75,19 @@ Breadcrumbs::for('admin.user.create', function ($trail) {
     $trail->push('Manajemen User', route('admin.user.index'));
     $trail->push('Tambah user', route('admin.user.create'));
 });
-//user permission
+
+//user user rolper
 Breadcrumbs::for('admin.user.role_permission', function ($trail) {
     $trail->push('Beranda', route('admin.dashboard'));
     $trail->push('Manajemen User', route('admin.user.index'));
     $trail->push('Role Permission', route('admin.user.role_permission'));
+});
+
+//user user roles
+Breadcrumbs::for('admin.user.roles', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Manajemen User', route('admin.user.index'));
+    $trail->push('Edit Role Akses', route('admin.user.roles'));
 });
 
 // suket
@@ -141,4 +149,10 @@ Breadcrumbs::for('admin.pejabat.index', function ($trail) {
 Breadcrumbs::for('admin.role.index', function ($trail) {
     $trail->push('Beranda', route('admin.dashboard'));
     $trail->push('Hak Akses', route('admin.role.index'));
+});
+
+// role permissions
+Breadcrumbs::for('admin.permission.index', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Hak Akses', route('admin.permission.index'));
 });

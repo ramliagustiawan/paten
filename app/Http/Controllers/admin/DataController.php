@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 use App\User;
 use App\Service;
 use App\Prosessurat;
@@ -154,6 +155,19 @@ class DataController extends Controller
             //     return $model->role->role;
             // })
             ->addColumn('action', 'admin.role.action')
+            ->addIndexColumn()
+            ->toJson();
+    }
+
+    public function permission()
+    {
+        $permission = Permission::orderBy('id', 'ASC');
+
+        return datatables()->of($permission)
+            // ->addColumn('permission_id', function (permission $model) {
+            //     return $model->permission->permission;
+            // })
+            ->addColumn('action', 'admin.permission.action')
             ->addIndexColumn()
             ->toJson();
     }

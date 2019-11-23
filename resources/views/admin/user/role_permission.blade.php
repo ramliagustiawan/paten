@@ -19,13 +19,13 @@
                         <section class="content">
                             <div class="container-fluid">
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        @card
+                                    {{-- <div class="col-md-4">
+
                                             @slot('title')
                                             <h4 class="card-title">Add New Permission</h4>
                                             @endslot
                 ​
-                                            <form action="" method="post">
+                                            <form action="{{ route('admin.user.add_permission') }}" method="post">
                                                 @csrf
                                                 <div class="form-group">
                                                     <label for="">Name</label>
@@ -41,29 +41,25 @@
                                             @slot('footer')
                 ​
                                             @endslot
-                                        @endcard
-                                    </div>
+
+                                    </div> --}}
                 ​
-                                    <div class="col-md-8">
-                                        @card
+                                    <div class="col-md-6">
+
                                             @slot('title')
                                             Set Permission to Role
                                             @endslot
                 ​
-                                            @if (session('success'))
-                                                @alert(['type' => 'success'])
-                                                    {{ session('success') }}
-                                                @endalert
-                                            @endif
+
 
                                             <form action="" method="GET">
                                                 <div class="form-group">
-                                                    <label for="">Roles</label>
+                                                    <label for="">Roles And Permissions</label>
                                                     <div class="input-group">
                                                         <select name="role" class="form-control">
-                                                            {{-- @foreach ($roles as $value)
+                                                            @foreach ($roles as $value)
                                                                 <option value="{{ $value }}" {{ request()->get('role') == $value ? 'selected':'' }}>{{ $value }}</option>
-                                                            @endforeach --}}
+                                                            @endforeach
                                                         </select>
                                                         <span class="input-group-btn">
                                                             <button class="btn btn-danger">Check!</button>
@@ -74,7 +70,7 @@
 
                                             {{-- jika $permission tidak bernilai kosong --}}
                                             @if (!empty($permissions))
-                                                <form action="{{ route('users.setRolePermission', request()->get('role')) }}" method="post">
+                                                <form action="{{ route('admin.user.setRolePermission', request()->get('role')) }}" method="post">
                                                     @csrf
                                                     <input type="hidden" name="_method" value="PUT">
                                                     <div class="form-group">
@@ -114,7 +110,7 @@
                                             @slot('footer')
 
                                             @endslot
-                                        @endcard
+
                                     </div>
                                 </div>
                             </div>

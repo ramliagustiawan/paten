@@ -14,6 +14,7 @@ Route::get('/ijin/ijin', 'DataController@ijin')->name('ijin.ijin');
 Route::get('/syarat/syarat', 'DataController@syarat')->name('syarat.syarat');
 Route::get('/pejabat/pejabat', 'DataController@pejabat')->name('pejabat.pejabat');
 Route::get('/role/role', 'DataController@role')->name('role.role');
+Route::get('/permission/permission', 'DataController@permission')->name('permission.permission');
 
 Route::post('/iumk/qrcode', 'IumkController@qrcode')->name('iumk.qrcode');
 
@@ -24,9 +25,11 @@ Route::get('/iumk/qrcode/{id}', 'IumkController@qrcode')->name('iumk.qrcode');
 Route::get('/suket/pdf/{id}', 'SuketController@cetak')->name('suket.cetak');
 Route::get('/suket/qrcode/{id}', 'SuketController@qrcode')->name('suket.qrcode');
 
+Route::get('/user/roles/{id}', 'UserController@roles')->name('user.roles');
+Route::put('/users/permission/{role}', 'UserController@setRolePermission')->name('user.setRolePermission');
+Route::post('/users/permission', 'UserController@addPermission')->name('user.add_permission');
 Route::get('/user/rolper', 'UserController@rolePermission')->name('user.role_permission');
 Route::resource('/user', 'UserController')->middleware('role:admin');
-// Route::post('/user/permission', 'UserController@addPermission')->name('users.add_permission');
 
 
 Route::resource('/daftar', 'DaftarController');
@@ -54,3 +57,5 @@ Route::resource('/syarat', 'SyaratController')->middleware('role:admin');
 Route::resource('/pejabat', 'PejabatController')->middleware('role:admin');
 
 Route::resource('/role', 'RoleController')->middleware('role:admin');
+
+Route::resource('/permission', 'PermissionController')->middleware('role:admin');

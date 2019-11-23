@@ -31,6 +31,13 @@
               <p>Role</p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ route('admin.permission.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+
+              <p>Permission</p>
+            </a>
+          </li>
 
           <li class="nav-item">
             <a href="{{ route('admin.user.role_permission') }}" class="nav-link">
