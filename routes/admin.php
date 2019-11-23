@@ -16,6 +16,8 @@ Route::get('/pejabat/pejabat', 'DataController@pejabat')->name('pejabat.pejabat'
 Route::get('/role/role', 'DataController@role')->name('role.role');
 Route::get('/permission/permission', 'DataController@permission')->name('permission.permission');
 
+Route::get('/dispensasi/dispensasi', 'DataController@dispensasi')->name('dispensasi.dispensasi');
+
 Route::post('/iumk/qrcode', 'IumkController@qrcode')->name('iumk.qrcode');
 
 Route::get('/iumk/iumk', 'DataController@iumk')->name('iumk.iumk');
@@ -24,6 +26,9 @@ Route::get('/iumk/qrcode/{id}', 'IumkController@qrcode')->name('iumk.qrcode');
 
 Route::get('/suket/pdf/{id}', 'SuketController@cetak')->name('suket.cetak');
 Route::get('/suket/qrcode/{id}', 'SuketController@qrcode')->name('suket.qrcode');
+
+Route::get('/dispensasi/pdf/{id}', 'DispensasiController@cetak')->name('dispensasi.cetak');
+Route::get('/dispensasi/qrcode/{id}', 'DispensasiController@qrcode')->name('dispensasi.qrcode');
 
 Route::get('/user/roles/{id}', 'UserController@roles')->name('user.roles');
 Route::put('/users/permission/{role}', 'UserController@setRolePermission')->name('user.setRolePermission');
@@ -43,7 +48,8 @@ Route::post('/iumk/{iumk}', 'IumkController@proses')->name('iumk.proses');
 Route::resource('/suket', 'SuketController');
 Route::post('/suket/{suket}', 'SuketController@proses')->name('suket.proses');
 
-
+Route::resource('/dispensasi', 'DispensasiController');
+Route::post('/dispensasi/{dispensasi}', 'DispensasiController@proses')->name('dispensasi.proses');
 
 
 Route::resource('/tindak', 'TindakController');

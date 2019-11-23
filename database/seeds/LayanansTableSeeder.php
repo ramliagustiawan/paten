@@ -26,6 +26,16 @@ class LayanansTableSeeder extends Seeder
         ]);
 
         Layanan::create([
+            'layanan' => 'Dispensasi Nikah',
+            'kategori' => 'Non Perijinan',
+            'biaya' => 'Gratis',
+            'waktu' => '20 Menit Setelah Berkas Lengkap',
+            'syarat' => 'Permohonan KUA
+                         Bukti Pelunasan PBB    ',
+            'ket' => ''
+        ]);
+
+        Layanan::create([
             'layanan' => 'Surat Keterangan',
             'kategori' => 'Non Perijinan',
             'biaya' => 'Gratis',
@@ -34,5 +44,6 @@ class LayanansTableSeeder extends Seeder
                          Bukti Pelunasan PBB    ',
             'ket' => ''
         ]);
+        
     }
 }

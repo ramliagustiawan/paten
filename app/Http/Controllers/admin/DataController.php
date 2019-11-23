@@ -16,6 +16,7 @@ use App\Suket;
 use App\Nonijin;
 use App\Ijin;
 use App\Pejabat;
+use App\Dispensasi;
 
 
 class DataController extends Controller
@@ -168,6 +169,19 @@ class DataController extends Controller
             //     return $model->permission->permission;
             // })
             ->addColumn('action', 'admin.permission.action')
+            ->addIndexColumn()
+            ->toJson();
+    }
+
+    public function dispensasi()
+    {
+        $dispensasi = Dispensasi::isSelesai()->orderBy('created_at', 'DESC');
+
+        return datatables()->of($dispensasi)
+            ->addColumn('layanan_id', function (Dispensasi $model) {
+                return $model->layanan->layanan;
+            })
+            ->addColumn('action', 'admin.dispensasi.action')
             ->addIndexColumn()
             ->toJson();
     }
