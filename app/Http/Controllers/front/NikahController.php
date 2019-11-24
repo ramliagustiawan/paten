@@ -5,6 +5,7 @@ namespace App\Http\Controllers\front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Service;
+use App\Dispensasi;
 
 class NikahController extends Controller
 {
@@ -15,7 +16,9 @@ class NikahController extends Controller
      */
     public function index()
     {
-        return view('front.nikah.index');
+        return view('front.nikah.index', [
+            'titile' => 'Dispensasi Nikah'
+        ]);
     }
 
     /**
@@ -25,10 +28,12 @@ class NikahController extends Controller
      */
     public function create()
     {
-        $iumk = Service::orderBY('created_at', DESC)->get();
-        return view('front.iumk.create', [
-            'title' => 'Pelaporan',
-            'report' => $iumk
+
+        $dispensasi = Dispensasi::orderBY('created_at', 'DESC')->get();
+        return view('admin.dispensasi.create', [
+            'title' => 'Ajukan dispensasi',
+            'dispensasi' => $dispensasi,
+            'layanan' => Layanan::orderBy('layanan', 'ASC')->get(),
         ]);
     }
 
@@ -44,75 +49,99 @@ class NikahController extends Controller
         // VALIDASI
         $this->validate($request, [
 
-            'nokua' => 'required',
-            'nama' => 'required|min:3',
-            'ttl' => 'required',
-            'jk' => 'required',
-            'negara' => 'required',
+            'kua' => 'required',
+            'nama' => 'required',
+            'nik' => 'required|numeric',
+            'tempat' => 'required',
+            'tgllhr' => 'required',
+            'jk' => 'required|min:4',
+            'wn' => 'required',
             'kerja' => 'required',
             'agama' => 'required',
-            'statusnikah' => 'required',
+            'status' => 'required',
             'bin' => 'required',
             'alamat' => 'required',
-            'istri' => 'required',
-            'ttlistri' => 'required',
-            'jkistri' => 'required',
-            'negaraistri' => 'required',
-            'kerjaistri' => 'required',
-            'agamaistri' => 'required',
-            'statusistri' => 'required',
+            'kelurahan' => 'required',
+
+            'layanan_id' => 'required',
+
+            'namacln' => 'required',
+            'nikcln' => 'required|numeric',
+            'tempatcln' => 'required',
+            'tgllhrcln' => 'required',
+            'jkcln' => 'required|min:4',
+            'wncln' => 'required',
+            'kerjacln' => 'required',
+            'agamacln' => 'required',
+            'statuscln' => 'required',
             'binti' => 'required',
-            'alamatistri' => 'required',
-            'kontak' => 'required|numeric',
-            'nik' => 'required|numeric',
-            'layanan' => 'required',
-            'fotoktp' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
+            'alamatcln' => 'required',
+            'kelurahancln' => 'required',
+
+            'kontakcln' => 'required|numeric',
+
+            'waktuakad' => 'required',
+            'tempatakad' => 'required',
+
+            'fotokua' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
 
 
         ]);
 
         // CEK GAMBAR
-        $fotoktp = null;
+        $fotokua = null;
         $fotopbb = null;
 
 
-        if ($request->hasFile('fotoktp')) {
-            $fotoktp = $request->file('fotoktp')->store('assets/covers');
+        if ($request->hasFile('fotokua')) {
+            $fotokua = $request->file('fotokua')->store('assets/covers');
         }
 
         if ($request->hasFile('fotopbb')) {
             $fotopbb = $request->file('fotopbb')->store('assets/covers');
         }
 
+        Dispensasi::create([
 
-
-        Service::create([
-
-            'nokua' => $request->nokua,
+            'kua' => $request->kua,
             'nama' => $request->nama,
-            'ttl' => $request->ttl,
+            'nik' => $request->nik,
+            'tempat' => $request->tempat,
+            'tgllhr' => $request->tgllhr,
             'jk' => $request->jk,
-            'negara' => $request->negara,
+            'wn' => $request->wn,
             'kerja' => $request->kerja,
             'agama' => $request->agama,
-            'statusnikah' => $request->statusnikah,
+            'status' => $request->status,
             'bin' => $request->bin,
             'alamat' => $request->alamat,
-            'istri' => $request->istri,
-            'ttlistri' => $request->ttlistri,
-            'jkistri' => $request->jkistri,
-            'negaraistri' => $request->negaraistri,
-            'kerjaistri' => $request->kerjaistri,
-            'agamaistri' => $request->agamaistri,
-            'statusistri' => $request->statusistri,
+            'kelurahan' => $request->kelurahan,
+
+            'layanan_id' => $request->layanan_id,
+
+            'namacln' => $request->namacln,
+            'nikcln' => $request->nikcln,
+            'tempatcln' => $request->tempatcln,
+            'tgllhrcln' => $request->tgllhrcln,
+            'jkcln' => $request->jkcln,
+            'wncln' => $request->wncln,
+            'kerjacln' => $request->kerjacln,
+            'agamacln' => $request->agamacln,
+            'statuscln' => $request->statuscln,
             'binti' => $request->binti,
-            'alamatistri' => $request->alamatistri,
-            'kontak' => $request->kontak,
-            'nik' => $request->nik,
-            'layanan' => $request->layanan,
-            'fotoktp' => $fotoktp,
+            'alamatcln' => $request->alamatcln,
+            'kelurahancln' => $request->kelurahancln,
+
+            'kontakcln' => $request->kontakcln,
+
+            'waktuakad' => $request->waktuakad,
+            'tempatakad' => $request->tempatakad,
+
+            'fotokua' => $fotokua,
             'fotopbb' => $fotopbb,
+
+
         ]);
 
         return redirect()->route('nikah.index')->withSuccess('Permohonan Dispensasi Nikah Berhasil Di Kirim');
