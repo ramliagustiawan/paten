@@ -1,9 +1,10 @@
+
 <div class="jumbotron jumbotron-fluid mt-0">
         <div class="container">
-             <h1 class="display-4 mt-4"><strong>SIP PATEN DUNGINGI</strong></h1>
-         <p class="lead"><strong>Sistem Informasi Pelaporan Dan Pelayanan Terpadu Kecamatan</strong></p>
-         <hr class="my-4">
-         <p >Pelayanan Dimana Saja Kapan Saja Dengan Lebih Pasti Dan Mudah</p>
+             <h2 class="display-5 mt-4 text-dark">SIP PATEN DUNGINGI</h2>
+         <p class="lead text-muted"><strong>Sistem Informasi Pelaporan Dan Pelayanan Terpadu Kecamatan</strong></p>
+         <hr class="my-4 ">
+         <p class="center text-light mt-1">Pelayanan Dimana Saja Kapan Saja Dengan Lebih Pasti Dan Mudah</p>
          <br>
 
         <table>
