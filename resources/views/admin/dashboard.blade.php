@@ -238,40 +238,14 @@
         <!-- Left col -->
         <section class="col-lg-12 connectedSortable">
           <!-- Custom tabs (Charts with tabs)-->
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">
-                <i class="fas fa-chart-pie mr-1"></i>
-                Sales
-              </h3>
-              <div class="card-tools">
-                <ul class="nav nav-pills ml-auto">
-                  <li class="nav-item">
-                    <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Area</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#sales-chart" data-toggle="tab">Donut</a>
-                  </li>
-                </ul>
-              </div>
-            </div><!-- /.card-header -->
-            <div class="card-body">
-              <div class="tab-content p-0">
-                <!-- Morris chart - Sales -->
-                <div class="chart tab-pane active" id="revenue-chart"
-                     style="position: relative; height: 300px;">
-                    <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>
-                 </div>
-                <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
-                  <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>
-                </div>
-              </div>
-            </div><!-- /.card-body -->
+         
+
+            {{-- highchart --}}
+            <div id="container">
+            </div>
+            
           </div>
           <!-- /.card -->
-
-
-
 
           <!-- /.card -->
         </section>
@@ -279,156 +253,16 @@
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
         </div>
 
-        <div class="row">
-        <section class="col-lg-4 connectedSortable">
-
-          <!-- Map card -->
-          <div class="card bg-gradient-primary">
-            <div class="card-header border-0">
-              <h3 class="card-title">
-                <i class="fas fa-map-marker-alt mr-1"></i>
-                Visitors
-              </h3>
-              <!-- card tools -->
-              <div class="card-tools">
-                <button type="button"
-                        class="btn btn-primary btn-sm daterange"
-                        data-toggle="tooltip"
-                        title="Date range">
-                  <i class="far fa-calendar-alt"></i>
-                </button>
-                <button type="button"
-                        class="btn btn-primary btn-sm"
-                        data-card-widget="collapse"
-                        data-toggle="tooltip"
-                        title="Collapse">
-                  <i class="fas fa-minus"></i>
-                </button>
-              </div>
-              <!-- /.card-tools -->
+        {{-- <div class="row">
+            <section class="col-lg-12 connectedSortable"> --}}
+          
+            {{-- highchart --}}
+            {{-- <div id="container2">
             </div>
-            <div class="card-body">
-              <div id="world-map" style="height: 250px; width: 100%;"></div>
-            </div>
-            <!-- /.card-body-->
-            <div class="card-footer bg-transparent">
-              <div class="row">
-                <div class="col-4 text-center">
-                  <div id="sparkline-1"></div>
-                  <div class="text-white">Visitors</div>
-                </div>
-                <!-- ./col -->
-                <div class="col-4 text-center">
-                  <div id="sparkline-2"></div>
-                  <div class="text-white">Online</div>
-                </div>
-                <!-- ./col -->
-                <div class="col-4 text-center">
-                  <div id="sparkline-3"></div>
-                  <div class="text-white">Sales</div>
-                </div>
-                <!-- ./col -->
-              </div>
-              <!-- /.row -->
-            </div>
-          </div>
-          <!-- /.card -->
-        </section>
-        <section class="col-lg-4 connectedSortable">
-
-          <!-- solid sales graph -->
-          <div class="card bg-gradient-info">
-            <div class="card-header border-0">
-              <h3 class="card-title">
-                <i class="fas fa-th mr-1"></i>
-                Sales Graph
-              </h3>
-
-              <div class="card-tools">
-                <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
-                  <i class="fas fa-minus"></i>
-                </button>
-                <button type="button" class="btn bg-info btn-sm" data-card-widget="remove">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-            </div>
-            <div class="card-body">
-              <canvas class="chart" id="line-chart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-            </div>
-            <!-- /.card-body -->
-            <div class="card-footer bg-transparent">
-              <div class="row">
-                <div class="col-4 text-center">
-                  <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"
-                         data-fgColor="#39CCCC">
-
-                  <div class="text-white">Mail-Orders</div>
-                </div>
-                <!-- ./col -->
-                <div class="col-4 text-center">
-                  <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
-                         data-fgColor="#39CCCC">
-
-                  <div class="text-white">Online</div>
-                </div>
-                <!-- ./col -->
-                <div class="col-4 text-center">
-                  <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
-                         data-fgColor="#39CCCC">
-
-                  <div class="text-white">In-Store</div>
-                </div>
-                <!-- ./col -->
-              </div>
-              <!-- /.row -->
-            </div>
-            <!-- /.card-footer -->
-          </div>
-          <!-- /.card -->
-        </section>
-        <section class="col-lg-4 connectedSortable">
-
-          <!-- Calendar -->
-          <div class="card bg-gradient-success">
-            <div class="card-header border-0">
-
-              <h3 class="card-title">
-                <i class="far fa-calendar-alt"></i>
-                Calendar
-              </h3>
-              <!-- tools card -->
-              <div class="card-tools">
-                <!-- button with a dropdown -->
-                <div class="btn-group">
-                  <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
-                    <i class="fas fa-bars"></i></button>
-                  <div class="dropdown-menu float-right" role="menu">
-                    <a href="#" class="dropdown-item">Add new event</a>
-                    <a href="#" class="dropdown-item">Clear events</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">View calendar</a>
-                  </div>
-                </div>
-                <button type="button" class="btn btn-success btn-sm" data-card-widget="collapse">
-                  <i class="fas fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-success btn-sm" data-card-widget="remove">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-              <!-- /. tools -->
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body pt-0">
-              <!--The calendar -->
-            </div>
-              <div id="calendar" style="width: 100%"></div>
-            </div>
-            <!-- /.card-body -->
-
-          <!-- /.card -->
-        </section>
+            
+          </section>
+        </div> --}}
+       
     </div>
         <!-- right col -->
       </div>
@@ -439,3 +273,132 @@
 
 
 @endsection
+
+@push('scripts')
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
+<script>
+Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Monthly Average Rainfall'
+    },
+    subtitle: {
+        text: 'Source: WorldClimate.com'
+    },
+    xAxis: {
+        categories: [
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec'
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Rainfall (mm)'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Tokyo',
+        data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+
+    }, {
+        name: 'New York',
+        data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
+
+    }, {
+        name: 'London',
+        data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
+
+    }, {
+        name: 'Berlin',
+        data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+
+    }]
+});
+
+
+</script>
+
+<script>
+// Build the chart
+Highcharts.chart('container2', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Browser market shares in January, 2018'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: false
+            },
+            showInLegend: true
+        }
+    },
+    series: [{
+        name: 'Brands',
+        colorByPoint: true,
+        data: [{
+            name: 'Chrome',
+            y: 61.41,
+            sliced: true,
+            selected: true
+        }, {
+            name: 'Internet Explorer',
+            y: 11.84
+        }, {
+            name: 'Firefox',
+            y: 10.85
+        }, {
+            name: 'Edge',
+            y: 4.67
+        }, {
+            name: 'Safari',
+            y: 4.18
+        }, {
+            name: 'Other',
+            y: 7.05
+        }]
+    }]
+});
+</script>
+
+@endpush
