@@ -15,6 +15,9 @@
             <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavId">
                     <ul class="navbar-nav  " >
                             <li class="nav-item">
+                              <a class="nav-link" href="{{ route('homepage') }}">HOME</a>
+                            </li>
+                            <li class="nav-item">
                               <a class="nav-link" href="{{ route('info.index') }}">INFORMASI LAYANAN</a>
                             </li>
                             <li class="nav-item">
