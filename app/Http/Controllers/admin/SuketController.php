@@ -57,7 +57,7 @@ class SuketController extends Controller
             'nama' => 'required',
             'nik' => 'required|numeric|max:9999999999999999',
             'tempat' => 'required',
-            'tgllhr' => 'required',
+            'tgllhr' => 'required|date',
             'jk' => 'required|min:4',
             'agama' => 'required',
             'pekerjaan' => 'required',
@@ -173,6 +173,8 @@ class SuketController extends Controller
 
         ]);
 
+       
+
         // CEK GAMBAR
         $fotoktp = null;
         $fotopbb = null;
@@ -191,7 +193,7 @@ class SuketController extends Controller
             'nama' => $request->nama,
             'nik' => $request->nik,
             'tempat' => $request->tempat,
-            'tgllhr' => $request->tgllhr,
+            // 'tgllhr' => $tgllhr,
             'jk' => $request->jk,
             'agama' => $request->agama,
             'pekerjaan' => $request->pekerjaan,

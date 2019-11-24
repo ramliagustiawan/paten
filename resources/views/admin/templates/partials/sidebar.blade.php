@@ -123,6 +123,7 @@
           </li>
           @endrole
 
+
           {{--  PROSES LAYANAN  --}}
 
           <li class="nav-header">PROSES LAYANAN</li>
@@ -161,14 +162,14 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-chart-pie"></i>
                         <p>SKTM</p>
                         {{-- <span class="badge badge-light ml-5">9</span> --}}
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-chart-pie"></i>
                         <p>Domisili Usaha</p>
                         {{-- <span class="badge badge-light ml-5">9</span> --}}

@@ -6,6 +6,10 @@
 
     <div class="container-fluid">
       <!-- Small boxes (Stat box) -->
+
+      <div >
+          <h5><strong>1. Layanan dan Pelaporan</strong></h5>
+      </div>
       <div class="row">
 
           <div class="col-lg-3 col-6">
@@ -20,7 +24,7 @@
                   <i class="ion ion-stats-bars"></i>
                  
                 </div>
-                <a href="{{ route('admin.proses.index') }}" class="small-box-footer">Lihat Status Layanan <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('admin.syarat.index') }}" class="small-box-footer">Lihat Layanan <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -31,12 +35,176 @@
             <div class="inner">
               <h3>{{ $countiumk }}</h3>
 
-              <p>Ijin Usaha Mikro Kecil</p>
+              <p>Pelaporan</p>
             </div>
             <div class="icon">
               <i class="ion ion-clipboard"></i>
             </div>
-            <a href="{{ route('admin.iumk.index') }}" class="small-box-footer">Ajukan IUMK <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{ route('admin.tindak.index') }}" class="small-box-footer">Tindak Lanjut <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+
+        <!-- ./col -->
+       
+        <!-- ./col -->
+      </div>
+
+      <hr>
+
+      <div >
+          <h5><strong>2. Layanan On Proses</strong></h5>
+      </div>
+      <div class="row">
+          <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>{{ $countproses }}</h3>
+    
+                  <p>Jumlah dan Status Layanan </p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-stats-bars"></i>
+                 
+                </div>
+                <a href="{{ route('admin.proses.index') }}" class="small-box-footer">Status Layanan On Proses <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>{{ $countiumk }}</h3>
+  
+                <p>Ijin Usaha Mikro Kecil</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-clipboard"></i>
+              </div>
+              <a href="{{ route('admin.iumk.index') }}" class="small-box-footer">Ajukan IUMK <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>{{ $countsuket }}</h3>
+  
+                <p>Dispensasi Nikah</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-document"></i>
+              </div>
+              <a href="{{ route('admin.dispensasi.index') }}" class="small-box-footer">Ajukan Dispensasi Nikah <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>{{ $countsuket }}</h3>
+  
+                <p>Surat Keterangan</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-clipboard"></i>
+              </div>
+              <a href="{{ route('admin.suket.index') }}" class="small-box-footer">Ajukan Surat Keterangan <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+        <!-- ./col -->
+      </div>
+
+      <div class="row">
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-info">
+            <div class="inner">
+              <h3>150</h3>
+
+              <p>Domisili Usaha</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-bag"></i>
+            </div>
+            <a href="#" class="small-box-footer">Ajukan Domisili Usaha <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-success">
+            <div class="inner">
+              <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+              <p>Surat Keterangan Tidak Mampu</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="#" class="small-box-footer">Ajukan SKTM <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-warning">
+            <div class="inner">
+              <h3>44</h3>
+
+              <p>Permohonan Lainnya</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-person-add"></i>
+            </div>
+            <a href="{{ route('admin.daftar.index') }}" class="small-box-footer">Daftar Permohonan <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+       
+        <!-- ./col -->
+      </div>
+<hr>
+      <div >
+          <h5><strong>3. Administrasi Kantor</strong></h5>
+      </div>
+      <div class="row">
+
+      
+
+          <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>{{ $countproses }}</h3>
+    
+                  <p>Surat Masuk</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-stats-bars"></i>
+                 
+                </div>
+                <a href="#" class="small-box-footer">Lihat Surat Masuk <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-info">
+            <div class="inner">
+              <h3>{{ $countiumk }}</h3>
+
+              <p>Surat Keluar</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-clipboard"></i>
+            </div>
+            <a href="#" class="small-box-footer">Lihat Surat Keluar <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -49,93 +217,19 @@
             <div class="inner">
               <h3>{{ $countsuket }}</h3>
 
-              <p>Surat Keterangan</p>
+              <p>Tindak Lanjut Surat</p>
             </div>
             <div class="icon">
               <i class="ion ion-document"></i>
             </div>
-            <a href="{{ route('admin.suket.index') }}" class="small-box-footer">Ajukan Surat Keterangan <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="#" class="small-box-footer">Tindak Lanjut <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-6">
-          <!-- small box -->
-          <div class="small-box bg-danger">
-            <div class="inner">
-              <h3>65</h3>
-
-              <p>Unique Visitors</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-pie-graph"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
+       
         <!-- ./col -->
       </div>
-      <div class="row">
-        <div class="col-lg-3 col-6">
-          <!-- small box -->
-          <div class="small-box bg-info">
-            <div class="inner">
-              <h3>150</h3>
-
-              <p>New Orders</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-bag"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-6">
-          <!-- small box -->
-          <div class="small-box bg-success">
-            <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-              <p>Bounce Rate</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-6">
-          <!-- small box -->
-          <div class="small-box bg-warning">
-            <div class="inner">
-              <h3>44</h3>
-
-              <p>User Registrations</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-6">
-          <!-- small box -->
-          <div class="small-box bg-danger">
-            <div class="inner">
-              <h3>65</h3>
-
-              <p>Unique Visitors</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-pie-graph"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-      </div>
+      
       <!-- /.row -->
 
       <!-- Main row -->

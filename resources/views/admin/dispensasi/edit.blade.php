@@ -47,12 +47,12 @@
                                                           @error('kua')
                                                             <span class="help-block">{{ $message }}</span>
                                                           @enderror
-                  
+
                                                       </div>
-                  
+
                                                       <p> Berdasarkan Surat Keterangan Untuk Nikah No: , Kecamatan Dungingi Kota Gorontalo, Berdasarkan Keputusan Menteri Agama RI. No. 298 Tahun 2003 Pasal 19 Ayat 2 tentang Pencacatan Nikah dengan ini diberikan Dispensasi Kepada:
                                                       </p>
-                  
+
                                                       <div class="form-group row @error('nama') has-error @enderror">
                                                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>1. Calon Suami </strong></label>
                                                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
@@ -61,45 +61,46 @@
                                                           @error('nama')
                                                             <span class="help-block">{{ $message }}</span>
                                                           @enderror
-                  
+
                                                       </div>
-                  
+
                                                       <div class="form-group row @error('nik') has-error @enderror">
                                                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>NIK</strong> </label>
                                                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                                           <input type="" name="nik" class="form-control" id="nik" placeholder="Masukkan Nomor Induk Kependudukan Anda" value="{{ old('nik') ?? $dispensasi->nik }}" >
                                                           </div>
-                                    
+
                                                           @error('nik')
                                                             <span class="help-block">{{ $message }}</span>
                                                           @enderror
-                                    
+
                                                   </div>
-                                    
+
                                                         <div class="form-group row @error('tempat') has-error @enderror">
                                                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tempat Lahir</strong> </label>
                                                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                                           <input type="" name="tempat" class="form-control" id="tempat" placeholder="Tempat Lahir Sesuai KTP" value="{{ old('tempat') ?? $dispensasi->tempat }}" >
                                                           </div>
-                                    
+
                                                           @error('tempat')
                                                             <span class="help-block">{{ $message }}</span>
                                                           @enderror
-                                    
+
                                                         </div>
-                                    
+
                                                         <div class="form-group row @error('tgllhr') has-error @enderror">
                                                                 <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tanggal Lahir</strong> </label>
                                                                 <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                                                <input type="date" name="tgllhr" class="form-control" id="tgllhr" placeholder="Contoh : Gorontalo, 13 Agustus 1994" value="{{ old('tgllhr') ?? $dispensasi->tgllhr }}" >{{ old('tgllhr') ?? $dispensasi->tgllhr }}
+                                                                <input type="" name="tgllhr" class="form-control" id="tgllhr" placeholder="Contoh : Gorontalo, 13 Agustus 1994" value="{{ old('tgllhr') ?? $dispensasi->tgllhr }}" readonly>
+
                                                                 </div>
-                                    
+
                                                                 @error('tgllhr')
                                                                   <span class="help-block">{{ $message }}</span>
                                                                 @enderror
-                                    
+
                                                         </div>
-                                    
+
                                                         <div class="form-group row @error('jk') has-error @enderror">
                                                             <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Jenis Kelamin</strong> </label>
                                                             <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
@@ -107,16 +108,16 @@
                                                                     <option selected>{{ old('jk')?? $dispensasi->jk  }}</option>
                                                                     <option value="Laki-Laki">Laki-Laki</option>
                                                                     <option value="Perempuan">Perempuan</option>
-                                    
+
                                                                   </select>
                                                             </div>
-                                    
+
                                                             @error('jk')
                                                               <span class="help-block">{{ $message }}</span>
                                                             @enderror
-                                    
+
                                                         </div>
-                                                                    
+
                                                       <div class="form-group row @error('wn') has-error @enderror">
                                                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Warga Negara</strong> </label>
                                                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
@@ -126,25 +127,25 @@
                                                                 <option value="Warga Negara Asing">Warga Negara Asing</option>
                                                               </select>
                                                         </div>
-                  
+
                                                         @error('wn')
                                                           <span class="help-block">{{ $message }}</span>
                                                         @enderror
-                  
+
                                                     </div>
-                  
+
                                                       <div class="form-group row @error('kerja') has-error @enderror">
                                                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Pekerjaan</strong> </label>
                                                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                                           <input type="" name="kerja" class="form-control" id="kerja" placeholder="Masukkan Pekerjaan Anda" value="{{ old('kerja') ?? $dispensasi->kerja }}" >
                                                           </div>
-                  
+
                                                           @error('kerja')
                                                             <span class="help-block">{{ $message }}</span>
                                                           @enderror
-                  
+
                                                       </div>
-                  
+
                                                       <div class="form-group row @error('agama') has-error @enderror">
                                                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Agama</strong> </label>
                                                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
@@ -157,14 +158,14 @@
                                                                   <option value="Krsten Protestan">Kristen Protestan</option>
                                                                 </select>
                                                           </div>
-                  
+
                                                           @error('agama')
                                                             <span class="help-block">{{ $message }}</span>
                                                           @enderror
-                  
+
                                                       </div>
-                  
-                  
+
+
                                                       <div class="form-group row @error('status') has-error @enderror">
                                                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Status</strong> </label>
                                                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
@@ -174,42 +175,42 @@
                                                                   <option value="Perawan">Perawan</option>
                                                                   <option value="Duda">Duda</option>
                                                                   <option value="Janda">Janda</option>
-                  
+
                                                                 </select>
                                                           </div>
-                  
+
                                                           @error('status')
                                                             <span class="help-block">{{ $message }}</span>
                                                           @enderror
-                  
+
                                                       </div>
-                  
+
                                                       <div class="form-group row @error('bin') has-error @enderror">
                                                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Bin</strong> </label>
                                                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                                           <input type="text" name="bin" class="form-control" id="bin" placeholder="Masukkan Nama Orang Tua anda" value="{{ old('bin') ?? $dispensasi->bin }}"
                                                           >
                                                           </div>
-                  
+
                                                           @error('bin')
                                                             <span class="help-block">{{ $message }}</span>
                                                           @enderror
-                  
+
                                                       </div>
-                  
-                  
+
+
                                                       <div class="form-group row @error('alamat') has-error @enderror">
                                                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Alamat</strong> </label>
                                                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                                           <input type="text" name="alamat" class="form-control" id="alamat" placeholder="Masukkan Alamat Lengkap Anda" value="{{ old('alamat') ?? $dispensasi->alamat }}">
                                                           </div>
-                  
+
                                                           @error('alamat')
                                                             <span class="help-block">{{ $message }}</span>
                                                           @enderror
-                  
+
                                                       </div>
-                  
+
                                                       <div class="form-group row @error('kelurahan') has-error @enderror">
                                                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kelurahan</strong> </label>
                                                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
@@ -224,16 +225,16 @@
                                                                   <option value="Luar Daerah">Luar Daerah</option>
                                                                 </select>
                                                           </div>
-                                      
+
                                                           @error('kelurahan')
                                                             <span class="help-block">{{ $message }}</span>
                                                           @enderror
-                                      
+
                                                       </div>
                                                       {{-- batas suami --}}
                                                       <br>
                                                       <hr>
-                  
+
                                                       <div class="form-group row @error('namacln') has-error @enderror">
                                                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>2. Calon Istri </strong></label>
                                                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
@@ -242,45 +243,45 @@
                                                           @error('namacln')
                                                             <span class="help-block">{{ $message }}</span>
                                                           @enderror
-                  
+
                                                       </div>
-                  
+
                                                       <div class="form-group row @error('nikcln') has-error @enderror">
                                                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>NIK</strong> </label>
                                                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                                           <input type="" name="nikcln" class="form-control" id="nikcln" placeholder="Masukkan Nomor Induk Kependudukan Anda" value="{{ old('nikcln')?? $dispensasi->nikcln }}" >
                                                           </div>
-                                    
+
                                                           @error('nikcln')
                                                             <span class="help-block">{{ $message }}</span>
                                                           @enderror
-                                    
+
                                                   </div>
-                                    
+
                                                         <div class="form-group row @error('tempatcln') has-error @enderror">
                                                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tempat Lahir</strong> </label>
                                                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                                           <input type="" name="tempatcln" class="form-control" id="tempatcln" placeholder="tempatcln Lahir Sesuai KTP" value="{{ old('tempatcln')?? $dispensasi->tempatcln }}">
                                                           </div>
-                                    
+
                                                           @error('tempatcln')
                                                             <span class="help-block">{{ $message }}</span>
                                                           @enderror
-                                    
+
                                                         </div>
-                                    
+
                                                         <div class="form-group row @error('tgllhrcln') has-error @enderror">
                                                                 <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tanggal Lahir</strong> </label>
                                                                 <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                                                <input type="date" name="tgllhrcln" class="form-control" id="tgllhrcln" placeholder="Contoh : Gorontalo, 13 Agustus 1994" value="{{ old('tgllhrcln')?? $dispensasi->tgllhrcln }}" >{{ old('tgllhrcln')?? $dispensasi->tgllhrcln }}
+                                                                <input type="" name="tgllhrcln" class="form-control" id="tgllhrcln" placeholder="Contoh : Gorontalo, 13 Agustus 1994" value="{{ old('tgllhrcln')?? $dispensasi->tgllhrcln }}" readonly>
                                                                 </div>
-                                    
+
                                                                 @error('tgllhrcln')
                                                                   <span class="help-block">{{ $message }}</span>
                                                                 @enderror
-                                    
+
                                                         </div>
-                                    
+
                                                         <div class="form-group row @error('jkcln') has-error @enderror">
                                                             <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Jenis Kelamin</strong> </label>
                                                             <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
@@ -288,16 +289,16 @@
                                                                     <option selected>{{ old('jkcln')?? $dispensasi->jkcln }}</option>
                                                                     <option value="Laki-Laki">Laki-Laki</option>
                                                                     <option value="Perempuan">Perempuan</option>
-                                    
+
                                                                   </select>
                                                             </div>
-                                    
+
                                                             @error('jkcln')
                                                               <span class="help-block">{{ $message }}</span>
                                                             @enderror
-                                    
+
                                                         </div>
-                                                                    
+
                                                       <div class="form-group row @error('wncln') has-error @enderror">
                                                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Warga Negara</strong> </label>
                                                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
@@ -307,25 +308,25 @@
                                                                 <option value="Warga Negara Asing">Warga Negara Asing</option>
                                                               </select>
                                                         </div>
-                  
+
                                                         @error('wncln')
                                                           <span class="help-block">{{ $message }}</span>
                                                         @enderror
-                  
+
                                                     </div>
-                  
+
                                                       <div class="form-group row @error('kerjacln') has-error @enderror">
                                                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Pekerjaan</strong> </label>
                                                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                                           <input type="" name="kerjacln" class="form-control" id="kerjacln" placeholder="Masukkan Pekerjaan Anda" value="{{ old('kerjacln') ?? $dispensasi->kerjacln }}" >
                                                           </div>
-                  
+
                                                           @error('kerjacln')
                                                             <span class="help-block">{{ $message }}</span>
                                                           @enderror
-                  
+
                                                       </div>
-                  
+
                                                       <div class="form-group row @error('agamacln') has-error @enderror">
                                                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Agama</strong> </label>
                                                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
@@ -338,14 +339,14 @@
                                                                   <option value="Krsten Protestan">Kristen Protestan</option>
                                                                 </select>
                                                           </div>
-                  
+
                                                           @error('agamacln')
                                                             <span class="help-block">{{ $message }}</span>
                                                           @enderror
-                  
+
                                                       </div>
-                  
-                  
+
+
                                                       <div class="form-group row @error('statuscln') has-error @enderror">
                                                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Status</strong> </label>
                                                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
@@ -355,42 +356,42 @@
                                                                   <option value="Perawan">Perawan</option>
                                                                   <option value="Duda">Duda</option>
                                                                   <option value="Janda">Janda</option>
-                  
+
                                                                 </select>
                                                           </div>
-                  
+
                                                           @error('statuscln')
                                                             <span class="help-block">{{ $message }}</span>
                                                           @enderror
-                  
+
                                                       </div>
-                  
+
                                                       <div class="form-group row @error('binti') has-error @enderror">
                                                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Binti</strong> </label>
                                                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                                           <input type="text" name="binti" class="form-control" id="binti" placeholder="Masukkan Nama Orang Tua anda" value="{{ old('binti')?? $dispensasi->binti }}"
                                                           >
                                                           </div>
-                  
+
                                                           @error('binti')
                                                             <span class="help-block">{{ $message }}</span>
                                                           @enderror
-                  
+
                                                       </div>
-                  
-                  
+
+
                                                       <div class="form-group row @error('alamatcln') has-error @enderror">
                                                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Alamat</strong> </label>
                                                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                                           <input type="text" name="alamatcln" class="form-control" id="alamat" placeholder="Masukkan Alamat Lengkap Anda" value="{{ old('alamat')?? $dispensasi->alamatcln }}">
                                                           </div>
-                  
+
                                                           @error('alamatcln')
                                                             <span class="help-block">{{ $message }}</span>
                                                           @enderror
-                  
+
                                                       </div>
-                  
+
                                                       <div class="form-group row @error('kelurahancln') has-error @enderror">
                                                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kelurahan</strong> </label>
                                                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
@@ -405,87 +406,87 @@
                                                                   <option value="Luar Daerah">Luar Daerah</option>
                                                                 </select>
                                                           </div>
-                                      
+
                                                           @error('kelurahancln')
                                                             <span class="help-block">{{ $message }}</span>
                                                           @enderror
-                                      
+
                                                       </div>
-                  
-                  
+
+
                                                     {{-- batas calon istri --}}
-                  
+
                                                     <hr>
-                  
+
                                                     <div class="form-group row @error('kontakcln') has-error @enderror">
                                                       <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kontak</strong> </label>
                                                       <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                                       <input type="" name="kontakcln" class="form-control" id="kontakcln" placeholder="Masukkan Nomor Telp/Hp Calon suami/ Calon Istri " value="{{ old('kontakcln')?? $dispensasi->kontakcln }}">
                                                       </div>
-                  
+
                                                       @error('kontakcln')
                                                         <span class="help-block">{{ $message }}</span>
                                                       @enderror
-                  
+
                                                   </div>
-                  
+
                                                   <div class="form-group row @error('waktuakad') has-error @enderror">
                                                       <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tanggal Akad</strong> </label>
                                                       <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                                      <input type="date" name="waktuakad" class="form-control" id="waktuakad" placeholder="Masukkan Tanggal Pelaksanaan Akad Nikah" value="{{ old('waktuakad')?? $dispensasi->waktuakad }}"
-                                                      >{{ old('waktuakad')?? $dispensasi->waktuakad }}
+                                                      <input type="" name="waktuakad" class="form-control" id="waktuakad" placeholder="Masukkan Tanggal Pelaksanaan Akad Nikah" value="{{ old('waktuakad')?? $dispensasi->waktuakad }}"
+                                                      readonly>
                                                       </div>
-                  
+
                                                       @error('waktuakad')
                                                         <span class="help-block">{{ $message }}</span>
                                                       @enderror
-                  
+
                                                   </div>
-                  
-                  
+
+
                                                       <div class="form-group row @error('tempatakad') has-error @enderror">
                                                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tempat Akad</strong> </label>
                                                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                                           <input type="text" name="tempatakad" class="form-control" id="tempatakad" placeholder="Masukkan Tempat Pelaksanaan Akad Nikah" value="{{ old('tempatakad')?? $dispensasi->tempatakad }}"
                                                           >
                                                           </div>
-                  
+
                                                           @error('tempatakad')
                                                             <span class="help-block">{{ $message }}</span>
                                                           @enderror
-                  
+
                                                       </div>
-                  
+
                                                      {{--  --}}
-                  
-                                                   
-                  
+
+
+
                                                       {{-- batas istri --}}
                                                       <br>
-                  
+
                                                       <p>Untuk dapat melaksanakan sebelum 10 (sepuluh) hari kerja sejak melaporkan ke KUA dispensasi ini diberikan berdasarkan permintaan yang bersangkutan/Wali/WakilWali dengan alasan:
                                                       </p>
-                  
+
                                                       <ul> - Akan Melaksanakan Pernikahan kurang 10 hari sejak melapor ke KUA</ul>
-                  
+
                                                       <p>Demikian untuk dipergunakan sebagaimana mestinya.
                                                       </p>
-                  
+
                                                       {{-- jenis surat invisible value default --}}
-                  
+
                                                       <div class="form-group row @error('layanan_id') has-error @enderror invisible ">
                                                               <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kategori</strong> </label>
                                                               <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                                               <input type="text" name="layanan_id" class="form-control" id="layanan_id" placeholder="Masukkan layanan Anda" value="2"
                                                               required>
                                                               </div>
-                  
+
                                                               @error('layanan_id')
                                                                 <span class="help-block">{{ $message }}</span>
                                                               @enderror
-                  
+
                                                       </div>
-                  
+
 
 
                                                         <div class="card">

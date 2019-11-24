@@ -183,3 +183,10 @@ Breadcrumbs::for('admin.dispensasi.create', function ($trail) {
     $trail->push('Dispensasi Nikah', route('admin.dispensasi.index'));
     $trail->push('Tambah Dispensasi Nikah', route('admin.dispensasi.create'));
 });
+
+// daftar
+Breadcrumbs::for('admin.daftar.index', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Permohonan Layanan', route('admin.daftar.index'));
+    $trail->push('Daftar Permohonan', route('admin.daftar.index'));
+});

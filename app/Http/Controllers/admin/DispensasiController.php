@@ -253,7 +253,7 @@ class DispensasiController extends Controller
             'nama' => $request->nama,
             'nik' => $request->nik,
             'tempat' => $request->tempat,
-            'tgllhr' => $request->tgllhr,
+            // 'tgllhr' => $request->tgllhr,
             'jk' => $request->jk,
             'wn' => $request->wn,
             'kerja' => $request->kerja,
@@ -268,7 +268,7 @@ class DispensasiController extends Controller
             'namacln' => $request->namacln,
             'nikcln' => $request->nikcln,
             'tempatcln' => $request->tempatcln,
-            'tgllhrcln' => $request->tgllhrcln,
+            // 'tgllhrcln' => $request->tgllhrcln,
             'jkcln' => $request->jkcln,
             'wncln' => $request->wncln,
             'kerjacln' => $request->kerjacln,
@@ -280,7 +280,7 @@ class DispensasiController extends Controller
 
             'kontakcln' => $request->kontakcln,
 
-            'waktuakad' => $request->waktuakad,
+            // 'waktuakad' => $request->waktuakad,
             'tempatakad' => $request->tempatakad,
 
             // 'fotokua' => $fotokua,

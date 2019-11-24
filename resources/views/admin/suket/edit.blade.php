@@ -79,7 +79,7 @@
                                                   <div class="form-group row @error('tgllhr') has-error @enderror">
                                                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tanggal Lahir</strong> </label>
                                                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                                          <input type="date" name="tgllhr" class="form-control" id="tgllhr" placeholder="Contoh : Gorontalo, 13 Agustus 1994" value="{{ old('tgllhr')?? $suket->tgllhr  }}" >
+                                                          <input type="" name="tgllhr" class="form-control" id="tgllhr"  value="{{$suket->tgllhr }}" readonly>
                                                           </div>
 
                                                           @error('tgllhr')
