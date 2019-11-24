@@ -15,7 +15,9 @@ class SyaratController extends Controller
      */
     public function index()
     {
-        return view('admin.syarat.index');
+        return view('admin.syarat.index', [
+            'title' => 'Detail Layanan'
+        ]);
     }
 
     /**

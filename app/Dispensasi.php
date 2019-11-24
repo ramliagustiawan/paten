@@ -91,7 +91,7 @@ class Dispensasi extends Model
 
         return 'https://via.placeholder.com/150x200.png?text=No+Data';
     }
-   
+
 
     public function prosessurat()
     {

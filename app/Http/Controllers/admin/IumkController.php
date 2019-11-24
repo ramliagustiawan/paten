@@ -22,7 +22,9 @@ class IumkController extends Controller
      */
     public function index()
     {
-        return view('admin.iumk.index');
+        return view('admin.iumk.index', [
+            'title' => 'Ijin Usaha Mikro Kecil'
+        ]);
     }
 
     /**

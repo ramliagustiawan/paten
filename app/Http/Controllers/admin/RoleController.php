@@ -11,7 +11,10 @@ class RoleController extends Controller
     public function index()
     {
         $role = Role::orderBy('created_at', 'DESC');
-        return view('admin.role.index', compact('role'));
+        return view('admin.role.index', [
+            'title' => 'Role Akses',
+            'role' => $role,
+        ]);
     }
 
     public function create()

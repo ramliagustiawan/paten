@@ -24,29 +24,46 @@
             </a>
           </li>
 
-          <li class="nav-item">
-            <a href="{{ route('admin.role.index') }}" class="nav-link">
-              <i class="nav-icon fas fa-lock"></i>
+          {{--  batas  --}}
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="fas fa-key nav-icon"></i>
+              <p>
+                Manajemen Akses
+                <i class="right fas fa-angle-left"></i>
 
-              <p>Role</p>
+              </p>
             </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ route('admin.permission.index') }}" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
 
-              <p>Permission</p>
-            </a>
+            <ul class="nav nav-treeview">
+
+              <li class="nav-item">
+                <a href="{{ route('admin.role.index') }}" class="nav-link">
+                  <i class="nav-icon fas fa-lock"></i>
+                  <p>Role</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{ route('admin.permission.index') }}" class="nav-link">
+                  <i class="nav-icon fas fa-book"></i>
+                  <p>Permission</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('admin.user.role_permission') }}" class="nav-link">
+                  <i class="nav-icon fas fa-key"></i>
+                  <p>Role  Permission</p>
+                </a>
+              </li>
+
+            </ul>
+
           </li>
 
-          <li class="nav-item">
-            <a href="{{ route('admin.user.role_permission') }}" class="nav-link">
-              <i class="nav-icon fas fa-key"></i>
-
-              <p>Role  Permission</p>
-            </a>
-          </li>
+          {{--  batas akhir  --}}
         @endrole
+
 
         @role('admin')
           <li class="nav-header">PENGATURAN</li>
@@ -65,20 +82,20 @@
 
                   <li class="nav-item">
                     <a href="{{ route('admin.ijin.index') }}" class="nav-link">
-                      <i class="far fa-dot-circle nav-icon"></i>
+                      <i class="fas fa-calendar-check nav-icon"></i>
                       <p>Perijinan</p>
                     </a>
                   </li>
 
                   <li class="nav-item">
                     <a href="{{ route('admin.nonijin.index') }}" class="nav-link">
-                      <i class="far fa-dot-circle nav-icon"></i>
+                        <i class="fas fa-calendar-check nav-icon"></i>
                       <p>Non Perijinan</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="{{ route('admin.syarat.index') }}" class="nav-link">
-                      <i class="far fa-dot-circle nav-icon"></i>
+                      <i class="fas fa-fax nav-icon"></i>
                       <p>Detail Layanan</p>
                     </a>
                   </li>
@@ -103,7 +120,7 @@
 
                     <li class="nav-item">
                       <a href="{{ route('admin.pejabat.index') }}" class="nav-link">
-                        <i class="far fa-dot-circle nav-icon"></i>
+                        <i class="fas fa-user-friends nav-icon"></i>
                         <p>Pejabat</p>
                       </a>
                     </li>
@@ -142,35 +159,35 @@
 
                   <li class="nav-item">
                     <a href="{{ route('admin.iumk.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <i class="far fa-calendar-check nav-icon"></i>
                         <p>IUMK</p>
                         {{-- <span class="badge badge-light ml-5">9</span> --}}
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="{{ route('admin.dispensasi.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <i class="far fa-calendar-check nav-icon"></i>
                         <p>Dispensasi Nikah</p>
                         {{-- <span class="badge badge-light ml-5">9</span> --}}
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="{{ route('admin.suket.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <i class="far fa-calendar-check nav-icon"></i>
                         <p>Surat Keterangan</p>
                         {{-- <span class="badge badge-light ml-5">9</span> --}}
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <i class="far fa-calendar-check nav-icon"></i>
                         <p>SKTM</p>
                         {{-- <span class="badge badge-light ml-5">9</span> --}}
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <i class="far fa-calendar-check nav-icon"></i>
                         <p>Domisili Usaha</p>
                         {{-- <span class="badge badge-light ml-5">9</span> --}}
                     </a>
@@ -178,7 +195,7 @@
 
                   <li class="nav-item">
                         <a href="{{ route('admin.daftar.index') }}" class="nav-link">
-                          <i class="nav-icon fas fa-file"></i>
+                          <i class="far fa-calendar-plus nav-icon"></i>
                           <p>Permohonan Layanan</p>
                         </a>
                       </li>

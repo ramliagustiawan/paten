@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Report;
 
+
 class TindakController extends Controller
 {
     /**
@@ -15,7 +16,9 @@ class TindakController extends Controller
      */
     public function index()
     {
-        return view('admin.tindak.index');
+        return view('admin.tindak.index', [
+            'title' => 'Tindak Lanjut Laporan'
+        ]);
     }
 
     /**
@@ -106,6 +109,10 @@ class TindakController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = Report::findOrFail($id);
+        // dd($model);
+        $model->delete();
+        return redirect()->route('admin.tindak.index')
+            ->with('danger', 'Pelaporan Dihapus');
     }
 }

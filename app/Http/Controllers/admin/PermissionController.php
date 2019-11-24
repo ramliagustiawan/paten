@@ -11,7 +11,10 @@ class PermissionController extends Controller
     public function index()
     {
         $permission = Permission::orderBy('created_at', 'DESC');
-        return view('admin.permission.index', compact('permission'));
+        return view('admin.permission.index', [
+            'title' => 'Permission Akses',
+            'permission' => $permission
+        ]);
     }
 
     public function create()

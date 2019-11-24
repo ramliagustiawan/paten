@@ -24,7 +24,9 @@ class SuketController extends Controller
      */
     public function index()
     {
-        return view('admin.suket.index');
+        return view('admin.suket.index', [
+            'title' => 'Surat Keterangan'
+        ]);
     }
 
     /**
@@ -173,7 +175,7 @@ class SuketController extends Controller
 
         ]);
 
-       
+
 
         // CEK GAMBAR
         $fotoktp = null;

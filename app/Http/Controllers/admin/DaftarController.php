@@ -17,7 +17,9 @@ class DaftarController extends Controller
      */
     public function index()
     {
-        return view('admin.daftar.index');
+        return view('admin.daftar.index', [
+            'title' => 'Permohonan Layanan'
+        ]);
     }
 
     /**

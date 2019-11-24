@@ -16,13 +16,13 @@
               <!-- small box -->
               <div class="small-box bg-success">
                 <div class="inner">
-                  <h3>{{ $countproses }}</h3>
-    
+                  <h3>{{ $countlayanan }}</h3>
+
                   <p>Total Layanan</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-stats-bars"></i>
-                 
+
                 </div>
                 <a href="{{ route('admin.syarat.index') }}" class="small-box-footer">Lihat Layanan <i class="fas fa-arrow-circle-right"></i></a>
               </div>
@@ -31,14 +31,14 @@
 
         <div class="col-lg-3 col-6">
           <!-- small box -->
-          <div class="small-box bg-info">
+          <div class="small-box bg-primary">
             <div class="inner">
-              <h3>{{ $countiumk }}</h3>
+              <h3>{{ $countreport }}</h3>
 
               <p>Pelaporan</p>
             </div>
             <div class="icon">
-              <i class="ion ion-clipboard"></i>
+              <i class="fas fa-phone-volume"></i>
             </div>
             <a href="{{ route('admin.tindak.index') }}" class="small-box-footer">Tindak Lanjut <i class="fas fa-arrow-circle-right"></i></a>
           </div>
@@ -46,7 +46,7 @@
         <!-- ./col -->
 
         <!-- ./col -->
-       
+
         <!-- ./col -->
       </div>
 
@@ -58,15 +58,16 @@
       <div class="row">
           <div class="col-lg-3 col-6">
               <!-- small box -->
-              <div class="small-box bg-success">
+              <div class="small-box bg-primary">
                 <div class="inner">
                   <h3>{{ $countproses }}</h3>
-    
+
                   <p>Jumlah dan Status Layanan </p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-stats-bars"></i>
-                 
+
+                  <i class="fas fa-chart-line"></i>
+
                 </div>
                 <a href="{{ route('admin.proses.index') }}" class="small-box-footer">Status Layanan On Proses <i class="fas fa-arrow-circle-right"></i></a>
               </div>
@@ -77,7 +78,7 @@
             <div class="small-box bg-info">
               <div class="inner">
                 <h3>{{ $countiumk }}</h3>
-  
+
                 <p>Ijin Usaha Mikro Kecil</p>
               </div>
               <div class="icon">
@@ -91,12 +92,12 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>{{ $countsuket }}</h3>
-  
+                <h3>{{ $countdispensasi }}</h3>
+
                 <p>Dispensasi Nikah</p>
               </div>
               <div class="icon">
-                <i class="ion ion-document"></i>
+                <i class="ion ion-clipboard"></i>
               </div>
               <a href="{{ route('admin.dispensasi.index') }}" class="small-box-footer">Ajukan Dispensasi Nikah <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -104,10 +105,10 @@
         <!-- ./col -->
         <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-info">
+            <div class="small-box bg-danger">
               <div class="inner">
                 <h3>{{ $countsuket }}</h3>
-  
+
                 <p>Surat Keterangan</p>
               </div>
               <div class="icon">
@@ -124,12 +125,12 @@
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
-              <h3>150</h3>
+              <h3>onProses</h3>
 
               <p>Domisili Usaha</p>
             </div>
             <div class="icon">
-              <i class="ion ion-bag"></i>
+                <i class="ion ion-clipboard"></i>
             </div>
             <a href="#" class="small-box-footer">Ajukan Domisili Usaha <i class="fas fa-arrow-circle-right"></i></a>
           </div>
@@ -137,14 +138,14 @@
         <!-- ./col -->
         <div class="col-lg-3 col-6">
           <!-- small box -->
-          <div class="small-box bg-success">
+          <div class="small-box bg-warning">
             <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
+              <h3>onProses</h3>
 
               <p>Surat Keterangan Tidak Mampu</p>
             </div>
             <div class="icon">
-              <i class="ion ion-stats-bars"></i>
+                <i class="ion ion-clipboard"></i>
             </div>
             <a href="#" class="small-box-footer">Ajukan SKTM <i class="fas fa-arrow-circle-right"></i></a>
           </div>
@@ -152,20 +153,20 @@
         <!-- ./col -->
         <div class="col-lg-3 col-6">
           <!-- small box -->
-          <div class="small-box bg-warning">
+          <div class="small-box bg-success">
             <div class="inner">
-              <h3>44</h3>
+              <h3>onProses</h3>
 
               <p>Permohonan Lainnya</p>
             </div>
             <div class="icon">
-              <i class="ion ion-person-add"></i>
+                <i class="fas fa-plus-circle"></i>
             </div>
             <a href="{{ route('admin.daftar.index') }}" class="small-box-footer">Daftar Permohonan <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
-       
+
         <!-- ./col -->
       </div>
 <hr>
@@ -174,19 +175,19 @@
       </div>
       <div class="row">
 
-      
+
 
           <div class="col-lg-3 col-6">
               <!-- small box -->
-              <div class="small-box bg-success">
+              <div class="small-box bg-primary">
                 <div class="inner">
-                  <h3>{{ $countproses }}</h3>
-    
+                  <h3>onProses</h3>
+
                   <p>Surat Masuk</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-stats-bars"></i>
-                 
+                    <i class="fas fa-envelope-open-text"></i>
+
                 </div>
                 <a href="#" class="small-box-footer">Lihat Surat Masuk <i class="fas fa-arrow-circle-right"></i></a>
               </div>
@@ -195,41 +196,41 @@
 
         <div class="col-lg-3 col-6">
           <!-- small box -->
-          <div class="small-box bg-info">
+          <div class="small-box bg-secondary">
             <div class="inner">
-              <h3>{{ $countiumk }}</h3>
+              <h3>onProses</h3>
 
               <p>Surat Keluar</p>
             </div>
             <div class="icon">
-              <i class="ion ion-clipboard"></i>
+                <i class="fas fa-paper-plane"></i>
             </div>
             <a href="#" class="small-box-footer">Lihat Surat Keluar <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
 
-        
+
 
         <div class="col-lg-3 col-6">
           <!-- small box -->
-          <div class="small-box bg-warning">
+          <div class="small-box bg-danger">
             <div class="inner">
-              <h3>{{ $countsuket }}</h3>
+              <h3>onProses</h3>
 
               <p>Tindak Lanjut Surat</p>
             </div>
             <div class="icon">
-              <i class="ion ion-document"></i>
+                <i class="fas fa-share-square"></i>
             </div>
             <a href="#" class="small-box-footer">Tindak Lanjut <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
-       
+
         <!-- ./col -->
       </div>
-      
+
       <!-- /.row -->
 
       <!-- Main row -->
