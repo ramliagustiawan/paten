@@ -10,6 +10,7 @@ use App\Prosessurat;
 use App\Report;
 use App\Layanan;
 use App\Dispensasi;
+use App\Service;
 
 
 class HomeController extends Controller
@@ -27,6 +28,7 @@ class HomeController extends Controller
         $report = Report::orderBY('created_at', 'DESC')->get();
         $layanan = Layanan::orderBY('id', 'ASC')->get();
         $dispensasi = Dispensasi::orderBY('nama', 'DESC')->get();
+        $service = Service::orderBY('nama', 'DESC')->get();
 
         $countiumk = Iumk::count();
         $countsuket = Suket::count();
@@ -34,6 +36,7 @@ class HomeController extends Controller
         $countreport = Report::count();
         $countlayanan = Layanan::count();
         $countdispensasi = Dispensasi::count();
+        $countservice = Service::count();
         // dd($countlayanan);
 
         // untuk chart
@@ -42,7 +45,7 @@ class HomeController extends Controller
             $categories[] = $item->layanan;
         }
 
-        $data = ([$countproses, $countiumk, $countdispensasi, $countsuket, 2]);
+        $data = ([$countproses, $countiumk, $countdispensasi, $countsuket, $countservice]);
 
         // dd($categories);
         // dd($data);
@@ -55,6 +58,7 @@ class HomeController extends Controller
             'countreport' => $countreport,
             'countlayanan' => $countlayanan,
             'countdispensasi' => $countdispensasi,
+            'countservice' => $countservice,
 
             'iumk' => $iumk,
             'suket' => $suket,
@@ -62,7 +66,9 @@ class HomeController extends Controller
             'report' => $report,
             'layanan' => $layanan,
             'dispensasi' => $dispensasi,
+            'service' => $service,
 
+            // chart
             'categories' => $categories,
             'data' => $data,
         ]);

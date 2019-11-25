@@ -111,7 +111,13 @@ class DaftarController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    { }
+    {
+        $model = Service::findOrFail($id);
+        return view('admin.daftar.show', [
+            'title' => 'Detail Layanan',
+            'model' => $model,
+        ]);
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -222,25 +228,25 @@ class DaftarController extends Controller
 
     public function proses($id)
     {
-        $model = Service::findOrFail($id);
-        // dd($model);
+        $daftar = Service::findOrFail($id);
+        // dd($daftar);
 
-        $model->update([
+        $daftar->update([
             'hasil' => Carbon::now(),
         ]);
 
 
         Prosessurat::create([
 
-            'proses_id' => $model->layanan_id,
-            'nama' => $model->nama,
-            'finish_at' => $model->layanan->layanan,
-            'proses' => $model->proses,
-            'syarat' => $model->syarat,
-            'tglajuan' => $model->created_at,
+            'proses_id' => $daftar->layanan_id,
+            'nama' => $daftar->nama,
+            'finish_at' => $daftar->layanan->layanan,
+            'proses' => $daftar->proses,
+            'syarat' => $daftar->syarat,
+            'tglajuan' => $daftar->created_at,
 
         ]);
 
-        return redirect()->route('admin.proses.index')->withSuccess('Proses Surat: ' . $model->nama);
+        return redirect()->route('admin.proses.index')->withSuccess('Proses Surat: ' . $daftar->nama);
     }
 }

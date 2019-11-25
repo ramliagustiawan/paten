@@ -155,7 +155,7 @@
           <!-- small box -->
           <div class="small-box bg-success">
             <div class="inner">
-              <h3>onProses</h3>
+              <h3>{{ $countservice }}</h3>
 
               <p>Permohonan Lainnya</p>
             </div>

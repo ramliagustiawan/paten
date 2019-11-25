@@ -4,26 +4,7 @@
 ]) !!}
 
 
-<div class="form-group">
-    <label for="" class="control-label">Nama</label>
-    {!! Form::text('nama', null, ['class' => 'form-control', 'id' => 'nama']) !!}
 
-    @error('nama')
-    <span class="help-block">{{ $message }}</span>
-    @enderror
-
-</div>
-
-
-<div class="form-group ">
-    <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kelurahan</strong> </label>
-    {!! Form::select('kelurahan', ['Huangobotu'=>'Huangobotu','Libuo'=>'Libuo','Tuladenggi'=>'Tuladenggi','Tomulabutao'=>'Tomulabutao','Tomulabutao Selatan'=>'Tomulabutao Selatan'], null, ['class' => 'form-control', 'id' => 'kelurahan']) !!}
-
-    @error('kelurahan')
-      <span class="help-block">{{ $message }}</span>
-    @enderror
-
-</div>
 
 <div class="form-group">
     <label for="" class="control-label">Kontak</label>

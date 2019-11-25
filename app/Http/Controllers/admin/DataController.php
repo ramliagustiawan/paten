@@ -37,7 +37,7 @@ class DataController extends Controller
 
     public function layanan()
     {
-        $daftar = Service::orderBy('created_at', 'DESC')->get();
+        $daftar = Service::isSelesai()->orderBy('created_at', 'DESC')->get();
         // dd($layanan);
         return datatables()->of($daftar)
             ->addColumn('layanan_id', function (Service $model) {

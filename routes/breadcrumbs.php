@@ -190,3 +190,9 @@ Breadcrumbs::for('admin.daftar.index', function ($trail) {
     $trail->push('Permohonan Layanan', route('admin.daftar.index'));
     $trail->push('Daftar Permohonan', route('admin.daftar.index'));
 });
+// daftar show
+Breadcrumbs::for('admin.daftar.show', function ($trail, $model) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Permohonan Layanan', route('admin.daftar.index'));
+    $trail->push('Detail Permohonan', route('admin.daftar.show', $model));
+});

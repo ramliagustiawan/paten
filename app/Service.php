@@ -21,6 +21,13 @@ class Service extends Model
         return 'https://via.placeholder.com/150x200.png?text=No+Cover';
     }
 
+    // public function getTgllhrAttribute()
+    // {
+    //     \Carbon\Carbon::setLocale('id');
+    //     return \Carbon\Carbon::parse($this->attributes['tgllhr'])
+    //         ->format(' d F Y ');
+    // }
+
     public function prosessurat()
     {
         return $this->belongsTo(Prosessurat::class);
@@ -32,5 +39,10 @@ class Service extends Model
     public function layanan()
     {
         return $this->belongsTo(Layanan::class);
+    }
+
+    public function scopeIsSelesai($query)
+    {
+        return $query->where('hasil', null);
     }
 }

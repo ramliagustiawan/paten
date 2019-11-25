@@ -193,14 +193,16 @@
                     </a>
                   </li>
 
-                  <li class="nav-item">
-                        <a href="{{ route('admin.daftar.index') }}" class="nav-link">
-                          <i class="far fa-calendar-plus nav-icon"></i>
-                          <p>Permohonan Layanan</p>
-                        </a>
-                      </li>
+
                 </ul>
               </li>
+
+              <li class="nav-item">
+                    <a href="{{ route('admin.daftar.index') }}" class="nav-link">
+                      <i class="far fa-calendar-plus nav-icon"></i>
+                      <p>Layanan Lainnya</p>
+                    </a>
+                  </li>
 
           <li class="nav-item">
               <a href="{{ route('admin.proses.index') }}" class="nav-link">

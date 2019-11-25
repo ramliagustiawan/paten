@@ -67,7 +67,7 @@
 </div>
 
 <div class="form-group">
-    <label for="" class="control-label">Tempat</label>
+    <label for="" class="control-label">Tempat Lahir</label>
     {!! Form::text('tempat', null, ['class' => 'form-control', 'id' => 'tempat']) !!}
 
     @error('tempat')
@@ -116,7 +116,7 @@
 
 </div>
 
-<div class="form-group">
+{{-- <div class="form-group">
     <label for="" class="control-label">KTP</label>
     {!! Form::file('fotoktp') !!}
 
@@ -134,7 +134,7 @@
     <span class="help-block">{{ $message }}</span>
     @enderror
 
-</div>
+</div> --}}
 
 
 

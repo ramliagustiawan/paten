@@ -11,7 +11,7 @@
 
         // kemudian mengganti nilai
         $('#modal-title').text(title);
-        $('#modal-btn-save').text(me.hasClass('edit') ? 'Update' : me.hasClass('editakses') ? 'Ubah Akses' : 'Create');
+        $('#modal-btn-save').text(me.hasClass('edit') ? 'Update' :  'Create');
 
         // proses dengan ajax
         $.ajax({
@@ -125,6 +125,7 @@
 
             });
     });
+
 
 
 </script>
