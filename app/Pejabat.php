@@ -18,4 +18,8 @@ class Pejabat extends Model
     {
         return $this->belongsTo(Prosessurat::class);
     }
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
+    }
 }

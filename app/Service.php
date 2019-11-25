@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Service extends Model
 {
+    protected $table = 'daftar';
+
     protected $guarded = [];
 
     public function getCover()
@@ -22,5 +24,13 @@ class Service extends Model
     public function prosessurat()
     {
         return $this->belongsTo(Prosessurat::class);
+    }
+    public function pejabat()
+    {
+        return $this->belongsTo(Pejabat::class);
+    }
+    public function layanan()
+    {
+        return $this->belongsTo(Layanan::class);
     }
 }

@@ -17,6 +17,10 @@ class Layanan extends Model
     {
         return $this->belongsTo(Iumk::class);
     }
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
+    }
     public function prosessurat()
     {
         return $this->belongsTo(Prosessurat::class);

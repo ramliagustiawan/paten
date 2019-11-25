@@ -7,7 +7,7 @@
                 <div class="card-header">
                     <h4 class="box-title">Daftar Permohonan Layanan</h4>
 
-                    <a href="{{ route('admin.daftar.create')}}" class="btn btn-primary pull-right modal-show" title="Tambah Pengguna">Tambah Pengguna</a>
+                    <a href="{{ route('admin.daftar.create')}}" class="btn btn-primary pull-right modal-show" title="Tambah Layanan Lainnya">Tambah Permohonan Layanan</a>
 
                     {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Tambah Pengguna
@@ -21,15 +21,17 @@
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
-                          <table id="status" class="table table-bordered  table-hover" style="width:100%">
+                          <table id="status" class="table table-bordered  table-hover"  style="font-size:14px; width:100%">
                             <thead>
                             <tr>
-                              <th>No</th>
-                              <th>Nama</th>
-                              <th>Layanan</th>
-                              <th>Kelurahan</th>
-                              <th>Tanggal Pengajuan</th>
-                               <th>Aksi</th>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Layanan</th>
+                                <th>Kelurahan</th>
+                                <th>Tanggal Pengajuan</th>
+                                <th>Persyaratan</th>
+                                <th>Keterangan</th>
+                                 <th>Aksi</th>
 
 
 
@@ -53,6 +55,8 @@
 
       </div>
 
+        {{-- modal tambah --}}
+        @include('admin.templates.partials.modal')
 
 
 @endsection
@@ -81,9 +85,11 @@
 
                             {data:'DT_RowIndex',orderable:false,searchable:false},
                             {data:'nama'},
-                            {data:'layanan'},
+                            {data:'layanan_id'},
                             {data:'alamat'},
                             {data:'created_at'},
+                            {data:'syarat'},
+                            {data:'proses'},
                             {data:'action'},
 
                         ]
@@ -91,6 +97,8 @@
                 });
             </script>
 
+            {{-- modal tambah --}}
+            @include('admin.templates.partials.ajaxcrud')
 
 
 

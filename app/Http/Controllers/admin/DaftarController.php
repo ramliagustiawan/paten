@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Service;
 use App\Prosessurat;
+use App\Layanan;
+use App\Pejabat;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 
 class DaftarController extends Controller
@@ -29,7 +32,14 @@ class DaftarController extends Controller
      */
     public function create()
     {
-        //
+
+        $model = new Service();
+        $layanan = Layanan::pluck('layanan', 'id');
+        return view('admin.daftar.form', [
+            'title' => 'Ajukan Layanan',
+            'model' => $model,
+            'layanan' => $layanan
+        ]);
     }
 
     /**
@@ -40,7 +50,58 @@ class DaftarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // VALIDASI
+        $this->validate($request, [
+
+            'nama' => 'required',
+            'nik' => 'required|numeric|max:9999999999999999',
+            'tempat' => 'required',
+            'tgllhr' => 'required|date',
+            'jk' => 'required|min:4',
+            'pekerjaan' => 'required',
+            'alamat' => 'required',
+            'kelurahan' => 'required',
+            'keterangan' => 'required|min:10',
+            'kontak' => 'required|numeric|max:999999999999',
+            'layanan_id' => 'required',
+            'fotoktp' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
+            'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
+
+
+        ]);
+
+        // CEK GAMBAR
+        $fotoktp = null;
+        $fotopbb = null;
+
+
+        if ($request->hasFile('fotoktp')) {
+            $fotoktp = $request->file('fotoktp')->store('assets/covers');
+        }
+
+        if ($request->hasFile('fotopbb')) {
+            $fotopbb = $request->file('fotopbb')->store('assets/covers');
+        }
+
+        $model = Service::create([
+
+            'nama' => $request->nama,
+            'nik' => $request->nik,
+            'tempat' => $request->tempat,
+            'tgllhr' => $request->tgllhr,
+            'jk' => $request->jk,
+            'pekerjaan' => $request->pekerjaan,
+            'alamat' => $request->alamat,
+            'kelurahan' => $request->kelurahan,
+            'keterangan' => $request->keterangan,
+            'kontak' => $request->kontak,
+            'layanan_id' => $request->layanan_id,
+            'fotoktp' => $fotoktp,
+            'fotopbb' => $fotopbb,
+
+        ]);
+
+        return $model;
     }
 
     /**
@@ -50,14 +111,7 @@ class DaftarController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        $daftar = Service::findOrFail($id);
-        // dd($daftar);
-        return view('admin.daftar.show', [
-            'title' => 'Detail Permohonan Layanan',
-            'daftar' => $daftar,
-        ]);
-    }
+    { }
 
     /**
      * Show the form for editing the specified resource.
@@ -66,7 +120,21 @@ class DaftarController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    { }
+    {
+
+        $model = Service::findOrFail($id);
+        $layanan = Layanan::pluck('layanan', 'id');
+        $pejabat = Pejabat::pluck('nama', 'id');
+
+        // dd($pejabat);
+
+        return view('admin.daftar.formedit', [
+            'title' => 'Edit Permohonan Layanan',
+            'model' => $model,
+            'layanan' => $layanan,
+            'pejabat' => $pejabat,
+        ]);
+    }
 
     /**
      * Update the specified resource in storage.
@@ -77,7 +145,67 @@ class DaftarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // VALIDASI
+        $this->validate($request, [
+
+            // 'nama' => 'required',
+            // // 'nik' => 'required|numeric|max:9999999999999999',
+            // // 'tempat' => 'required',
+            // // 'tgllhr' => 'required|date',
+            // // 'jk' => 'required|min:4',
+            // // 'pekerjaan' => 'required',
+            // // 'alamat' => 'required',
+            // 'kelurahan' => 'required',
+            // 'keterangan' => 'required|min:10',
+            // 'kontak' => 'required|numeric|max:999999999999',
+            // 'layanan_id' => 'required',
+            // 'fotoktp' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
+            // 'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
+
+
+        ]);
+
+        // CEK GAMBAR
+        $fotoktp = null;
+        $fotopbb = null;
+
+
+        if ($request->hasFile('fotoktp')) {
+            $fotoktp = $request->file('fotoktp')->store('assets/covers');
+        }
+
+        if ($request->hasFile('fotopbb')) {
+            $fotopbb = $request->file('fotopbb')->store('assets/covers');
+        }
+
+        $model = Service::findOrFail($id);
+
+        $model->update([
+
+            // 'nama' => $request->nama,
+            // 'nik' => $request->nik,
+            // 'tempat' => $request->tempat,
+            // 'tgllhr' => $request->tgllhr,
+            // 'jk' => $request->jk,
+            // 'pekerjaan' => $request->pekerjaan,
+            // 'alamat' => $request->alamat,
+            // 'kelurahan' => $request->kelurahan,
+            // 'keterangan' => $request->keterangan,
+            // 'kontak' => $request->kontak,
+            // 'layanan_id' => $request->layanan_id,
+            // 'fotoktp' => $fotoktp,
+            // 'fotopbb' => $fotopbb,
+            'syarat' => $request->syarat,
+            'proses' => $request->proses,
+            // 'ketproses' => $request->ketproses,
+            'nosurat' => $request->nosurat,
+            'tglsurat' => $request->tglsurat,
+            'pejabat_id' => $request->pejabat_id,
+            // 'hasil' => $request->hasil,
+
+        ]);
+
+        return $model;
     }
 
     /**
@@ -88,20 +216,31 @@ class DaftarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = Service::findOrFail($id);
+        $model->delete();
     }
 
     public function proses($id)
     {
-        $service = Service::findOrFail($id);
+        $model = Service::findOrFail($id);
+        // dd($model);
+
+        $model->update([
+            'hasil' => Carbon::now(),
+        ]);
+
 
         Prosessurat::create([
 
-            'service_id' => $service->id,
-            'layanan' => $service->layanan,
-            'tglajuan' => $service->created_at,
+            'proses_id' => $model->layanan_id,
+            'nama' => $model->nama,
+            'finish_at' => $model->layanan->layanan,
+            'proses' => $model->proses,
+            'syarat' => $model->syarat,
+            'tglajuan' => $model->created_at,
+
         ]);
 
-        return redirect()->route('admin.proses.index')->withSuccess('Proses Surat');
+        return redirect()->route('admin.proses.index')->withSuccess('Proses Surat: ' . $model->nama);
     }
 }

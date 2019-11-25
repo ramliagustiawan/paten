@@ -37,9 +37,12 @@ class DataController extends Controller
 
     public function layanan()
     {
-        $layanan = Service::orderBy('created_at', 'DESC');
-
-        return datatables()->of($layanan)
+        $daftar = Service::orderBy('created_at', 'DESC')->get();
+        // dd($layanan);
+        return datatables()->of($daftar)
+            ->addColumn('layanan_id', function (Service $model) {
+                return $model->layanan->layanan;
+            })
             ->addColumn('action', 'admin.daftar.action')
             ->addIndexColumn()
             ->toJson();
