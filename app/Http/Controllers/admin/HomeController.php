@@ -25,7 +25,7 @@ class HomeController extends Controller
         $suket = Suket::orderBY('created_at', 'DESC')->get();
         $proses = Prosessurat::orderBY('created_at', 'DESC')->get();
         $report = Report::orderBY('created_at', 'DESC')->get();
-        $layanan = Layanan::orderBY('layanan', 'DESC')->get();
+        $layanan = Layanan::orderBY('id', 'ASC')->get();
         $dispensasi = Dispensasi::orderBY('nama', 'DESC')->get();
 
         $countiumk = Iumk::count();
@@ -34,7 +34,18 @@ class HomeController extends Controller
         $countreport = Report::count();
         $countlayanan = Layanan::count();
         $countdispensasi = Dispensasi::count();
-        // dd($count);
+        // dd($countlayanan);
+
+        // untuk chart
+        $categories = [];
+        foreach ($layanan as $item) {
+            $categories[] = $item->layanan;
+        }
+
+        $data = ([$countproses, $countiumk, $countdispensasi, $countsuket, 2]);
+
+        // dd($categories);
+        // dd($data);
 
         return view('admin.dashboard', [
             'title' => 'Dashboard',
@@ -51,6 +62,9 @@ class HomeController extends Controller
             'report' => $report,
             'layanan' => $layanan,
             'dispensasi' => $dispensasi,
+
+            'categories' => $categories,
+            'data' => $data,
         ]);
 
         Role::create(['name' => 'adminkec']);
