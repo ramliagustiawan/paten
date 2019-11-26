@@ -209,8 +209,15 @@ Breadcrumbs::for('admin.suratin.create', function ($trail) {
 });
 
 // edit
-Breadcrumbs::for('admin.suratin.edit', function ($trail,$suratmasuk) {
+Breadcrumbs::for('admin.suratin.edit', function ($trail, $suratmasuk) {
     $trail->push('Beranda', route('admin.dashboard'));
     $trail->push('Register Surat', route('admin.suratin.index'));
-    $trail->push('Registrasi Surat Masuk', route('admin.suratin.edit',$suratmasuk));
+    $trail->push('Registrasi Surat Masuk', route('admin.suratin.edit', $suratmasuk));
+});
+
+// suratin show
+Breadcrumbs::for('admin.suratin.show', function ($trail, $suratmasuk) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Register Surat', route('admin.suratin.index'));
+    $trail->push('Detail Surat Masuk', route('admin.suratin.show', $suratmasuk));
 });

@@ -8,7 +8,7 @@
 
     <form action="" method="POST">
         @csrf
-        <input type="submit" value="Selesai" class="btn btn-success" style="font-size:13px;">
+        <input type="submit" value="Arsipkan" class="btn btn-success" style="font-size:13px;">
     </form>
 
 

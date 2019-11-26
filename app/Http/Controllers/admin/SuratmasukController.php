@@ -63,7 +63,7 @@ class SuratmasukController extends Controller
 
         // CEK GAMBAR
         $fotosurat = null;
-       
+
 
         if ($request->hasFile('fotosurat')) {
             $fotosurat = $request->file('fotosurat')->store('assets/covers');
@@ -79,11 +79,10 @@ class SuratmasukController extends Controller
             'ket' => $request->ket,
             'perihal' => $request->perihal,
             'fotosurat' => $fotosurat,
-           
+
         ]);
 
         return redirect()->route('admin.suratin.index')->withSuccess('Registrasi Surat Masuk Berhasil');
-    
     }
 
     /**
@@ -94,7 +93,14 @@ class SuratmasukController extends Controller
      */
     public function show($id)
     {
-        //
+        $suratmasuk = Suratmasuk::find($id);
+        $pejabat = Pejabat::get();
+        // dd($suratmasuk);
+        return view('admin.suratin.show', [
+            'title' => 'Detail Surat Masuk',
+            'suratmasuk' => $suratmasuk,
+            'pejabat' => $pejabat,
+        ]);
     }
 
     /**
@@ -124,10 +130,10 @@ class SuratmasukController extends Controller
      */
     public function update(Request $request, $id)
     {
-          $suratmasuk = Suratmasuk::find($id);
+        $suratmasuk = Suratmasuk::find($id);
 
-          // VALIDASI
-          $this->validate($request, [
+        // VALIDASI
+        $this->validate($request, [
 
             // 'asalsurat' => 'required',
             // 'nosurat' => 'required',
@@ -137,18 +143,18 @@ class SuratmasukController extends Controller
             // 'perihal' => 'required',
             // 'fotosurat' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
 
-            'disposisicamat'=>'required',
-            'disposisisek'=>'required',
-            'pejabat_id'=>'required',
-            'tindaklanjut'=>'required',
-            'hasil'=>'required'
+            'disposisicamat' => 'required',
+            'disposisisek' => 'required',
+            'pejabat_id' => 'required',
+            'tindaklanjut' => 'required',
+            // 'hasil'=>'required'
 
 
         ]);
 
         // CEK GAMBAR
         $fotosurat = null;
-       
+
 
         if ($request->hasFile('fotosurat')) {
             $fotosurat = $request->file('fotosurat')->store('assets/covers');
@@ -169,7 +175,7 @@ class SuratmasukController extends Controller
             'pejabat_id' => $request->pejabat_id,
             'tindaklanjut' => $request->tindaklanjut,
             'hasil' => $request->hasil,
-           
+
         ]);
 
         return redirect()->route('admin.suratin.index', $suratmasuk)->withInfo('Proses Surat Masuk Dari ' . $suratmasuk->asalsurat . ' Telah Ditindaklanjuti');
