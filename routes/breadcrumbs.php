@@ -187,7 +187,6 @@ Breadcrumbs::for('admin.dispensasi.create', function ($trail) {
 // daftar
 Breadcrumbs::for('admin.daftar.index', function ($trail) {
     $trail->push('Beranda', route('admin.dashboard'));
-    $trail->push('Permohonan Layanan', route('admin.daftar.index'));
     $trail->push('Daftar Permohonan', route('admin.daftar.index'));
 });
 // daftar show
@@ -195,4 +194,23 @@ Breadcrumbs::for('admin.daftar.show', function ($trail, $model) {
     $trail->push('Beranda', route('admin.dashboard'));
     $trail->push('Permohonan Layanan', route('admin.daftar.index'));
     $trail->push('Detail Permohonan', route('admin.daftar.show', $model));
+});
+
+// suratin index
+Breadcrumbs::for('admin.suratin.index', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Register Surat', route('admin.suratin.index'));
+});
+// create
+Breadcrumbs::for('admin.suratin.create', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Register Surat', route('admin.suratin.index'));
+    $trail->push('Registrasi Surat Masuk', route('admin.suratin.create'));
+});
+
+// edit
+Breadcrumbs::for('admin.suratin.edit', function ($trail,$suratmasuk) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Register Surat', route('admin.suratin.index'));
+    $trail->push('Registrasi Surat Masuk', route('admin.suratin.edit',$suratmasuk));
 });

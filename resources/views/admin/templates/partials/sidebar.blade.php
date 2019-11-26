@@ -214,7 +214,7 @@
             {{-- register --}}
             <li class="nav-header">REGISTER</li>
             <li class="nav-item">
-              <a href="{{ route('admin.tindak.index') }}" class="nav-link">
+              <a href="{{ route('admin.suratin.index') }}" class="nav-link">
                 <i class="nav-icon fas fa-arrow-alt-circle-down"></i>
                 <p>Surat Masuk</p>
               </a>

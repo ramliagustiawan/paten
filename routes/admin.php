@@ -15,6 +15,8 @@ Route::get('/syarat/syarat', 'DataController@syarat')->name('syarat.syarat');
 Route::get('/pejabat/pejabat', 'DataController@pejabat')->name('pejabat.pejabat');
 Route::get('/role/role', 'DataController@role')->name('role.role');
 Route::get('/permission/permission', 'DataController@permission')->name('permission.permission');
+Route::get('/suratin/suratin', 'DataController@suratin')->name('suratin.suratin');
+
 
 Route::get('/dispensasi/dispensasi', 'DataController@dispensasi')->name('dispensasi.dispensasi');
 
@@ -65,3 +67,5 @@ Route::resource('/pejabat', 'PejabatController')->middleware('role:admin');
 Route::resource('/role', 'RoleController')->middleware('role:admin');
 
 Route::resource('/permission', 'PermissionController')->middleware('role:admin');
+
+Route::resource('/suratin', 'SuratmasukController');

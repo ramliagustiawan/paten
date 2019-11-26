@@ -17,7 +17,7 @@ use App\Nonijin;
 use App\Ijin;
 use App\Pejabat;
 use App\Dispensasi;
-
+use App\Suratmasuk;
 
 class DataController extends Controller
 {
@@ -188,4 +188,20 @@ class DataController extends Controller
             ->addIndexColumn()
             ->toJson();
     }
+
+    public function suratin()
+    {
+        $suratin = Suratmasuk::orderBy('created_at', 'DESC');
+
+        return datatables()->of($suratin)
+            // ->addColumn('layanan_id', function (suratin $model) {
+            //     return $model->layanan->layanan;
+            // })
+            ->addColumn('action', 'admin.suratin.action')
+            ->addIndexColumn()
+            ->toJson();
+    }
+
+
+
 }
