@@ -12,6 +12,7 @@ use App\Layanan;
 use App\Dispensasi;
 use App\Service;
 use App\Suratmasuk;
+use App\Arsip;
 
 
 class HomeController extends Controller
@@ -31,6 +32,7 @@ class HomeController extends Controller
         $dispensasi = Dispensasi::orderBY('nama', 'DESC')->get();
         $service = Service::orderBY('nama', 'DESC')->get();
         $suratmasuk = Suratmasuk::orderBY('id', 'DESC')->get();
+        $arsip = Arsip::orderBY('id', 'DESC')->get();
 
         $countiumk = Iumk::count();
         $countsuket = Suket::count();
@@ -40,6 +42,7 @@ class HomeController extends Controller
         $countdispensasi = Dispensasi::count();
         $countservice = Service::count();
         $countsuratmasuk = Suratmasuk::count();
+        $countarsip = Arsip::count();
         // dd($countlayanan);
 
         // untuk chart
@@ -63,6 +66,7 @@ class HomeController extends Controller
             'countdispensasi' => $countdispensasi,
             'countservice' => $countservice,
             'countsuratmasuk' => $countsuratmasuk,
+            'countarsip' => $countarsip,
 
             'iumk' => $iumk,
             'suket' => $suket,
@@ -73,6 +77,7 @@ class HomeController extends Controller
             'service' => $service,
             'service' => $service,
             'suratmasuk' => $suratmasuk,
+            'arsip' => $arsip,
 
             // chart
             'categories' => $categories,

@@ -6,7 +6,7 @@
     <a href="{{ route('admin.suratin.edit', $model)}}" class="btn btn-warning modal-show edit" title="{{ $model->name }}" style="font-size:13px;">Proses</a>
 
 
-    <form action="" method="POST">
+    <form action="{{ route('admin.suratin.arsip', $model) }}" method="POST">
         @csrf
         <input type="submit" value="Arsipkan" class="btn btn-success" style="font-size:13px;">
     </form>

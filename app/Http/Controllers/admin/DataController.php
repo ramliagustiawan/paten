@@ -18,6 +18,7 @@ use App\Ijin;
 use App\Pejabat;
 use App\Dispensasi;
 use App\Suratmasuk;
+use App\Arsip;
 
 class DataController extends Controller
 {
@@ -202,6 +203,16 @@ class DataController extends Controller
             ->toJson();
     }
 
+    public function arsip()
+    {
+        $arsip = Arsip::orderBy('id', 'DESC');
 
-
+        return datatables()->of($arsip)
+            // ->addColumn('pejabat_id', function (Suratmasuk $model) {
+            //     return $model->pejabat;
+            // })
+            ->addColumn('action', 'admin.arsip.action')
+            ->addIndexColumn()
+            ->toJson();
+    }
 }

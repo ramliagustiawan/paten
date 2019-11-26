@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Suratmasuk;
 use App\Pejabat;
+use App\Arsip;
 
 class SuratmasukController extends Controller
 {
@@ -194,5 +195,29 @@ class SuratmasukController extends Controller
         $model->delete();
         return redirect()->route('admin.suratin.index')
             ->with('danger', 'Surat Masuk Dihapus');
+    }
+
+
+    public function arsip($id)
+    {
+        $suratmasuk = Suratmasuk::findOrFail($id);
+        // dd($suratmasuk);
+
+        $suratmasuk->update([
+            'hasil' => 'arsip',
+        ]);
+
+        Arsip::create([
+
+            'arsip_id' => $suratmasuk->id,
+            'asalsurat' => $suratmasuk->asalsurat,
+            'tglterima' => $suratmasuk->tglterima,
+            'perihal' => $suratmasuk->perihal,
+            'tindaklanjut' => $suratmasuk->tindaklanjut,
+            'tglselesai' => $suratmasuk->created_at,
+
+        ]);
+
+        return redirect()->route('admin.arsip.index')->withSuccess('Arsip Surat dari : ' . $suratmasuk->asalsurat);
     }
 }

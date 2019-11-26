@@ -4,10 +4,10 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Iumk;
-use App\Prosessurat;
+use App\Arsip;
+use App\Suratmasuk;
 
-class ProsesController extends Controller
+class ArsipController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +16,11 @@ class ProsesController extends Controller
      */
     public function index()
     {
-        $proses = Prosessurat::get();
-        // dd($proses);
-        return view('admin.proses.index', [
-            'title' => 'Status Layanan',
-            'proses' => $proses,
+        $arsip = Arsip::get();
+        // dd($arsip);
+        return view('admin.arsip.index', [
+            'title' => 'Arsip Surat',
+            'arsip' => $arsip,
         ]);
     }
 
@@ -53,14 +53,7 @@ class ProsesController extends Controller
      */
     public function show($id)
     {
-        $proses = Prosessurat::find($id);
-        // $iumk = Iumk::find($id);
-        // dd($proses);
-        return view('admin.proses.show', [
-            'title' => 'Detail Proses Layanan',
-            'daftar' => $proses,
-            // 'iumk' => $iumk,
-        ]);
+        //
     }
 
     /**
@@ -71,11 +64,13 @@ class ProsesController extends Controller
      */
     public function edit($id)
     {
-        $proses = Prosessurat::find($id);
-        // dd($proses);
-        return view('admin.proses.edit', [
-            'title' => 'Edit proses Surat',
-            'proses' => $proses,
+        $arsip = Arsip::find($id);
+        $suratmasuk = Suratmasuk::find($id);
+        // dd($arsip);
+        return view('admin.arsip.edit', [
+            'title' => 'Arsip Surat',
+            'arsip' => $arsip,
+            'suratmasuk'=>$suratmasuk
         ]);
     }
 
@@ -88,13 +83,13 @@ class ProsesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $proses = Prosessurat::find($id);
-        // dd($proses);
+        $arsip = Arsip::find($id);
+        // dd($arsip);
         // VALIDASI
         $this->validate($request, [
 
-            'proses' => 'required',
-            'ket' => 'required',
+            // 'proses' => 'required',
+            // 'ket' => 'required',
             // 'proses_id' => 'required',
             // 'nama' => 'required',
             // 'tglajuan' => 'required|min:4',
@@ -104,15 +99,14 @@ class ProsesController extends Controller
 
         ]);
 
+        $arsip->update([
 
-        $proses->update([
-
-            'proses' => $request->proses,
+            'tglarsip' => $request->tglarsip,
             'ket' => $request->ket,
 
         ]);
 
-        return redirect()->route('admin.proses.index', $proses)->withInfo('Permohonan Surat Keterangan ' . $proses->nama . ' Selesai');
+        return redirect()->route('admin.arsip.index', $arsip)->withInfo('Arsip Surat dari : ' . $arsip->asalsurat . ' Di Arsipkan');
     }
 
     /**
@@ -121,10 +115,10 @@ class ProsesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Prosessurat $prosessurat)
+    public function destroy(Arsip $arsip)
     {
-        $prosessurat->delete();
-        return redirect()->route('admin.proses.index')
-            ->with('danger', 'Permohonan Surat Keterangan Dihapus');
+        $arsip->delete();
+        return redirect()->route('admin.arsip.index')
+            ->with('danger', 'Arsip Surat Dihapus');
     }
 }

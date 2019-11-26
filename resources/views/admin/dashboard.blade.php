@@ -189,7 +189,7 @@
                     <i class="fas fa-envelope-open-text"></i>
 
                 </div>
-                <a href="#" class="small-box-footer">Lihat Surat Masuk <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('admin.suratin.index') }}" class="small-box-footer">Lihat Surat Masuk <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -216,14 +216,14 @@
           <!-- small box -->
           <div class="small-box bg-danger">
             <div class="inner">
-              <h3>onProses</h3>
+              <h3>{{ $countarsip }}</h3>
 
-              <p>Tindak Lanjut Surat</p>
+              <p>Arsip Surat</p>
             </div>
             <div class="icon">
                 <i class="fas fa-share-square"></i>
             </div>
-            <a href="#" class="small-box-footer">Tindak Lanjut <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{ route('admin.arsip.index') }}" class="small-box-footer">Lihat Arsip Surat <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->

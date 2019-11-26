@@ -221,3 +221,16 @@ Breadcrumbs::for('admin.suratin.show', function ($trail, $suratmasuk) {
     $trail->push('Register Surat', route('admin.suratin.index'));
     $trail->push('Detail Surat Masuk', route('admin.suratin.show', $suratmasuk));
 });
+
+// arsip index
+Breadcrumbs::for('admin.arsip.index', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Arsip Surat', route('admin.arsip.index'));
+});
+
+// arsip edit
+Breadcrumbs::for('admin.arsip.edit', function ($trail, $arsip) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Arsip Surat', route('admin.arsip.index'));
+    $trail->push('Update Arsip Surat', route('admin.arsip.edit', $arsip));
+});

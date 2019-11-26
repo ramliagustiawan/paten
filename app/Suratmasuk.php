@@ -16,6 +16,11 @@ class Suratmasuk extends Model
         return $this->belongsTo(Pejabat::class);
     }
 
+    public function arsip()
+    {
+        return $this->belongsTo(Arsip::class);
+    }
+
     // tampilgambar
     public function getsurat()
     {

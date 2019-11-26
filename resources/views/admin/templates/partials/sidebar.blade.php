@@ -225,6 +225,12 @@
                 <p>Surat Keluar</p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="{{ route('admin.arsip.index') }}" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>Arsip Surat</p>
+              </a>
+            </li>
 
 
             {{--  PELAPORAN  --}}
