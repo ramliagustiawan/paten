@@ -26,11 +26,15 @@
                             <tr>
                               <th>No</th>
                               <th>Asal Surat</th>
-                              <th>Nomor Surat</th>
+                             
                               <th>Perihal</th>
-                              <th>Isi Surat</th>
-                              <th>Tanggal Surat</th>
+
+                              {{-- <th>Isi Surat</th> --}}
                               <th>Tanggal Terima</th>
+                              <th>Disposisi Camat</th>
+                              <th>Sekcam</th>
+                              {{-- <th>Pejabat</th> --}}
+                              <th>Tindak Lanjut</th>
                               {{-- <th>Disposisi Camat</th>
                               <th>Sekretaris</th>
                               <th>Pejabat</th>
@@ -92,12 +96,13 @@
                         columns: [
 
                             {data:'DT_RowIndex',orderable:false,searchable:false},
-                            {data:'asalsurat'},
-                            {data:'nosurat'},
+                            {data:'asalsurat'},                          
                             {data:'ket'},
-                            {data:'perihal'},
-                            {data:'tglsurat'},
-                            {data:'created_at'},
+                            {data:'tglterima'},
+                            {data:'disposisicamat'},
+                            {data:'disposisisek'},
+                            // {data:'pejabat_id'},
+                            {data:'tindaklanjut'},
                             {data:'action'},
                         ]
                     });

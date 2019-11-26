@@ -37,73 +37,85 @@
                                       @csrf
                                       @method("PUT")
                                      
-                                      <div class="form-group row @error('name') has-error @enderror">
-                                          <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong> Pelapor </strong></label>
-                                          <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                          <input type="text" name="name" class="form-control" id="name" readonly placeholder="Masukkan name Lengkap Anda" value="" >
-                                          </div>
-                                          @error('name')
-                                            <span class="help-block">{{ $message }}</span>
-                                          @enderror
-
-                                      </div>
-
-                                      <div class="form-group row @error('created_at') has-error @enderror">
-                                        <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tanggal Pelaporan</strong> </label>
+                                      <div class="form-group row @error('asalsurat') has-error @enderror">
+                                        <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong> Asal Surat </strong></label>
                                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                        <input type="" name="created_at" class="form-control" id="created_at" readonly  placeholder="Masukkan Nomor Induk Kependudukan Anda" value="" >
+                                        <input type="text" name="asalsurat" class="form-control" id="asalsurat"  placeholder="Asal Surat" value="{{ old('asalsurat') ?? $suratmasuk->asalsurat }}" readonly >
                                         </div>
-
-                                        @error('created_at')
-                                          <span class="help-block">{{ $message }}</span>
-                                        @enderror
-
-                                </div>
-
-                                      <div class="form-group row @error('alamat') has-error @enderror">
-                                        <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Alamat</strong> </label>
-                                        <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                        <input type="" name="alamat" class="form-control" id="alamat" readonly placeholder="alamat Lahir Sesuai KTP" value="">
-                                        </div>
-
-                                        @error('alamat')
-                                          <span class="help-block">{{ $message }}</span>
-                                        @enderror
-
-                                      </div>
-
-
-                                      <div class="form-group row @error('kontak') has-error @enderror">
-                                          <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kontak</strong> </label>
-                                          <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                          <input type="text" name="kontak" class="form-control" readonly  id="kontak" placeholder="Masukkan kontak Lengkap Anda" value="">
-                                          </div>
-
-                                          @error('kontak')
-                                            <span class="help-block">{{ $message }}</span>
-                                          @enderror
-
-                                      </div>
-
-
-
-                                    <div class="form-group row @error('pesan') has-error @enderror">
-                                        <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Isi Laporan</strong> </label>
-                                        <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                        <input type="text" name="pesan" class="form-control" id="pesan" readonly  placeholder="Masukkan pesan Lengkap Anda" value="">
-                                        </div>
-
-                                        @error('pesan')
+                                        @error('asalsurat')
                                           <span class="help-block">{{ $message }}</span>
                                         @enderror
 
                                     </div>
 
+                                    <div class="form-group row @error('nosurat') has-error @enderror">
+                                      <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Nomor Surat Pelaporan</strong> </label>
+                                      <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                      <input type="" name="nosurat" class="form-control" id="nosurat"   placeholder="Masukkan Nomor Surat" value="{{ old('nosurat')?? $suratmasuk->nosurat }}" readonly>
+                                      </div>
+
+                                      @error('nosurat')
+                                        <span class="help-block">{{ $message }}</span>
+                                      @enderror
+
+                              </div>
+
+                                    <div class="form-group row @error('tglsurat') has-error @enderror">
+                                      <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tanggal Surat</strong> </label>
+                                      <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                      <input type="" name="tglsurat" class="form-control" id="tglsurat"  placeholder="Tanggal Surat" value="{{ old('tglsurat')?? $suratmasuk->tglsurat }}" readonly>
+                                      </div>
+
+                                      @error('tglsurat')
+                                        <span class="help-block">{{ $message }}</span>
+                                      @enderror
+
+                                    </div>
+
+
+                                    <div class="form-group row @error('tglterima') has-error @enderror">
+                                        <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tanggal Terima Surat</strong> </label>
+                                        <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                        <input type="" name="tglterima" class="form-control"   id="tglterima" placeholder=" Tanggal Terima Surat" value="{{ old('tglterima')?? $suratmasuk->tglterima }}" readonly>
+                                        </div>
+
+                                        @error('tglterima')
+                                          <span class="help-block">{{ $message }}</span>
+                                        @enderror
+
+                                    </div>
+
+
+
+                                  <div class="form-group row @error('ket') has-error @enderror">
+                                      <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Perihal</strong> </label>
+                                      <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                      <input type="text" name="ket" class="form-control" id="ket"   placeholder="Masukkan Perihal Surat" value="{{ old('ket')?? $suratmasuk->ket }}" readonly>
+                                      </div>
+
+                                      @error('ket')
+                                        <span class="help-block">{{ $message }}</span>
+                                      @enderror
+
+                                  </div>
+
+                                <div class="form-group row @error('perihal') has-error @enderror">
+                                  <label for="" class="col-sm-2 col-md-6 col-lg-2 col-form-label"><strong>Isi Surat</strong></label>
+                                  <div class="col-sm-10">
+                                  <textarea class="form-control" id="" name="perihal" placeholder="Ringkasan Isi Surat"  rows="4" readonly>{{ old('perihal')?? $suratmasuk->perihal }}</textarea>
+                                  </div>
+          
+                                  @error('perihal')
+                                  <span class="help-block">{{ $message }}</span>
+                                  @enderror
+          
+                              </div>
+
                                     <br>
 
                                            <div class="card">
                                                     <div class="card-header">
-                                                    <strong> tindak Lanjut :</strong>
+                                                    <strong>Tindak Lanjut :</strong>
                                                     </div>
 
                                             </div>
@@ -114,56 +126,81 @@
                                               {{--  --}}
 
 
-                                            <div class="form-group row @error('tindakan') has-error @enderror">
-                                                <label for="" class="col-sm-2 col-md-6 col-lg-2 col-form-label"><strong>Respon Tindakan</strong></label>
+                                            <div class="form-group row @error('disposisicamat') has-error @enderror">
+                                                <label for="" class="col-sm-2 col-md-6 col-lg-2 col-form-label"><strong>Disposisi Camat</strong></label>
                                                 <div class="col-sm-10">
-                                                <textarea class="form-control" id="" name="tindakan" placeholder="Tuliskan Pengaduan /Laporan Anda"  rows="4"></textarea>
+                                                <textarea class="form-control" id="" name="disposisicamat" placeholder="Disposisi Camat"  rows="4">{{ old('disposisicamat')?? $suratmasuk->disposisicamat }}</textarea>
                                                 </div>
 
-                                                @error('tindakan')
+                                                @error('disposisicamat')
                                                 <span class="help-block">{{ $message }}</span>
                                                 @enderror
 
                                             </div>
 
-                                            <div class="form-group row @error('aparat') has-error @enderror">
-                                              <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Pejabat Yang Menangani</strong> </label>
-                                              <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                              <input type="" name="aparat" class="form-control" id="aparat" placeholder="Yang Menangani Laporan" value="" >
+                                            <div class="form-group row @error('disposisisek') has-error @enderror">
+                                              <label for="" class="col-sm-2 col-md-6 col-lg-2 col-form-label"><strong>Sekretaris</strong></label>
+                                              <div class="col-sm-10">
+                                              <textarea class="form-control" id="" name="disposisisek" placeholder="Disposisi Sekcam"  rows="4">{{ old('disposisisek')?? $suratmasuk->disposisisek }}</textarea>
                                               </div>
 
-                                              @error('aparat')
+                                              @error('disposisisek')
+                                              <span class="help-block">{{ $message }}</span>
+                                              @enderror
+
+                                          </div>
+
+                                          <div class="form-group row @error('pejabat_id') has-error @enderror">
+                                            <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Pejabat Yang Menindaklanjuti</strong> </label>
+                                            <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                                <select name="pejabat_id" id="" class="form-control select2">
+
+                                                    @foreach ($pejabat as $item)
+                                                    <option
+                                                        value="{{ $item->id }}"
+                                                        @if($item->id == $suratmasuk->pejabat_id)
+                                                            selected
+                                                        @endif
+                                                    >
+                                                        {{$item->nama}}
+                                                    </option>
+
+                                                    @endforeach
+                                                  </select>
+                                            </div>
+
+                                            @error('pejabat_id')
+                                              <span class="help-block">{{ $message }}</span>
+                                            @enderror
+
+                                        </div>
+
+                                        <div class="form-group row @error('tindaklanjut') has-error @enderror">
+                                          <label for="" class="col-sm-2 col-md-6 col-lg-2 col-form-label"><strong>Tindak Lanjut</strong></label>
+                                          <div class="col-sm-10">
+                                          <textarea class="form-control" id="" name="tindaklanjut" placeholder="Tindak Lanjut Surat"  rows="4">{{ old('tindaklanjut')?? $suratmasuk->tindaklanjut }}</textarea>
+                                          </div>
+
+                                          @error('tindaklanjut')
+                                          <span class="help-block">{{ $message }}</span>
+                                          @enderror
+
+                                      </div>
+
+
+                                            <div class="form-group row @error('hasil') has-error @enderror">
+                                              <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Keterangan</strong> </label>
+                                              <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                              <input type="" name="hasil" class="form-control" id="hasil" placeholder="Hasil" value="{{ old('hasil')?? $suratmasuk->hasil }}" >
+                                              </div>
+
+                                              @error('hasil')
                                                 <span class="help-block">{{ $message }}</span>
                                               @enderror
 
                                       </div>
 
-                                            <div class="form-group row @error('ket') has-error @enderror">
-                                              <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Keterangan</strong> </label>
-                                              <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                              <input type="" name="ket" class="form-control" id="ket" placeholder="Keterangan" value="">
-                                              </div>
-
-                                              @error('ket')
-                                                <span class="help-block">{{ $message }}</span>
-                                              @enderror
-
-                                            </div>
-
-
-                                            <div class="form-group row @error('updated_at') has-error @enderror">
-                                                <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Update</strong> </label>
-                                                <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                                <input type="text" name="updated_at" class="form-control" id="updated_at" placeholder="Masukkan updated_at Lengkap Anda" value="{{ old('updated_at') }}">
-                                                </div>
-
-                                                @error('updated_at')
-                                                  <span class="help-block">{{ $message }}</span>
-                                                @enderror
-
-                                            </div>
-
-
+                                          
 
                                             <div class="form-group mt-2">
                                                 <input type="submit" value="Tindak Lanjut" class="btn btn-primary">

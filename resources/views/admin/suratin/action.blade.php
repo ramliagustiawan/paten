@@ -12,7 +12,7 @@
     </form>
 
 
-    <button href="{{ route('admin.suratin.destroy', $model) }}" class="btn btn-danger btn-delete" id="delete" title="{{ $model->name }}" style="font-size:14px;" >Hapus</button>
+    <button href="{{ route('admin.suratin.destroy', $model) }}" class="btn btn-danger btn-delete" id="delete" title="{{ $model->asalsurat }}" style="font-size:14px;" >Hapus</button>
 
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>

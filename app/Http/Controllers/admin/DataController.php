@@ -194,9 +194,9 @@ class DataController extends Controller
         $suratin = Suratmasuk::orderBy('created_at', 'DESC');
 
         return datatables()->of($suratin)
-            // ->addColumn('layanan_id', function (suratin $model) {
-            //     return $model->layanan->layanan;
-            // })
+            ->addColumn('pejabat_id', function (Suratmasuk $model) {
+                return $model->pejabat;
+            })
             ->addColumn('action', 'admin.suratin.action')
             ->addIndexColumn()
             ->toJson();
