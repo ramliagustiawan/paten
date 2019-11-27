@@ -198,14 +198,14 @@
           <!-- small box -->
           <div class="small-box bg-secondary">
             <div class="inner">
-              <h3>onProses</h3>
+              <h3>{{ $countsuratout}}</h3>
 
               <p>Surat Keluar</p>
             </div>
             <div class="icon">
                 <i class="fas fa-paper-plane"></i>
             </div>
-            <a href="#" class="small-box-footer">Lihat Surat Keluar <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{ route('admin.suratout.index') }}" class="small-box-footer">Lihat Surat Keluar <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
