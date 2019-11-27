@@ -6,10 +6,10 @@
     <a href="{{ route('admin.suratout.edit', $model)}}" class="btn btn-warning modal-show edit" title="{{ $model->name }}" style="font-size:13px;">Proses</a>
 
 
-    <form action="{{ route('admin.suratout.arsip', $model) }}" method="POST">
+    {{-- <form action="{{ route('admin.suratout.arsip', $model) }}" method="POST">
         @csrf
         <input type="submit" value="Arsipkan" class="btn btn-success" style="font-size:13px;">
-    </form>
+    </form> --}}
 
 
     <button href="{{ route('admin.suratout.destroy', $model) }}" class="btn btn-danger btn-delete" id="delete" title="{{ $model->asalsurat }}" style="font-size:14px;" >Hapus</button>

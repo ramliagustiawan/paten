@@ -55,10 +55,10 @@ class Suratout extends Model
             ->format('d F Y');
     }
 
-    public function getTglterimaAttribute()
+    public function getTglkirimAttribute()
     {
         \Carbon\Carbon::setLocale('id');
-        return \Carbon\Carbon::parse($this->attributes['tglterima'])
+        return \Carbon\Carbon::parse($this->attributes['tglkirim'])
             ->format('d F Y');
     }
 }

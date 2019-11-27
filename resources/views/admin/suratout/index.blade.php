@@ -28,9 +28,11 @@
                               <th>Nomor Surat</th>
                               <th>Tanggal Surat</th>
                               <th>Isi Surat</th>
-                              <th>Perihal</th>
+                              {{-- <th>Perihal</th> --}}
                               <th>Tujuan</th>
                               <th>Pengirim</th>
+                              <th>Tanggal Kirim</th>
+                              <th>Keterangan</th>
                                <th>Aksi</th>
 
 
@@ -90,9 +92,11 @@
                             {data:'nosurat'},
                             {data:'tglsurat'},
                             {data:'perihal'},
-                            {data:'isisingkat'},
+                            // {data:'isisingkat'},
                             {data:'tujuansurat'},
                             {data:'pengirim'},
+                            {data:'tglkirim'},
+                            {data:'penerima'},
                             // {data:'pejabat_id'},
                             {data:'action'},
                         ]

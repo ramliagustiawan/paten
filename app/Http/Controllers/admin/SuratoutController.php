@@ -98,7 +98,7 @@ class SuratoutController extends Controller
         $pejabat = Pejabat::get();
         // dd($suratout);
         return view('admin.suratout.show', [
-            'title' => 'Detail Surat Masuk',
+            'title' => 'Detail Surat Keluar',
             'suratout' => $suratout,
             'pejabat' => $pejabat,
         ]);
@@ -112,7 +112,14 @@ class SuratoutController extends Controller
      */
     public function edit($id)
     {
-        //
+        $suratout = Suratout::findOrFail($id);
+        $pejabat = Pejabat::get();
+        // dd($suratout);
+        return view('admin.suratout.edit', [
+            'title' => 'Proses Surat Keluar',
+            'suratout' => $suratout,
+            'pejabat' => $pejabat,
+        ]);
     }
 
     /**
@@ -124,7 +131,45 @@ class SuratoutController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $suratout = Suratout::find($id);
+
+        // VALIDASI
+        $this->validate($request, [
+
+            // 'nosurat' => 'required',
+            // 'tglsurat' => 'required|date',
+            // 'perihal' => 'required',
+            // 'isisingkat' => 'required',
+            // 'tujuansurat' => 'required',
+            // 'pengirim' => 'required',
+            // 'fotosurat' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
+
+
+        ]);
+
+        // CEK GAMBAR
+        $fotosurat = null;
+
+
+        if ($request->hasFile('fotosurat')) {
+            $fotosurat = $request->file('fotosurat')->store('assets/covers');
+        }
+
+
+        $suratout->update([
+
+            'tglkirim' => $request->tglkirim,
+            'petugas' => $request->petugas,
+            'penerima' => $request->penerima,
+            'ket' => $request->ket,
+            // 'tujuansurat' => $request->tujuansurat,
+            // 'pengirim' => $request->pengirim,
+            // 'fotosurat' => $fotosurat,
+
+        ]);
+
+        return redirect()->route('admin.suratout.index', $suratout)->withInfo('Surat Keluar Tujuan ' . $suratout->tujuansurat . ' Telah Ditindaklanjuti');
     }
 
     /**
@@ -135,6 +180,10 @@ class SuratoutController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = Suratout::findOrFail($id);
+        // dd($model);
+        $model->delete();
+        return redirect()->route('admin.suratout.index')
+            ->with('danger', 'Surat Keluar Dihapus');
     }
 }
