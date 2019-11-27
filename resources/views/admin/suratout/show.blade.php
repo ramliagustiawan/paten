@@ -19,7 +19,7 @@
 
                         <div class="card">
                                 <div class="card-header">
-                                        <h4 class="text-center">Registrasi Surat Masuk</h4>
+                                    <h4 class="text-center">Register Surat Dari {{ $suratmasuk->asalsurat }}</h4>
 
                                 </div>
                                 <div class="card-body">
@@ -33,9 +33,16 @@
 
                                   <div class="col-xs-10 col-md-10 col-lg-10 mt-1">
 
-                                    <form action="{{ route('admin.suratin.update',$suratmasuk) }}" method="POST" enctype="multipart/form-data">
+                                    <form >
                                       @csrf
-                                      @method("PUT")
+
+                                      <div class="card">
+                                        <div class="card-header">
+                                        <strong>1. Detail Surat :</strong>
+                                        </div>
+
+                                        </div>
+
 
                                       <div class="form-group row @error('asalsurat') has-error @enderror">
                                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong> Asal Surat </strong></label>
@@ -102,7 +109,7 @@
                                 <div class="form-group row @error('perihal') has-error @enderror">
                                   <label for="" class="col-sm-2 col-md-6 col-lg-2 col-form-label"><strong>Isi Surat</strong></label>
                                   <div class="col-sm-10">
-                                  <textarea class="form-control" id="" name="perihal" placeholder="Ringkasan Isi Surat"  rows="4" readonly>{{ old('perihal')?? $suratmasuk->perihal }}</textarea>
+                                  <textarea class="form-control" id="perihal" name="perihal" placeholder="Ringkasan Isi Surat"  rows="4" readonly>{{ old('perihal')?? $suratmasuk->perihal }}</textarea>
                                   </div>
 
                                   @error('perihal')
@@ -115,21 +122,41 @@
 
                                            <div class="card">
                                                     <div class="card-header">
-                                                    <strong>Tindak Lanjut :</strong>
+                                                    <strong>2. Fisik Surat :</strong>
                                                     </div>
 
                                             </div>
+
+                                            <div class="form-group row @error('ket') has-error @enderror">
+                                                <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong></strong> </label>
+                                                <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                                                    <img src="{{ url($suratmasuk->getsurat()) }}" height="450px">
+                                                </div>
+
+                                                @error('ket')
+                                                  <span class="help-block">{{ $message }}</span>
+                                                @enderror
+
+                                            </div>
+
 
                                             {{--  --}}
                                             <br>
 
                                               {{--  --}}
 
+                                              <div class="card">
+                                                <div class="card-header">
+                                                <strong>3. Tindak Lanjut :</strong>
+                                                </div>
+
+                                        </div>
+
 
                                             <div class="form-group row @error('disposisicamat') has-error @enderror">
                                                 <label for="" class="col-sm-2 col-md-6 col-lg-2 col-form-label"><strong>Disposisi Camat</strong></label>
                                                 <div class="col-sm-10">
-                                                <textarea class="form-control" id="" name="disposisicamat" placeholder="Disposisi Camat"  rows="4">{{ old('disposisicamat')?? $suratmasuk->disposisicamat }}</textarea>
+                                                <textarea class="form-control" id="" name="disposisicamat" placeholder="Disposisi Camat"  rows="4" readonly>{{ old('disposisicamat')?? $suratmasuk->disposisicamat }}</textarea>
                                                 </div>
 
                                                 @error('disposisicamat')
@@ -141,7 +168,7 @@
                                             <div class="form-group row @error('disposisisek') has-error @enderror">
                                               <label for="" class="col-sm-2 col-md-6 col-lg-2 col-form-label"><strong>Sekretaris</strong></label>
                                               <div class="col-sm-10">
-                                              <textarea class="form-control" id="" name="disposisisek" placeholder="Disposisi Sekcam"  rows="4">{{ old('disposisisek')?? $suratmasuk->disposisisek }}</textarea>
+                                              <textarea class="form-control" id="" name="disposisisek" placeholder="Disposisi Sekcam"  rows="4" readonly>{{ old('disposisisek')?? $suratmasuk->disposisisek }}</textarea>
                                               </div>
 
                                               @error('disposisisek')
@@ -153,7 +180,7 @@
                                           <div class="form-group row @error('pejabat_id') has-error @enderror">
                                             <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Pejabat Yang Menindaklanjuti</strong> </label>
                                             <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                                <select name="pejabat_id" id="" class="form-control select2">
+                                                <select name="pejabat_id" id="" class="form-control select2" readonly>
 
                                                     @foreach ($pejabat as $item)
                                                     <option
@@ -178,7 +205,7 @@
                                         <div class="form-group row @error('tindaklanjut') has-error @enderror">
                                           <label for="" class="col-sm-2 col-md-6 col-lg-2 col-form-label"><strong>Tindak Lanjut</strong></label>
                                           <div class="col-sm-10">
-                                          <textarea class="form-control" id="" name="tindaklanjut" placeholder="Tindak Lanjut Surat"  rows="4">{{ old('tindaklanjut')?? $suratmasuk->tindaklanjut }}</textarea>
+                                          <textarea class="form-control" id="" name="tindaklanjut" placeholder="Tindak Lanjut Surat"  rows="4" readonly>{{ old('tindaklanjut')?? $suratmasuk->tindaklanjut }}</textarea>
                                           </div>
 
                                           @error('tindaklanjut')
@@ -191,7 +218,7 @@
                                             <div class="form-group row @error('hasil') has-error @enderror">
                                               <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Keterangan</strong> </label>
                                               <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                              <input type="" name="hasil" class="form-control" id="hasil" placeholder="Hasil" value="{{ old('hasil')?? $suratmasuk->hasil }}" >
+                                              <input type="" name="hasil" class="form-control" id="hasil" placeholder="Hasil" value="{{ old('hasil')?? $suratmasuk->hasil }}" readonly>
                                               </div>
 
                                               @error('hasil')
@@ -200,31 +227,21 @@
 
                                       </div>
 
-
-
-                                            <div class="form-group mt-2">
+                                            {{--  <div class="form-group mt-2">
                                                 <input type="submit" value="Tindak Lanjut" class="btn btn-primary">
 
-                                            </div>
-
-
-
-
+                                            </div>  --}}
                                           </form>
 
                                           {{-- cetak --}}
                                           {{-- <button href="{{ route('admin.tindak.cetak')}}" class="btn btn-success modal-show edit" >Cetak</button> --}}
 
-
                                       </div>
+                                  </div>
 
-
-
-                                    </div>
-
-                                    <div class="card-footer text-muted mt-4">
+                                    {{--  <div class="card-footer text-muted mt-4">
                                       Periksa Kembali Data Diatas Apakah Sudah Benar
-                                    </div>
+                                    </div>  --}}
                               </div>
                         </div>
 
@@ -261,7 +278,6 @@
         {{--  swal  --}}
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
-
           {{--  ckeditor  --}}
           <script src="{{ asset('assets/ckeditor/ckeditor.js')}}"></script>
 
@@ -270,8 +286,6 @@
                 CKEDITOR.replace('perihal');
 
         </script>
-
-
 
 @endpush
 

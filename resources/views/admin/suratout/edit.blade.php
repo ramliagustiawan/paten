@@ -36,7 +36,7 @@
                                     <form action="{{ route('admin.suratin.update',$suratmasuk) }}" method="POST" enctype="multipart/form-data">
                                       @csrf
                                       @method("PUT")
-
+                                     
                                       <div class="form-group row @error('asalsurat') has-error @enderror">
                                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong> Asal Surat </strong></label>
                                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
@@ -104,11 +104,11 @@
                                   <div class="col-sm-10">
                                   <textarea class="form-control" id="" name="perihal" placeholder="Ringkasan Isi Surat"  rows="4" readonly>{{ old('perihal')?? $suratmasuk->perihal }}</textarea>
                                   </div>
-
+          
                                   @error('perihal')
                                   <span class="help-block">{{ $message }}</span>
                                   @enderror
-
+          
                               </div>
 
                                     <br>
@@ -200,7 +200,7 @@
 
                                       </div>
 
-
+                                          
 
                                             <div class="form-group mt-2">
                                                 <input type="submit" value="Tindak Lanjut" class="btn btn-primary">
@@ -260,16 +260,6 @@
 
         {{--  swal  --}}
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-
-
-          {{--  ckeditor  --}}
-          <script src="{{ asset('assets/ckeditor/ckeditor.js')}}"></script>
-
-        <script>
-
-                CKEDITOR.replace('perihal');
-
-        </script>
 
 
 

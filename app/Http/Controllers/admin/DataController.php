@@ -19,6 +19,7 @@ use App\Pejabat;
 use App\Dispensasi;
 use App\Suratmasuk;
 use App\Arsip;
+use App\Suratout;
 
 class DataController extends Controller
 {
@@ -205,6 +206,22 @@ class DataController extends Controller
                 return $model->pejabat;
             })
             ->addColumn('action', 'admin.suratin.action')
+            ->addIndexColumn()
+            ->toJson();
+    }
+
+    public function suratout()
+    {
+        $suratout = Suratout::orderBy('created_at', 'DESC');
+
+        return datatables()->of($suratout)
+            // ->addColumn('pejabat_id', function (Suratmasuk $model) {
+            //     return $model->pejabat;
+            // })
+            ->addColumn('isisingkat', function (Suratout $model) {
+                return strip_tags($model->isisingkat);
+            })
+            ->addColumn('action', 'admin.suratout.action')
             ->addIndexColumn()
             ->toJson();
     }

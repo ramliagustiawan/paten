@@ -16,6 +16,7 @@ Route::get('/pejabat/pejabat', 'DataController@pejabat')->name('pejabat.pejabat'
 Route::get('/role/role', 'DataController@role')->name('role.role');
 Route::get('/permission/permission', 'DataController@permission')->name('permission.permission');
 Route::get('/suratin/suratin', 'DataController@suratin')->name('suratin.suratin');
+Route::get('/suratout/suratout', 'DataController@suratout')->name('suratout.suratout');
 Route::get('/arsip/arsip', 'DataController@arsip')->name('arsip.arsip');
 
 
@@ -71,5 +72,8 @@ Route::resource('/permission', 'PermissionController')->middleware('role:admin')
 
 Route::resource('/suratin', 'SuratmasukController');
 Route::post('/suratin/{suratin}', 'SuratmasukController@arsip')->name('suratin.arsip');
+
+Route::resource('/suratout', 'SuratoutController');
+Route::post('/suratout/{suratout}', 'SuratoutController@arsip')->name('suratout.arsip');
 
 Route::resource('/arsip', 'ArsipController');

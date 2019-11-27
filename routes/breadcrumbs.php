@@ -222,6 +222,36 @@ Breadcrumbs::for('admin.suratin.show', function ($trail, $suratmasuk) {
     $trail->push('Detail Surat Masuk', route('admin.suratin.show', $suratmasuk));
 });
 
+// batas
+
+// suratout index
+Breadcrumbs::for('admin.suratout.index', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Register Surat', route('admin.suratout.index'));
+});
+// create
+Breadcrumbs::for('admin.suratout.create', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Register Surat', route('admin.suratout.index'));
+    $trail->push('Registrasi Surat Keluar', route('admin.suratout.create'));
+});
+
+// edit
+Breadcrumbs::for('admin.suratout.edit', function ($trail, $suratout) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Register Surat', route('admin.suratout.index'));
+    $trail->push('Registrasi Surat Keluar', route('admin.suratout.edit', $suratout));
+});
+
+// suratout show
+Breadcrumbs::for('admin.suratout.show', function ($trail, $suratout) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Register Surat', route('admin.suratout.index'));
+    $trail->push('Detail Surat Keluar', route('admin.suratout.show', $suratout));
+});
+
+// batas akhir
+
 // arsip index
 Breadcrumbs::for('admin.arsip.index', function ($trail) {
     $trail->push('Beranda', route('admin.dashboard'));

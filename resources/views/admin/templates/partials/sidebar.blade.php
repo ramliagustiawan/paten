@@ -220,7 +220,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ route('admin.tindak.index') }}" class="nav-link">
+              <a href="{{ route('admin.suratout.index') }}" class="nav-link">
                 <i class="nav-icon fas fa-arrow-alt-circle-up"></i>
                 <p>Surat Keluar</p>
               </a>
