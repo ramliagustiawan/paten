@@ -36,3 +36,18 @@
 </div>
 
 {!! Form::close() !!}
+
+
+
+
+
+        {{--  ckeditor  --}}
+        {{--  <script src="{{ asset('assets/ckeditor/ckeditor.js')}}"></script>
+
+        <script>
+
+            CKEDITOR.replace('syarat');
+
+        </script>  --}}
+
+

@@ -68,6 +68,12 @@ class DataController extends Controller
         $report = Report::orderBy('created_at', 'DESC');
 
         return datatables()->of($report)
+            ->addColumn('pesan', function (Report $model) {
+                return strip_tags($model->pesan);
+            })
+            ->addColumn('tindakan', function (Report $model) {
+                return strip_tags($model->tindakan);
+            })
             ->addColumn('action', 'admin.tindak.action')
             ->addIndexColumn()
             ->toJson();

@@ -88,18 +88,17 @@
                                       </div>
 
 
-
                                     <div class="form-group row @error('pesan') has-error @enderror">
-                                        <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Isi Laporan</strong> </label>
-                                        <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                        <input type="text" name="pesan" class="form-control" id="pesan" readonly  placeholder="Masukkan pesan Lengkap Anda" value="{{ old('pesan') ?? $tindak->pesan}}">
+                                            <label for="" class="col-sm-2 col-md-6 col-lg-2 col-form-label"><strong>Isi Laporan</strong></label>
+                                            <div class="col-sm-10">
+                                            <textarea class="form-control" id="" name="pesan" placeholder="Ringkasan Isi Surat"  rows="4" readonly>{!!  htmlspecialchars($tindak->pesan)!!}</textarea>
+                                            </div>
+
+                                            @error('pesan')
+                                            <span class="help-block">{{ $message }}</span>
+                                            @enderror
+
                                         </div>
-
-                                        @error('pesan')
-                                          <span class="help-block">{{ $message }}</span>
-                                        @enderror
-
-                                    </div>
 
                                     <br>
 
@@ -119,7 +118,7 @@
                                             <div class="form-group row @error('tindakan') has-error @enderror">
                                                 <label for="" class="col-sm-2 col-md-6 col-lg-2 col-form-label"><strong>Respon Tindakan</strong></label>
                                                 <div class="col-sm-10">
-                                                <textarea class="form-control" id="" name="tindakan" placeholder="Tuliskan Pengaduan /Laporan Anda"  rows="4">{{ old('tindakan') ?? $tindak->tindakan }}</textarea>
+                                                <textarea class="form-control" id="" name="tindakan" placeholder="Respon Pengaduan / Tindak lanjut"  rows="4">{{ old('tindakan') ?? $tindak->tindakan }}</textarea>
                                                 </div>
 
                                                 @error('tindakan')
@@ -226,7 +225,15 @@
         {{--  swal  --}}
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
+           {{--  ckeditor  --}}
+           <script src="{{ asset('assets/ckeditor/ckeditor.js')}}"></script>
 
+           <script>
+
+               CKEDITOR.replace('tindakan');
+               CKEDITOR.replace('pesan');
+
+           </script>
 
 @endpush
 

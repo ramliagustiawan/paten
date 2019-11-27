@@ -21,7 +21,7 @@
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
-                          <table id="status" class="table table-bordered  table-hover" style="font-size:14px; width:100%">
+                          <table id="status" class="table table-bordered  table-hover" style="font-size:14px; width:100%; ">
                             <thead>
                             <tr>
                               <th>No</th>
@@ -29,8 +29,8 @@
                               <th>Alamat</th>
                               <th>Kontak</th>
                               <th>Tanggal Laporan</th>
-                              <th>Isi Laporan</th>
-                              <th>Tindak Lanjut</th>
+                              <th>Laporan</th>
+                              {{--  <th>Tindak Lanjut</th>  --}}
                               <th>Pejabat Yg Menangani</th>
                               <th>Keterangan</th>
 
@@ -86,6 +86,7 @@
                     $('#status').DataTable({
                         processing: true,
                         serverSide: true,
+                        // responsive: true,
                         ajax:'{{ route('admin.tindak.lanjut') }}',
                         columns: [
 
@@ -95,7 +96,7 @@
                             {data:'kontak'},
                             {data:'created_at'},
                             {data:'pesan'},
-                            {data:'tindakan'},
+                            // {data:'tindakan'},
                             {data:'aparat'},
                             {data:'ket'},
                             {data:'action'},

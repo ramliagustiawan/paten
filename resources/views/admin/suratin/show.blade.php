@@ -109,7 +109,7 @@
                                 <div class="form-group row @error('perihal') has-error @enderror">
                                   <label for="" class="col-sm-2 col-md-6 col-lg-2 col-form-label"><strong>Isi Surat</strong></label>
                                   <div class="col-sm-10">
-                                  <textarea class="form-control" id="" name="perihal" placeholder="Ringkasan Isi Surat"  rows="4" readonly>{{ old('perihal')?? $suratmasuk->perihal }}</textarea>
+                                  <textarea class="form-control" id="perihal" name="perihal" placeholder="Ringkasan Isi Surat"  rows="4" readonly>{{ old('perihal')?? $suratmasuk->perihal }}</textarea>
                                   </div>
 
                                   @error('perihal')
@@ -278,7 +278,14 @@
         {{--  swal  --}}
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
+          {{--  ckeditor  --}}
+          <script src="{{ asset('assets/ckeditor/ckeditor.js')}}"></script>
 
+        <script>
+
+                CKEDITOR.replace('perihal');
+
+        </script>
 
 @endpush
 

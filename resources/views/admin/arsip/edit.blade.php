@@ -102,7 +102,7 @@
                                 <div class="form-group row @error('perihal') has-error @enderror">
                                   <label for="" class="col-sm-2 col-md-6 col-lg-2 col-form-label"><strong>Isi Surat</strong></label>
                                   <div class="col-sm-10">
-                                  <textarea class="form-control" id="" name="perihal" placeholder="Ringkasan Isi Surat"  rows="4" readonly>{{ old('perihal')?? $arsip->perihal }}</textarea>
+                                  <textarea class="form-control" id="perihal" name="perihal" placeholder="Ringkasan Isi Surat"  rows="4" readonly>{{ old('perihal')?? $arsip->perihal }}</textarea>
                                   </div>
 
                                   @error('perihal')
@@ -116,11 +116,11 @@
                                 <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                 <input type="" name="tglarsip" class="form-control" id="tglarsip" placeholder="Contoh : Gorontalo, 13 Agustus 1994" value="{{ old('tglarsip') ?? $arsip->tglarsip }}" readonly>
                                 </div>
-    
+
                                 @error('tglarsip')
                                   <span class="help-block">{{ $message }}</span>
                                 @enderror
-    
+
                         </div>
 
                                     <br>
@@ -142,11 +142,11 @@
                                                 <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                                 <input type="date" name="tglarsip" class="form-control" id="tglarsip" placeholder="Contoh : Gorontalo, 13 Agustus 1994" value="{{ old('tglarsip') }}" >
                                                 </div>
-                    
+
                                                 @error('tglarsip')
                                                   <span class="help-block">{{ $message }}</span>
                                                 @enderror
-                    
+
                                         </div>
 
 
@@ -224,6 +224,16 @@
 
         {{--  swal  --}}
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+         {{--  ckeditor  --}}
+         <script src="{{ asset('assets/ckeditor/ckeditor.js')}}"></script>
+
+         <script>
+
+             CKEDITOR.replace('perihal');
+
+         </script>
+
 
 
 

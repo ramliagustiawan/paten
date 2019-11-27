@@ -121,6 +121,14 @@
          {{-- flash message --}}
          @include ('front.templates.partials.alerts')
 
+           {{--  ckeditor  --}}
+           <script src="{{ asset('assets/ckeditor/ckeditor.js')}}"></script>
+
+           <script>
+
+               CKEDITOR.replace('pesan');
+
+           </script>
 
 
 @endpush
