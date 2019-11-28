@@ -245,13 +245,13 @@
 
 
             {{-- rekapan --}}
-            <li class="nav-header">REKAPITULASI</li>
+            {{-- <li class="nav-header">REKAPITULASI</li>
             <li class="nav-item">
               <a href="{{ route('admin.tindak.index') }}" class="nav-link">
                 <i class="nav-icon fas fa-calculator"></i>
                 <p>Rekap Layanan</p>
               </a>
-            </li>
+            </li> --}}
 
 
             {{--  logout  --}}
