@@ -44,6 +44,7 @@ Route::resource('/user', 'UserController')->middleware('role:admin');
 Route::resource('/daftar', 'DaftarController');
 Route::post('/daftar/{daftar}', 'DaftarController@proses')->name('daftar.proses');
 
+Route::get('/proses/pdf', 'ProsesController@cetak')->name('proses.cetak');
 Route::resource('/proses', 'ProsesController');
 
 Route::resource('/iumk', 'IumkController');
