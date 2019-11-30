@@ -102,6 +102,7 @@
 
 
 
+
 @endsection
 
 
@@ -169,7 +170,8 @@
                         {data: 'kategori'},
                         {data: 'biaya'},
                         {data: 'waktu'},
-                        {data: 'syarat'},
+                        // {data: 'syarat'},
+                        {data:'action'},
                     ]
                 });
             });

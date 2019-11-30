@@ -44,6 +44,7 @@ class DataController extends Controller
         $syarat = Layanan::orderBy('id', 'ASC');
 
         return datatables()->of($syarat)
+            ->addColumn('action', 'front.info.action')
             ->addIndexColumn()
             ->toJson();
     }
