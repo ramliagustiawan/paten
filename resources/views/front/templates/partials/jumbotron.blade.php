@@ -4,7 +4,7 @@
              <h2 class="display-5 mt-4 text-dark">SIP PATEN DUNGINGI</h2>
          <p class="lead text-muted"><strong>Sistem Informasi Pelaporan Dan Pelayanan Terpadu Kecamatan</strong></p>
          <hr class="my-4 ">
-         <p class="center text-light mt-1">Pelayanan Dimana Saja Kapan Saja Dengan Lebih Pasti Dan Mudah</p>
+         <p class="center text-light mt-1">" Pelayanan Dimana Saja Kapan Saja Dengan Lebih Pasti Dan Mudah "</p>
          <br>
 
         <table>

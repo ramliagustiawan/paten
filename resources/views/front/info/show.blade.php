@@ -25,10 +25,33 @@
                                     <div class="box-header">
                                     </div>
 
-                                    {{-- isi --}}
-                                    1. Persyaratan
-                                    {{ $layanan->syarat }}
-                                    2. Waktu
+                                    <div class="card">
+                                        <div class="card-header">
+                                          <strong>1. Biaya :</strong>
+                                        </div>
+                                        <div class="card-body">
+                                          <span>{{ $layanan->biaya }}</span>
+                                        </div>
+                                        </div>
+
+                                    <div class="card">
+                                        <div class="card-header">
+                                          <strong>2. Waktu :</strong>
+                                        </div>
+                                        <div class="card-body">
+                                          <span>{{ $layanan->waktu }}</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header">
+                                          <strong>3. Persyaratan :</strong>
+                                        </div>
+                                        <div class="card-body">
+                                          <span>{{ $layanan->syarat }}</span>
+                                        </div>
+                                    </div>
+
 
                                     <!-- /.box-body -->
                                   </div>
