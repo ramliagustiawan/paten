@@ -26,7 +26,8 @@ class DataController extends Controller
     public function data()
     {
 
-        $user = User::orderBy('created_at', 'DESC');
+        $user = User::orderBy('created_at', 'DESC')->get();
+        $user->load('roles');
 
         return datatables()->of($user)
             ->addColumn('roles_id', function (User $model) {
@@ -40,6 +41,7 @@ class DataController extends Controller
     public function layanan()
     {
         $daftar = Service::isSelesai()->orderBy('created_at', 'DESC')->get();
+        $daftar->load('layanan', 'pejabat');
         // dd($layanan);
         return datatables()->of($daftar)
             ->addColumn('layanan_id', function (Service $model) {
@@ -82,7 +84,8 @@ class DataController extends Controller
 
     public function iumk()
     {
-        $iumk = Iumk::isSelesai()->orderBy('created_at', 'DESC');
+        $iumk = Iumk::isSelesai()->orderBy('created_at', 'DESC')->get();
+        $iumk->load('layanan');
 
         return datatables()->of($iumk)
             ->addColumn('layanan_id', function (Iumk $model) {
@@ -95,7 +98,8 @@ class DataController extends Controller
 
     public function suket()
     {
-        $suket = Suket::isSelesai()->orderBy('created_at', 'DESC');
+        $suket = Suket::isSelesai()->orderBy('created_at', 'DESC')->get();
+        $suket->load('layanan');
 
         return datatables()->of($suket)
             ->addColumn('layanan_id', function (Suket $model) {
@@ -186,7 +190,8 @@ class DataController extends Controller
 
     public function dispensasi()
     {
-        $dispensasi = Dispensasi::isSelesai()->orderBy('created_at', 'DESC');
+        $dispensasi = Dispensasi::isSelesai()->orderBy('created_at', 'DESC')->get();
+        $dispensasi->load('layanan');
 
         return datatables()->of($dispensasi)
             ->addColumn('layanan_id', function (Dispensasi $model) {
@@ -199,7 +204,8 @@ class DataController extends Controller
 
     public function suratin()
     {
-        $suratin = Suratmasuk::orderBy('created_at', 'DESC');
+        $suratin = Suratmasuk::orderBy('created_at', 'DESC')->get();
+        $suratin->load('pejabat');
 
         return datatables()->of($suratin)
             ->addColumn('pejabat_id', function (Suratmasuk $model) {

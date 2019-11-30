@@ -125,7 +125,7 @@
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
-              <h3>onProses</h3>
+              <h3>#</h3>
 
               <p>Domisili Usaha</p>
             </div>
@@ -140,7 +140,7 @@
           <!-- small box -->
           <div class="small-box bg-warning">
             <div class="inner">
-              <h3>onProses</h3>
+              <h3>#</h3>
 
               <p>Surat Keterangan Tidak Mampu</p>
             </div>

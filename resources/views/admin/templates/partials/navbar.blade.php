@@ -17,7 +17,7 @@
     <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavId">
             <ul class="navbar-nav px-auto " >
         {{-- batas --}}
-      <li class="nav-item dropdown m-auto">
+      {{-- <li class="nav-item dropdown m-auto">
             <a class="nav-link" data-toggle="dropdown" href="#">
               <i class="far fa-bell"></i>
               <span class="badge badge-warning navbar-badge">15</span>
@@ -37,7 +37,7 @@
               <div class="dropdown-divider"></div>
               <div class="dropdown-divider"></div>
             </div>
-          </li>
+          </li> --}}
         </ul>
             <!-- Signout -->
             <ul class="navbar-nav px-auto " >
