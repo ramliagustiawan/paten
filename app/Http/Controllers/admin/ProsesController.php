@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Iumk;
 use App\Prosessurat;
+use Fpdf;
+use PDF;
 
 class ProsesController extends Controller
 {
@@ -126,5 +128,18 @@ class ProsesController extends Controller
         $prosessurat->delete();
         return redirect()->route('admin.proses.index')
             ->with('danger', 'Permohonan Surat Keterangan Dihapus');
+    }
+
+    public function cetak()
+    {
+        $prosessurat = Prosessurat::get();
+        $pdf = PDF::loadView('admin.proses.cetak', [
+            'prosessurat' => $prosessurat,
+            // 'pejabat' => $pejabat,
+            'title' => 'Print Status Surat',
+
+        ])->setPaper('F4', 'portrait');
+
+        return $pdf->stream();
     }
 }
