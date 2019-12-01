@@ -2,10 +2,10 @@
 
         {{-- <a href="{{ route('admin.tindak.show', $model)}}" class="btn btn-info modal-show edit" title="{{ $model->name }}" style="font-size:13px;">Periksa</a> --}}
 
-        <a href="{{ route('admin.tindak.edit', $model)}}" class="btn btn-warning modal-show edit" title="{{ $model->name }}" style="font-size:13px;">Respon</a>
+        <a href="{{ route('admin.tindak.edit', $model)}}" class="btn btn-warning modal-show edit" title="{{ $model->name }}" style="font-size:13px;"><i class="fas fa-edit"></i></a>
 
         <button href="{{ route('admin.tindak.destroy', $model) }}"
-        class="btn btn-danger" id="delete" style="font-size:13px;">Hapus</button>
+        class="btn btn-danger" id="delete" style="font-size:13px;"><i class="fas fa-trash-alt"></i></button>
 
 
         {{-- <form action="{{ route('admin.tindak.proses', $model) }}" method="POST">

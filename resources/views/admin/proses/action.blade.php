@@ -1,8 +1,8 @@
 
 
-        <a href="{{ route('admin.proses.show', $model)}}" class="btn btn-info modal-show edit" title="{{ $model->name }}" style="font-size:14px;">Periksa</a>
+        <a href="{{ route('admin.proses.show', $model)}}" class="btn btn-info modal-show edit" title="{{ $model->name }}" style="font-size:14px;"><i class="fas fa-search"></i> Periksa</a>
 
-        <a href="{{ route('admin.proses.edit', $model)}}" class="btn btn-warning modal-show edit" title="{{ $model->name }}" style="font-size:14px;">Update</a>
+        <a href="{{ route('admin.proses.edit', $model)}}" class="btn btn-warning modal-show edit" title="{{ $model->name }}" style="font-size:14px;"><i class="fas fa-edit"></i> Update</a>
 {{--
         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter">
                 Edit

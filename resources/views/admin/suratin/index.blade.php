@@ -7,7 +7,7 @@
                 <div class="card-header">
                     <h4 class="box-title">Surat Masuk</h4>
 
-                    <a href="{{ route('admin.suratin.create')}}" class="btn btn-primary pull-right modal-show" title="Tambah Pengguna">Register Surat Masuk</a>
+                    <a href="{{ route('admin.suratin.create')}}" class="btn btn-primary pull-right modal-show" title="Tambah Pengguna"><i class="fas fa-plus-circle"></i> Register Surat Masuk</a>
 
                     {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Tambah Pengguna
@@ -26,7 +26,7 @@
                             <tr>
                               <th>No</th>
                               <th>Asal Surat</th>
-                             
+
                               <th>Perihal</th>
 
                               {{-- <th>Isi Surat</th> --}}
@@ -96,7 +96,7 @@
                         columns: [
 
                             {data:'DT_RowIndex',orderable:false,searchable:false},
-                            {data:'asalsurat'},                          
+                            {data:'asalsurat'},
                             {data:'ket'},
                             {data:'tglterima'},
                             {data:'disposisicamat'},

@@ -1,11 +1,11 @@
 
 {{-- <div class="row"> --}}
 
-    <a href="{{ route('admin.suket.show', $model)}}" class="btn btn-info modal-show edit" title="{{ $model->name }}" style="font-size:13px;">Periksa</a>
+    <a href="{{ route('admin.suket.show', $model)}}" class="btn btn-info modal-show edit" title="{{ $model->name }}" style="font-size:13px;"><i class="fas fa-search"></i></a>
 
-    <a href="{{ route('admin.suket.edit', $model)}}" class="btn btn-warning modal-show edit" title="{{ $model->name }}" style="font-size:13px;">Proses</a>
+    <a href="{{ route('admin.suket.edit', $model)}}" class="btn btn-warning modal-show edit" title="{{ $model->name }}" style="font-size:13px;"><i class="fas fa-edit"></i></a>
 
-    <a href="{{ route('admin.suket.cetak', $model)}}" class="btn btn-primary modal-show edit" title="{{ $model->name }}" style="font-size:13px;">Cetak</a>
+    <a href="{{ route('admin.suket.cetak', $model)}}" class="btn btn-primary modal-show edit" title="{{ $model->name }}" style="font-size:13px;"><i class="fas fa-print"></i>Cetak</a>
 
 
 
@@ -15,7 +15,7 @@
     </form>
 
 
-    <button href="{{ route('admin.suket.destroy', $model) }}" class="btn btn-danger btn-delete" id="delete" title="{{ $model->name }}" style="font-size:14px;" >Hapus</button>
+    <button href="{{ route('admin.suket.destroy', $model) }}" class="btn btn-danger btn-delete" id="delete" title="{{ $model->name }}" style="font-size:14px;" ><i class="fas fa-trash-alt"></i></button>
 
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>

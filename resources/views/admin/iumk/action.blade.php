@@ -1,21 +1,21 @@
 
 {{-- <div class="row"> --}}
 
-    <a href="{{ route('admin.iumk.show', $model)}}" class="btn btn-info modal-show edit" title="{{ $model->name }}" style="font-size:13px;">Periksa</a>
+    <a href="{{ route('admin.iumk.show', $model)}}" class="btn btn-info modal-show edit" title="{{ $model->name }}" style="font-size:13px;"><i class="fas fa-search"></i></a>
 
-    <a href="{{ route('admin.iumk.edit', $model)}}" class="btn btn-warning modal-show edit" title="{{ $model->name }}" style="font-size:13px;">Proses</a>
+    <a href="{{ route('admin.iumk.edit', $model)}}" class="btn btn-warning modal-show edit" title="{{ $model->name }}" style="font-size:13px;"><i class="fas fa-edit"></i></a>
 
-    <a href="{{ route('admin.iumk.cetak', $model)}}" class="btn btn-primary modal-show edit" title="{{ $model->name }}" style="font-size:13px;">Cetak</a>
+    <a href="{{ route('admin.iumk.cetak', $model)}}" class="btn btn-primary modal-show edit" title="{{ $model->name }}" style="font-size:13px;"><i class="fas fa-print"></i> Cetak</a>
 
 
 
     <form action="{{ route('admin.iumk.proses', $model) }}" method="POST">
         @csrf
-        <input type="submit" value="Selesai" class="btn btn-success btn-proses" id="proses" style="font-size:13px;">
+        <input type="submit" value="Selesai"  class="btn btn-success btn-proses" id="proses" style="font-size:13px;">
     </form>
 
 
-    <button href="{{ route('admin.iumk.destroy', $model) }}" class="btn btn-danger btn-delete" id="delete" title="{{ $model->name }}" style="font-size:14px;" >Hapus</button>
+    <button href="{{ route('admin.iumk.destroy', $model) }}" class="btn btn-danger btn-delete" id="delete" title="{{ $model->name }}" style="font-size:14px;" ><i class="fas fa-trash-alt"></i></button>
 
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>

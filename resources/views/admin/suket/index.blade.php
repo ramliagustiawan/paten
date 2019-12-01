@@ -7,7 +7,7 @@
                 <div class="card-header">
                     <h4 class="box-title">Daftar Permohonan Layanan</h4>
 
-                    <a href="{{ route('admin.suket.create')}}" class="btn btn-primary pull-right modal-show" title="Tambah Pengguna">Tambah Permohonan Surat Keterangan</a>
+                    <a href="{{ route('admin.suket.create')}}" class="btn btn-primary pull-right modal-show" title="Tambah Pengguna"><i class="fas fa-plus-circle"></i> Tambah Permohonan Surat Keterangan</a>
 
                     {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Tambah Pengguna

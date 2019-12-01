@@ -7,7 +7,7 @@
                 <div class="card-header">
                     <h4 class="box-title">Pejabat</h4>
 
-                    <a href="{{ route('admin.pejabat.create')}}" class="btn btn-primary pull-right modal-show" title="Tambah Pejabat">Tambah Pejabat</a>
+                    <a href="{{ route('admin.pejabat.create')}}" class="btn btn-primary pull-right modal-show" title="Tambah Pejabat"><i class="fas fa-plus-circle"></i> Tambah Pejabat</a>
 
                     {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Tambah Pengguna

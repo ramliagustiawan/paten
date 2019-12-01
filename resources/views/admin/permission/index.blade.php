@@ -7,7 +7,7 @@
                 <div class="card-header">
                     <h4 class="box-title">Permission Akses</h4>
 
-                    <a href="{{ route('admin.permission.create')}}" class="btn btn-primary pull-right modal-show" title="Tambah Layanan">Tambah Permission</a>
+                    <a href="{{ route('admin.permission.create')}}" class="btn btn-primary pull-right modal-show" title="Tambah Layanan"><i class="fas fa-plus-circle"></i> Tambah Permission</a>
 
                     {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Tambah Pengguna
