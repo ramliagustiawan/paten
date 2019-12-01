@@ -4,8 +4,10 @@ namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Service;
 use App\Dispensasi;
+use App\Rules\Captcha;
 
 class NikahController extends Controller
 {
@@ -85,6 +87,7 @@ class NikahController extends Controller
 
             'fotokua' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
+            'g-recaptcha-response' => new Captcha(),
 
 
         ]);

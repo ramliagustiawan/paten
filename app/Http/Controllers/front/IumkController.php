@@ -72,6 +72,7 @@ class IumkController extends Controller
             'fotosku' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotodiri' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
+            'g-recaptcha-response' => new Captcha(),
 
 
         ]);

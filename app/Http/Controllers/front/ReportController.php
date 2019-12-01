@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Report;
 use Illuminate\Support\Facades\Storage;
+use App\Rules\Captcha;
 
 class ReportController extends Controller
 {
@@ -47,6 +48,7 @@ class ReportController extends Controller
             'alamat' => 'required|min:10',
             'kontak' => 'required|numeric',
             'pesan' => 'required|min:10',
+            'g-recaptcha-response' => new Captcha(),
 
 
         ]);

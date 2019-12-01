@@ -15,19 +15,19 @@
             <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavId">
                     <ul class="navbar-nav  " >
                             <li class="nav-item">
-                              <a class="nav-link" href="{{ route('homepage') }}">HOME</a>
+                              <a class="nav-link" href="{{ route('homepage') }}"><i class="fas fa-home"></i> HOME</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="{{ route('info.index') }}">INFORMASI LAYANAN</a>
+                              <a class="nav-link" href="{{ route('info.index') }}"><i class="fas fa-info-circle"></i> INFORMASI LAYANAN</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="{{ route('ajukan.index') }}">AJUKAN LAYANAN</a>
+                              <a class="nav-link" href="{{ route('ajukan.index') }}"><i class="fas fa-edit"></i> AJUKAN LAYANAN</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="{{ route('report.index') }}">PELAPORAN</a>
+                              <a class="nav-link" href="{{ route('report.index') }}"><i class="fas fa-phone-square-alt"></i> PELAPORAN</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link " href="{{ route('login') }}" tabindex="-1" aria-disabled="true">LOGIN</a>
+                              <a class="nav-link " href="{{ route('login') }}" tabindex="-1" aria-disabled="true"><i class="fas fa-sign-in-alt"></i> LOGIN</a>
                             </li>
                     </ul>
             </div>

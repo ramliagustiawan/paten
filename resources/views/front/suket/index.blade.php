@@ -290,6 +290,18 @@
                             </div>
                     </div>
 
+                     {{-- recaptcha --}}
+                     <div class="form-group row">
+                        <div class="col-md-6 offset mt-2">
+                            <div class="g-recaptcha" data-sitekey="{{env('CAPTCHA_KEY') }}"></div>
+                            @if($errors->has('g-recaptcha-response'))
+                                <span class="invalid-feedback" style="display:block">
+                                    <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+
 
                     <div class="form-group mt-2">
                         <input type="submit" value="Ajukan" class="btn btn-primary">

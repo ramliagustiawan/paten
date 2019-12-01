@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Service;
 use App\Suket;
+use App\Rules\Captcha;
 
 class SuketController extends Controller
 {
@@ -55,6 +56,7 @@ class SuketController extends Controller
             'layanan_id' => 'required',
             'fotoktp' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
+            'g-recaptcha-response' => new Captcha(),
 
 
         ]);
