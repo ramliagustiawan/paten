@@ -28,12 +28,11 @@ class CreateSuratmasukTable extends Migration
             $table->char('tindaklanjut')->nullable()->default(null);
             $table->char('hasil')->nullable()->default(null);
             $table->char('ket')->nullable()->default(null);
-          
+
             $table->timestamps();
 
             // BUAT FOREIGN KEY
             $table->foreign('pejabat_id')->references('id')->on('pejabat')->onUpdate('CASCADE')->onDelete('CASCADE');
-           
         });
     }
 
