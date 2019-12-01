@@ -171,7 +171,7 @@ return [
         Codedge\Fpdf\FpdfServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         LaravelQRCode\Providers\QRCodeServiceProvider::class,
-        Jenssegers\Date\DateServiceProvider::class, 
+        Jenssegers\Date\DateServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -182,6 +182,9 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        // chapta
+        Buzz\LaravelGoogleCaptcha\CaptchaServiceProvider::class,
 
     ],
 
@@ -238,7 +241,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Fpdf' => Codedge\Fpdf\Facades\Fpdf::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
-        'QRCode' => LaravelQRCode\Facades\QRCode::class,    
+        'QRCode' => LaravelQRCode\Facades\QRCode::class,
 
     ],
 

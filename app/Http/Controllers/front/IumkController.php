@@ -4,8 +4,10 @@ namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Service;
 use App\Iumk;
+use App\Rules\Captcha;
 
 class IumkController extends Controller
 {
@@ -19,6 +21,13 @@ class IumkController extends Controller
         return view('front.iumk.index');
     }
 
+    public function validator(array $data)
+    {
+        return Validator::make($data, [
+            'g-recaptcha-response' => new Captcha(),
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -29,7 +38,8 @@ class IumkController extends Controller
         $iumk = Iumk::orderBY('created_at', 'DESC')->get();
         return view('front.iumk.create', [
             'title' => 'Ajukan IUMK',
-            'iumk' => $iumk
+            'iumk' => $iumk,
+
         ]);
     }
 
@@ -62,6 +72,7 @@ class IumkController extends Controller
             'fotosku' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotodiri' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
+
 
         ]);
 
