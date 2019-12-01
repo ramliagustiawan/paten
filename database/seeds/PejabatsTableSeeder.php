@@ -14,13 +14,14 @@ class PejabatsTableSeeder extends Seeder
     {
         Pejabat::create([
             'nama' => 'Sriyanti Ano, SP, M.Si',
-            'Jabatan' => 'Camat Dungingi',
+            'jabatan' => 'Camat Dungingi',
             'nip' => '19690908 199203 2 011',
         ]);
 
         Pejabat::create([
             'nama' => 'Ramli A. Taliki, SSTP',
             'Jabatan' => 'a.n. Camat Dungingi',
+            'ketjabatan' => 'Sekretaris Kecamatan',
             'nip' => '19840813 200312 1 002',
         ]);
     }

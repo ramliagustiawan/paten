@@ -44,6 +44,5 @@ class LayanansTableSeeder extends Seeder
                          Bukti Pelunasan PBB    ',
             'ket' => ''
         ]);
-        
     }
 }

@@ -11,9 +11,9 @@
         <input type="submit" value="Arsipkan" class="btn btn-success" style="font-size:13px;">
     </form>
 
-
+    @can('delete')
     <button href="{{ route('admin.suratin.destroy', $model) }}" class="btn btn-danger btn-delete" id="delete" title="{{ $model->asalsurat }}" style="font-size:14px;" ><i class="fas fa-trash-alt"></i></button>
-
+    @endcan
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 

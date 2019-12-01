@@ -4,9 +4,10 @@
 
         <a href="{{ route('admin.tindak.edit', $model)}}" class="btn btn-warning modal-show edit" title="{{ $model->name }}" style="font-size:13px;"><i class="fas fa-edit"></i></a>
 
+        @can('delete')
         <button href="{{ route('admin.tindak.destroy', $model) }}"
         class="btn btn-danger" id="delete" style="font-size:13px;"><i class="fas fa-trash-alt"></i></button>
-
+        @endcan
 
         {{-- <form action="{{ route('admin.tindak.proses', $model) }}" method="POST">
                 @csrf

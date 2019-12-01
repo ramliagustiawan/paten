@@ -14,9 +14,9 @@
         <input type="submit" value="Selesai"  class="btn btn-success btn-proses" id="proses" style="font-size:13px;">
     </form>
 
-
+    @can('delete')
     <button href="{{ route('admin.iumk.destroy', $model) }}" class="btn btn-danger btn-delete" id="delete" title="{{ $model->name }}" style="font-size:14px;" ><i class="fas fa-trash-alt"></i></button>
-
+    @endcan
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
