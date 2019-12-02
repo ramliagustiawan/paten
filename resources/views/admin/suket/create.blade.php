@@ -293,7 +293,7 @@
 
 
                                                         <div class="form-group mt-2">
-                                                            <input type="submit" value="Ajukan" class="btn btn-primary">
+                                                            <input type="submit" value="Proses" class="btn btn-primary">
                                                         </div>
 
                                                       </form>

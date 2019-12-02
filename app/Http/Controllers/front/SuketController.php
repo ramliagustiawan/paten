@@ -42,7 +42,7 @@ class SuketController extends Controller
         $this->validate($request, [
 
             'nama' => 'required',
-            'nik' => 'required|numeric|max:9999999999999999',
+            'nik' => 'required|numeric|max:9999999999999999|digits_between:16,18',
             'tempat' => 'required',
             'tgllhr' => 'required',
             'jk' => 'required|min:4',
@@ -52,7 +52,7 @@ class SuketController extends Controller
             'kelurahan' => 'required',
             'keterangan' => 'required|min:10',
             'keperluan' => 'required|min:10',
-            'kontak' => 'required|numeric|max:999999999999',
+            'kontak' => 'required|numeric|max:999999999999|digits_between:10,15',
             'layanan_id' => 'required',
             'fotoktp' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
