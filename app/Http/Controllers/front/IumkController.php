@@ -75,6 +75,21 @@ class IumkController extends Controller
             'g-recaptcha-response' => new Captcha(),
 
 
+        ],
+        [
+            'nama.required' => 'Silahkan Masukkan Nama Lengkap Anda',
+            'nik.required' => 'Silahkan Masukkan NIK Anda | 16 Digit',
+            'alamat.required' => 'Silahkan Masukkan Alamat Anda',
+            'kelurahan.required' => 'Pilih Kelurahan',
+            'kontak.required' => 'Masukkan Nomor HP Anda | 10 sd 12 Digit',
+            'naper.required' => 'Silahkan Masukkan Nama Usaha',
+            'bentuk.required' => 'Pilih Bentuk Usaha',
+            'npwp.required' => 'Silahkan Masukkan NPWP atau - (Bila Tidak Ada)',
+            'giatusaha.required' => 'Pilih Kegiatan Usaha',
+            'statusbangunan.required' => 'Pilih Status Bangunan',
+            'alamatusaha.required' => 'Alamat Lengkap Usaha : Jalan, Kelurahan, Kecamatan',
+            'modal.required' => 'Silahkan Masukkan Jumlah Modal Anda',
+           
         ]);
 
         // CEK GAMBAR

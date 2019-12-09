@@ -109,4 +109,6 @@ class Iumk extends Model
     {
         return $query->where('hasil', null);
     }
+
+  
 }
