@@ -53,13 +53,13 @@ class SuketController extends Controller
      */
     public function store(Request $request)
     {
-        // VALIDASI
-        $this->validate($request, [
+         // VALIDASI
+         $ruls = [
 
             'nama' => 'required',
-            'nik' => 'required|numeric|max:9999999999999999',
+            'nik' => 'required|numeric|digits_between:16,17',
             'tempat' => 'required',
-            'tgllhr' => 'required|date',
+            'tgllhr' => 'required',
             'jk' => 'required|min:4',
             'agama' => 'required',
             'pekerjaan' => 'required',
@@ -67,13 +67,27 @@ class SuketController extends Controller
             'kelurahan' => 'required',
             'keterangan' => 'required|min:10',
             'keperluan' => 'required|min:10',
-            'kontak' => 'required|numeric|max:999999999999',
+            'kontak' => 'required|numeric|digits_between:10,13',
             'layanan_id' => 'required',
             'fotoktp' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
 
+        ];
 
-        ]);
+        $message = [
+            'required' => ':attribute Harus Di Isi',
+            'numeric' => 'Masukkan Angka',
+            'nik.required' => 'Masukkan Nik Anda | 16 Digit',
+            'kontak.required'=> 'Masukkan Nomor Hp Anda | 10 - 12 Digit',
+            'tgllhr.required'=>'Masukkan Tanggal,Bulan,Tahun Lahir',
+            'tempat.required'=>'Tempat Lahir Harus Di Isi',
+            'nik.digits_between'=>'NIK harus 16 Digits',
+            'kontak.digits_between'=>'No HP terdiri dari 10 sd 12 Digits',
+            'max' => 'Mohon Maaf .. Besar File Yang Di Upload maximal 2 Mb',
+            'image' => 'Mohon Maaf .. File Yang Diupload Hanya Dalam Bentuk Jpg,Png,Jpeg,SVG',
+        ];
+
+        $request->validate($ruls,$message);
 
         // CEK GAMBAR
         $fotoktp = null;

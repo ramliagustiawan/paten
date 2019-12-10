@@ -92,7 +92,9 @@ class IumkController extends Controller
             'nik.digits_between'=>'NIK terdiri dari 16 Digits',
             'kontak.digits_between'=>'No HP terdiri dari 10 sd 12 Digits',
             'numeric' => 'Isi Dengan Angka',
-            'max.numeric' => 'Cek Kembali : Kelebihan Digits'
+            'max.numeric' => 'Cek Kembali : Kelebihan Digits',
+            'max' => 'Mohon Maaf .. Besar File Yang Di Upload maximal 2 Mb',
+            'image' => 'Mohon Maaf .. File Yang Diupload Hanya Dalam Bentuk Jpg,Png,Jpeg,SVG',
 
         ]);
 

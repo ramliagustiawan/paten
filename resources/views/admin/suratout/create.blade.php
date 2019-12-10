@@ -45,7 +45,7 @@
                                         </div>
 
                                         @error('nosurat')
-                                          <span class="help-block">{{ $message }}</span>
+                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
 
                                     </div>
@@ -57,7 +57,7 @@
                                         </div>
 
                                         @error('tglsurat')
-                                          <span class="help-block">{{ $message }}</span>
+                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
 
                                       </div>
@@ -70,7 +70,7 @@
                                         </div>
 
                                         @error('perihal')
-                                          <span class="help-block">{{ $message }}</span>
+                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
 
                                     </div>
@@ -82,7 +82,7 @@
                                     </div>
 
                                     @error('isisingkat')
-                                    <span class="help-block">{{ $message }}</span>
+                                      <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                     @enderror
 
                                 </div>
@@ -93,7 +93,7 @@
                                     <input type="text" name="tujuansurat" class="form-control" id="tujuansurat"  placeholder="Tujuan Surat" value="{{ old('tujuansurat') }}" >
                                     </div>
                                     @error('tujuansurat')
-                                      <span class="help-block">{{ $message }}</span>
+                                        <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                     @enderror
 
                                 </div>
@@ -104,7 +104,7 @@
                                     <input type="text" name="pengirim" class="form-control" id="pengirim"  placeholder="Pengirim Surat" value="{{ old('pengirim') }}" >
                                     </div>
                                     @error('pengirim')
-                                      <span class="help-block">{{ $message }}</span>
+                                        <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                     @enderror
 
                                 </div>
@@ -136,7 +136,7 @@
                                                 </div>
 
                                                 @error('fotosurat')
-                                                    <span class="help-block">{{ $message }}</span>
+                                                      <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                                 @enderror
 
                                         </div>

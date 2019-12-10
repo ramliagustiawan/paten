@@ -114,6 +114,8 @@ class NikahController extends Controller
             'nik.digits_between'=>'NIK harus 16 Digits',
             'nikcln.digits_between'=>'NIK harus 16 Digits',
             'kontakcln.digits_between'=>'No HP terdiri dari 10 sd 12 Digits',
+            'max' => 'Mohon Maaf .. Besar File Yang Di Upload maximal 2 Mb',
+            'image' => 'Mohon Maaf .. File Yang Diupload Hanya Dalam Bentuk Jpg,Png,Jpeg,SVG',
 
         ];
 

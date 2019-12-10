@@ -32,7 +32,7 @@
                                         <input type="text" name="kua" class="form-control" id="kua" placeholder="Masukkan tanggal permohonan KUA" value="{{ old('kua') }}" >
                                         </div>
                                         @error('kua')
-                                          <span class="help-block">{{ $message }}</span>
+                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
 
                                     </div>
@@ -46,7 +46,7 @@
                                         <input type="text" name="nama" class="form-control" id="nama" placeholder="Masukkan Nama Lengkap Anda" value="{{ old('nama') }}" >
                                         </div>
                                         @error('nama')
-                                          <span class="help-block">{{ $message }}</span>
+                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
 
                                     </div>
@@ -56,66 +56,66 @@
                                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                         <input type="" name="nik" class="form-control" id="nik" placeholder="Masukkan Nomor Induk Kependudukan Anda" value="{{ old('nik') }}" >
                                         </div>
-                  
+
                                         @error('nik')
-                                          <span class="help-block">{{ $message }}</span>
+                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
-                  
+
                                 </div>
-                  
+
                                       <div class="form-group row @error('tempat') has-error @enderror">
                                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tempat Lahir</strong> </label>
                                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                         <input type="" name="tempat" class="form-control" id="tempat" placeholder="Tempat Lahir Sesuai KTP" value="{{ old('tempat') }}" >
                                         </div>
-                  
+
                                         @error('tempat')
-                                          <span class="help-block">{{ $message }}</span>
+                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
-                  
+
                                       </div>
-                  
+
                                       <div class="form-group row @error('tgllhr') has-error @enderror">
                                               <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tanggal Lahir</strong> </label>
                                               <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                               <input type="date" name="tgllhr" class="form-control" id="tgllhr" placeholder="Contoh : Gorontalo, 13 Agustus 1994" value="{{ old('tgllhr') }}" >
                                               </div>
-                  
+
                                               @error('tgllhr')
-                                                <span class="help-block">{{ $message }}</span>
+                                                  <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                               @enderror
-                  
+
                                       </div>
-                  
+
                                       <div class="form-group row @error('jk') has-error @enderror">
                                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Jenis Kelamin</strong> </label>
                                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                               <select name="jk" id="" class="form-control select2">
-                                                  <option selected>Pilih Jenis Kelamin</option>
+                                                  <option selected>{{ old('jk')?? 'Pilih Jenis Kelamin' }}</option>
                                                   <option value="Laki-Laki">Laki-Laki</option>
                                                   <option value="Perempuan">Perempuan</option>
-                  
+
                                                 </select>
                                           </div>
-                  
+
                                           @error('jk')
-                                            <span class="help-block">{{ $message }}</span>
+                                              <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                           @enderror
-                  
+
                                       </div>
-                                                  
+
                                     <div class="form-group row @error('wn') has-error @enderror">
                                       <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Warga Negara</strong> </label>
                                       <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                           <select name="wn" id="" class="form-control select2">
-                                              <option selected>Pilih Kewarganegaraan</option>
+                                              <option selected>{{ old('wn')?? 'Pilih Kewarganegaraan' }}</option>
                                               <option value="Indonesia">Indonesia</option>
                                               <option value="Warga Negara Asing">Warga Negara Asing</option>
                                             </select>
                                       </div>
 
                                       @error('wn')
-                                        <span class="help-block">{{ $message }}</span>
+                                          <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                       @enderror
 
                                   </div>
@@ -127,7 +127,7 @@
                                         </div>
 
                                         @error('kerja')
-                                          <span class="help-block">{{ $message }}</span>
+                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
 
                                     </div>
@@ -136,7 +136,7 @@
                                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Agama</strong> </label>
                                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                             <select name="agama" id="" class="form-control select2">
-                                                <option selected>Pilih Agama</option>
+                                                <option selected>{{ old('agama')?? 'Pilih Agama' }}</option>
                                                 <option value="Islam">Islam</option>
                                                 <option value="Kristen Katolik">Kristen Katolik</option>
                                                 <option value="Hindu">Hindu</option>
@@ -146,7 +146,7 @@
                                         </div>
 
                                         @error('agama')
-                                          <span class="help-block">{{ $message }}</span>
+                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
 
                                     </div>
@@ -156,17 +156,16 @@
                                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Status</strong> </label>
                                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                             <select name="status" id="" class="form-control select2">
-                                                <option selected>Pilih Status</option>
+                                                <option selected>{{ old('status')?? 'Pilih Status' }}</option>
                                                 <option value="Perjaka">Perjaka</option>
-                                                <option value="Perawan">Perawan</option>
                                                 <option value="Duda">Duda</option>
-                                                <option value="Janda">Janda</option>
+
 
                                               </select>
                                         </div>
 
                                         @error('status')
-                                          <span class="help-block">{{ $message }}</span>
+                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
 
                                     </div>
@@ -179,7 +178,7 @@
                                         </div>
 
                                         @error('bin')
-                                          <span class="help-block">{{ $message }}</span>
+                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
 
                                     </div>
@@ -192,7 +191,7 @@
                                         </div>
 
                                         @error('alamat')
-                                          <span class="help-block">{{ $message }}</span>
+                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
 
                                     </div>
@@ -201,7 +200,7 @@
                                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kelurahan</strong> </label>
                                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                             <select name="kelurahan" id="" class="form-control select2">
-                                                <option selected>Pilih Kelurahan</option>
+                                                <option selected>{{ old('kelurahan')?? 'Pilih Kelurahan' }}</option>
                                                 <option value="Kelurahan Huangobotu Kecamatan Dungingi">Huangobotu</option>
                                                 <option value="Kelurahan Libuo Kecamatan Dungingi">Libuo</option>
                                                 <option value="Kelurahan Tuladenggi Kecamatan Dungingi">Tuladenggi</option>
@@ -211,11 +210,11 @@
                                                 <option value="Luar Daerah">Luar Daerah</option>
                                               </select>
                                         </div>
-                    
+
                                         @error('kelurahan')
-                                          <span class="help-block">{{ $message }}</span>
+                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
-                    
+
                                     </div>
                                     {{-- batas suami --}}
                                     <br>
@@ -227,7 +226,7 @@
                                         <input type="text" name="namacln" class="form-control" id="namacln" placeholder="Masukkan nama Lengkap Anda" value="{{ old('namacln') }}" >
                                         </div>
                                         @error('namacln')
-                                          <span class="help-block">{{ $message }}</span>
+                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
 
                                     </div>
@@ -237,66 +236,66 @@
                                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                         <input type="" name="nikcln" class="form-control" id="nikcln" placeholder="Masukkan Nomor Induk Kependudukan Anda" value="{{ old('nikcln') }}" >
                                         </div>
-                  
+
                                         @error('nikcln')
-                                          <span class="help-block">{{ $message }}</span>
+                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
-                  
+
                                 </div>
-                  
+
                                       <div class="form-group row @error('tempatcln') has-error @enderror">
                                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tempat Lahir</strong> </label>
                                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                         <input type="" name="tempatcln" class="form-control" id="tempatcln" placeholder="tempatcln Lahir Sesuai KTP" value="{{ old('tempatcln') }}">
                                         </div>
-                  
+
                                         @error('tempatcln')
-                                          <span class="help-block">{{ $message }}</span>
+                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
-                  
+
                                       </div>
-                  
+
                                       <div class="form-group row @error('tgllhrcln') has-error @enderror">
                                               <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tanggal Lahir</strong> </label>
                                               <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                               <input type="date" name="tgllhrcln" class="form-control" id="tgllhrcln" placeholder="Contoh : Gorontalo, 13 Agustus 1994" value="{{ old('tgllhrcln') }}" >
                                               </div>
-                  
+
                                               @error('tgllhrcln')
-                                                <span class="help-block">{{ $message }}</span>
+                                                  <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                               @enderror
-                  
+
                                       </div>
-                  
+
                                       <div class="form-group row @error('jkcln') has-error @enderror">
                                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Jenis Kelamin</strong> </label>
                                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                               <select name="jkcln" id="" class="form-control select2">
-                                                  <option selected>Pilih Jenis Kelamin</option>
+                                                  <option selected>{{ old('jkcln')?? 'Pilih Jenis Kelamin' }}</option>
                                                   <option value="Laki-Laki">Laki-Laki</option>
                                                   <option value="Perempuan">Perempuan</option>
-                  
+
                                                 </select>
                                           </div>
-                  
+
                                           @error('jkcln')
-                                            <span class="help-block">{{ $message }}</span>
+                                              <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                           @enderror
-                  
+
                                       </div>
-                                                  
+
                                     <div class="form-group row @error('wncln') has-error @enderror">
                                       <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Warga Negara</strong> </label>
                                       <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                           <select name="wncln" id="" class="form-control select2">
-                                              <option selected>Pilih Kewarganegaraan</option>
+                                              <option selected>{{ old('wncln')?? 'Pilih Kewarganegaraan' }}</option>
                                               <option value="Indonesia">Indonesia</option>
                                               <option value="Warga Negara Asing">Warga Negara Asing</option>
                                             </select>
                                       </div>
 
                                       @error('wncln')
-                                        <span class="help-block">{{ $message }}</span>
+                                          <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                       @enderror
 
                                   </div>
@@ -308,7 +307,7 @@
                                         </div>
 
                                         @error('kerjacln')
-                                          <span class="help-block">{{ $message }}</span>
+                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
 
                                     </div>
@@ -317,7 +316,7 @@
                                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Agama</strong> </label>
                                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                             <select name="agamacln" id="" class="form-control select2">
-                                                <option selected>Pilih Agama</option>
+                                                <option selected>{{ old('agamacln')?? 'Pilih Agama' }}</option>
                                                 <option value="Islam">Islam</option>
                                                 <option value="Kristen Katolik">Kristen Katolik</option>
                                                 <option value="Hindu">Hindu</option>
@@ -327,7 +326,7 @@
                                         </div>
 
                                         @error('agamacln')
-                                          <span class="help-block">{{ $message }}</span>
+                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
 
                                     </div>
@@ -337,7 +336,7 @@
                                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Status</strong> </label>
                                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                             <select name="statuscln" id="" class="form-control select2">
-                                                <option selected>Pilih Status</option>
+                                                <option selected>{{ old('statuscln')?? 'Pilih Status' }}</option>
                                                 <option value="Perjaka">Perjaka</option>
                                                 <option value="Perawan">Perawan</option>
                                                 <option value="Duda">Duda</option>
@@ -347,7 +346,7 @@
                                         </div>
 
                                         @error('statuscln')
-                                          <span class="help-block">{{ $message }}</span>
+                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
 
                                     </div>
@@ -360,7 +359,7 @@
                                         </div>
 
                                         @error('binti')
-                                          <span class="help-block">{{ $message }}</span>
+                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
 
                                     </div>
@@ -373,7 +372,7 @@
                                         </div>
 
                                         @error('alamatcln')
-                                          <span class="help-block">{{ $message }}</span>
+                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
 
                                     </div>
@@ -382,7 +381,7 @@
                                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kelurahan</strong> </label>
                                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                             <select name="kelurahancln" id="" class="form-control select2">
-                                                <option selected>Pilih Kelurahan</option>
+                                                <option selected>{{ old('kelurahancln')?? 'Pilih Kelurahan' }}</option>
                                                 <option value="Kelurahan Huangobotu Kecamatan Dungingi">Huangobotu</option>
                                                 <option value="Kelurahan Libuo Kecamatan Dungingi">Libuo</option>
                                                 <option value="Kelurahan Tuladenggi Kecamatan Dungingi">Tuladenggi</option>
@@ -392,11 +391,11 @@
                                                 <option value="Luar Daerah">Luar Daerah</option>
                                               </select>
                                         </div>
-                    
+
                                         @error('kelurahancln')
-                                          <span class="help-block">{{ $message }}</span>
+                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
-                    
+
                                     </div>
 
 
@@ -411,7 +410,7 @@
                                     </div>
 
                                     @error('kontakcln')
-                                      <span class="help-block">{{ $message }}</span>
+                                        <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                     @enderror
 
                                 </div>
@@ -424,7 +423,7 @@
                                     </div>
 
                                     @error('waktuakad')
-                                      <span class="help-block">{{ $message }}</span>
+                                        <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                     @enderror
 
                                 </div>
@@ -438,14 +437,14 @@
                                         </div>
 
                                         @error('tempatakad')
-                                          <span class="help-block">{{ $message }}</span>
+                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
 
                                     </div>
 
                                    {{--  --}}
 
-                                 
+
 
                                     {{-- batas istri --}}
                                     <br>

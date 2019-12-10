@@ -49,7 +49,7 @@ class SuratmasukController extends Controller
     public function store(Request $request)
     {
         // VALIDASI
-        $this->validate($request, [
+        $ruls = [
 
             'asalsurat' => 'required',
             'nosurat' => 'required',
@@ -59,8 +59,15 @@ class SuratmasukController extends Controller
             'perihal' => 'required',
             'fotosurat' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
 
+        ];
 
-        ]);
+        $message = [
+            'required' => ':attribute Harus Di Isi',
+            'max' => 'Mohon Maaf .. Besar File Yang Di Upload maximal 2 Mb',
+            'image' => 'Mohon Maaf .. File Yang Diupload Hanya Dalam Bentuk Jpg,Png,Jpeg,SVG',
+        ];
+
+        $request->validate($ruls,$message);
 
         // CEK GAMBAR
         $fotosurat = null;

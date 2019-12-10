@@ -47,7 +47,7 @@
                                                             <input type="text" name="nama" class="form-control" id="nama" placeholder="Masukkan Nama Lengkap Anda" value="{{ old('nama') }}" >
                                                             </div>
                                                             @error('nama')
-                                                              <span class="help-block">{{ $message }}</span>
+                                                                <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                                             @enderror
 
                                                         </div>
@@ -59,7 +59,7 @@
                                                           </div>
 
                                                           @error('nik')
-                                                            <span class="help-block">{{ $message }}</span>
+                                                              <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                                           @enderror
 
                                                   </div>
@@ -71,7 +71,7 @@
                                                           </div>
 
                                                           @error('tempat')
-                                                            <span class="help-block">{{ $message }}</span>
+                                                              <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                                           @enderror
 
                                                         </div>
@@ -83,7 +83,7 @@
                                                                 </div>
 
                                                                 @error('tgllhr')
-                                                                  <span class="help-block">{{ $message }}</span>
+                                                                    <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                                                 @enderror
 
                                                         </div>
@@ -92,7 +92,7 @@
                                                             <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Jenis Kelamin</strong> </label>
                                                             <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                                                 <select name="jk" id="" class="form-control select2">
-                                                                    <option selected>Pilih Jenis Kelamin</option>
+                                                                    <option selected>{{ old('jk')?? 'Pilih Jenis Kelamin' }}</option>
                                                                     <option value="Laki-Laki">Laki-Laki</option>
                                                                     <option value="Perempuan">Perempuan</option>
 
@@ -100,7 +100,7 @@
                                                             </div>
 
                                                             @error('jk')
-                                                              <span class="help-block">{{ $message }}</span>
+                                                                <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                                             @enderror
 
                                                         </div>
@@ -109,7 +109,7 @@
                                                             <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Agama</strong> </label>
                                                             <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                                                 <select name="agama" id="" class="form-control select2">
-                                                                    <option selected>Pilih Agama</option>
+                                                                    <option selected>{{ old('agama')?? 'Pilih Agama' }}</option>
                                                                     <option value="Islam">Islam</option>
                                                                     <option value="Kristen Katolik">Kristen Katolik</option>
                                                                     <option value="Hindu">Hindu</option>
@@ -119,7 +119,7 @@
                                                             </div>
 
                                                             @error('agama')
-                                                              <span class="help-block">{{ $message }}</span>
+                                                                <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                                             @enderror
 
                                                         </div>
@@ -132,7 +132,7 @@
                                                         </div>
 
                                                         @error('pekerjaan')
-                                                          <span class="help-block">{{ $message }}</span>
+                                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                                         @enderror
 
                                                     </div>
@@ -146,7 +146,7 @@
                                                             </div>
 
                                                             @error('alamat')
-                                                              <span class="help-block">{{ $message }}</span>
+                                                                <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                                             @enderror
 
                                                         </div>
@@ -157,7 +157,7 @@
                                                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kelurahan</strong> </label>
                                                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                                             <select name="kelurahan" id="" class="form-control select2">
-                                                                <option selected>Pilih Kelurahan</option>
+                                                                <option selected>{{ old('kelurahan')?? 'Pilih Kelurahan' }}</option>
                                                                 <option value="Kelurahan Huangobotu Kecamatan Dungingi">Huangobotu</option>
                                                                 <option value="Kelurahan Libuo Kecamatan Dungingi">Libuo</option>
                                                                 <option value="Kelurahan Tuladenggi Kecamatan Dungingi">Tuladenggi</option>
@@ -167,7 +167,7 @@
                                                         </div>
 
                                                         @error('kelurahan')
-                                                          <span class="help-block">{{ $message }}</span>
+                                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                                         @enderror
 
                                                     </div>
@@ -181,7 +181,7 @@
                                                             </div>
 
                                                             @error('keterangan')
-                                                            <span class="help-block">{{ $message }}</span>
+                                                              <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                                             @enderror
 
                                                         </div>
@@ -193,7 +193,7 @@
                                                             <input type="text" name="keperluan" class="form-control" id="keperluan" placeholder="Contoh : Pengurusan Pembukaan Rekening Bank " value="{{ old('keperluan') }}" >
                                                             </div>
                                                             @error('keperluan')
-                                                              <span class="help-block">{{ $message }}</span>
+                                                                <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                                             @enderror
 
                                                         </div>
@@ -207,7 +207,7 @@
                                                         </div>
 
                                                         @error('kontak')
-                                                          <span class="help-block">{{ $message }}</span>
+                                                            <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                                         @enderror
 
                                                     </div>
@@ -224,7 +224,7 @@
                                                                 </div>
 
                                                                 @error('layanan_id')
-                                                                  <span class="help-block">{{ $message }}</span>
+                                                                    <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                                                 @enderror
 
                                                         </div>
@@ -256,7 +256,7 @@
                                                                                 </div>
 
                                                                                 @error('fotoktp')
-                                                                                    <span class="help-block">{{ $message }}</span>
+                                                                                      <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                                                                 @enderror
 
                                                                         </div>
@@ -275,7 +275,7 @@
                                                                                 </div>
 
                                                                                 @error('fotopbb')
-                                                                                    <span class="help-block">{{ $message }}</span>
+                                                                                      <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                                                                 @enderror
 
                                                                         </div>

@@ -50,12 +50,12 @@ class DispensasiController extends Controller
      */
     public function store(Request $request)
     {
-        // VALIDASI
-        $this->validate($request, [
+         // VALIDASI
+         $ruls = [
 
             'kua' => 'required',
             'nama' => 'required',
-            'nik' => 'required|numeric',
+            'nik' => 'required|numeric|digits_between:16,17',
             'tempat' => 'required',
             'tgllhr' => 'required',
             'jk' => 'required|min:4',
@@ -70,7 +70,7 @@ class DispensasiController extends Controller
             'layanan_id' => 'required',
 
             'namacln' => 'required',
-            'nikcln' => 'required|numeric',
+            'nikcln' => 'required|numeric|digits_between:16,17',
             'tempatcln' => 'required',
             'tgllhrcln' => 'required',
             'jkcln' => 'required|min:4',
@@ -82,7 +82,7 @@ class DispensasiController extends Controller
             'alamatcln' => 'required',
             'kelurahancln' => 'required',
 
-            'kontakcln' => 'required|numeric',
+            'kontakcln' => 'required|numeric|digits_between:10,13',
 
             'waktuakad' => 'required',
             'tempatakad' => 'required',
@@ -90,8 +90,36 @@ class DispensasiController extends Controller
             'fotokua' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
             'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
 
+        ];
 
-        ]);
+        $message = [
+            'required' => ':attribute Harus Di Isi',
+            'numeric' => 'Masukkan Angka',
+            'kua.required' => 'Masukkan tanggal permohonan Dispensasi dari KUA',
+            'nik.required' => 'Masukkan Nik Anda | 16 Digit',
+            'nik.required' => 'Masukkan Nik Anda | 16 Digit',
+            'kontak.required'=> 'Masukkan Nomor Hp Anda | 10 - 12 Digit',
+            'tgllhr.required'=>'Masukkan Tanggal,Bulan,Tahun Lahir',
+            'tempat.required'=>'Tempat Lahir Harus Di Isi',
+            'kerja.required' => 'Pekerjaan Harus Di Isi',
+            'bin.required' => 'Nama Orang Tua Laki-Laki Harus Di Isi',
+            'namacln.required' => 'Nama Harus Di Isi',
+            'nikcln.required' => 'Masukkan Nik Anda | 16 Digit',
+            'tempatcln.required'=>'Tempat Lahir Harus Di Isi',
+            'tgllhrcln.required'=>'Masukkan Tanggal,Bulan,Tahun Lahir',
+            'kerjacln.required' => 'Pekerjaan Harus Di Isi',
+            'binti.required' => 'Nama Orang Tua Laki-Laki Harus Di Isi',
+            'alamatcln.required' => 'Alamat Calon Pengantin Wanita Harus Di Isi',
+            'kontakcln.required'=> 'Masukkan Nomor Hp Anda | 10 - 12 Digit',
+            'nik.digits_between'=>'NIK harus 16 Digits',
+            'nikcln.digits_between'=>'NIK harus 16 Digits',
+            'kontakcln.digits_between'=>'No HP terdiri dari 10 sd 12 Digits',
+            'max' => 'Mohon Maaf .. Besar File Yang Di Upload maximal 2 Mb',
+            'image' => 'Mohon Maaf .. File Yang Diupload Hanya Dalam Bentuk Jpg,Png,Jpeg,SVG',
+
+        ];
+
+        $request->validate($ruls,$message);
 
         // CEK GAMBAR
         $fotokua = null;

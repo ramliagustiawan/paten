@@ -42,7 +42,7 @@
                                           <input type="text" name="asalsurat" class="form-control" id="asalsurat"  placeholder="Asal Surat" value="{{ old('asalsurat') }}" >
                                           </div>
                                           @error('asalsurat')
-                                            <span class="help-block">{{ $message }}</span>
+                                             <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                           @enderror
 
                                       </div>
@@ -54,7 +54,7 @@
                                         </div>
 
                                         @error('nosurat')
-                                          <span class="help-block">{{ $message }}</span>
+                                           <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
 
                                 </div>
@@ -66,7 +66,7 @@
                                         </div>
 
                                         @error('tglsurat')
-                                          <span class="help-block">{{ $message }}</span>
+                                           <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
 
                                       </div>
@@ -79,7 +79,7 @@
                                           </div>
 
                                           @error('tglterima')
-                                            <span class="help-block">{{ $message }}</span>
+                                             <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                           @enderror
 
                                       </div>
@@ -93,7 +93,7 @@
                                         </div>
 
                                         @error('ket')
-                                          <span class="help-block">{{ $message }}</span>
+                                           <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                         @enderror
 
                                     </div>
@@ -105,7 +105,7 @@
                                     </div>
 
                                     @error('perihal')
-                                    <span class="help-block">{{ $message }}</span>
+                                     <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                     @enderror
 
                                 </div>
@@ -137,7 +137,7 @@
                                                 </div>
 
                                                 @error('fotosurat')
-                                                    <span class="help-block">{{ $message }}</span>
+                                                     <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                                 @enderror
 
                                         </div>
