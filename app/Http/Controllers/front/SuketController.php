@@ -39,7 +39,7 @@ class SuketController extends Controller
     {
 
         // VALIDASI
-        $this->validate($request, [
+        $ruls = [
 
             'nama' => 'required',
             'nik' => 'required|numeric|max:9999999999999999|digits_between:16,18',
@@ -59,7 +59,18 @@ class SuketController extends Controller
             'g-recaptcha-response' => new Captcha(),
 
 
-        ]);
+        ];
+
+        $message = [
+            'required' => ':attribute Harus Di Isi',
+            'numeric' => 'Masukkan Angka',
+            'nik.required' => 'Masukkan Nik Anda | 16 Digit',
+            'kontak.required'=> 'Masukkan Nomor Hp Anda | 10 - 12 Digit',
+            'tgllhr.required'=>'Masukkan Tanggal,Bulan,Tahun Lahir',
+            'tempat.required'=>'Tempat Lahir Harus Di Isi',
+        ];
+
+        $request->validate($ruls,$message);
 
         // CEK GAMBAR
         $fotoktp = null;

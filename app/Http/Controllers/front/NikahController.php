@@ -31,12 +31,12 @@ class NikahController extends Controller
     public function create()
     {
 
-        $dispensasi = Dispensasi::orderBY('created_at', 'DESC')->get();
-        return view('admin.dispensasi.create', [
-            'title' => 'Ajukan dispensasi',
-            'dispensasi' => $dispensasi,
-            'layanan' => Layanan::orderBy('layanan', 'ASC')->get(),
-        ]);
+        // $dispensasi = Dispensasi::orderBY('created_at', 'DESC')->get();
+        // return view('admin.dispensasi.create', [
+        //     'title' => 'Ajukan dispensasi',
+        //     'dispensasi' => $dispensasi,
+        //     'layanan' => Layanan::orderBy('layanan', 'ASC')->get(),
+        // ]);
     }
 
     /**
@@ -49,7 +49,7 @@ class NikahController extends Controller
     {
 
         // VALIDASI
-        $this->validate($request, [
+        $ruls = [
 
             'kua' => 'required',
             'nama' => 'required',
@@ -90,7 +90,37 @@ class NikahController extends Controller
             'g-recaptcha-response' => new Captcha(),
 
 
-        ]);
+        ];
+
+        $message = [
+            'required' => ':attribute Harus Di Isi',
+            'numeric' => 'Masukkan Angka',
+            'kua.required' => 'Masukkan tanggal permohonan Dispensasi dari KUA',
+            'nik.required' => 'Masukkan Nik Anda | 16 Digit',
+            'nik.required' => 'Masukkan Nik Anda | 16 Digit',
+            'kontak.required'=> 'Masukkan Nomor Hp Anda | 10 - 12 Digit',
+            'tgllhr.required'=>'Masukkan Tanggal,Bulan,Tahun Lahir',
+            'tempat.required'=>'Tempat Lahir Harus Di Isi',
+            'kerja.required' => 'Pekerjaan Harus Di Isi',
+            'bin.required' => 'Nama Orang Tua Laki-Laki Harus Di Isi',
+            'namacln.required' => 'Nama Harus Di Isi',
+            'nikcln.required' => 'Masukkan Nik Anda | 16 Digit',
+            'tempatcln.required'=>'Tempat Lahir Harus Di Isi',
+            'tgllhrcln.required'=>'Masukkan Tanggal,Bulan,Tahun Lahir',
+            'kerjacln.required' => 'Pekerjaan Harus Di Isi',
+            'binti.required' => 'Nama Orang Tua Laki-Laki Harus Di Isi',
+            'alamatcln.required' => 'Alamat Calon Pengantin Wanita Harus Di Isi',
+            'kontakcln.required'=> 'Masukkan Nomor Hp Anda | 10 - 12 Digit',
+
+
+
+
+
+
+
+        ];
+
+        $request->validate($ruls,$message);
 
         // CEK GAMBAR
         $fotokua = null;

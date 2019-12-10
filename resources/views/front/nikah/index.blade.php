@@ -38,7 +38,7 @@
                         <input type="text" name="kua" class="form-control" id="kua" placeholder="Masukkan tanggal permohonan KUA" value="{{ old('kua') }}" >
                         </div>
                         @error('kua')
-                          <span class="help-block">{{ $message }}</span>
+                        <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                     </div>
@@ -52,7 +52,7 @@
                         <input type="text" name="nama" class="form-control" id="nama" placeholder="Masukkan Nama Lengkap Anda" value="{{ old('nama') }}" >
                         </div>
                         @error('nama')
-                          <span class="help-block">{{ $message }}</span>
+                         <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                     </div>
@@ -64,7 +64,7 @@
                         </div>
 
                         @error('nik')
-                          <span class="help-block">{{ $message }}</span>
+                         <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                 </div>
@@ -76,7 +76,7 @@
                         </div>
 
                         @error('tempat')
-                          <span class="help-block">{{ $message }}</span>
+                         <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                       </div>
@@ -88,7 +88,7 @@
                               </div>
 
                               @error('tgllhr')
-                                <span class="help-block">{{ $message }}</span>
+                               <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                               @enderror
 
                       </div>
@@ -105,7 +105,7 @@
                           </div>
 
                           @error('jk')
-                            <span class="help-block">{{ $message }}</span>
+                           <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                           @enderror
 
                       </div>
@@ -121,7 +121,7 @@
                       </div>
 
                       @error('wn')
-                        <span class="help-block">{{ $message }}</span>
+                       <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                       @enderror
 
                   </div>
@@ -133,7 +133,7 @@
                         </div>
 
                         @error('kerja')
-                          <span class="help-block">{{ $message }}</span>
+                         <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                     </div>
@@ -152,7 +152,7 @@
                         </div>
 
                         @error('agama')
-                          <span class="help-block">{{ $message }}</span>
+                         <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                     </div>
@@ -171,7 +171,7 @@
                         </div>
 
                         @error('status')
-                          <span class="help-block">{{ $message }}</span>
+                         <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                     </div>
@@ -184,7 +184,7 @@
                         </div>
 
                         @error('bin')
-                          <span class="help-block">{{ $message }}</span>
+                         <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                     </div>
@@ -197,7 +197,7 @@
                         </div>
 
                         @error('alamat')
-                          <span class="help-block">{{ $message }}</span>
+                         <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                     </div>
@@ -218,7 +218,7 @@
                         </div>
 
                         @error('kelurahan')
-                          <span class="help-block">{{ $message }}</span>
+                         <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                     </div>
@@ -232,7 +232,7 @@
                         <input type="text" name="namacln" class="form-control" id="namacln" placeholder="Masukkan nama Lengkap Anda" value="{{ old('namacln') }}" >
                         </div>
                         @error('namacln')
-                          <span class="help-block">{{ $message }}</span>
+                         <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                     </div>
@@ -244,7 +244,7 @@
                         </div>
 
                         @error('nikcln')
-                          <span class="help-block">{{ $message }}</span>
+                         <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                 </div>
@@ -256,7 +256,7 @@
                         </div>
 
                         @error('tempatcln')
-                          <span class="help-block">{{ $message }}</span>
+                         <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                       </div>
@@ -268,7 +268,7 @@
                               </div>
 
                               @error('tgllhrcln')
-                                <span class="help-block">{{ $message }}</span>
+                               <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                               @enderror
 
                       </div>
@@ -285,7 +285,7 @@
                           </div>
 
                           @error('jkcln')
-                            <span class="help-block">{{ $message }}</span>
+                           <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                           @enderror
 
                       </div>
@@ -301,7 +301,7 @@
                       </div>
 
                       @error('wncln')
-                        <span class="help-block">{{ $message }}</span>
+                       <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                       @enderror
 
                   </div>
@@ -313,7 +313,7 @@
                         </div>
 
                         @error('kerjacln')
-                          <span class="help-block">{{ $message }}</span>
+                         <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                     </div>
@@ -332,7 +332,7 @@
                         </div>
 
                         @error('agamacln')
-                          <span class="help-block">{{ $message }}</span>
+                         <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                     </div>
@@ -350,7 +350,7 @@
                         </div>
 
                         @error('statuscln')
-                          <span class="help-block">{{ $message }}</span>
+                         <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                     </div>
@@ -363,7 +363,7 @@
                         </div>
 
                         @error('binti')
-                          <span class="help-block">{{ $message }}</span>
+                         <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                     </div>
@@ -376,7 +376,7 @@
                         </div>
 
                         @error('alamatcln')
-                          <span class="help-block">{{ $message }}</span>
+                         <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                     </div>
@@ -397,7 +397,7 @@
                         </div>
 
                         @error('kelurahancln')
-                          <span class="help-block">{{ $message }}</span>
+                         <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                     </div>
@@ -414,7 +414,7 @@
                     </div>
 
                     @error('kontakcln')
-                      <span class="help-block">{{ $message }}</span>
+                     <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                     @enderror
 
                 </div>
@@ -427,7 +427,7 @@
                     </div>
 
                     @error('waktuakad')
-                      <span class="help-block">{{ $message }}</span>
+                     <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                     @enderror
 
                 </div>
@@ -441,7 +441,7 @@
                         </div>
 
                         @error('tempatakad')
-                          <span class="help-block">{{ $message }}</span>
+                         <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                     </div>
@@ -471,7 +471,7 @@
                             </div>
 
                             @error('layanan_id')
-                              <span class="help-block">{{ $message }}</span>
+                             <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                             @enderror
 
                     </div>
@@ -495,7 +495,7 @@
                                             </div>
 
                                             @error('fotokua')
-                                                <span class="help-block">{{ $message }}</span>
+                                               <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                             @enderror
 
                                     </div>
@@ -514,7 +514,7 @@
                                             </div>
 
                                             @error('fotopbb')
-                                                <span class="help-block">{{ $message }}</span>
+                                               <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                                             @enderror
 
                                     </div>
