@@ -89,7 +89,10 @@ class IumkController extends Controller
             'statusbangunan.required' => 'Pilih Status Bangunan',
             'alamatusaha.required' => 'Alamat Lengkap Usaha : Jalan, Kelurahan, Kecamatan',
             'modal.required' => 'Silahkan Masukkan Jumlah Modal Anda',
-           
+            'nik.digits_between'=>'NIK terdiri dari 16 Digits',
+            'kontak.digits_between'=>'No HP terdiri dari 10 sd 12 Digits',
+            'numeric' => 'Isi Dengan Angka',
+
         ]);
 
         // CEK GAMBAR

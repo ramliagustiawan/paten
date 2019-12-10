@@ -88,7 +88,7 @@
                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Jenis Kelamin</strong> </label>
                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                             <select name="jk" id="" class="form-control select2">
-                                <option selected>Pilih Jenis Kelamin</option>
+                                <option selected>{{ old('jk') ?? 'Pilih Jenis Kelamin' }}</option>
                                 <option value="jk Huangobotu Kecamatan Dungingi">Laki-Laki</option>
                                 <option value="jk Huangobotu Kecamatan Dungingi">Perempuan</option>
 
@@ -105,7 +105,7 @@
                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Agama</strong> </label>
                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                             <select name="agama" id="" class="form-control select2">
-                                <option selected>Pilih Agama</option>
+                                <option selected>{{ old('agama') ?? 'Pilih Agama' }}</option>
                                 <option value="Islam">Islam</option>
                                 <option value="Kristen Katolik">Kristen Katolik</option>
                                 <option value="Hindu">Hindu</option>
@@ -153,7 +153,7 @@
                     <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kelurahan</strong> </label>
                     <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                         <select name="kelurahan" id="" class="form-control select2">
-                            <option selected>Pilih Kelurahan</option>
+                            <option selected>{{ old('kelurahan') ?? 'Pilih Kelurahan' }}</option>
                             <option value="Kelurahan Huangobotu Kecamatan Dungingi">Huangobotu</option>
                             <option value="Kelurahan Huangobotu Kecamatan Dungingi">Libuo</option>
                             <option value="Kelurahan Huangobotu Kecamatan Dungingi">Tuladenggi</option>

@@ -111,12 +111,9 @@ class NikahController extends Controller
             'binti.required' => 'Nama Orang Tua Laki-Laki Harus Di Isi',
             'alamatcln.required' => 'Alamat Calon Pengantin Wanita Harus Di Isi',
             'kontakcln.required'=> 'Masukkan Nomor Hp Anda | 10 - 12 Digit',
-
-
-
-
-
-
+            'nik.digits_between'=>'NIK harus 16 Digits',
+            'nikcln.digits_between'=>'NIK harus 16 Digits',
+            'kontakcln.digits_between'=>'No HP terdiri dari 10 sd 12 Digits',
 
         ];
 
@@ -177,6 +174,6 @@ class NikahController extends Controller
 
         ]);
 
-        return redirect()->route('nikah.index')->withSuccess('Permohonan Dispensasi Nikah Berhasil Di Kirim');
+        return redirect()->route('ajukan.index')->withSuccess('Permohonan Dispensasi Nikah Berhasil Di Kirim');
     }
 }

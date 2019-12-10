@@ -35,198 +35,175 @@
                     <p> Berdasarkan Peraturan Presiden Nomor 98 Tahun 2014 Tentang Perizinan Untuk Usaha Mikro dan Kecil (Lembar Negera Republik Indonesia Tahun 2014 Nomor 222);Peraturan Menteri Dalam Negeri Republik Indonesia Nomor 83 Tahun 2014 tentang Pedoman Pemberikan Izin Usaha Mikro Kecil; Peraturan Walikota Gorontalo tentang Pelimpahan Sebagian Usuran Pemerintahan dari Walikota Gorontalo kepada Camat, bersama ini menyatakan dan memberikan izin kepada :
                     </p>
 
-                    <div class="form-group row ">
+                    <div class="form-group row @error('nama') has-error @enderror">
                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Nama </strong></label>
                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                         <input type="text" name="nama" class="form-control" id="nama" placeholder="Masukkan Nama Anda" value="{{ old('nama') }}" >
                         </div>
-                        @if($errors->has('nama'))
-                                <span class="invalid-feedback" style="display:block">
-                                    <strong>{{ $errors->first('nama') }}</strong>
-                                </span>
-                        @endif
+                        @error('nama')
+                          <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
+                        @enderror
 
                     </div>
 
-                    <div class="form-group row ">
+                    <div class="form-group row @error('nik') has-error @enderror">
                             <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>NIK</strong> </label>
                             <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                             <input type="" name="nik" class="form-control" id="nik" placeholder="Masukkan Nomor Induk Kependudukan Anda" value="{{ old('nik') }}" >
                             </div>
 
-                            @if($errors->has('nik'))
-                              <span class="invalid-feedback" style="display:block">
-                                  <strong>{{ $errors->first('nik') }}</strong>
-                              </span>
-                            @endif
+                            @error('nik')
+                              <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
+                            @enderror
 
                     </div>
 
 
 
-                    <div class="form-group row ">
+                    <div class="form-group row @error('alamat') has-error @enderror">
                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Alamat</strong> </label>
                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                         <input type="text" name="alamat" class="form-control" id="alamat" placeholder="Masukkan Alamat Anda" value="{{ old('alamat') }}"
                         >
                         </div>
 
-                        @if($errors->has('alamat'))
-                        <span class="invalid-feedback" style="display:block">
-                            <strong>{{ $errors->first('alamat') }}</strong>
-                        </span>
-                      @endif
+                        @error('alamat')
+                          <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
+                        @enderror
 
                     </div>
 
                    {{--  --}}
 
-                   <div class="form-group row ">
+                   <div class="form-group row @error('kelurahan') has-error @enderror">
                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kelurahan</strong> </label>
                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                             <select name="kelurahan" id="" class="form-control select2">
-                                <option selected>Pilih Kelurahan</option>
+                                <option selected>{{ old('kelurahan') ?? 'Pilih Kelurahan' }}</option>
                                 <option value="Kelurahan Huangobotu Kecamatan Dungingi">Huangobotu</option>
-                                <option value="Kelurahan Huangobotu Kecamatan Dungingi">Libuo</option>
-                                <option value="Kelurahan Huangobotu Kecamatan Dungingi">Tuladenggi</option>
-                                <option value="Kelurahan Huangobotu Kecamatan Dungingi">Tomulabutao</option>
-                                <option value="Kelurahan Huangobotu Kecamatan Dungingi">Tomulabutao Selatan</option>
+                                <option value="Kelurahan Libuo Kecamatan Dungingi">Libuo</option>
+                                <option value="Kelurahan Tuladenggi Kecamatan Dungingi">Tuladenggi</option>
+                                <option value="Kelurahan Tomulabutao Kecamatan Dungingi">Tomulabutao</option>
+                                <option value="Kelurahan Tomulabutao Selatan Kecamatan Dungingi">Tomulabutao Selatan</option>
                               </select>
                         </div>
 
-                        @if($errors->has('kelurahan'))
-                        <span class="invalid-feedback" style="display:block">
-                            <strong>{{ $errors->first('kelurahan') }}</strong>
-                        </span>
-                      @endif
+                        @error('kelurahan')
+                          <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
+                        @enderror
 
                     </div>
 
                     {{--  --}}
 
 
-                    <div class="form-group row ">
+                    <div class="form-group row @error('kontak') has-error @enderror">
                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kontak</strong> </label>
                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                         <input type="" name="kontak" class="form-control" id="kontak" placeholder="Masukkan Nomor Telp/Hp Anda" value="{{ old('kontak') }}">
                         </div>
 
-                        @if($errors->has('kontak'))
-                        <span class="invalid-feedback" style="display:block">
-                            <strong>{{ $errors->first('kontak') }}</strong>
-                        </span>
-                      @endif
+                        @error('kontak')
+                          <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
+                        @enderror
 
                     </div>
 
                     <p>Untuk mendirikan usaha Mikro dan Kecil yang mencakup perizinan dasar berupa: Menempati lokasi/domisili, melakukan kegiatan usaha baik peroduksi maupun penjualan barang dan jasa dengan identitas:</p>
 
-                    <div class="form-group row ">
+                    <div class="form-group row @error('naper') has-error @enderror">
                             <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Nama Perusahaan </strong></label>
                             <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                             <input type="text" name="naper" class="form-control" id="naper" placeholder="Masukkan Nama Anda" value="{{ old('naper') }}">
                             </div>
-                            @if($errors->has('naper'))
-                              <span class="invalid-feedback" style="display:block">
-                                  <strong>{{ $errors->first('naper') }}</strong>
-                              </span>
-                            @endif
+                            @error('naper')
+                              <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
+                            @enderror
 
                         </div>
 
-                        <div class="form-group row ">
+                        <div class="form-group row @error('bentuk') has-error @enderror">
                             <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Bentuk Usaha</strong> </label>
                             <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                 <select name="bentuk" id="" class="form-control select2">
-                                    <option selected>Pilih Bentuk Usaha</option>
+                                    <option selected>{{ old('bentuk') ?? 'Pilih Bentuk Usaha' }}</option>
                                     <option value="Usaha Dagang">Usaha Dagang</option>
                                     <option value="Usaha Jasa">Usaha Jasa</option>
                                     <option value="Usaha Produksi">Usaha Produksi</option>
                                   </select>
                             </div>
 
-                            @if($errors->has('bentuk'))
-                              <span class="invalid-feedback" style="display:block">
-                                  <strong>{{ $errors->first('bentuk') }}</strong>
-                              </span>
-                            @endif
+                            @error('bentuk')
+                              <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
+                            @enderror
 
                         </div>
 
-                        <div class="form-group row ">
+                        <div class="form-group row @error('npwp') has-error @enderror">
                                 <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>NPWP</strong> </label>
                                 <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                 <input type="" name="npwp" class="form-control" id="npwp" placeholder="Masukkan NPWP atau (-) jika belum ada" value="{{ old('npwp') }}">
                                 </div>
 
-                                @if($errors->has('npwp'))
-                              <span class="invalid-feedback" style="display:block">
-                                  <strong>{{ $errors->first('npwp') }}</strong>
-                              </span>
-                            @endif
+                                @error('npwp')
+                                  <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
+                                @enderror
 
                             </div>
 
-                            <div class="form-group row ">
+                            <div class="form-group row @error('giatusaha') has-error @enderror">
                                     <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kegiatan Usaha</strong> </label>
                                     <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                     <input type="" name="giatusaha" class="form-control" id="giatusaha" placeholder="Contoh : Jual Nasi Kuning" value="{{ old('giatusaha') }}">
                                     </div>
 
-                                    @if($errors->has('giatusaha'))
-                              <span class="invalid-feedback" style="display:block">
-                                  <strong>{{ $errors->first('giatusaha') }}</strong>
-                              </span>
-                            @endif
+                                    @error('giatusaha')
+                                      <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
+                                    @enderror
+
                             </div>
 
 
-                            <div class="form-group row ">
+                            <div class="form-group row @error('statusbangunan') has-error @enderror">
                                 <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Sarana Usaha</strong> </label>
                                 <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                     <select name="statusbangunan" id="" class="form-control select2">
-                                        <option selected>Pilih Sarana Usaha</option>
+                                        <option selected>{{ old('statusbangunan') ?? 'Pilih Sarana Usaha' }}</option>
                                         <option value="Milik Sendiri">Milik Sendiri</option>
                                         <option value="Sewa">Sewa</option>
                                         <option value="Pedagang Keliling">Pedagang Keliling</option>
                                       </select>
                                 </div>
 
-                                @if($errors->has('statusbangunan'))
-                                <span class="invalid-feedback" style="display:block">
-                                    <strong>{{ $errors->first('statusbangunan') }}</strong>
-                                </span>
-                              @endif
+                                @error('statusbangunan')
+                                  <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
+                                @enderror
 
                             </div>
 
-                            <div class="form-group row ">
+                            <div class="form-group row @error('alamatusaha') has-error @enderror">
                                     <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Alamat Usaha</strong> </label>
                                     <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                     <input type="text" name="alamatusaha" class="form-control" id="alamatusaha" placeholder="Tuliskan Lengkap Contoh : Jalan Apel Kelurahan Huangobotu Kecamatan Dungingi" value="{{ old('alamatusaha') }}">
                                     </div>
 
-                                    @if($errors->has('alamatusaha'))
-                                    <span class="invalid-feedback" style="display:block">
-                                        <strong>{{ $errors->first('alamatusaha') }}</strong>
-                                    </span>
-                                  @endif
+                                    @error('alamatusaha')
+                                      <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
+                                    @enderror
 
                                 </div>
 
 
-                        <div class="form-group row ">
+                        <div class="form-group row @error('modal') has-error @enderror">
                             <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Jumlah Modal</strong> </label>
                             <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                             <input type="text" name="modal" class="form-control" id="modal" placeholder="Contoh : 20.000.000" value="{{ old('modal') }}"
                             >
                             </div>
 
-                            @if($errors->has('modal'))
-                            <span class="invalid-feedback" style="display:block">
-                                <strong>{{ $errors->first('modal') }}</strong>
-                            </span>
-                          @endif
+                            @error('modal')
+                              <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
+                            @enderror
 
                         </div>
 
@@ -234,18 +211,21 @@
 
                     {{-- jenis surat invisible value default --}}
 
-                    <div class="form-group row  invisible ">
+                    <div class="form-group row @error('layanan_id') has-error @enderror invisible">
                             <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kategori</strong> </label>
                             <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                             <input type="text" name="layanan_id" class="form-control" id="layanan" placeholder="Masukkan layanan Anda" value="1"
                             required>
                             </div>
+                            {{-- <select name="layanan_id" id="" class="form-control select2">
+                                @foreach ($layanan as $item)
+                                <option value="{{ $item->id }}">{{ $item->layanan }}</option>
+                                @endforeach
+                            </select> --}}
 
-                            @if($errors->has('layanan_id'))
-                            <span class="invalid-feedback" style="display:block">
-                                <strong>{{ $errors->first('layanan_id') }}</strong>
-                            </span>
-                          @endif
+                            @error('layanan_id')
+                              <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
+                            @enderror
 
                     </div>
 
@@ -256,7 +236,7 @@
                             </div>
                             <div class="card-body up">
 
-                                    <div class="form-group row  ">
+                                    <div class="form-group row  @error('fotoktp') has-error @enderror">
                                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                                 <label class="" for="">1. KTP (Copy)</label>
                                             </div>
@@ -267,17 +247,15 @@
                                                 <input type="radio" aria-label="Radio button for following text input"> <span>Lewatkan Lampiran *</span>
                                             </div>
 
-                                            @if($errors->has('fotoktp'))
-                                            <span class="invalid-feedback" style="display:block">
-                                                <strong>{{ $errors->first('fotoktp') }}</strong>
-                                            </span>
-                                          @endif
+                                            @error('fotoktp')
+                                                <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
+                                            @enderror
 
                                     </div>
 
                                     <hr>
 
-                                    <div class="form-group row  ">
+                                    <div class="form-group row  @error('fotopbb') has-error @enderror">
                                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                                 <label class="" for="">2. Bukti Pelunasan PBB</label>
                                             </div>
@@ -288,17 +266,15 @@
                                                 <input type="radio" aria-label="Radio button for following text input"> <span>Lewatkan Lampiran *</span>
                                             </div>
 
-                                            @if($errors->has('fotopbb'))
-                                              <span class="invalid-feedback" style="display:block">
-                                                  <strong>{{ $errors->first('fotopbb') }}</strong>
-                                              </span>
-                                            @endif
+                                            @error('fotopbb')
+                                                <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
+                                            @enderror
 
                                     </div>
 
                                     <hr>
 
-                                    <div class="form-group row ">
+                                    <div class="form-group row  @error('fotosku') has-error @enderror">
                                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                                 <label class="" for="">3. Surat Keterangan Usaha Dari Kelurahan</label>
                                             </div>
@@ -309,17 +285,15 @@
                                                 <input type="radio" aria-label="Radio button for following text input"> <span>Lewatkan Lampiran *</span>
                                             </div>
 
-                                            @if($errors->has('fotosku'))
-                                            <span class="invalid-feedback" style="display:block">
-                                                <strong>{{ $errors->first('fotosku') }}</strong>
-                                            </span>
-                                          @endif
+                                            @error('fotosku')
+                                                <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
+                                            @enderror
 
                                     </div>
 
                                     <hr>
 
-                                    <div class="form-group row  ">
+                                    <div class="form-group row  @error('fotodiri') has-error @enderror">
                                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                                 <label class="" for="">4. Foto Diri Ukuran 4 x 6 Warna</label>
                                             </div>
@@ -330,11 +304,9 @@
                                                 <input type="radio" aria-label="Radio button for following text input"> <span>Lewatkan Lampiran *</span>
                                             </div>
 
-                                            @if($errors->has('fotodiri'))
-                                              <span class="invalid-feedback" style="display:block">
-                                                  <strong>{{ $errors->first('fotodiri') }}</strong>
-                                              </span>
-                                            @endif
+                                            @error('fotodiri')
+                                                <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
+                                            @enderror
 
                                     </div>
 

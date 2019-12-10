@@ -68,6 +68,8 @@ class SuketController extends Controller
             'kontak.required'=> 'Masukkan Nomor Hp Anda | 10 - 12 Digit',
             'tgllhr.required'=>'Masukkan Tanggal,Bulan,Tahun Lahir',
             'tempat.required'=>'Tempat Lahir Harus Di Isi',
+            'nik.digits_between'=>'NIK harus 16 Digits',
+            'kontak.digits_between'=>'No HP terdiri dari 10 sd 12 Digits',
         ];
 
         $request->validate($ruls,$message);

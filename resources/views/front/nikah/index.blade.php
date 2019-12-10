@@ -97,7 +97,7 @@
                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Jenis Kelamin</strong> </label>
                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                               <select name="jk" id="" class="form-control select2">
-                                  <option selected>Pilih Jenis Kelamin</option>
+                                  <option selected>{{ old('jk') ?? 'Pilih Jenis Kelamin' }}</option>
                                   <option value="Laki-Laki">Laki-Laki</option>
                                   <option value="Perempuan">Perempuan</option>
 
@@ -114,7 +114,7 @@
                       <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Warga Negara</strong> </label>
                       <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                           <select name="wn" id="" class="form-control select2">
-                              <option selected>Pilih Kewarganegaraan</option>
+                              <option selected>{{ old('wn') ?? 'Pilih Kewarganegaraan' }}</option>
                               <option value="Indonesia">Indonesia</option>
                               <option value="Warga Negara Asing">Warga Negara Asing</option>
                             </select>
@@ -142,7 +142,7 @@
                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Agama</strong> </label>
                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                             <select name="agama" id="" class="form-control select2">
-                                <option selected>Pilih Agama</option>
+                                <option selected>{{ old('agama') ?? 'Pilih Agama' }}</option>
                                 <option value="Islam">Islam</option>
                                 <option value="Kristen Katolik">Kristen Katolik</option>
                                 <option value="Hindu">Hindu</option>
@@ -162,7 +162,7 @@
                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Status</strong> </label>
                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                             <select name="status" id="" class="form-control select2">
-                                <option selected>Pilih Status</option>
+                                <option selected>{{ old('status') ?? 'Pilih Status' }}</option>
                                 <option value="Perjaka">Perjaka</option>
                                 <option value="Duda">Duda</option>
 
@@ -206,7 +206,7 @@
                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kelurahan</strong> </label>
                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                             <select name="kelurahan" id="" class="form-control select2">
-                                <option selected>Pilih Kelurahan</option>
+                                <option selected>{{ old('kelurahan') ?? 'Pilih Kelurahan' }}</option>
                                 <option value="Kelurahan Huangobotu Kecamatan Dungingi">Huangobotu</option>
                                 <option value="Kelurahan Libuo Kecamatan Dungingi">Libuo</option>
                                 <option value="Kelurahan Tuladenggi Kecamatan Dungingi">Tuladenggi</option>
@@ -252,7 +252,7 @@
                       <div class="form-group row @error('tempatcln') has-error @enderror">
                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tempat Lahir</strong> </label>
                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                        <input type="" name="tempatcln" class="form-control" id="tempatcln" placeholder="tempatcln Lahir Sesuai KTP" value="{{ old('tempatcln') }}">
+                        <input type="" name="tempatcln" class="form-control" id="tempatcln" placeholder="Tempat Lahir Sesuai KTP" value="{{ old('tempatcln') }}">
                         </div>
 
                         @error('tempatcln')
@@ -277,7 +277,7 @@
                           <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Jenis Kelamin</strong> </label>
                           <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                               <select name="jkcln" id="" class="form-control select2">
-                                  <option selected>Pilih Jenis Kelamin</option>
+                                  <option selected>{{ old('jkcln') ?? 'Pilih Jenis Kelamin' }}</option>
                                   <option value="Laki-Laki">Laki-Laki</option>
                                   <option value="Perempuan">Perempuan</option>
 
@@ -294,7 +294,7 @@
                       <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Warga Negara</strong> </label>
                       <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                           <select name="wncln" id="" class="form-control select2">
-                              <option selected>Pilih Kewarganegaraan</option>
+                              <option selected>{{ old('wncln') ?? 'Pilih Kewarganegaraan' }}</option>
                               <option value="Indonesia">Indonesia</option>
                               <option value="Warga Negara Asing">Warga Negara Asing</option>
                             </select>
@@ -322,7 +322,7 @@
                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Agama</strong> </label>
                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                             <select name="agamacln" id="" class="form-control select2">
-                                <option selected>Pilih Agama</option>
+                                <option selected>{{ old('agamacln') ?? 'Pilih Agama' }}</option>
                                 <option value="Islam">Islam</option>
                                 <option value="Kristen Katolik">Kristen Katolik</option>
                                 <option value="Hindu">Hindu</option>
@@ -342,7 +342,7 @@
                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Status</strong> </label>
                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                             <select name="statuscln" id="" class="form-control select2">
-                                <option selected>Pilih Status</option>
+                                <option selected>{{ old('statuscln') ?? 'Pilih Status' }}</option>
                                 <option value="Perawan">Perawan</option>
                                 <option value="Janda">Janda</option>
 
@@ -385,7 +385,7 @@
                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kelurahan</strong> </label>
                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                             <select name="kelurahancln" id="" class="form-control select2">
-                                <option selected>Pilih Kelurahan</option>
+                                <option selected>{{ old('kelurahancln') ?? 'Pilih Kelurahan' }}</option>
                                 <option value="Kelurahan Huangobotu Kecamatan Dungingi">Huangobotu</option>
                                 <option value="Kelurahan Libuo Kecamatan Dungingi">Libuo</option>
                                 <option value="Kelurahan Tuladenggi Kecamatan Dungingi">Tuladenggi</option>
@@ -547,7 +547,7 @@
 
 
                     <div class="form-group mt-2">
-                        <input type="submit" value="Kirim" class="btn btn-primary">
+                        <input type="submit" value="Ajukan" class="btn btn-primary">
                     </div>
 
                   </form>
