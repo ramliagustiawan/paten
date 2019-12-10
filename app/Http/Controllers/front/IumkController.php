@@ -56,10 +56,10 @@ class IumkController extends Controller
         $this->validate($request, [
 
             'nama' => 'required',
-            'nik' => 'required|numeric|max:9999999999999999|digits_between:16,18',
+            'nik' => 'required|numeric|digits_between:16,17',
             'alamat' => 'required|min:3',
             'kelurahan' => 'required',
-            'kontak' => 'required|numeric|max:999999999999|digits_between:10,15',
+            'kontak' => 'required|numeric|digits_between:10,13',
             'naper' => 'required',
             'bentuk' => 'required',
             'npwp' => 'required',
@@ -92,6 +92,7 @@ class IumkController extends Controller
             'nik.digits_between'=>'NIK terdiri dari 16 Digits',
             'kontak.digits_between'=>'No HP terdiri dari 10 sd 12 Digits',
             'numeric' => 'Isi Dengan Angka',
+            'max.numeric' => 'Cek Kembali : Kelebihan Digits'
 
         ]);
 

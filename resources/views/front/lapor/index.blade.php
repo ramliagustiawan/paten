@@ -48,10 +48,10 @@
                     <div class="form-group row @error('name') has-error @enderror">
                         <label for="" class="col-sm-2 col-md-6 col-lg-2 col-form-label"><strong>Nama </strong></label>
                         <div class="col-sm-10">
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Masukkan Nama Anda" value="{{ old('name') }}" required>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Masukkan Nama Anda" value="{{ old('name') }}">
                         </div>
                         @error('name')
-                          <span class="help-block">{{ $message }}</span>
+                        <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                     </div>
@@ -62,11 +62,11 @@
                         <label for="" class="col-sm-2 col-md-6 col-lg-2 col-form-label"><strong>Alamat</strong> </label>
                         <div class="col-sm-10">
                         <input type="text" name="alamat" class="form-control" id="alamat" placeholder="Masukkan Alamat Anda" value="{{ old('alamat') }}"
-                        required>
+                        >
                         </div>
 
                         @error('alamat')
-                          <span class="help-block">{{ $message }}</span>
+                         <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                     </div>
@@ -74,11 +74,11 @@
                     <div class="form-group row @error('kontak') has-error @enderror">
                         <label for="" class="col-sm-2 col-md-6 col-lg-2 col-form-label"><strong>Kontak</strong> </label>
                         <div class="col-sm-10">
-                        <input type="" name="kontak" class="form-control" id="kontak" placeholder="Masukkan Nomor Telp/Hp Anda" value="{{ old('kontak') }}" required>
+                        <input type="" name="kontak" class="form-control" id="kontak" placeholder="Masukkan Nomor Telp/Hp Anda" value="{{ old('kontak') }}">
                         </div>
 
                         @error('kontak')
-                          <span class="help-block">{{ $message }}</span>
+                         <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                     </div>
@@ -90,7 +90,7 @@
                         </div>
 
                         @error('pesan')
-                        <span class="help-block">{{ $message }}</span>
+                       <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
                         @enderror
 
                     </div>
@@ -108,7 +108,7 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="submit" value="Kirim" class="btn btn-primary">
+                        <input type="submit" value="Lapor" class="btn btn-primary">
                     </div>
 
                   </form>

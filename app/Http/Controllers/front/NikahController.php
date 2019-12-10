@@ -53,7 +53,7 @@ class NikahController extends Controller
 
             'kua' => 'required',
             'nama' => 'required',
-            'nik' => 'required|numeric|max:9999999999999999|digits_between:16,18',
+            'nik' => 'required|numeric|digits_between:16,17',
             'tempat' => 'required',
             'tgllhr' => 'required',
             'jk' => 'required|min:4',
@@ -68,7 +68,7 @@ class NikahController extends Controller
             'layanan_id' => 'required',
 
             'namacln' => 'required',
-            'nikcln' => 'required|numeric|max:9999999999999999|digits_between:16,18',
+            'nikcln' => 'required|numeric|digits_between:16,17',
             'tempatcln' => 'required',
             'tgllhrcln' => 'required',
             'jkcln' => 'required|min:4',
@@ -80,7 +80,7 @@ class NikahController extends Controller
             'alamatcln' => 'required',
             'kelurahancln' => 'required',
 
-            'kontakcln' => 'required|numeric|max:999999999999|digits_between:10,15',
+            'kontakcln' => 'required|numeric|digits_between:10,13',
 
             'waktuakad' => 'required',
             'tempatakad' => 'required',

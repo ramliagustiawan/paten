@@ -27,11 +27,11 @@ class ReportController extends Controller
      */
     public function create()
     {
-        $iumk = Report::orderBY('created_at', DESC)->get();
-        return view('front.lapor.create', [
-            'title' => 'Pelaporan',
-            'report' => $iumk
-        ]);
+        // $iumk = Report::orderBY('created_at', DESC)->get();
+        // return view('front.lapor.create', [
+        //     'title' => 'Pelaporan',
+        //     'report' => $iumk
+        // ]);
     }
 
     /**
@@ -43,15 +43,23 @@ class ReportController extends Controller
     public function store(Request $request)
     {
         // VALIDASI
-        $this->validate($request, [
+        $ruls = [
             'name' => 'required',
             'alamat' => 'required|min:10',
-            'kontak' => 'required|numeric',
+            'kontak' => 'required|numeric|digits_between:10,13',
             'pesan' => 'required|min:10',
             'g-recaptcha-response' => new Captcha(),
 
 
-        ]);
+        ];
+        $message = [
+            'required' => ':attribute Harus Di Isi',
+            'name.required' => 'Nama Harus Di Isi',
+            'numeric' => 'Masukkan Angka',
+            'kontak.digits_between'=>'No HP terdiri dari 10 sd 12 Digits',
+        ];
+
+        $request->validate($ruls,$message);
 
         Report::create([
             'name' => $request->name,
@@ -60,6 +68,8 @@ class ReportController extends Controller
             'pesan' =>  $request->pesan,
 
         ]);
+
+
 
         return redirect()->route('report.index')->withSuccess('Laporan Berhasil Di Kirim');
     }
