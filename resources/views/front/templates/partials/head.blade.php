@@ -3,6 +3,8 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>{{$title ?? 'SIP PATEN'}}</title>
 
+<link rel="shorcut icon" href="{{asset('assets/images/kota.png')}}">
+
 
 {{--  bootstrap4  --}}
 <link rel="stylesheet" href="{{ asset('assets/bootstrap4_dist/css/bootstrap.min.css') }}">
