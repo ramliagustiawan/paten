@@ -209,7 +209,7 @@ class SuketController extends Controller
             'nama' => $request->nama,
             'nik' => $request->nik,
             'tempat' => $request->tempat,
-            'tgllhr' => $request->tgllhr,
+            // 'tgllhr' => $request->tgllhr,
             'jk' => $request->jk,
             'agama' => $request->agama,
             'pekerjaan' => $request->pekerjaan,

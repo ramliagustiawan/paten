@@ -367,9 +367,7 @@
                                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                             <select name="statuscln" id="" class="form-control select2">
                                                 <option selected>{{ old('statuscln')?? 'Pilih Status' }}</option>
-                                                <option value="Perjaka">Perjaka</option>
                                                 <option value="Perawan">Perawan</option>
-                                                <option value="Duda">Duda</option>
                                                 <option value="Janda">Janda</option>
 
                                               </select>

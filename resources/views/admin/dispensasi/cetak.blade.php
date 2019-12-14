@@ -75,7 +75,7 @@
     <tr>
         <td style="font-size: 20px;"><strong>Nama</strong></td>
         <td width="400" style="font-size: 20px;">  : <strong> {{$dispensasi->nama}}   (Calon Suami) </strong></td>
-       
+
     </tr>
         <tr>
             <td height="7"></td>
@@ -87,13 +87,13 @@
         <tr>
             <td height="20"></td>
         </tr>
-   
+
 </table>
 
 
 <table>
     <tr>
-    <td align="justify">    Untuk Melaksanakan Pernikahan (Akad Nikah) Pada Hari {{$dispensasi->waktuakad}} di {{$dispensasi->tempatakad}} </td>
+    <td align="justify">    Untuk Melaksanakan Pernikahan (Akad Nikah) Pada Tanggal {{$dispensasi->waktuakad}} di {{$dispensasi->tempatakad}} </td>
     </tr>
 </table>
 
@@ -107,7 +107,7 @@
         </tr>
     </table>
 
- 
+
 
 <br>
 
@@ -158,18 +158,18 @@
         <tr>
             <td height="95"></td>
         </tr>
-    
+
         <tr>
-            <td><u>Tembusan Kepada Yth :</u></td>          
-        </tr>         
+            <td><u>Tembusan Kepada Yth :</u></td>
+        </tr>
         <tr>
             <td><i>Kepala KUA Kecamatan Dungingi</i></td>
-            
+
         </tr>
             <tr>
                 <td height="25"></td>
             </tr>
-       
+
     </table>
 
 

@@ -140,7 +140,17 @@
                                         <div class="form-group row @error('tglarsip') has-error @enderror">
                                                 <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tanggal Di Arsipkan</strong> </label>
                                                 <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                                <input type="date" name="tglarsip" class="form-control" id="tglarsip" placeholder="Contoh : Gorontalo, 13 Agustus 1994" value="{{ old('tglarsip') }}" >
+                                                {{-- <input type="date" name="tglarsip" class="form-control" id="tglarsip" placeholder="Contoh : Gorontalo, 13 Agustus 1994" value="{{ old('tglarsip') }}" > --}}
+
+                                                <input type="text"
+                                                class="datepicker-here form-control"
+                                                data-language='en'
+                                                name="tglarsip"
+                                                value="{{ old('tglarsip') }}"
+                                                placeholder="Input Tanggal Pelaksanaan Akad"
+                                                data-multiple-dates="3"
+                                                data-multiple-dates-separator=", "
+                                                data-position='bottom left'/>
                                                 </div>
 
                                                 @error('tglarsip')
@@ -213,6 +223,13 @@
 
 @endsection
 
+@push('datepicker')
+
+    {{-- datepicker --}}
+<link rel="stylesheet" href="{{asset('assets/air-datepicker/dist/css/datepicker.css')}}">
+
+@endpush
+
 @push('scripts')
 
 
@@ -233,6 +250,11 @@
              CKEDITOR.replace('perihal');
 
          </script>
+
+           {{-- datepicker --}}
+           <script src="{{asset('assets/air-datepicker/dist/js/datepicker.js')}}"></script>
+           <script src="{{asset('assets/air-datepicker/dist/js/i18n/datepicker.en.js')}}"></script>
+
 
 
 

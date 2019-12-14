@@ -227,7 +227,7 @@
                     <div class="form-group row @error('layanan_id') has-error @enderror invisible ">
                             <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Kategori</strong> </label>
                             <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                            <input type="text" name="layanan_id" class="form-control" id="layanan_id" placeholder="Masukkan layanan_id Anda" value="2"
+                            <input type="text" name="layanan_id" class="form-control" id="layanan_id" placeholder="Masukkan layanan_id Anda" value="3"
                             required>
                             </div>
 

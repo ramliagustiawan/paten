@@ -53,7 +53,17 @@
                                       <div class="form-group row @error('tglsurat') has-error @enderror">
                                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tanggal Surat</strong> </label>
                                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                        <input type="date" name="tglsurat" class="form-control" id="tglsurat"  placeholder="Tanggal Surat" value="{{ old('tglsurat') }}">
+                                        {{-- <input type="date" name="tglsurat" class="form-control" id="tglsurat"  placeholder="Tanggal Surat" value="{{ old('tglsurat') }}"> --}}
+
+                                        <input type="text"
+                                        class="datepicker-here form-control"
+                                        data-language='en'
+                                        name="tglsurat"
+                                        value="{{ old('tglsurat') }}"
+                                        placeholder="Input Tanggal Surat"
+                                        data-multiple-dates="3"
+                                        data-multiple-dates-separator=", "
+                                        data-position='bottom left'/>
                                         </div>
 
                                         @error('tglsurat')
@@ -194,6 +204,13 @@
 
 @endsection
 
+@push('datepicker')
+
+    {{-- datepicker --}}
+<link rel="stylesheet" href="{{asset('assets/air-datepicker/dist/css/datepicker.css')}}">
+
+@endpush
+
 @push('scripts')
 
 
@@ -214,6 +231,10 @@
             CKEDITOR.replace('isisingkat');
 
         </script>
+
+         {{-- datepicker --}}
+         <script src="{{asset('assets/air-datepicker/dist/js/datepicker.js')}}"></script>
+         <script src="{{asset('assets/air-datepicker/dist/js/i18n/datepicker.en.js')}}"></script>
 
 
 
