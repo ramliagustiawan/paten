@@ -39,18 +39,18 @@
 
                             </tr>
                             </thead>
-                         
+
                           </table>
                         </div>
                         <!-- /.box-body -->
                       </div>
                       <!-- /.box -->
 
-                    
+
                       <a href="{{ route('admin.proses.cetak')}}" class="btn btn-danger " id="cetak" title="" style="font-size:15px;" ><span class="fa fa-file-pdf"></span> Print Daftar Layanan</a>
-                  
+
                 </div>
-               
+
               </div>
       {{-- batas --}}
 
@@ -104,10 +104,10 @@
               <button type="button" class="btn btn-primary">Edit</button>
             </div>
 
-          
+
         </form>
 
-       
+
           </div>
         </div>
       </div>
@@ -115,9 +115,16 @@
       {{-- modal --}}
 
 
-      
+
 
       </div>
+
+       {{-- hapus --}}
+       <form action="" method="post" id="deleteForm">
+        @csrf
+        @method("DELETE")
+        <input type="submit" value="Hapus" style="display:none">
+    </form>
 
 
 

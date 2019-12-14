@@ -123,11 +123,13 @@ class ProsesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Prosessurat $prosessurat)
+    public function destroy($id)
     {
-        $prosessurat->delete();
+        $proses = Prosessurat::find($id);
+        $proses->delete();
+        // dd($proses);
         return redirect()->route('admin.proses.index')
-            ->with('danger', 'Permohonan Surat Keterangan Dihapus');
+            ->with('danger', 'Permohonan Surat Dihapus');
     }
 
     public function cetak()
