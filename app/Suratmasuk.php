@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Date\Date;
 
 class Suratmasuk extends Model
 {
@@ -38,27 +39,29 @@ class Suratmasuk extends Model
     // fungsi mengubah format tanggal
     public function getCreatedAtAttribute()
     {
-        return \Carbon\Carbon::parse($this->attributes['created_at'])
+        Date::setLocale('id');
+        return Date::parse($this->attributes['created_at'])
             ->format('d M Y H:i');
     }
 
     public function getUpdatedAtAttribute()
     {
-        return \Carbon\Carbon::parse($this->attributes['updated_at'])
+        Date::setLocale('id');
+        return Date::parse($this->attributes['updated_at'])
             ->diffForHumans();
     }
 
     public function getTglsuratAttribute()
     {
-        \Carbon\Carbon::setLocale('id');
-        return \Carbon\Carbon::parse($this->attributes['tglsurat'])
+        Date::setLocale('id');
+        return Date::parse($this->attributes['tglsurat'])
             ->format('d F Y');
     }
 
     public function getTglterimaAttribute()
     {
-        \Carbon\Carbon::setLocale('id');
-        return \Carbon\Carbon::parse($this->attributes['tglterima'])
+        Date::setLocale('id');
+        return Date::parse($this->attributes['tglterima'])
             ->format('d F Y');
     }
 }

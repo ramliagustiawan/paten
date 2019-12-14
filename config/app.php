@@ -93,7 +93,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'id',
+    'fallback_locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -242,6 +242,7 @@ return [
         'Fpdf' => Codedge\Fpdf\Facades\Fpdf::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'QRCode' => LaravelQRCode\Facades\QRCode::class,
+        'Date' => Jenssegers\Date\Date::class,
 
     ],
 
