@@ -32,3 +32,5 @@
 <link rel="stylesheet" href="datepicker/datepicker3.css"/>
 
 @stack('content')
+
+@stack('datepicker')

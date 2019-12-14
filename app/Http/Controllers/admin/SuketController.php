@@ -4,7 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-// use Jenssegers\Date\Date;
+use Jenssegers\Date\Date;
 use App\Suket;
 use App\Layanan;
 use App\Pejabat;
@@ -209,7 +209,7 @@ class SuketController extends Controller
             'nama' => $request->nama,
             'nik' => $request->nik,
             'tempat' => $request->tempat,
-            // 'tgllhr' => $tgllhr,
+            'tgllhr' => $request->tgllhr,
             'jk' => $request->jk,
             'agama' => $request->agama,
             'pekerjaan' => $request->pekerjaan,

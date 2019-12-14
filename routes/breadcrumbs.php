@@ -115,7 +115,7 @@ Breadcrumbs::for('admin.suket.show', function ($trail, $suket) {
 Breadcrumbs::for('admin.suket.edit', function ($trail, $suket) {
     $trail->push('Beranda', route('admin.dashboard'));
     $trail->push('Surat Keterangan', route('admin.suket.index'));
-    $trail->push('Validasi suket', route('admin.suket.edit', $suket));
+    $trail->push('Validasi Surat Keterangan', route('admin.suket.edit', $suket));
 });
 
 // nonijin

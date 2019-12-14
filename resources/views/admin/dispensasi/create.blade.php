@@ -29,7 +29,17 @@
                                     <div class="form-group row @error('kua') has-error @enderror">
                                         <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Permohonan KUA</strong></label>
                                         <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                        <input type="text" name="kua" class="form-control" id="kua" placeholder="Masukkan tanggal permohonan KUA" value="{{ old('kua') }}" >
+                                        {{-- <input type="text" name="kua" class="form-control" id="kua" placeholder="Masukkan tanggal permohonan KUA" value="{{ old('kua') }}" > --}}
+                                        <input type="text"
+                                            class="datepicker-here form-control"
+                                            data-language='en'
+                                            name="kua"
+                                            value="{{ old('kua') }}"
+                                            placeholder="Masukkan Tanggal Permohonan KUA"
+                                            data-multiple-dates="3"
+                                            data-multiple-dates-separator=", "
+                                            data-position='bottom left'/>
+
                                         </div>
                                         @error('kua')
                                             <span class="invalid-feedback" style="display:block"><strong>{{ $message }}</strong></span>
@@ -78,7 +88,17 @@
                                       <div class="form-group row @error('tgllhr') has-error @enderror">
                                               <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tanggal Lahir</strong> </label>
                                               <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                              <input type="date" name="tgllhr" class="form-control" id="tgllhr" placeholder="Contoh : Gorontalo, 13 Agustus 1994" value="{{ old('tgllhr') }}" >
+                                              {{-- <input type="date" name="tgllhr" class="form-control" id="tgllhr" placeholder="Contoh : Gorontalo, 13 Agustus 1994" value="{{ old('tgllhr') }}" > --}}
+
+                                              <input type="text"
+                                              class="datepicker-here form-control"
+                                              data-language='en'
+                                              name="tgllhr"
+                                              value="{{ old('tgllhr') }}"
+                                              placeholder="Masukkan Tanggal Lahir"
+                                              data-multiple-dates="3"
+                                              data-multiple-dates-separator=", "
+                                              data-position='bottom left'/>
                                               </div>
 
                                               @error('tgllhr')
@@ -258,7 +278,17 @@
                                       <div class="form-group row @error('tgllhrcln') has-error @enderror">
                                               <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tanggal Lahir</strong> </label>
                                               <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                              <input type="date" name="tgllhrcln" class="form-control" id="tgllhrcln" placeholder="Contoh : Gorontalo, 13 Agustus 1994" value="{{ old('tgllhrcln') }}" >
+                                              {{-- <input type="date" name="tgllhrcln" class="form-control" id="tgllhrcln" placeholder="Contoh : Gorontalo, 13 Agustus 1994" value="{{ old('tgllhrcln') }}" > --}}
+
+                                              <input type="text"
+                                              class="datepicker-here form-control"
+                                              data-language='en'
+                                              name="tgllhrcln"
+                                              value="{{ old('tgllhrcln') }}"
+                                              placeholder="Masukkan Tanggal Lahir"
+                                              data-multiple-dates="3"
+                                              data-multiple-dates-separator=", "
+                                              data-position='bottom left'/>
                                               </div>
 
                                               @error('tgllhrcln')
@@ -418,8 +448,17 @@
                                 <div class="form-group row @error('waktuakad') has-error @enderror">
                                     <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tanggal Akad</strong> </label>
                                     <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                    <input type="date" name="waktuakad" class="form-control" id="waktuakad" placeholder="Masukkan Tanggal Pelaksanaan Akad Nikah" value="{{ old('waktuakad') }}"
-                                    >
+                                    {{-- <input type="date" name="waktuakad" class="form-control" id="waktuakad" placeholder="Masukkan Tanggal Pelaksanaan Akad Nikah" value="{{ old('waktuakad') }}"> --}}
+
+                                    <input type="text"
+                                    class="datepicker-here form-control"
+                                    data-language='en'
+                                    name="waktuakad"
+                                    value="{{ old('waktuakad') }}"
+                                    placeholder="Input Tanggal Pelaksanaan Akad"
+                                    data-multiple-dates="3"
+                                    data-multiple-dates-separator=", "
+                                    data-position='bottom left'/>
                                     </div>
 
                                     @error('waktuakad')
@@ -551,6 +590,13 @@
 
 @endsection
 
+@push('datepicker')
+
+    {{-- datepicker --}}
+<link rel="stylesheet" href="{{asset('assets/air-datepicker/dist/css/datepicker.css')}}">
+
+@endpush
+
 
 @push('scripts')
 
@@ -563,6 +609,10 @@
 
         {{--  swal  --}}
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+         {{-- datepicker --}}
+         <script src="{{asset('assets/air-datepicker/dist/js/datepicker.js')}}"></script>
+         <script src="{{asset('assets/air-datepicker/dist/js/i18n/datepicker.en.js')}}"></script>
 
 
 @endpush

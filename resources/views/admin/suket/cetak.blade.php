@@ -194,6 +194,9 @@
         <td align="center"><b>{{$suket->pejabat->jabatan}}</b></td>
     </tr>
     <tr>
+        <td align="center"><b>{{$suket->pejabat->ketjabatan}}</b></td>
+    </tr>
+    <tr>
         <td height="35"></td>
     </tr>
     <tr>

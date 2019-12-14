@@ -79,7 +79,16 @@
                                                         <div class="form-group row @error('tgllhr') has-error @enderror">
                                                                 <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tanggal Lahir</strong> </label>
                                                                 <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                                                <input type="date" name="tgllhr" class="form-control" id="tgllhr" placeholder="Contoh : Gorontalo, 13 Agustus 1994" value="{{ old('tgllhr') }}" >
+                                                                {{-- <input type="date" name="tgllhr" class="form-control" id="tgllhr" placeholder="Contoh : Gorontalo, 13 Agustus 1994" value="{{ old('tgllhr') }}" > --}}
+                                                                <input type="text"
+                                                                class="datepicker-here form-control"
+                                                                data-language='en'
+                                                                name="tgllhr"
+                                                                value="{{ old('tgllhr') }}"
+                                                                placeholder="Input Tanggal Lahir"
+                                                                data-multiple-dates="3"
+                                                                data-multiple-dates-separator=", "
+                                                                data-position='bottom left'/>
                                                                 </div>
 
                                                                 @error('tgllhr')
@@ -327,6 +336,13 @@
 
 @endsection
 
+@push('datepicker')
+
+    {{-- datepicker --}}
+<link rel="stylesheet" href="{{asset('assets/air-datepicker/dist/css/datepicker.css')}}">
+
+@endpush
+
 
 @push('scripts')
 
@@ -348,6 +364,10 @@
              CKEDITOR.replace('keterangan');
 
          </script>  --}}
+
+         {{-- datepicker --}}
+        <script src="{{asset('assets/air-datepicker/dist/js/datepicker.js')}}"></script>
+        <script src="{{asset('assets/air-datepicker/dist/js/i18n/datepicker.en.js')}}"></script>
 
 
 @endpush
