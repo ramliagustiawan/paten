@@ -47,10 +47,10 @@ class Prosessurat extends Model
             ->format('d F Y');
     }
 
-    public function getTglajuanAttribute()
-    {
-        Date::setLocale('id');
-        return Date::parse($this->attributes['tglajuan'])
-            ->format('d M Y H:i');
-    }
+    // public function getTglajuanAttribute()
+    // {
+    //     Date::setLocale('id');
+    //     return Date::parse($this->attributes['tglajuan'])
+    //         ->format('d M Y H:i');
+    // }
 }

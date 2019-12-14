@@ -147,7 +147,7 @@
                                                 data-language='en'
                                                 name="tglarsip"
                                                 value="{{ old('tglarsip') }}"
-                                                placeholder="Input Tanggal Pelaksanaan Akad"
+                                                placeholder="Input Tanggal Arsip Surat"
                                                 data-multiple-dates="3"
                                                 data-multiple-dates-separator=", "
                                                 data-position='bottom left'/>
