@@ -10,7 +10,6 @@ Route::get('/dispensasi/dispensasi', 'DataController@dispensasi')->name('dispens
 Route::get('/iumk/iumk', 'DataController@iumk')->name('iumk.iumk');
 Route::get('/suket/suket', 'DataController@suket')->name('suket.suket');
 
-
 Route::get('/daftar/layanan', 'DataController@layanan')->name('daftar.layanan');
 Route::get('/proses/surat', 'DataController@surat')->name('proses.surat');
 Route::get('/tindak/lanjut', 'DataController@lanjut')->name('tindak.lanjut');
@@ -48,14 +47,15 @@ Route::post('/daftar/{daftar}', 'DaftarController@proses')->name('daftar.proses'
 Route::get('/proses/pdf', 'ProsesController@cetak')->name('proses.cetak');
 Route::resource('/proses', 'ProsesController');
 
+Route::resource('/dispensasi', 'DispensasiController');
+Route::post('/dispensasi/{dispensasi}', 'DispensasiController@proses')->name('dispensasi.proses');
+
 Route::resource('/iumk', 'IumkController');
 Route::post('/iumk/{iumk}', 'IumkController@proses')->name('iumk.proses');
 
 Route::resource('/suket', 'SuketController');
 Route::post('/suket/{suket}', 'SuketController@proses')->name('suket.proses');
 
-Route::resource('/dispensasi', 'DispensasiController');
-Route::post('/dispensasi/{dispensasi}', 'DispensasiController@proses')->name('dispensasi.proses');
 
 
 Route::resource('/tindak', 'TindakController');

@@ -348,7 +348,7 @@ class DispensasiController extends Controller
         $dispensasi = Dispensasi::find($id);
         $pdf = PDF::loadView('admin.dispensasi.cetak', [
             'dispensasi' => $dispensasi,
-            // 'pejabat' => $pejabat,
+
             'title' => 'Dispensasi Nikah',
 
         ])->setPaper('F4', 'portrait');
@@ -383,16 +383,14 @@ class DispensasiController extends Controller
     {
         $dispensasi = Dispensasi::find($id);
         $file = public_path('assets/code/qr.png');
-        // dd($dispensasi);
-        // dd($file);
+
 
         $nama = $dispensasi->nama;
-        // $nik = $dispensasi->nik;
-        // $alamat = $dispensasi->alamat;
+
         $kelurahan = $dispensasi->layanan;
         $naper = $dispensasi->kua;
         $bentuk = $dispensasi->nik;
-        // dd($nama);
+
 
         QRCode::meCard($nama, $kelurahan, $naper, $bentuk)
             ->setErrorCorrectionLevel('H')

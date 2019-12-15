@@ -110,6 +110,20 @@ class DataController extends Controller
             ->toJson();
     }
 
+    public function dispensasi()
+    {
+        $dispensasi = Dispensasi::isSelesai()->orderBy('created_at', 'DESC')->get();
+        $dispensasi->load('layanan');
+
+        return datatables()->of($dispensasi)
+            ->addColumn('layanan_id', function (Dispensasi $model) {
+                return $model->layanan->layanan;
+            })
+            ->addColumn('action', 'admin.dispensasi.action')
+            ->addIndexColumn()
+            ->toJson();
+    }
+
     public function nonijin()
     {
         $nonijin = Nonijin::orderBy('nama', 'ASC');
@@ -188,19 +202,7 @@ class DataController extends Controller
             ->toJson();
     }
 
-    public function dispensasi()
-    {
-        $dispensasi = Dispensasi::isSelesai()->orderBy('created_at', 'DESC')->get();
-        $dispensasi->load('layanan');
 
-        return datatables()->of($dispensasi)
-            ->addColumn('layanan_id', function (Dispensasi $model) {
-                return $model->layanan->layanan;
-            })
-            ->addColumn('action', 'admin.dispensasi.action')
-            ->addIndexColumn()
-            ->toJson();
-    }
 
     public function suratin()
     {
