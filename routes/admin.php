@@ -5,10 +5,15 @@ Route::get('/', 'HomeController@index')->name('dashboard');
 
 // taruh diatas datatable
 Route::get('/user/data', 'DataController@data')->name('user.data');
+
+Route::get('/dispensasi/dispensasi', 'DataController@dispensasi')->name('dispensasi.dispensasi');
+Route::get('/iumk/iumk', 'DataController@iumk')->name('iumk.iumk');
+Route::get('/suket/suket', 'DataController@suket')->name('suket.suket');
+
+
 Route::get('/daftar/layanan', 'DataController@layanan')->name('daftar.layanan');
 Route::get('/proses/surat', 'DataController@surat')->name('proses.surat');
 Route::get('/tindak/lanjut', 'DataController@lanjut')->name('tindak.lanjut');
-Route::get('/suket/suket', 'DataController@suket')->name('suket.suket');
 Route::get('/nonijin/nonijin', 'DataController@nonijin')->name('nonijin.nonijin');
 Route::get('/ijin/ijin', 'DataController@ijin')->name('ijin.ijin');
 Route::get('/syarat/syarat', 'DataController@syarat')->name('syarat.syarat');
@@ -18,11 +23,9 @@ Route::get('/permission/permission', 'DataController@permission')->name('permiss
 Route::get('/suratin/suratin', 'DataController@suratin')->name('suratin.suratin');
 Route::get('/suratout/suratout', 'DataController@suratout')->name('suratout.suratout');
 Route::get('/arsip/arsip', 'DataController@arsip')->name('arsip.arsip');
-Route::get('/dispensasi/dispensasi', 'DataController@dispensasi')->name('dispensasi.dispensasi');
 
 // Route::post('/iumk/qrcode', 'IumkController@qrcode')->name('iumk.qrcode');
 
-Route::get('/iumk/iumk', 'DataController@iumk')->name('iumk.iumk');
 Route::get('/iumk/pdf/{id}', 'IumkController@cetak')->name('iumk.cetak');
 Route::get('/iumk/qrcode/{id}', 'IumkController@qrcode')->name('iumk.qrcode');
 
