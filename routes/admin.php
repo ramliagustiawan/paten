@@ -18,11 +18,9 @@ Route::get('/permission/permission', 'DataController@permission')->name('permiss
 Route::get('/suratin/suratin', 'DataController@suratin')->name('suratin.suratin');
 Route::get('/suratout/suratout', 'DataController@suratout')->name('suratout.suratout');
 Route::get('/arsip/arsip', 'DataController@arsip')->name('arsip.arsip');
-
-
 Route::get('/dispensasi/dispensasi', 'DataController@dispensasi')->name('dispensasi.dispensasi');
 
-Route::post('/iumk/qrcode', 'IumkController@qrcode')->name('iumk.qrcode');
+// Route::post('/iumk/qrcode', 'IumkController@qrcode')->name('iumk.qrcode');
 
 Route::get('/iumk/iumk', 'DataController@iumk')->name('iumk.iumk');
 Route::get('/iumk/pdf/{id}', 'IumkController@cetak')->name('iumk.cetak');

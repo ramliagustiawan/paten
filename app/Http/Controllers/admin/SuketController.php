@@ -4,11 +4,9 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Jenssegers\Date\Date;
 use App\Suket;
 use App\Layanan;
 use App\Pejabat;
-use Fpdf;
 use PDF;
 use App\Prosessurat;
 use Carbon\Carbon;
