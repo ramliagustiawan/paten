@@ -99,7 +99,7 @@
               <div class="icon">
                 <i class="ion ion-clipboard"></i>
               </div>
-              <a href="{{ route('admin.dispensasi.index') }}" class="small-box-footer">Ajukan Dispensasi Nikah <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{ route('admin.nikah.index') }}" class="small-box-footer">Ajukan Dispensasi Nikah <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
         <!-- ./col -->

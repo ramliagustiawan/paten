@@ -110,7 +110,7 @@ class DataController extends Controller
             ->toJson();
     }
 
-    public function dispensasi()
+    public function nikah()
     {
         $dispensasi = Dispensasi::isSelesai()->orderBy('created_at', 'DESC')->get();
         $dispensasi->load('layanan');
@@ -119,7 +119,7 @@ class DataController extends Controller
             ->addColumn('layanan_id', function (Dispensasi $model) {
                 return $model->layanan->layanan;
             })
-            ->addColumn('action', 'admin.dispensasi.action')
+            ->addColumn('action', 'admin.nikah.action')
             ->addIndexColumn()
             ->toJson();
     }

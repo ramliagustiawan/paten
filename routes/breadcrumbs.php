@@ -5,6 +5,35 @@ Breadcrumbs::for('admin.dashboard', function ($trail) {
     $trail->push('Beranda', route('admin.dashboard'));
 });
 
+// nikah index
+Breadcrumbs::for('admin.nikah.index', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Dispensasi Nikah', route('admin.nikah.index'));
+});
+
+// dispensasi create
+Breadcrumbs::for('admin.nikah.create', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Dispensasi Nikah', route('admin.nikah.index'));
+    $trail->push('Tambah Dispensasi Nikah', route('admin.nikah.create'));
+});
+
+// dispensasi show
+Breadcrumbs::for('admin.nikah.show', function ($trail, $dispensasi) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Dispensasi Nikah', route('admin.nikah.index'));
+    $trail->push('Detail Dispensasi Nikah', route('admin.nikah.show', $dispensasi));
+});
+
+// dispensasi edit
+Breadcrumbs::for('admin.nikah.edit', function ($trail, $dispensasi) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Dispensasi Nikah', route('admin.nikah.index'));
+    $trail->push('Validasi Dispensasi Nikah', route('admin.nikah.edit', $dispensasi));
+});
+
+
+
 // dispensasi index
 Breadcrumbs::for('admin.dispensasi.index', function ($trail) {
     $trail->push('Beranda', route('admin.dashboard'));

@@ -165,7 +165,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ route('admin.dispensasi.index') }}" class="nav-link">
+                    <a href="{{ route('admin.nikah.index') }}" class="nav-link">
                         <i class="far fa-calendar-check nav-icon"></i>
                         <p>Dispensasi Nikah</p>
                         {{-- <span class="badge badge-light ml-5">9</span> --}}
