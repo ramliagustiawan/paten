@@ -6,7 +6,7 @@ Route::get('/', 'HomeController@index')->name('dashboard');
 // taruh diatas datatable
 Route::get('/user/data', 'DataController@data')->name('user.data');
 
-Route::get('/dispensasi/dispensasi', 'DataController@dispensasi')->name('dispensasi.dispensasi');
+
 Route::get('/nikah/nikah', 'DataController@nikah')->name('nikah.nikah');
 Route::get('/iumk/iumk', 'DataController@iumk')->name('iumk.iumk');
 Route::get('/suket/suket', 'DataController@suket')->name('suket.suket');
@@ -24,16 +24,13 @@ Route::get('/suratin/suratin', 'DataController@suratin')->name('suratin.suratin'
 Route::get('/suratout/suratout', 'DataController@suratout')->name('suratout.suratout');
 Route::get('/arsip/arsip', 'DataController@arsip')->name('arsip.arsip');
 
-// Route::post('/iumk/qrcode', 'IumkController@qrcode')->name('iumk.qrcode');
+
 
 Route::get('/iumk/pdf/{id}', 'IumkController@cetak')->name('iumk.cetak');
 Route::get('/iumk/qrcode/{id}', 'IumkController@qrcode')->name('iumk.qrcode');
 
 Route::get('/suket/pdf/{id}', 'SuketController@cetak')->name('suket.cetak');
 Route::get('/suket/qrcode/{id}', 'SuketController@qrcode')->name('suket.qrcode');
-
-Route::get('/dispensasi/pdf/{id}', 'DispensasiController@cetak')->name('dispensasi.cetak');
-Route::get('/dispensasi/qrcode/{id}', 'DispensasiController@qrcode')->name('dispensasi.qrcode');
 
 Route::get('/nikah/pdf/{id}', 'NikahController@cetak')->name('nikah.cetak');
 Route::get('/nikah/qrcode/{id}', 'NikahController@qrcode')->name('nikah.qrcode');
@@ -51,9 +48,6 @@ Route::post('/daftar/{daftar}', 'DaftarController@proses')->name('daftar.proses'
 Route::get('/proses/pdf', 'ProsesController@cetak')->name('proses.cetak');
 Route::resource('/proses', 'ProsesController');
 
-Route::resource('/dispensasi', 'DispensasiController');
-Route::post('/dispensasi/{dispensasi}', 'DispensasiController@proses')->name('dispensasi.proses');
-
 Route::resource('/iumk', 'IumkController');
 Route::post('/iumk/{iumk}', 'IumkController@proses')->name('iumk.proses');
 
@@ -62,7 +56,6 @@ Route::post('/suket/{suket}', 'SuketController@proses')->name('suket.proses');
 
 Route::resource('/nikah', 'NikahController');
 Route::post('/nikah/{nikah}', 'NikahController@proses')->name('nikah.proses');
-
 
 
 Route::resource('/tindak', 'TindakController');
