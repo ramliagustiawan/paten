@@ -65,12 +65,12 @@ class ArsipController extends Controller
     public function edit($id)
     {
         $arsip = Arsip::find($id);
-        $suratmasuk = Suratmasuk::find($id);
-        // dd($arsip);
+        // $suratmasuk = Suratmasuk::all();
+        // // dd($suratmasuk);
         return view('admin.arsip.edit', [
             'title' => 'Arsip Surat',
             'arsip' => $arsip,
-            'suratmasuk'=>$suratmasuk
+            // 'suratmasuk'=>$suratmasuk,
         ]);
     }
 

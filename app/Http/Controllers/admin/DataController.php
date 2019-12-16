@@ -206,13 +206,13 @@ class DataController extends Controller
 
     public function suratin()
     {
-        $suratin = Suratmasuk::orderBy('created_at', 'DESC')->get();
+        $suratin = Suratmasuk::isSelesai()->orderBy('created_at', 'DESC')->get();
         $suratin->load('pejabat');
 
         return datatables()->of($suratin)
-            ->addColumn('pejabat_id', function (Suratmasuk $model) {
-                return $model->pejabat;
-            })
+            // ->addColumn('pejabat_id', function (Suratmasuk $model) {
+            //     return $model->pejabat;
+            // })
             ->addColumn('action', 'admin.suratin.action')
             ->addIndexColumn()
             ->toJson();
@@ -239,9 +239,6 @@ class DataController extends Controller
         $arsip = Arsip::orderBy('id', 'DESC');
 
         return datatables()->of($arsip)
-            // ->addColumn('pejabat_id', function (Suratmasuk $model) {
-            //     return $model->pejabat;
-            // })
             ->addColumn('action', 'admin.arsip.action')
             ->addIndexColumn()
             ->toJson();

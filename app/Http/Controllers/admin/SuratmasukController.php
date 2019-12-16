@@ -151,10 +151,10 @@ class SuratmasukController extends Controller
             // 'perihal' => 'required',
             // 'fotosurat' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
 
-            'disposisicamat' => 'required',
-            'disposisisek' => 'required',
-            'pejabat_id' => 'required',
-            'tindaklanjut' => 'required',
+            // 'disposisicamat' => 'required',
+            // 'disposisisek' => 'required',
+            // 'pejabat_id' => 'required',
+            // 'tindaklanjut' => 'required',
             // 'hasil'=>'required'
 
 
@@ -219,7 +219,7 @@ class SuratmasukController extends Controller
             'arsip_id' => $suratmasuk->id,
             'asalsurat' => $suratmasuk->asalsurat,
             'tglterima' => $suratmasuk->tglterima,
-            'perihal' => $suratmasuk->perihal,
+            'perihal' => $suratmasuk->ket,
             'tindaklanjut' => $suratmasuk->tindaklanjut,
             'tglselesai' => $suratmasuk->created_at,
 

@@ -64,4 +64,9 @@ class Suratmasuk extends Model
         return Date::parse($this->attributes['tglterima'])
             ->format('d F Y');
     }
+
+    public function scopeIsSelesai($query)
+    {
+        return $query->where('hasil', null);
+    }
 }

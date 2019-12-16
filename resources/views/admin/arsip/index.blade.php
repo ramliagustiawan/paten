@@ -31,7 +31,7 @@
                               <th>Tindak Lanjut</th>
                               <th>Tanggal Selesai</th>
                               <th>Tanggal Arsip</th>
-                              <th>Ket</th>
+                              <th>Ket Penyimpanan</th>
                                <th>Aksi</th>
 
 

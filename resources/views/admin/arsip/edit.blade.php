@@ -48,7 +48,7 @@
 
                                     </div>
 
-                                    <div class="form-group row @error('nosurat') has-error @enderror">
+                                    {{-- <div class="form-group row @error('nosurat') has-error @enderror">
                                       <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Nomor Surat Pelaporan</strong> </label>
                                       <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                       <input type="" name="nosurat" class="form-control" id="nosurat"   placeholder="Masukkan Nomor Surat" value="{{ old('nosurat')?? $suratmasuk->nosurat }}" readonly>
@@ -58,9 +58,9 @@
                                         <span class="help-block">{{ $message }}</span>
                                       @enderror
 
-                              </div>
+                              </div> --}}
 
-                                    <div class="form-group row @error('tglsurat') has-error @enderror">
+                                    {{-- <div class="form-group row @error('tglsurat') has-error @enderror">
                                       <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tanggal Surat</strong> </label>
                                       <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                       <input type="" name="tglsurat" class="form-control" id="tglsurat"  placeholder="Tanggal Surat" value="{{ old('tglsurat')?? $suratmasuk->tglsurat }}" readonly>
@@ -70,7 +70,7 @@
                                         <span class="help-block">{{ $message }}</span>
                                       @enderror
 
-                                    </div>
+                                    </div> --}}
 
 
                                     <div class="form-group row @error('tglterima') has-error @enderror">
@@ -87,7 +87,7 @@
 
 
 
-                                  <div class="form-group row @error('ket') has-error @enderror">
+                                  {{-- <div class="form-group row @error('ket') has-error @enderror">
                                       <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Perihal</strong> </label>
                                       <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                       <input type="text" name="ket" class="form-control" id="ket"   placeholder="Masukkan Perihal Surat" value="{{ old('ket')?? $suratmasuk->ket }}" readonly>
@@ -97,12 +97,12 @@
                                         <span class="help-block">{{ $message }}</span>
                                       @enderror
 
-                                  </div>
+                                  </div> --}}
 
                                 <div class="form-group row @error('perihal') has-error @enderror">
                                   <label for="" class="col-sm-2 col-md-6 col-lg-2 col-form-label"><strong>Isi Surat</strong></label>
                                   <div class="col-sm-10">
-                                  <textarea class="form-control" id="perihal" name="perihal" placeholder="Ringkasan Isi Surat"  rows="4" readonly>{{ old('perihal')?? $arsip->perihal }}</textarea>
+                                  <input class="form-control" id="perihal" name="perihal" placeholder="Ringkasan Isi Surat" value="{{ old('ket')?? $arsip->perihal }}" readonly>
                                   </div>
 
                                   @error('perihal')
@@ -112,9 +112,9 @@
                               </div>
 
                               <div class="form-group row @error('tglarsip') has-error @enderror">
-                                <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tanggal Di Arsipkan</strong> </label>
+                                <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Tanggal Selesai Tindaklanjut</strong> </label>
                                 <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
-                                <input type="" name="tglarsip" class="form-control" id="tglarsip" placeholder="Contoh : Gorontalo, 13 Agustus 1994" value="{{ old('tglarsip') ?? $arsip->tglarsip }}" readonly>
+                                <input type="" name="tglselesai" class="form-control" id="tglarsip" placeholder="Contoh : Gorontalo, 13 Agustus 1994" value="{{ old('tglselesai') ?? $arsip->tglselesai}}" readonly>
                                 </div>
 
                                 @error('tglarsip')
@@ -245,11 +245,11 @@
          {{--  ckeditor  --}}
          <script src="{{ asset('assets/ckeditor/ckeditor.js')}}"></script>
 
-         <script>
+         {{-- <script>
 
              CKEDITOR.replace('perihal');
 
-         </script>
+         </script> --}}
 
            {{-- datepicker --}}
            <script src="{{asset('assets/air-datepicker/dist/js/datepicker.js')}}"></script>

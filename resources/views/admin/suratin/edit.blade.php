@@ -188,7 +188,7 @@
                                       </div>
 
 
-                                            <div class="form-group row @error('hasil') has-error @enderror">
+                                            {{-- <div class="form-group row @error('hasil') has-error @enderror">
                                               <label for="" class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-form-label"><strong>Keterangan</strong> </label>
                                               <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
                                               <input type="" name="hasil" class="form-control" id="hasil" placeholder="Hasil" value="{{ old('hasil')?? $suratmasuk->hasil }}" >
@@ -198,7 +198,7 @@
                                                 <span class="help-block">{{ $message }}</span>
                                               @enderror
 
-                                      </div>
+                                      </div> --}}
 
 
 
