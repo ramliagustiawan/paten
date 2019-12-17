@@ -57,7 +57,7 @@ class SuratmasukController extends Controller
             'tglterima' => 'required|date',
             'ket' => 'required',
             'perihal' => 'required',
-            'fotosurat' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
+            'fotosurat' => 'file|image|max:2048',
 
         ];
 
@@ -149,7 +149,7 @@ class SuratmasukController extends Controller
             // 'tglterima' => 'required|date',
             // 'ket' => 'required',
             // 'perihal' => 'required',
-            // 'fotosurat' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
+            // 'fotosurat' => 'file|image|max:2048',
 
             // 'disposisicamat' => 'required',
             // 'disposisisek' => 'required',

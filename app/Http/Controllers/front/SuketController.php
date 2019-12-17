@@ -54,8 +54,8 @@ class SuketController extends Controller
             'keperluan' => 'required|min:10',
             'kontak' => 'required|numeric|digits_between:10,13',
             'layanan_id' => 'required',
-            'fotoktp' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
-            'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
+            'fotoktp' => 'file|image|max:2048',
+            'fotopbb' => 'file|image|max:2048',
             'g-recaptcha-response' => new Captcha(),
 
 

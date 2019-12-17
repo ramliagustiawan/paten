@@ -57,7 +57,7 @@ class SuratoutController extends Controller
             'isisingkat' => 'required',
             'tujuansurat' => 'required',
             'pengirim' => 'required',
-            'fotosurat' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
+            'fotosurat' => 'file|image|max:2048',
 
 
         ];
@@ -151,7 +151,7 @@ class SuratoutController extends Controller
             // 'isisingkat' => 'required',
             // 'tujuansurat' => 'required',
             // 'pengirim' => 'required',
-            // 'fotosurat' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
+            // 'fotosurat' => 'file|image|max:2048',
 
 
         ]);

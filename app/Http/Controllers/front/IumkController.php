@@ -68,10 +68,10 @@ class IumkController extends Controller
             'alamatusaha' => 'required|min:10',
             'modal' => 'required',
             'layanan_id' => 'required',
-            'fotoktp' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
-            'fotosku' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
-            'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
-            'fotodiri' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
+            'fotoktp' => 'file|image|max:2048',
+            'fotosku' => 'file|image|max:2048',
+            'fotopbb' => 'file|image|max:2048',
+            'fotodiri' => 'file|image|max:2048',
             'g-recaptcha-response' => new Captcha(),
 
 

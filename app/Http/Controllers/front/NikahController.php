@@ -85,8 +85,8 @@ class NikahController extends Controller
             'waktuakad' => 'required',
             'tempatakad' => 'required',
 
-            'fotokua' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
-            'fotopbb' => 'file|image|mimes:jpg,png,jpeg,svg|max:2048',
+            'fotokua' => 'file|image|max:2048',
+            'fotopbb' => 'file|image|max:2048',
             'g-recaptcha-response' => new Captcha(),
 
 
