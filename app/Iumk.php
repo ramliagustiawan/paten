@@ -54,7 +54,7 @@ class Iumk extends Model
         }
 
         if ($this->fotoktp) {
-            return asset($this->fotoktp);
+            return ('storage/'.$this->fotoktp);
         }
 
         return 'https://via.placeholder.com/150x200.png?text=No+Data';
@@ -68,7 +68,7 @@ class Iumk extends Model
         }
 
         if ($this->fotosku) {
-            return asset($this->fotosku);
+            return ('storage/'.$this->fotosku);
         }
 
         return 'https://via.placeholder.com/150x200.png?text=No+Data';
@@ -82,7 +82,7 @@ class Iumk extends Model
         }
 
         if ($this->fotopbb) {
-            return asset($this->fotopbb);
+            return ('storage/'.$this->fotopbb);
         }
 
         return 'https://via.placeholder.com/150x200.png?text=No+Data';
@@ -95,7 +95,7 @@ class Iumk extends Model
         }
 
         if ($this->fotodiri) {
-            return asset($this->fotodiri);
+            return ('storage/'.$this->fotodiri);
         }
 
         return 'https://via.placeholder.com/150x200.png?text=No+Data';
