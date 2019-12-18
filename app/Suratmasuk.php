@@ -30,7 +30,7 @@ class Suratmasuk extends Model
         }
 
         if ($this->fotosurat) {
-            return asset($this->fotosurat);
+            return ('storage/'.$this->fotosurat);
         }
 
         return 'https://via.placeholder.com/150x200.png?text=No+Data';

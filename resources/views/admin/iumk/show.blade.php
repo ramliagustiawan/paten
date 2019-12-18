@@ -90,24 +90,24 @@
 
                                 <tr>
                                     <th>KTP</th>
-                                    <td><img src="{{ asset($daftar->getCover()) }}" height="250px"></td>
+                                    <td><img src="{{ url($daftar->getCover()) }}" height="250px"></td>
                                     
 
                                 </tr>
 
                                 <tr>
                                     <th>Surat Keterangan Usaha</th>
-                                    <td><img src="{{ asset($daftar->getSku()) }}" height="250px"></td>
+                                    <td><img src="{{ url($daftar->getSku()) }}" height="250px"></td>
                                 </tr>
 
                                 <tr>
                                     <th>Pajak Bumi Bangunan</th>
-                                    <td><img src="{{ asset($daftar->getPbb()) }}" height="250px"></td>
+                                    <td><img src="{{ url($daftar->getPbb()) }}" height="250px"></td>
                                 </tr>
 
                                 <tr>
                                     <th>Foto Diri</th>
-                                    <td><img src="{{ asset($daftar->getDiri()) }}" height="250px"></td>
+                                    <td><img src="{{ url($daftar->getDiri()) }}" height="250px"></td>
                                 </tr>
 
 

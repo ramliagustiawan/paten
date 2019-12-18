@@ -75,7 +75,7 @@ class Dispensasi extends Model
         }
 
         if ($this->fotokua) {
-            return asset($this->fotokua);
+            return ('storage/'.$this->fotokua);
         }
 
         return 'https://via.placeholder.com/150x200.png?text=No+Data';
@@ -89,7 +89,7 @@ class Dispensasi extends Model
         }
 
         if ($this->fotopbb) {
-            return asset($this->fotopbb);
+            return ('storage/'.$this->fotopbb);
         }
 
         return 'https://via.placeholder.com/150x200.png?text=No+Data';
